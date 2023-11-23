@@ -14,22 +14,21 @@ const Details = ({ scrollToRef }: DetailsProps) => (
         <div className={cn("container", styles.container)}>
             <div className={styles.details}>
                 <div className={styles.counter}>1M</div>
-                <div className={cn("h4", styles.info)}>Onix’s users</div>
+                <div className={cn("h4", styles.info)}>KIP users</div>
             </div>
             <div className={styles.wrap}>
                 <div className={cn("content", styles.content)}>
-                    <h2>Scaling solutions, amplified.</h2>
-                    <h3>Built by developers, for developers.</h3>
+                    <h2>The Great Knowledge Heist</h2>
+                    <h3>They need our knowledge and data.</h3>
                     <p>
-                        Onix is committed to fostering the growth of Web3
-                        applications by providing the infrastructure and
-                        security needed for Web3.
+                    LLM models need to be trained on huge amounts of knowledge and data.
+                    An industrial scale web-scraping exercise is on-going, 
+                    and if you've ever written or published anything online, 
+                    it's very likely that has already been integrated as a weight in an LLM.
                     </p>
                     <p>
-                        Onix believes in Web3 for all. Onix is a decentralised
-                        blockchain scaling platform that enables developers to
-                        build scalable user-friendly dApps with low transaction
-                        fees without ever sacrificing on security.
+                    Our knowledge and data has been absorbed to feed proprietary for-profit models.
+                    No one asked us for permission and there is no way to opt-out.
                     </p>
                 </div>
                 <Link href="/contact">
