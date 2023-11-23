@@ -5,7 +5,7 @@ import Scroll from "@/components/Scroll";
 import Image from "@/components/Image";
 
 type MainProps = {
-  scrollToRef: any;
+  scrollToRef?: any;
 };
 
 const Main = ({ scrollToRef }: MainProps) => (
@@ -20,16 +20,18 @@ const Main = ({ scrollToRef }: MainProps) => (
           <p>Create and secure your Knowledge Assets on the blockchain.</p>
           <p>Reclaim your ownership rights over your knowledge & data today.</p>
         </div>
-        <Scroll
-          className={styles.scroll}
-          title="SCROLL TO EXPLORE"
-          onScroll={() =>
-            scrollToRef.current.scrollIntoView({
-              behavior: "smooth",
-            })
-          }
-          row
-        />
+        {scrollToRef ? (
+          <Scroll
+            className={styles.scroll}
+            title="SCROLL TO EXPLORE"
+            onScroll={() =>
+              scrollToRef.current.scrollIntoView({
+                behavior: "smooth",
+              })
+            }
+            row
+          />
+        ) : null}
       </div>
     </div>
     <div className={styles.images}>
