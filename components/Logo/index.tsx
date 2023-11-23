@@ -12,10 +12,10 @@ const Logo = ({ className, onClick }: LogoProps) => (
     <Link href="/">
         <a className={cn(styles.logo, className)} onClick={onClick}>
             <Image
-                src="/images/logo.svg"
+                src="/images/KIP.svg"
                 width={90}
                 height={24}
-                alt="Onix"
+                alt="KIP Logo"
                 priority
             />
         </a>

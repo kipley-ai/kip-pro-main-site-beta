@@ -21,9 +21,14 @@ const Main = ({ scrollToRef }: MainProps) => (
     <div className={cn("section", styles.section)}>
         <div className={cn("container", styles.container)}>
             <div className={styles.head}>
-                <div className={styles.stage}>INTRODUCING ONIX</div>
-                <div className={cn("h1", styles.title)}>
-                    Community-owned API&nbsp;of blockchains.
+                <div className={styles.stage}>Towards Decentralised AI</div>
+                <div className={cn("h1", styles.title)}>Your Knowledge is</div>
+                <div className={cn("container", styles.wrapper)}>
+                    <div className={cn("container", styles.words)}>
+                        <span className={cn("h1", styles.word)}>Power</span>
+                        <span className={cn("h1", styles.word)}>Property</span>
+                        <span className={cn("h1", styles.word)}>Provenance</span>
+                    </div>
                 </div>
                 <div className={styles.info}>
                     Onix delivers tamper-proof inputs, outputs, and computations

@@ -23,8 +23,38 @@
     +tagline
     color: $n5
 
-.title
-    margin-bottom: 20px
+.wrapper
+    box-sizing: content-box
+    height: 90px
+    padding: 10px 30px
+    display: flex
+    border-radius: 2px
+    box-shadow: 0 20px 25px rgb(0, 0, 0, 0.2)
+
+.words
+    overflow: hidden
+
+.word
+    display: block
+    height: 100%
+    /* border: 1px solid orange */
+    color: #0e6ffc
+    animation: spin_words 4s infinite
+
+@keyframes spin_words
+    0%, 16.666%
+        transform: translateY(0%)
+    20%, 33.333%
+        transform: translateY(-100%)
+    36.666%, 50%
+        transform: translateY(-100%)
+    53.333%, 66.666%
+        transform: translateY(-200%)
+    70%, 83.333%
+        transform: translateY(-200%)
+    86.666%, 100%
+        transform: translateY(0%)
+
 
 .info
     +body1
