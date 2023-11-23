@@ -8,34 +8,34 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 type LayoutProps = {
-    layoutNoOverflow?: boolean;
-    children: React.ReactNode;
+  layoutNoOverflow?: boolean;
+  children: React.ReactNode;
 };
 
 const Layout = ({ layoutNoOverflow, children }: LayoutProps) => {
-    const { pathname } = useRouter();
+  const { pathname } = useRouter();
 
-    useEffect(() => {
-        clearQueueScrollLocks();
-        enablePageScroll();
-    }, [pathname]);
+  useEffect(() => {
+    clearQueueScrollLocks();
+    enablePageScroll();
+  }, [pathname]);
 
-    return (
-        <>
-            <Head>
-                <title>Onix</title>
-            </Head>
-            <div
-                className={cn(styles.layout, {
-                    [styles.layoutNoOverflow]: layoutNoOverflow,
-                })}
-            >
-                <Header />
-                {children}
-                <Footer />
-            </div>
-        </>
-    );
+  return (
+    <>
+      <Head>
+        <title>KIP Protocol - Decentralising AI through Knowledge Assets</title>
+      </Head>
+      <div
+        className={cn(styles.layout, {
+          [styles.layoutNoOverflow]: layoutNoOverflow,
+        })}
+      >
+        <Header />
+        {children}
+        <Footer />
+      </div>
+    </>
+  );
 };
 
 export default Layout;
