@@ -1,5 +1,5 @@
 import cn from "classnames";
-import styles from "./AboutUs.module.sass";
+import styles from "./UpToDate.module.sass";
 import Image from "@/components/Image";
 
 const list = [
@@ -7,9 +7,9 @@ const list = [
     "Your data can be transformed, organized, and shared across applications for anyone to query with just a few keystrokes.",
 ];
 
-type AboutUsProps = {};
+type UpToDateProps = {};
 
-const AboutUs = ({}: AboutUsProps) => (
+const UpToDate = ({}: UpToDateProps) => (
     <div className={cn("section", styles.section)}>
         <div className={cn("container", styles.container)}>
             <div className={styles.row}>
@@ -53,4 +53,4 @@ const AboutUs = ({}: AboutUsProps) => (
     </div>
 );
 
-export default AboutUs;
+export default UpToDate;

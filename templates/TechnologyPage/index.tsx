@@ -4,7 +4,6 @@ import Main from "./Main";
 import Details from "./Details";
 import Development from "./Development";
 import Community from "./Community";
-import AboutUs from "./AboutUs";
 import Posts from "./Posts";
 import Faq from "./Faq";
 import Reviews from "@/components/Reviews";
@@ -21,7 +20,6 @@ const TechnologyPage = () => {
             <Details scrollToRef={scrollToRef} />
             <Development />
             <Community />
-            <AboutUs />
             <Posts />
             <Faq />
             <Reviews reviews={reviews} />

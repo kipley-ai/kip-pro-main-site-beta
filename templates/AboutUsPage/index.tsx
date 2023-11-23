@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import Layout from "@/components/Layout";
 import Main from "./Main";
-import Details from "./Details";
 import Testimonial from "./Testimonial";
 import Team from "./Team";
 import Values from "./Values";
@@ -16,7 +15,6 @@ const AboutUsPage = () => {
     return (
         <Layout>
             <Main scrollToRef={scrollToRef} />
-            <Details scrollToRef={scrollToRef} />
             <Testimonial />
             <Team />
             <Values />
