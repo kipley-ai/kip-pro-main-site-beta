@@ -12,13 +12,14 @@ const Main = ({ scrollToRef }: MainProps) => (
   <div className={cn("section", styles.section)}>
     <div className={cn("container", styles.container)}>
       <div className={styles.wrap}>
-        <div className={styles.stage}>about us</div>
-        <div className={cn("h1", styles.title)}>Onix Fintech</div>
+        <div className={styles.stage}>A New Movement is Needed</div>
+        <div className={cn("h1", styles.title)}>Introducing KnowledgeFi</div>
         <div className={styles.info}>
-          <p>Our knowledge and data drives the AI powered future.</p>
-          <p>And it is being taken from us now as we speak.</p>
-          <p>Create and secure your Knowledge Assets on the blockchain.</p>
-          <p>Reclaim your ownership rights over your knowledge & data today.</p>
+          <p>
+            Everyone should be empowered, through the systematic creation of
+            true digital property rights, to unlock the full economic value of
+            our Knowledge Assets.
+          </p>
         </div>
         {scrollToRef ? (
           <Scroll
