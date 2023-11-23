@@ -2,7 +2,16 @@ import cn from "classnames";
 import styles from "./UpToDate.module.sass";
 import Image from "@/components/Image";
 
-const list = ["Vectorised Knowledge Bases", "Training Data"];
+const list = [
+  {
+    title: "Vectorised Knowledge Bases",
+    text: "Your data can be transformed, organized, and shared across applications for anyone to query with just a few keystrokes.",
+  },
+  {
+    title: "Training Data",
+    text: "Your data can be transformed, organized, and shared across applications for anyone to query with just a few keystrokes.",
+  },
+];
 
 type UpToDateProps = {};
 
@@ -22,8 +31,8 @@ const UpToDate = ({}: UpToDateProps) => (
           <div className={styles.list}>
             {list.map((item, index) => (
               <div className={styles.item} key={index}>
-                <div className={cn("h3", styles.number)}>0{index + 1}</div>
-                <div className={styles.content}>{item}</div>
+                <div className={cn("h3", styles.number)}>{item.title}</div>
+                <div className={styles.content}>{item.text}</div>
               </div>
             ))}
           </div>
