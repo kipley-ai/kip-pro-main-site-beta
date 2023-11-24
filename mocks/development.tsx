@@ -3,7 +3,7 @@ export const development = [
     title: "Create Knowledge Asset NFT",
     content:
       "Secure your valuable knowledge and data on the blockchain through creating a discrete Knowledge Asset, with ownership rights tied to an ERC 1155 NFT.",
-    image: "/images/development-pic-1.png",
+    image: "/images/figures/figure-101.png",
     color: "#6F5BEB",
     url: "/technology",
   },
@@ -11,7 +11,7 @@ export const development = [
     title: "Automated Revenue Sharing",
     content:
       "Get your fair share of revenues whenever your Knowledge Asset is used by an AI model.",
-    image: "/images/development-pic-2.png",
+    image: "/images/figures/figure-106 (1).png",
     color: "#EBB15B",
     delay: 150,
     url: "/technology",
@@ -20,7 +20,7 @@ export const development = [
     title: "Raise funds for Planned Research",
     content:
       "Attract people to support your research. Commit your research deliverables in a Knowledge Asset and allocate shares.",
-    image: "/images/development-pic-3.png",
+    image: "/images/figures/figure-104 (1).png",
     color: "#89EB5B",
     delay: 300,
     url: "/technology",
@@ -29,7 +29,7 @@ export const development = [
     title: "Activate communities around your passion",
     content:
       "The knowledgeable and the curious flock together. Engage people around your research through its ups and downs.",
-    image: "/images/development-pic-1.png",
+    image: "/images/figures/figure-103 (1).png",
     color: "#6F5BEB",
     delay: 450,
     url: "/technology",

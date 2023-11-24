@@ -54,7 +54,7 @@ const Main = ({ scrollToRef }: MainProps) => (
         easing="easeInQuad"
         rotate={[2, -10]}
       >
-        <Image src="/images/figures/figure-3.png" layout="fill" alt="Figure" />
+        <Image src="/images/figures/figure-107 (1).png" layout="fill" alt="Figure" />
       </Parallax>
     </div>
   </div>
