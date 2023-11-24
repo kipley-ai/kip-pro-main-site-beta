@@ -36,16 +36,16 @@ const UpToDate = ({}: UpToDateProps) => (
               </div>
             ))}
           </div>
-          <div className={styles.line}>
+          {/* <div className={styles.line}>
             <button className={cn("button", styles.button)}>
               <span>launch app</span>
             </button>
             <button className={styles.document}>Read the docs</button>
-          </div>
+          </div> */}
         </div>
         <div className={styles.preview}>
           <Image
-            src="/images/about-pic-2.png"
+            src="/images/figures/figure-102.png"
             width={712}
             height={682}
             alt="Figure"

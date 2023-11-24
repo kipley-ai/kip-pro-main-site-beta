@@ -31,11 +31,11 @@ const Details = ({ scrollToRef }: DetailsProps) => (
                     No one asked us for permission and there is no way to opt-out.
                     </p>
                 </div>
-                <Link href="/contact">
+                {/* <Link href="/contact">
                     <a className={cn("button", styles.button)}>
                         <span>contact us</span>
                     </a>
-                </Link>
+                </Link> */}
             </div>
             <Parallax
                 className={styles.image}
@@ -44,7 +44,7 @@ const Details = ({ scrollToRef }: DetailsProps) => (
                 rotate={[2, -15]}
             >
                 <Image
-                    src="/images/figures/figure-7.png"
+                    src="/images/figures/figure-105 (1).png"
                     layout="fill"
                     alt="Figure"
                 />
