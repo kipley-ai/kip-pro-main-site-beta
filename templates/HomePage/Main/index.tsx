@@ -3,6 +3,7 @@ import cn from "classnames";
 import styles from "./Main.module.sass";
 import Image from "@/components/Image";
 import Scroll from "@/components/Scroll";
+import Typewriter from './Typewriter';
 
 const images = [
   "/images/figures/figure-103 (1).png",
@@ -23,13 +24,14 @@ const Main = ({ scrollToRef }: MainProps) => (
       <div className={styles.head}>
         <div className={styles.stage}>Towards Decentralised AI</div>
         <div className={cn("h1", styles.title)}>Your Knowledge is</div>
-        <div className={cn("container", styles.wrapper)}>
+        {/* <div className={cn("container", styles.wrapper)}>
           <div className={cn("container", styles.words)}>
             <span className={cn("h1", styles.word)}>Power</span>
             <span className={cn("h1", styles.word)}>Property</span>
             <span className={cn("h1", styles.word)}>Provenance</span>
           </div>
-        </div>
+        </div> */}
+        <Typewriter />
         <div className={styles.info}>
           <p>Our knowledge and data drives the AI powered future.</p>
           <p>And it is being taken from us now as we speak.</p>
