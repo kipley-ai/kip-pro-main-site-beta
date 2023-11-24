@@ -13,8 +13,8 @@ const Details = ({ scrollToRef }: DetailsProps) => (
         <div className={cn("anchor", styles.anchor)} ref={scrollToRef}></div>
         <div className={cn("container", styles.container)}>
             <div className={styles.details}>
-                <div className={styles.counter}>1M</div>
-                <div className={cn("h4", styles.info)}>KIP users</div>
+                {/* <div className={styles.counter}>1M</div>
+                <div className={cn("h4", styles.info)}>KIP users</div> */}
             </div>
             <div className={styles.wrap}>
                 <div className={cn("content", styles.content)}>
