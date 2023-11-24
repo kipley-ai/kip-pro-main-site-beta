@@ -11,12 +11,12 @@ import { socials } from "@/constants/socials";
 type FooterProps = {};
 
 const Footer = ({}: FooterProps) => (
-    <footer className={styles.footer}>
-        <div className={cn("container-wide", styles.container)}>
-            <div className={styles.row}>
-                <Logo className={styles.logo} />
-                <div className={styles.menu}>
-                    {footerNavigation.map((link, index) =>
+  <footer className={styles.footer}>
+    <div className={cn("container-wide", styles.container)}>
+      <div className={styles.row}>
+        <Logo className={styles.logo} />
+        <div className={styles.menu}>
+          {/* {footerNavigation.map((link, index) =>
                         link.external ? (
                             <a
                                 className={styles.link}
@@ -37,24 +37,22 @@ const Footer = ({}: FooterProps) => (
                                 {link.title}
                             </NavLink>
                         )
-                    )}
-                </div>
-            </div>
-            <div className={styles.row}>
-                <div className={styles.copyright}>
-                    © 2023 KIP. All rights reserved.
-                </div>
-                <div className={styles.documents}>
-                    {documents.map((document, index) => (
+                    )} */}
+        </div>
+      </div>
+      <div className={styles.row}>
+        <div className={styles.copyright}>© 2023 KIP. All rights reserved.</div>
+        <div className={styles.documents}>
+          {/* {documents.map((document, index) => (
                         <Link href={document.url} key={index}>
                             <a className={styles.document}>{document.title}</a>
                         </Link>
-                    ))}
-                </div>
-                <Socials className={styles.socials} socials={socials} />
-            </div>
+                    ))} */}
         </div>
-    </footer>
+        <Socials className={styles.socials} socials={socials} />
+      </div>
+    </div>
+  </footer>
 );
 
 export default Footer;
