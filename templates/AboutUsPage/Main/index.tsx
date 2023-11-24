@@ -4,6 +4,7 @@ import styles from "./Main.module.sass";
 import Scroll from "@/components/Scroll";
 import Image from "@/components/Image";
 import ProgressBar from "./ProgressBar";
+import GetInvolvedButton from "@/components/GetInvolvedButton";
 
 type MainProps = {
   scrollToRef?: any;
@@ -22,9 +23,12 @@ const Main = ({ scrollToRef }: MainProps) => (
             our Knowledge Assets.
           </p>
           <ProgressBar />
-          <button className={cn("button", styles["get-involved-button"])}>
+          {/* <button className={cn("button", styles["get-involved-button"])}>
             <span>Get Involved</span>
-          </button>
+          </button> */}
+          <GetInvolvedButton
+            buttonStyle={cn("button", styles["get-involved-button"])}
+          />
         </div>
         {scrollToRef ? (
           <Scroll
