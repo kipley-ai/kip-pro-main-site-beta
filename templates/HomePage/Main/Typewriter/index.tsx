@@ -15,7 +15,7 @@ const Typewriter: React.FC = () => {
           typeWriter(text, i + 1, fnCallback);
         }, 100);
       } else if (typeof fnCallback === "function") {
-        setTimeout(fnCallback, 700);
+        setTimeout(fnCallback, 1000);
       }
     };
 

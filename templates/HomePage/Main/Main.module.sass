@@ -62,6 +62,8 @@
 .scroll
     position: relative
     z-index: 3
+    +m
+        visibility: hidden
 
 .images
     position: absolute
@@ -73,11 +75,17 @@
     +w
         top: 20px
     +t
-        top: 100px
-        width: 1420px
+        top: 20rem
+        width: 1020px
     +m
-        top: 450px
+        top: 300px
         width: 810px
+    +a
+        top: 500px
+        width: 610px
+    +s
+        top: 600px
+        width: 410px
 
 .image
     &:nth-child(1)
