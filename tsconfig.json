@@ -26,6 +26,6 @@
             "@/mocks/*": ["mocks/*"]
         }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "web3.d.ts", "components/GetInvolvedButton/index.js"],
     "exclude": ["node_modules"]
 }

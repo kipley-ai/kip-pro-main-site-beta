@@ -7,6 +7,7 @@ import Menu from "./Menu";
 
 import { headerNavigation } from "@/constants/navigation";
 import { socials } from "@/constants/socials";
+import GetInvolvedButton from "@/components/GetInvolvedButton";
 
 type HeaderProps = {};
 
@@ -39,9 +40,12 @@ const Header = ({}: HeaderProps) => {
           socials={socials}
           onClick={() => setOpen(!open)}
         /> */}
-        <button className={cn("button", styles["get-involved-button"])}>
-            <span>Get Involved</span>
-        </button>
+        {/* <button className={cn("button", styles["get-involved-button"])}>
+          <span>Get Involved</span>
+        </button> */}
+        <GetInvolvedButton
+          buttonStyle={cn("button", styles["get-involved-button"])}
+        />
       </div>
     </header>
   );
