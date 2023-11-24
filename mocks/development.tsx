@@ -29,7 +29,7 @@ export const development = [
     title: "Activate communities around your passion",
     content:
       "The knowledgeable and the curious flock together. Engage people around your research through its ups and downs.",
-    image: "/images/figures/IMG_9206.png",
+    image: "/images/figures/figure-108.png",
     color: "#6F5BEB",
     delay: 450,
     url: "/technology",
