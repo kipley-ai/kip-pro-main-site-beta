@@ -3,6 +3,7 @@ import cn from "classnames";
 import styles from "./Main.module.sass";
 import Scroll from "@/components/Scroll";
 import Image from "@/components/Image";
+import ProgressBar from "./ProgressBar";
 
 type MainProps = {
   scrollToRef?: any;
@@ -12,7 +13,7 @@ const Main = ({ scrollToRef }: MainProps) => (
   <div className={cn("section", styles.section)}>
     <div className={cn("container", styles.container)}>
       <div className={styles.wrap}>
-        <div className={styles.stage}>A New Movement is Needed</div>
+        <div className={styles.stage}>We Are Mobilising</div>
         <div className={cn("h1", styles.title)}>Introducing KnowledgeFi</div>
         <div className={styles.info}>
           <p>
@@ -20,6 +21,10 @@ const Main = ({ scrollToRef }: MainProps) => (
             true digital property rights, to unlock the full economic value of
             our Knowledge Assets.
           </p>
+          <ProgressBar />
+          <button className={cn("button", styles["get-involved-button"])}>
+            <span>Get Involved</span>
+          </button>
         </div>
         {scrollToRef ? (
           <Scroll

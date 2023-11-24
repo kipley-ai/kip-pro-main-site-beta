@@ -26,9 +26,9 @@ export const development = [
     url: "/technology",
   },
   {
-    title: "Reliable, tamper-proof network",
+    title: "Activate communities around your passion",
     content:
-      "Use cryptographic proofs to connect highly accurate and available data/APIs to any smart contract.",
+      "The knowledgeable and the curious flock together. Engage people around your research through its ups and downs.",
     image: "/images/development-pic-1.png",
     color: "#6F5BEB",
     delay: 450,

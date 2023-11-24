@@ -6,8 +6,8 @@ import Scroll from "@/components/Scroll";
 
 const images = [
   "/images/figures/figure-1.png",
-  "/images/figures/figure-2.png",
-  "/images/figures/figure-3.png",
+  "/images/figures/figure-102.png",
+  "/images/figures/figure-101.png",
   "/images/figures/figure-4.png",
   "/images/figures/figure-5.png",
   "/images/figures/figure-6.png",

@@ -5,11 +5,11 @@ import Image from "@/components/Image";
 const list = [
   {
     title: "Vectorised Knowledge Bases",
-    text: "Your data can be transformed, organized, and shared across applications for anyone to query with just a few keystrokes.",
+    text: "Retrieval Augmented Generation (RAG) is going to play an increasing role in our use of AI. Turn your vectorised KBs into Knowledge Assets, and be remunerated fairly when AI users retrieve from it.",
   },
   {
     title: "Training Data",
-    text: "Your data can be transformed, organized, and shared across applications for anyone to query with just a few keystrokes.",
+    text: "Our human consciousness and knowledge leave imprints on the internet. The AI models need these imprints to improve. Set yourself up so they may engage with us fairly as partners, not pushovers.",
   },
 ];
 
