@@ -1,22 +1,22 @@
 export const socials = [
     {
         icon: "discord",
-        href: "https://ui8.net/",
+        href: "https://discord.gg/eKp45C8G8K",
     },
     {
         icon: "twitter",
-        href: "https://twitter.com/ui8",
+        href: "https://x.com/KIPprotocol",
     },
-    {
-        icon: "instagram",
-        href: "https://www.instagram.com/ui8net/",
-    },
-    {
-        icon: "telegram",
-        href: "https://ui8.net/",
-    },
-    {
-        icon: "facebook",
-        href: "https://www.facebook.com/ui8.net/",
-    },
+    // {
+    //     icon: "instagram",
+    //     href: "https://www.instagram.com/ui8net/",
+    // },
+    // {
+    //     icon: "telegram",
+    //     href: "https://ui8.net/",
+    // },
+    // {
+    //     icon: "facebook",
+    //     href: "https://www.facebook.com/ui8.net/",
+    // },
 ];
