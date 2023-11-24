@@ -25,7 +25,7 @@ const HomePage = () => {
       <Details scrollToRef={scrollToRef} />
       <UpToDate />
       <AboutUsPageMain />
-      <AboutUs />
+      {/* <AboutUs />
       <Statistics />
       <Solutions />
       <Posts
@@ -35,7 +35,7 @@ const HomePage = () => {
         posts={posts}
       />
       <Reviews reviews={reviews} />
-      <JoinCommunity title="Want to get involved?" />
+      <JoinCommunity title="Want to get involved?" /> */}
     </Layout>
   );
 };

@@ -34,19 +34,14 @@ const Header = ({}: HeaderProps) => {
         data-scroll-lock-fill-gap
       >
         <Logo className={styles.logo} />
-        <Menu
+        {/* <Menu
           navigation={headerNavigation}
           socials={socials}
           onClick={() => setOpen(!open)}
-        />
-        <a
-          className={cn("button", styles.button)}
-          href="/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>launch app</span>
-        </a>
+        /> */}
+        <button className={cn("button", styles["get-involved-button"])}>
+            <span>Get Involved</span>
+        </button>
       </div>
     </header>
   );
