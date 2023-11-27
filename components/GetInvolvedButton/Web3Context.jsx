@@ -49,7 +49,7 @@ export const Web3Provider = ({ children }) => {
         const account = accounts[0];
 
         const domain = window.location.host;
-        const message = `${domain} wants you to sign in with your Ethereum account:\n${account}\n\nWelcome to the KnowledgeFi movement. By connecting to the site, you are allowing us to log your wallet address and the data and time of login. More details will be revealed in due course.\n\nURI: https://${domain}\nVersion: 1\nChain ID: 1\nNonce: 32891757\nIssued At: 2021-09-30T16:25:24.000Z`;
+        const message = `${domain} wants you to sign in with your Ethereum account:\n${account}\n\nWelcome to the KnowledgeFi movement. By connecting to the site, you are allowing us to log your wallet address and date / time of connection. More details will be revealed in due course.\n\nURI: https://${domain}\nVersion: 1\nChain ID: 1\nNonce: 32891757\nIssued At: 2021-09-30T16:25:24.000Z`;
 
         // Sign the message with MetaMask
         const signature = await web3.eth.personal.sign(message, account, "");
