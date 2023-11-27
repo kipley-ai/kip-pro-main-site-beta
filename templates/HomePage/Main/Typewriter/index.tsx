@@ -35,7 +35,7 @@ const Typewriter: React.FC = () => {
   }, []);
 
   return (
-    <h1 className={cn("h1", styles.typewriterHeader)}>Heading</h1>
+    <h1 className={cn("h1", styles.typewriterHeader)}>Power</h1>
   );
 };
 
