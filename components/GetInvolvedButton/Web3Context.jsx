@@ -8,7 +8,7 @@ export const Web3Provider = ({ children }) => {
   const [error, setError] = useState("");
 
   const checkEthereumExists = () => {
-    if (!ethereum) {
+    if (!window.ethereum) {
       setError("Please Install MetaMask.");
       return false;
     }
@@ -27,11 +27,11 @@ export const Web3Provider = ({ children }) => {
 
   useEffect(() => {
     if (checkEthereumExists()) {
-      ethereum.on("accountsChanged", getConnectedAccounts);
+      window.ethereum?.on("accountsChanged", getConnectedAccounts);
       getConnectedAccounts();
     }
     return () => {
-      ethereum.removeListener("accountsChanged", getConnectedAccounts);
+      window.ethereum?.removeListener("accountsChanged", getConnectedAccounts);
     };
   }, []);
 
