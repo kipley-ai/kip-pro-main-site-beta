@@ -44,7 +44,7 @@ const Details = ({ scrollToRef }: DetailsProps) => (
                 rotate={[2, -15]}
             >
                 <Image
-                    src="/images/figures/figure-105 (1).png"
+                    src="/images/figures/3D-icons-2-transparent-bg.png"
                     layout="fill"
                     alt="Figure"
                 />

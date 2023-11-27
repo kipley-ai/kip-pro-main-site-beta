@@ -30,7 +30,6 @@ const Development = ({ scrollToRef }: DevelopmentProps) => {
           {development.map((item, index) => (
             <Card
               className={styles.card}
-              url={item.url}
               color={item.color}
               key={index}
               animateIn="fadeInDown"
@@ -41,12 +40,12 @@ const Development = ({ scrollToRef }: DevelopmentProps) => {
               </div>
               <div className={cn("h3", styles.subtitle)}>{item.title}</div>
               <div className={styles.content}>{item.content}</div>
-              <div className={styles.foot}>
+              {/* <div className={styles.foot}>
                 <div className={styles.more} style={{ color: item.color }}>
                   Learn more
                 </div>
                 <Icon className={styles.arrow} name="arrow-right" size="26" />
-              </div>
+              </div> */}
             </Card>
           ))}
         </div>
