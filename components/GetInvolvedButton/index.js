@@ -6,7 +6,7 @@ const GetInvolvedButton = ({ buttonStyle }) => {
 
     return (
         <button
-            // disabled={account}
+            disabled={account}
             className={buttonStyle}
             onClick={connectToMetaMask}
         >
