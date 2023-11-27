@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react"
 import { useWeb3Context } from "./Web3Context";
 
 const GetInvolvedButton = ({ buttonStyle }) => {
