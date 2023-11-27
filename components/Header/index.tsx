@@ -8,6 +8,7 @@ import Menu from "./Menu";
 import { headerNavigation } from "@/constants/navigation";
 import { socials } from "@/constants/socials";
 import GetInvolvedButton from "@/components/GetInvolvedButton";
+import { Web3Provider } from "@/components/GetInvolvedButton/Web3Context";
 
 type HeaderProps = {};
 
@@ -20,34 +21,36 @@ const Header = ({}: HeaderProps) => {
   });
 
   return (
-    <header
-      className={cn(
-        {
-          [styles.visible]: headerStyle,
-          [styles.open]: open,
-        },
-        styles.header
-      )}
-    >
-      <div
-        className={cn("container-wide", styles.container)}
-        data-scroll-lock-scrollable
-        data-scroll-lock-fill-gap
+    <Web3Provider>
+      <header
+        className={cn(
+          {
+            [styles.visible]: headerStyle,
+            [styles.open]: open,
+          },
+          styles.header
+        )}
       >
-        <Logo className={styles.logo} />
-        {/* <Menu
+        <div
+          className={cn("container-wide", styles.container)}
+          data-scroll-lock-scrollable
+          data-scroll-lock-fill-gap
+        >
+          <Logo className={styles.logo} />
+          {/* <Menu
           navigation={headerNavigation}
           socials={socials}
           onClick={() => setOpen(!open)}
         /> */}
-        {/* <button className={cn("button", styles["get-involved-button"])}>
+          {/* <button className={cn("button", styles["get-involved-button"])}>
           <span>Get Involved</span>
         </button> */}
-        <GetInvolvedButton
-          buttonStyle={cn("button", styles["get-involved-button"])}
-        />
-      </div>
-    </header>
+          <GetInvolvedButton
+            buttonStyle={cn("button", styles["get-involved-button"])}
+          />
+        </div>
+      </header>
+    </Web3Provider>
   );
 };
 
