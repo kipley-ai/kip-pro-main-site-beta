@@ -24,6 +24,7 @@ const Layout = ({ layoutNoOverflow, children }: LayoutProps) => {
     <>
       <Head>
         <title>KIP Protocol - Decentralising AI through Knowledge Assets</title>
+        <link rel="icon" href="/logo-KIP-twitter-5.png" />
       </Head>
       <div
         className={cn(styles.layout, {
