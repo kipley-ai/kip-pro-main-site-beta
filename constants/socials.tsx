@@ -4,7 +4,7 @@ export const socials = [
         href: "https://discord.gg/eKp45C8G8K",
     },
     {
-        icon: "twitter",
+        icon: "x",
         href: "https://x.com/KIPprotocol",
     },
     // {
