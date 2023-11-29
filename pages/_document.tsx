@@ -59,6 +59,7 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Karla:wght@400;500;800&display=swap"
             rel="stylesheet"
           />
+          <meta name="google-site-verification" content="RaJJ6dtIx2uhJqPaedR8u4PuIaINCrY4My3ai7rbe9A" />
         </Head>
         <body className="app">
           <Main />
