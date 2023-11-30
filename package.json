@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@lottiefiles/react-lottie-player": "^3.5.3",
     "@n8tb1t/use-scroll-position": "^2.0.3",
     "@supabase/supabase-js": "^2.38.5",
     "@types/scroll-lock": "^2.1.0",

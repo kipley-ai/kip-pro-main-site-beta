@@ -3,6 +3,7 @@ import Link from "next/link";
 import cn from "classnames";
 import styles from "./Details.module.sass";
 import Image from "@/components/Image";
+import { Player } from '@lottiefiles/react-lottie-player';
 
 type DetailsProps = {
     scrollToRef: any;
@@ -43,11 +44,13 @@ const Details = ({ scrollToRef }: DetailsProps) => (
                 easing="easeInQuad"
                 rotate={[2, -15]}
             >
-                <Image
-                    src="/images/figures/3D-icons-2-transparent-bg.png"
-                    layout="fill"
-                    alt="Figure"
-                />
+                <Player
+                    autoplay
+                    keepLastFrame
+                    src="images/figures/3d-icons-9.json"
+                    style={{ height: '900px', width: '900px' }}
+                    >
+                </Player>
             </Parallax>
         </div>
     </div>
