@@ -15,41 +15,43 @@ const Footer = ({}: FooterProps) => (
     <div className={cn("container-wide", styles.container)}>
       <div className={styles.row}>
         <Logo className={styles.logo} />
-        <div className={styles.menu}>
-          {/* {footerNavigation.map((link, index) =>
-                        link.external ? (
-                            <a
-                                className={styles.link}
-                                href={link.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                key={index}
-                            >
-                                {link.title}
-                            </a>
-                        ) : (
-                            <NavLink
-                                className={styles.link}
-                                activeClassName={styles.active}
-                                href={link.url}
-                                key={index}
-                            >
-                                {link.title}
-                            </NavLink>
-                        )
-                    )} */}
+        <div style={{ marginRight: "auto" }}>
+          <Socials className={styles.socials} socials={socials} />
         </div>
+        {/* <div className={styles.menu}>
+          {footerNavigation.map((link, index) =>
+            link.external ? (
+              <a
+                className={styles.link}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={index}
+              >
+                {link.title}
+              </a>
+            ) : (
+              <NavLink
+                className={styles.link}
+                activeClassName={styles.active}
+                href={link.url}
+                key={index}
+              >
+                {link.title}
+              </NavLink>
+            )
+          )}
+        </div> */}
       </div>
       <div className={styles.row}>
         <div className={styles.copyright}>© 2023 KIP. All rights reserved.</div>
-        <div className={styles.documents}>
-          {/* {documents.map((document, index) => (
-                        <Link href={document.url} key={index}>
-                            <a className={styles.document}>{document.title}</a>
-                        </Link>
-                    ))} */}
-        </div>
-        <Socials className={styles.socials} socials={socials} />
+        {/* <div className={styles.documents}>
+          {documents.map((document, index) => (
+            <Link href={document.url} key={index}>
+              <a className={styles.document}>{document.title}</a>
+            </Link>
+          ))}
+        </div> */}
       </div>
     </div>
   </footer>

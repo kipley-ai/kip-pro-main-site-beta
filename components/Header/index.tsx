@@ -42,9 +42,15 @@ const Header = ({}: HeaderProps) => {
           socials={socials}
           onClick={() => setOpen(!open)}
         /> */}
-          {/* <button className={cn("button", styles["get-involved-button"])}>
-          <span>Get Involved</span>
-        </button> */}
+          <a
+            rel="noreferrer"
+            target="_blank"
+            href="https://kipprotocol.gitbook.io/kip-protocol-litepaper/"
+            className={cn("button", styles["get-involved-button"])}
+            style={{ marginRight: 10 }}
+          >
+            <span>Docs</span>
+          </a>
           <GetInvolvedButton
             buttonStyle={cn("button", styles["get-involved-button"])}
           />

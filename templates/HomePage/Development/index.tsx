@@ -23,8 +23,8 @@ const Development = ({ scrollToRef }: DevelopmentProps) => {
       <div className={cn("anchor", styles.anchor)} ref={scrollToRef}></div>
       <div className={cn("container-wide", styles.container)}>
         <h2 className={cn("h2", styles.title)}>
-          KIP Protocol is a Web3 framework for the creation, management &
-          monetisation of Knowledge Assets.
+          KIP Protocol is a decentralised AI framework unlocking digital
+          property rights of Knowledge Assets in the AI-powered future.
         </h2>
         <div className={styles.list} {...events} ref={ref}>
           {development.map((item, index) => (
