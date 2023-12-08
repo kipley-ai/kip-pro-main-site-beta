@@ -46,10 +46,9 @@ const Header = ({}: HeaderProps) => {
             rel="noreferrer"
             target="_blank"
             href="https://kipprotocol.gitbook.io/kip-protocol-litepaper/"
-            className={cn("button", styles["get-involved-button"])}
-            style={{ marginRight: 10 }}
+            style={{ marginRight: 20 }}
           >
-            <span>Docs</span>
+            <span style={{ color: "white", fontWeight: 600 }}>Docs</span>
           </a>
           <GetInvolvedButton
             buttonStyle={cn("button", styles["get-involved-button"])}
