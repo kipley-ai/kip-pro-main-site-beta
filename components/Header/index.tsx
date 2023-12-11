@@ -45,7 +45,7 @@ const Header = ({}: HeaderProps) => {
           <a
             rel="noreferrer"
             target="_blank"
-            href="https://kipprotocol.gitbook.io/kip-protocol-litepaper/"
+            href="https://kipprotocol.gitbook.io/wp/"
             style={{ marginRight: 20 }}
           >
             <span style={{ color: "white", fontWeight: 600 }}>Docs</span>
