@@ -5,7 +5,6 @@ import Document, {
   NextScript,
   DocumentContext,
 } from "next/document";
-import Script from "next/script";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -17,18 +16,6 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          {/* <!-- Google tag (gtag.js) --> */}
-          <Script src="https://www.googletagmanager.com/gtag/js?id=G-6PQ6H3S32V" />
-          <Script id="google-analytics">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-        
-              gtag('config', 'G-6PQ6H3S32V');
-            `}
-          </Script>
-
           <meta
             content="KIP Protocol is a decentralised AI framework unlocking digital property rights of Knowledge Assets in the AI-powered future."
             name="KIP Protocol"
