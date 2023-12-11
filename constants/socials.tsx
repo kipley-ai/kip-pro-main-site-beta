@@ -9,7 +9,7 @@ export const socials = [
   },
   {
     icon: "galxe",
-    href: "https://galxe.com/muBnuTr6qGaT4QXifPbrpX",
+    href: "https://galxe.com/KIPProtocol",
   },
   // {
   //     icon: "telegram",
