@@ -45,10 +45,18 @@ const Header = ({}: HeaderProps) => {
           <a
             rel="noreferrer"
             target="_blank"
-            href="https://kipprotocol.gitbook.io/wp/"
-            style={{ marginRight: 20 }}
+            href="https://linktr.ee/kip.pro"
+            className={cn("a", styles.link)}
           >
-            <span style={{ color: "white", fontWeight: 600 }}>Docs</span>
+            <span className={styles["link-text"]}>Community</span>
+          </a>
+          <a
+            rel="noreferrer"
+            target="_blank"
+            href="https://kipprotocol.gitbook.io/wp/"
+            className={cn("a", styles.link)}
+          >
+            <span className={styles["link-text"]}>Documentation</span>
           </a>
           <GetInvolvedButton
             buttonStyle={cn("button", styles["get-involved-button"])}
