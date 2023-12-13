@@ -1,7 +1,7 @@
 export const socials = [
   {
     icon: "discord",
-    href: "https://discord.gg/eKp45C8G8K",
+    href: "https://discord.gg/39JGeatd",
   },
   {
     icon: "x",

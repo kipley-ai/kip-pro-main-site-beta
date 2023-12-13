@@ -37,27 +37,31 @@ const Header = ({}: HeaderProps) => {
           data-scroll-lock-fill-gap
         >
           <Logo className={styles.logo} />
-          {/* <Menu
-          navigation={headerNavigation}
-          socials={socials}
-          onClick={() => setOpen(!open)}
-        /> */}
-          <a
-            rel="noreferrer"
-            target="_blank"
-            href="https://linktr.ee/kip.pro"
-            className={cn("a", styles.link)}
-          >
-            <span className={styles["link-text"]}>Community</span>
-          </a>
-          <a
-            rel="noreferrer"
-            target="_blank"
-            href="https://kipprotocol.gitbook.io/wp/"
-            className={cn("a", styles.link)}
-          >
-            <span className={styles["link-text"]}>Documentation</span>
-          </a>
+          <div className={styles.links}>
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://linktr.ee/kip.pro"
+              className={cn("a", styles.link)}
+            >
+              <span className={styles["link-text"]}>Community</span>
+            </a>
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://kipprotocol.gitbook.io/wp/"
+              className={cn("a", styles.link)}
+            >
+              <span className={styles["link-text"]}>Documentation</span>
+            </a>
+          </div>
+          <div className={styles.menu}>
+            <Menu
+              navigation={headerNavigation}
+              socials={socials}
+              onClick={() => setOpen(!open)}
+            />
+          </div>
           <GetInvolvedButton
             buttonStyle={cn("button", styles["get-involved-button"])}
           />

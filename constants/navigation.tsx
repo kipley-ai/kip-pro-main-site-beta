@@ -3,6 +3,16 @@ export const headerNavigation = [
         title: "Home",
         url: "/",
     },
+    {
+        title: "Community",
+        url: "https://linktr.ee/kip.pro",
+        external: true,
+    },
+    {
+        title: "Documentation",
+        url: "https://kipprotocol.gitbook.io/wp/",
+        external: true,
+    },
     // {
     //     title: "About us",
     //     url: "/about-us",
