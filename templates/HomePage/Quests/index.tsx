@@ -27,11 +27,15 @@ const Quests = ({ scrollToRef }: QuestsProps) => (
       <ImageGallery />
       <div className={styles.wrap}>
         <div className={cn("content", styles.content)}>
-          <Link href={"https://galxe.com/KIPProtocol/campaign/GCQH3tUYcq"}>
+          <a
+            href={"https://galxe.com/KIPProtocol/campaign/GCQH3tUYcq"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className={cn("h2", styles.join)}>
               Join our Community Campaigns on Galxe
             </div>
-          </Link>
+          </a>
           <h3>And follow us on</h3>
           <Socials className={styles.socials} socials={socials} />
         </div>
