@@ -20,7 +20,10 @@
         +m
             padding: 20px 0
         img
+            transform-origin: left
             transform: scale(0.6)
+            +m
+                transform-origin: center
         
     &.open.visible
         background: transparent
@@ -28,11 +31,18 @@
 .container
     display: flex
     align-items: center
+    +m
+        padding-left: 0px
 
 .logo
     position: relative
     z-index: 45
     margin-right: auto
+
+.links
+    display: flex
+    +m
+        display: none
 
 .link
     margin-right: 40px
@@ -52,6 +62,9 @@
         display: none
 
 .get-involved-button
+    display: flex
+    +m
+        display: none
     span
         position: relative
         z-index: 1
