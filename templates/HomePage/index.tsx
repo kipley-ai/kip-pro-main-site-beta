@@ -11,6 +11,7 @@ import Posts from "@/components/Posts";
 import Reviews from "@/components/Reviews";
 import JoinCommunity from "@/components/JoinCommunity";
 import AboutUsPageMain from "../AboutUsPage/Main";
+import Quests from "./Quests";
 
 import { posts } from "@/mocks/posts";
 import { reviews } from "@/mocks/reviews";
@@ -25,6 +26,7 @@ const HomePage = () => {
       <Details scrollToRef={scrollToRef} />
       <UpToDate />
       <AboutUsPageMain />
+      <Quests scrollToRef={scrollToRef} />
       {/* <AboutUs />
       <Statistics />
       <Solutions />

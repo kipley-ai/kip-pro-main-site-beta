@@ -1,0 +1,31 @@
+$bigWidth: 23%
+$smallWidth: 12%
+$imgHeight: 250px
+
+.imgExpand
+    width: $smallWidth
+    height: $imgHeight
+    background-color: blue
+    margin-right: -2.5px
+    margin-left: -2.5px
+    padding-right: 0
+    padding-left: 0
+    transition: width 0.3s ease
+    object-fit: cover
+
+.big
+    width: $bigWidth
+    height: $imgHeight
+
+.small
+    width: $smallWidth
+
+.imgContainer
+    display: flex
+    flex-direction: row
+    width: 100%
+    height: 120%
+    justify-content: center
+
+    @media (max-width: 900px)
+        display: none
