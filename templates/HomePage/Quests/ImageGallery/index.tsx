@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import styles from "./ImageGallery.module.sass";
 
 const ImageGallery = () => {
-  const [activeIndex, setActiveIndex] = useState(-1);
+  const [activeIndex, setActiveIndex] = useState<number>(-1);
 
-  const handleMouseOver = (index) => {
+  const handleMouseOver = (index: number) => {
     setActiveIndex(index);
   };
 
