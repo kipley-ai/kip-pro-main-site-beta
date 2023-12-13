@@ -55,12 +55,13 @@ const Header = ({}: HeaderProps) => {
               <span className={styles["link-text"]}>Documentation</span>
             </a>
           </div>
-          <Menu
-            className={styles.menu}
-            navigation={headerNavigation}
-            socials={socials}
-            onClick={() => setOpen(!open)}
-          />
+          <div className={styles.menu}>
+            <Menu
+              navigation={headerNavigation}
+              socials={socials}
+              onClick={() => setOpen(!open)}
+            />
+          </div>
           <GetInvolvedButton
             buttonStyle={cn("button", styles["get-involved-button"])}
           />
