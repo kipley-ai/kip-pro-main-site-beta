@@ -1,0 +1,95 @@
+@import @/styles/helpers
+
+.section
+    display: flex
+    flex-direction: row
+    justify-content: between
+    align-items: center
+    margin: 5rem
+    gap: 3rem
+    z-index: 1
+    +m
+        flex-direction: column
+        margin: 1.5rem
+        margin-top: 8rem
+
+.container
+    display: flex
+    +t
+        display: block
+
+.details
+    flex-shrink: 0
+    margin-right: auto
+    text-align: right
+    +t
+        margin: 0 0 48px
+        text-align: left
+    +m
+        margin-bottom: 60px
+
+.counter
+    +inter
+    font-size: 144px
+    line-height: 1
+    letter-spacing: -.02em
+    font-weight: 900
+    +m
+        font-size: 80px
+        line-height: 88px
+
+.info
+    color: $n3
+
+.wrap
+    max-width: 420px
+    +t
+        max-width: 100%
+
+.content
+    +t
+        max-width: 100%
+
+.image
+    position: absolute
+    left: calc(50% - 846px)
+    bottom: -90px
+    width: 350px
+    +w
+        left: -9vw
+    +x
+        left: -10vw
+    +d
+        left: -20vw
+    +t
+        display: none
+    &:before
+        content: ""
+        display: block
+        padding-bottom: 100%
+
+.links
+    display: flex
+    flex-direction: row
+    justify-content: between
+    align-items: center
+    gap: 10px
+    +t
+        flex-direction: column
+        gap: 20px
+
+.join
+    font-size: 40px
+    font-weight: 800
+    margin-bottom: 20px
+    line-height: 1.2
+    cursor: pointer
+    +m
+        font-size: 35px
+
+.socials
+    margin-left: auto
+    +m
+        position: static
+        margin-left: 0px
+        margin-bottom: 48px
