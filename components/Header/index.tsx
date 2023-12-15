@@ -4,6 +4,7 @@ import cn from "classnames";
 import styles from "./Header.module.sass";
 import Logo from "@/components/Logo";
 import Menu from "./Menu";
+import Link from 'next/link';
 
 import { headerNavigation } from "@/constants/navigation";
 import { socials } from "@/constants/socials";
@@ -38,6 +39,11 @@ const Header = ({}: HeaderProps) => {
         >
           <Logo className={styles.logo} />
           <div className={styles.links}>
+            <Link href="/about-us">
+              <a className={cn("a", styles.link)}>
+                <span className={styles["link-text"]}>About Us</span>
+              </a>
+            </Link>
             <a
               rel="noreferrer"
               target="_blank"

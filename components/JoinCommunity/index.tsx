@@ -28,7 +28,7 @@ const JoinCommunity = ({ title }: JoinCommunityProps) => (
                         target="_blank"
                         rel="noreferrer"
                     >
-                        how to build on Onix
+                        how to build on KIP
                     </a>
                     .
                 </div>

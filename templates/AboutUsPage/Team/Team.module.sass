@@ -1,7 +1,7 @@
 @import @/styles/helpers
 
 .head
-    max-width: 578px
+    max-width: 688px
     margin: 0 auto 80px
     text-align: center
     +t
@@ -11,22 +11,58 @@
         margin-bottom: 64px
         text-align: left
 
+.small-title
+    color: #575757
+
 .subtitle
-    margin-bottom: 24px
-    color: $n4
+    margin-left: 20px
+    font-weight: 600
+    color: white
+
+.position
+    margin-left: 20px
+
+$columns: 4
 
 .list
-    display: flex
-    flex-wrap: wrap
+    display: grid
+    grid-template-columns: repeat(#{$columns}, 1fr)
+    grid-gap: 0px
     margin: -44px -22px 0
     +w
-        margin: -44px -13px 0
+        display: block
+        max-width: 1000px
+        margin: 0 auto
     +t
-        margin: -40px 0 0
+        display: block
+        max-width: 600px
+        margin: 0 auto
     +m
         display: block
         max-width: 400px
         margin: 0 auto
+    img
+        width: 50%
+        height: 50%
+        border-radius: 18px
+
+
+.card
+    float: left
+    width: 300px
+    height: 400px
+    margin: 28px 14px 0
+    padding: 60px 20px 20px
+    +t
+        width: calc(50% - 32px)
+        margin: 32px 16px 0
+    +m
+        float: none
+        width: 100%
+        margin: 2rem 0
+    &:hover
+        .arrow
+            fill: $n2
 
 .item
     position: relative
@@ -63,13 +99,15 @@
     border-radius: 16px
 
 .photo
-    padding: 8px
+    position: relative
+    // padding: 8px
     border-top-left-radius: 24px
-    background: $n6
-    clip-path: url(#polygonPhoto)
+    // background: $n6
+    // clip-path: url(#polygonPhoto)
     img
-        filter: grayscale(100)
+        // filter: grayscale(100)
         transition: all .3s
+        border-radius:54px
         +t
             filter: grayscale(0)
 
@@ -80,6 +118,11 @@
     border-radius: 18px
     overflow: hidden
     clip-path: url(#polygonPhoto)
+
+.card-heading
+    display: flex
+    flex-direction: row
+    margin-bottom: 1rem
 
 .details
     flex-grow: 1
@@ -92,4 +135,14 @@
 .position
     margin-top: 4px
     +base
-    color: $n5
+    color: #696969
+    font-size: 18px
+
+.content
+    font-size: 17px
+
+.container
+    margin: 0 auto
+    padding: 0
+    +m
+        padding: 0 2rem

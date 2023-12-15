@@ -1,0 +1,100 @@
+@import @/styles/helpers
+
+.section
+    padding-top: 60px
+    background: $n9
+
+.list
+    margin-bottom: 120px
+    +m
+        margin-bottom: 0
+
+.item
+    display: flex
+    padding: 64px 0
+    +t
+        display: block
+    &:not(:last-child)
+        border-bottom: 1px solid $n6
+
+.subtitle
+    max-width: 305px
+    margin-right: auto
+    +t
+        max-width: 100%
+        margin: 0 0 24px
+
+.images
+    display: flex
+    flex-direction: row
+    justify-content: center
+    gap: 7rem
+    margin-bottom: 20px
+    +t
+        flex-direction: column
+        align-items: center
+        gap: 2rem
+        div:nth-child(2) 
+            padding: 0 30px
+        
+
+.content
+    max-width: 578px
+    +body1
+    color: $n3
+    +t
+        max-width: 100%
+
+.comment
+    position: relative
+    padding: 184px 0 350px
+    text-align: center
+    +d
+        padding: 120px 60px 238px
+    +t
+        padding: 78px 16px 120px
+        overflow: hidden
+    +m
+        padding: 80px 0 120px
+
+.details
+    position: relative
+    z-index: 3
+
+.title
+    margin-bottom: 48px
+    +w
+        max-width: 1008px
+        margin: 0 auto 48px
+    +m
+        font-size: 28px
+        line-height: 28px
+
+.avatar
+    position: relative
+    display: inline-block
+    flex-shrink: 0
+    width: 200px
+    height: 128px
+    overflow: hidden
+
+.author
+    margin-bottom: 4px
+    +baseB
+
+.position
+    +base
+    color: $n5
+
+.image
+    position: relative
+    width: 100%
+    max-width: 180px
+    aspect-ratio: 90/45
+
+.tistr
+    position: relative
+    width: 100%
+    min-width: 200px
+    max-width: 320px
+    aspect-ratio: 435/80
