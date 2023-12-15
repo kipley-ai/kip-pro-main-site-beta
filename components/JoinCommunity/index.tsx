@@ -28,7 +28,7 @@ const JoinCommunity = ({ title }: JoinCommunityProps) => (
                         target="_blank"
                         rel="noreferrer"
                     >
-                        KIP's plans for the future
+                        KIP&apos;s plans for the future
                     </a>
                     .
                 </div>
