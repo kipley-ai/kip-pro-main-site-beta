@@ -4,6 +4,10 @@ export const headerNavigation = [
         url: "/",
     },
     {
+        title: "About Us",
+        url: "/about-us",
+    },
+    {
         title: "Community",
         url: "https://linktr.ee/kip.pro",
         external: true,

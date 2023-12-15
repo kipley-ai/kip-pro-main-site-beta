@@ -124,13 +124,13 @@ $columns: 4
     flex-direction: row
     margin-bottom: 1rem
 
-.details
-    flex-grow: 1
-    padding: 32px 32px 40px
-    background: $n6
-    border-radius: 0 0 24px 24px
-    +t
-        padding: 40px 32px 32px
+// .details
+//     flex-grow: 1
+//     padding: 32px 32px 40px
+//     background: $n6
+//     border-radius: 0 0 24px 24px
+//     +t
+//         padding: 40px 32px 32px
 
 .position
     margin-top: 4px
@@ -144,5 +144,52 @@ $columns: 4
 .container
     margin: 0 auto
     padding: 0
+    display: flex
+    flex-direction: column
     +m
         padding: 0 2rem
+
+.comment
+    position: relative
+    padding: 0 3rem
+    text-align: center
+    display: flex
+    flex-direction: column
+    gap: 15vh
+    margin: 8rem 0 0
+    +m
+        padding: 50px 0 120px
+
+.details
+    position: relative
+    z-index: 3
+
+.small
+    color: #575757
+    margin-bottom: 2rem
+
+.images
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 20px // Adjust the gap between rows as needed
+    +t
+        gap: 3rem
+
+.row
+    display: flex
+    justify-content: between // Align items horizontally in the center
+    align-items: center // Align items vertically in the center
+    gap: 30px // Adjust the gap between logos as needed
+
+    div
+        display: inline-flex // Make sure each Image component is inline-flex
+        height: 50px // Fixed height for all logos
+        object-fit: contain // Maintains aspect ratio
+        width: auto // Allows variable width
+
+    +t
+        flex-direction: row
+        flex-wrap: wrap
+        justify-content: center
+        gap: 3rem
