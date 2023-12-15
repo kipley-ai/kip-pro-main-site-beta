@@ -32,7 +32,7 @@ const Values = ({}: ValuesProps) => (
         <div className={cn("container", styles.container)}>
             <div className={styles.row}>
                 <div className={styles.col}>
-                    <div className={cn("h3", styles.subtitle)}>Our AI Research</div>
+                    <div className={cn("h3", styles.subtitle)}>Papers</div>
                     <div className={cn("h2", styles.title)}>
                         AI Research
                     </div>

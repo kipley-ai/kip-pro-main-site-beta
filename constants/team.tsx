@@ -34,7 +34,7 @@ export const team = [
     delay: 400,
   },
   {
-    name: "Pei Junjie",
+    name: "JJ Pei",
     content: `Masters in Computing (Al
             Specialisation), NUS
             Masters in Economics from Fudan
