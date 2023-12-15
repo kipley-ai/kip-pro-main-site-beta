@@ -31,7 +31,7 @@ const Team = ({}: TeamProps) => {
                     {team.map((man, index) => (
                         <Card
                             className={styles.card}
-                            color="#89EB5B" // Provide a color value here
+                            color="#89EB5B"
                             key={index}
                             animateIn="fadeInDown"
                         >

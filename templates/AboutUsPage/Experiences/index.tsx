@@ -14,7 +14,8 @@ const Experiences = ({}: ExperiencesProps) => (
                         Past Clients in AI & Data Work
                     </div>
                     <div className={cn("h2", styles.title)}>
-                        We have deep experience in complex AI / data project deployment
+                        We have executed & deployed <br /> 
+                        AI / complex data projects since 2015
                     </div>
                     <div className={styles.images}>
                         {/* First row */}
