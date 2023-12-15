@@ -23,7 +23,7 @@ const AboutUsPage = () => {
             <Experiences />
             <Values />
             {/* <Reviews reviews={reviews} /> */}
-            <JoinCommunity title="Download our whitepaper" />
+            <JoinCommunity title="Read our whitepaper" />
         </Layout>
     );
 };

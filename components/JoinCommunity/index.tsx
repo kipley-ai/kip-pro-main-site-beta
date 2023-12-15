@@ -21,25 +21,35 @@ const JoinCommunity = ({ title }: JoinCommunityProps) => (
             <div className={styles.wrap}>
                 <div className={cn("h2", styles.title)}>{title}</div>
                 <div className={styles.info}>
-                    Or learn all about{" "}
+                    Learn all about{" "}
                     <a
                         className={styles.social}
-                        href="/"
+                        href="https://kipprotocol.gitbook.io/wp/"
                         target="_blank"
                         rel="noreferrer"
                     >
-                        how to build on KIP
+                        KIP's plans for the future
                     </a>
                     .
                 </div>
-                <a
-                    className={cn("button", styles.button)}
-                    href="https://ui8.net/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <span>JOIN THE COMMUNITY</span>
-                </a>
+                <div className={styles.buttons}>
+                    <a
+                        className={cn("button", styles.read)}
+                        href="https://kipprotocol.gitbook.io/wp/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>READ WHITEPAPER</span>
+                    </a>
+                    <a
+                        className={cn("button", styles.button)}
+                        href="https://linktr.ee/kip.pro"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>JOIN THE COMMUNITY</span>
+                    </a>
+                </div>
             </div>
         </div>
         <div className={styles.images}>

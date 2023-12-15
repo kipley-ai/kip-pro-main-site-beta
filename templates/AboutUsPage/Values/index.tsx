@@ -6,19 +6,22 @@ import { hexToRgbA } from "@/utils/index";
 
 const list = [
     {
-        title: "Everything Onix weekly report",
-        status: "TAG LINE",
+        title: "Establishing Performance Guidelines in Fine Tuning, Retrieval Augmented Generation and Soft Prompting for Non-Specialist LLM Users",
+        status: "RAG",
         color: "#EB5BE5",
+        link: "https://arxiv.org/pdf/2311.05903.pdf"
     },
     {
-        title: "Everything Onix weekly report",
-        status: "TAG LINE",
+        title: "Politics of 0xbedience",
+        status: "Experimental DAO Governance",
         color: "#6F5BEB",
+        link: "https://xianyangcb.substack.com/p/the-politics-of-0xbedience"
     },
     {
-        title: "Everything Onix weekly report",
-        status: "TAG LINE",
+        title: "Learning the Language of Rain",
+        status: "Predictive AI for Weather Forecasting",
         color: "#89EB5B",
+        link: "https://xianyangcb.substack.com/p/learning-the-language-of-rain"
     },
 ];
 
@@ -29,19 +32,16 @@ const Values = ({}: ValuesProps) => (
         <div className={cn("container", styles.container)}>
             <div className={styles.row}>
                 <div className={styles.col}>
-                    <div className={cn("h3", styles.subtitle)}>Our values</div>
+                    <div className={cn("h3", styles.subtitle)}>Our AI Research</div>
                     <div className={cn("h2", styles.title)}>
-                        Next-gen for&nbsp;top blockchain
+                        AI Research
                     </div>
                     <div className={styles.content}>
-                        Onix believes in Web3 for all. Onix is a decentralised
-                        blockchain scaling platform that enables developers to
-                        build scalable user-friendly dApps with low transaction
-                        fees without ever sacrificing on security.
+                        Check out some of the research and papers we've done previously on blockchain & AI
                     </div>
-                    <button className={cn("button", styles.button)}>
+                    {/* <button className={cn("button", styles.button)}>
                         <span>launch app</span>
-                    </button>
+                    </button> */}
                 </div>
                 <div className={styles.col}>
                     <div className={styles.list}>
@@ -51,6 +51,7 @@ const Values = ({}: ValuesProps) => (
                                 innerCardClass={styles.inner}
                                 key={index}
                                 color={item.color}
+                                url={item.link}
                                 animateIn="fadeInDown"
                                 small
                             >
