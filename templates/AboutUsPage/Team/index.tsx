@@ -37,7 +37,7 @@ const Team = ({}: TeamProps) => {
                         >
                             <div className={styles["card-heading"]}>
                                 <div className={styles.photo}>
-                                    <Image src={man.image} width={100} height={100} alt="Figure" />
+                                    <Image src={man.image} layout="fill" alt="Figure" />
                                 </div>
                                 <div style={{ display: "flex", flexDirection: "column" }}>
                                     <div className={cn("p", styles.subtitle)}>{man.name}</div>

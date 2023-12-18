@@ -8,7 +8,7 @@ export const team = [
         corporates and large organisations.
         Founded gaming DAO DAObi.`,
     position: "Chief AI Officer",
-    image: "/images/team/team-member-04.jpg",
+    image: "/images/team-kip-bw/team-jennifer.jpg",
   },
   {
     name: "Chen Liaoyuan",
@@ -20,7 +20,7 @@ export const team = [
         security. Including a data system
         integrated into Visa China.`,
     position: "CTO / VP, Infrastructure",
-    image: "/images/team/team-member-03.jpg",
+    image: "/images/team-kip-bw/team-liaoyuan.jpg",
     delay: 400,
   },
   {
@@ -30,7 +30,7 @@ export const team = [
         Lead. 5 years experience running
         data teams.`,
     position: "VP, Data and Analytics",
-    image: "/images/team/team-member-06.jpg",
+    image: "/images/team-kip-bw/team-henry.jpg",
     delay: 400,
   },
   {
@@ -42,7 +42,7 @@ export const team = [
             Data Scientist. Self-created
             crytography.`,
     position: "VP, AI Engineering",
-    image: "/images/team/team-member-05.jpg",
+    image: "/images/team-kip-bw/team-junjie.jpg",
     delay: 200,
   },
   {
@@ -54,7 +54,7 @@ export const team = [
         principal. Deep experience in Web3
         from 2016 (including as Gp in crypto
         focused fund).`,
-    image: "/images/team/team-member-01.jpg",
+    image: "/images/team-kip-bw/team-julian.jpg",
   },
   {
     name: "Teo Jun Hao",
@@ -62,7 +62,7 @@ export const team = [
     content: `Ex Head Web3 Investment Direct,
         COL. 6 years experiences in project
         management & Web3 Investments.`,
-    image: "/images/team-kip/team-junhao.jpg",
+    image: "/images/team-kip-bw/team-junhao.jpg",
   },
   {
     name: "Lisa Zhou",
@@ -70,7 +70,7 @@ export const team = [
     content: `Ex Global Head, TMT Corporate
         Solutions, HSBC. 15 years
         experiences in global BD & Sales.`,
-    image: "/images/team/team-member-02.jpg",
+    image: "/images/team-kip-bw/team-lisa.jpg",
     delay: 200,
   },
   {
@@ -80,7 +80,7 @@ export const team = [
     marketing director SnapEX,
     10 years experience in
     communications and community.`,
-    image: "/images/team-kip/team-daniel.jpg",
+    image: "/images/team-kip-bw/team-daniel.jpg",
   },
 
   // {
