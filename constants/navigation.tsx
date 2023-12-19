@@ -7,10 +7,10 @@ export const headerNavigation = [
         title: "About Us",
         url: "/about-us",
     },
-    {
-        title: "Chat",
-        url: "/chat-with-kols",
-    },
+    // {
+    //     title: "Chat",
+    //     url: "/chat-with-kols",
+    // },
     {
         title: "Community",
         url: "https://linktr.ee/kip.pro",

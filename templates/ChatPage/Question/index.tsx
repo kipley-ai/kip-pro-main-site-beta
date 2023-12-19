@@ -56,7 +56,12 @@ const Question = ({}: QuestionProps) => {
                 <div className={styles.list}>
                     {accounts.map((man, index) => (
                         <AnimationOnScroll
-                            className={styles.item}
+                            className={selectedMembers.includes(
+                                man.name,
+                            )
+                                ? styles["selected-item"]
+                                : styles.item
+                            }
                             initiallyVisible
                             key={index}
                             animateOnce
@@ -81,13 +86,6 @@ const Question = ({}: QuestionProps) => {
                                         layout="fill"
                                         objectFit="cover"
                                         alt="Avatar"
-                                        style={{
-                                            filter: selectedMembers.includes(
-                                                man.name,
-                                            )
-                                                ? "grayscale(0)" // Colorized
-                                                : "grayscale(100)", // Grayscale
-                                        }}
                                     />
                                 </div>
                                 <svg
@@ -110,7 +108,7 @@ const Question = ({}: QuestionProps) => {
                             </div>
                         </AnimationOnScroll>
                     ))}
-                    <div className={styles.input}>
+                    {/* <div className={styles.input}>
                         <Field
                             className={styles.field}
                             placeholder="Ask a question"
@@ -122,7 +120,7 @@ const Question = ({}: QuestionProps) => {
                             className={styles.arrow}
                             alt="Down Left Arrow"
                         />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

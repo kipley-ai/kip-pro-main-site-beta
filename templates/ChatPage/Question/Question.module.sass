@@ -2,6 +2,7 @@
 
 .section
     padding-top: 200px
+    margin-bottom: 0
     background: $n9
 
 .head
@@ -29,9 +30,7 @@
     +t
         margin: -40px 0 0
     +m
-        display: block
-        max-width: 400px
-        margin: 0 auto
+        margin: -40px 0 0
 
 .item
     position: relative
@@ -39,25 +38,53 @@
     flex-direction: column
     flex: 0 0 calc(16.667% - 44px)
     width: calc(16.667% - 44px)
-    margin: 22px 11px 0
+    margin: 27px 11px 0
     cursor: pointer
-    +w
-        flex: 0 0 calc(33.333% - 26px)
-        width: calc(33.333% - 26px)
-        margin: 44px 13px 0
+    // +w
+    //     flex: 0 0 calc(33.333% - 26px)
+    //     width: calc(33.333% - 26px)
+    //     margin: 44px 13px 0
     +t
-        flex: 0 0 calc(50% - 40px)
-        width: calc(50% - 40px)
-        margin: 40px 20px 0
+        flex: 0 0 calc(25% - 40px)
+        width: calc(25% - 40px)
+        margin: 22px 11px 0
     +m
-        width: 100%
-        margin: 40px 0 0
+        flex: 0 0 calc(50% - 40px)
+        width: calc(40%)
+        margin: 22px 11px 0
     &:nth-child(n+9)
         +t
             display: none
-    &:hover
-        img
-            filter: grayscale(0)
+    // &:hover
+    //     img
+    //         filter: grayscale(0)
+
+.selected-item
+    position: relative
+    display: flex
+    flex-direction: column
+    flex: 0 0 calc(16.667% - 44px)
+    width: calc(16.667% - 44px)
+    margin: 22px 11px 0
+    cursor: pointer
+    border: 3px solid #89EB5B
+    border-radius: 25px
+    box-sizing: border-box
+    // +w
+    //     flex: 0 0 calc(33.333% - 26px)
+    //     width: calc(33.333% - 26px)
+    //     margin: 44px 13px 0
+    +t
+        flex: 0 0 calc(25% - 40px)
+        width: calc(25% - 40px)
+        margin: 22px 11px 0
+    +m
+        flex: 0 0 calc(50% - 40px)
+        width: calc(40%)
+        margin: 22px 11px 0
+    &:nth-child(n+9)
+        +t
+            display: none
 
 .square
     position: absolute
@@ -73,7 +100,7 @@
     background: $n6
     clip-path: url(#polygonPhoto)
     img
-        filter: grayscale(100)
+        // filter: grayscale(100)
         transition: all .3s
         +t
             filter: grayscale(0)
@@ -91,8 +118,9 @@
     padding: 16px 16px 20px
     background: $n6
     border-radius: 0 0 24px 24px
-    +t
-        padding: 40px 32px 32px
+    overflow-wrap: break-word
+    // +t
+    //     padding: 40px 32px 32px
 
 .position
     margin-top: 4px
