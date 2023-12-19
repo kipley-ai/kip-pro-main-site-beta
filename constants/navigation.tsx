@@ -8,6 +8,10 @@ export const headerNavigation = [
         url: "/about-us",
     },
     {
+        title: "Chat",
+        url: "/chat-with-kols",
+    },
+    {
         title: "Community",
         url: "https://linktr.ee/kip.pro",
         external: true,

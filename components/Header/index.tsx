@@ -44,6 +44,11 @@ const Header = ({}: HeaderProps) => {
                 <span className={styles["link-text"]}>About Us</span>
               </a>
             </Link>
+            <Link href="/chat-with-kols">
+              <a className={cn("a", styles.link)}>
+                <span className={styles["link-text"]}>Chat</span>
+              </a>
+            </Link>
             <a
               rel="noreferrer"
               target="_blank"
