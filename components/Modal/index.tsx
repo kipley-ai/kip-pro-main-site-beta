@@ -2,6 +2,7 @@ import cn from "classnames";
 import styles from "./Modal.module.sass";
 
 type ModalProps = {
+    children?: React.ReactNode;
     className?: string;
 };
 

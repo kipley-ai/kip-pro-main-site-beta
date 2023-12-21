@@ -1,26 +1,32 @@
 import cn from "classnames";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./ChatModal.module.sass";
 import Card from "@/components/Card";
 import Modal from "@/components/Modal";
 import { chat } from "@/mocks/chat";
 import Field from "@/components/Field";
 
-const ChatModal = ({ avatars, onClose }) => {
+const currentTimestamp: string = "2023-12-20T10:02:30.000Z";
+const myUsername: string = "KIPtest";
+
+type ChatModalProps = {
+    avatars: string[];
+    onClose: () => void;
+};
+
+const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
     const [question, setQuestion] = useState<string>("");
+    const [expandedMessages, setExpandedMessages] = useState<{
+        [index: number]: boolean;
+    }>({});
 
-    const currentTimestamp: string = "2023-12-20T10:02:30.000Z";
-    const myUsername: string = "KIPtest";
-
-    const handleBackdropClick = (e) => {
+    const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
         if (e.target === e.currentTarget) {
             onClose();
         }
     };
 
-    const [expandedMessages, setExpandedMessages] = useState({});
-
-    const toggleMessageExpansion = (index) => {
+    const toggleMessageExpansion = (index: number) => {
         setExpandedMessages((prevState) => ({
             ...prevState,
             [index]: !prevState[index],
@@ -28,9 +34,10 @@ const ChatModal = ({ avatars, onClose }) => {
     };
 
     const timeAgo = (timestamp: string): string => {
-        const currentTime = new Date();
+        const currentTime = new Date(currentTimestamp);
         const pastTime = new Date(timestamp);
-        const timeDifference = new Date(currentTimestamp) - pastTime.getTime();
+
+        const timeDifference = currentTime.getTime() - pastTime.getTime();
         const minutesAgo = Math.floor(timeDifference / (1000 * 60));
         const hoursAgo = Math.floor(timeDifference / (1000 * 60 * 60));
 
