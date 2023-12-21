@@ -6,19 +6,15 @@ import styles from "./Question.module.sass";
 import Image from "@/components/Image";
 import Card from "@/components/Card";
 import Field from "@/components/Field";
+import ChatModal from "./ChatModal";
 
 import { accounts } from "@/mocks/twitter-accounts";
 
 type QuestionProps = {};
 
 const Question = ({}: QuestionProps) => {
-    const [question, setQuestion] = useState<string>("");
-
-    const isMobile = useMediaQuery({
-        query: "(max-width: 767px)",
-    });
-
     const [selectedMembers, setSelectedMembers] = useState<string[]>([]);
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
     // Function to toggle a team member's selection and colorization
     const toggleSelection = (name: string) => {
@@ -33,12 +29,23 @@ const Question = ({}: QuestionProps) => {
         }
     };
 
+    const handleSiriClick = () => {
+        console.log("Siri clicked");
+        setIsModalOpen(true);
+    };
+
     useEffect(() => {
         console.log("Selected members: ", selectedMembers);
     }, [selectedMembers]);
 
     return (
         <div className={cn("section", styles.section)}>
+            {isModalOpen && (
+                <ChatModal
+                    avatars={selectedMembers}
+                    onClose={() => setIsModalOpen(false)}
+                />
+            )}
             <div className={cn("container", styles.container)}>
                 <div className={styles.head}>
                     {/* <div className={cn("h3", styles["small-title"])}>
@@ -53,14 +60,21 @@ const Question = ({}: QuestionProps) => {
                         full economic value of our Knowledge Assets.
                     </div>
                 </div>
+                {selectedMembers.length > 0 && (
+                    <div
+                        className={styles.siri}
+                        onClick={() => handleSiriClick()}
+                    >
+                        <img src="/images/chat-siri.png" alt="Chat" />
+                    </div>
+                )}
                 <div className={styles.list}>
                     {accounts.map((man, index) => (
                         <AnimationOnScroll
-                            className={selectedMembers.includes(
-                                man.name,
-                            )
-                                ? styles["selected-item"]
-                                : styles.item
+                            className={
+                                selectedMembers.includes(man.name)
+                                    ? styles["selected-item"]
+                                    : styles.item
                             }
                             initiallyVisible
                             key={index}
@@ -108,19 +122,6 @@ const Question = ({}: QuestionProps) => {
                             </div>
                         </AnimationOnScroll>
                     ))}
-                    {/* <div className={styles.input}>
-                        <Field
-                            className={styles.field}
-                            placeholder="Ask a question"
-                            value={question}
-                            onChange={(e: any) => setQuestion(e.target.value)}
-                        />
-                        <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/d/de/Down-left-arrow_%2861409%29_-_The_Noun_Project.svg"
-                            className={styles.arrow}
-                            alt="Down Left Arrow"
-                        />
-                    </div> */}
                 </div>
             </div>
         </div>

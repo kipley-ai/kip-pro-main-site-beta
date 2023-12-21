@@ -1,0 +1,168 @@
+// Modal.module.sass
+
+.modalOverlay
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(219, 135, 255, 0.1)
+    display: flex
+    justify-content: center
+    align-items: center
+    z-index: 1000
+    gap: 20px
+
+.leftModal
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+.avatars
+    display: flex
+    gap: 20px
+
+.avatar
+    width: 95px
+    height: 95px
+    border-radius: 15%
+    border: 1px solid transparent
+    background: rgb(0,245,255)
+    background: linear-gradient(90deg, rgba(0,245,255,1) 0%, rgba(255,0,245,1) 52%, rgba(255,226,0,1) 100%)
+
+.info
+    display: flex
+    flex-direction: column
+    gap: 10px
+    padding: 1rem 1.5rem
+
+.wallet
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    // background-color: rgba(99, 7, 148)
+    border-radius: 25px
+    padding: 20px
+    height: 50%
+
+.walletAddress
+    letter-spacing: 2px
+
+.walletDescription
+    display: flex
+    flex-direction: column
+    gap: 10px
+
+.walletIntegration
+    font-weight: normal
+
+.rightModal
+    padding: 2rem 2rem 3rem
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+.chat
+    display: flex
+    flex-direction: column
+    gap: 20px
+    overflow-y: auto
+    scrollbar-width: thin
+    scrollbar-color: #007
+    padding-bottom: 2rem
+
+.message
+    display: flex
+    gap: 40px
+    font-family: monospace, monospace
+    font-size: 10pt
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: normal
+    overflow: visible
+    text-overflow: unset
+
+.myMessage
+    display: flex
+    flex-direction: row-reverse
+    align-items: flex-end
+    margin-right: 2rem
+
+.messageAvatar
+    width: 40px
+    height: 40px
+    border-radius: 10%
+    border: 1px solid transparent
+    background: rgb(0,245,255)
+    background: linear-gradient(90deg, rgba(0,245,255,1) 0%, rgba(255,0,245,1) 52%, rgba(255,226,0,1) 100%)
+
+.talkBubble
+    display: inline-block
+    position: relative
+    width: 250px
+    height: auto
+    background-color: #2f233d
+    padding: 10px
+    border-radius: 10%
+
+.readMoreButton
+    background: none
+    border: none
+    color: red
+    cursor: pointer
+    margin-top: 0px
+
+.timestamp
+    font-size: 8pt
+    color: #fff
+    text-align: right
+
+.leftTimestamp
+    text-align: left
+
+.leftTop:after
+    content: ' '
+    position: absolute
+    width: 0
+    height: 0
+    left: -20px
+    right: auto
+    top: 0px
+    bottom: auto
+    border: 22px solid
+    border-color: #2f233d transparent transparent transparent
+
+.rightTop:after
+    content: ' '
+    position: absolute
+    width: 0
+    height: 0
+    left: auto
+    right: -20px
+    top: 0px
+    bottom: auto
+    border: 20px solid
+    border-color: #2f233d transparent transparent transparent
+
+.input
+    position: relative
+    width: 100%
+
+.field
+
+.orb
+    position: absolute
+    top: 12px
+    left: 16px
+    width: 30px
+    height: 30px
+    z-index: 10
+
+.arrow
+    position: absolute
+    top: 12px
+    right: 14px
+    width: 25px
+    height: 25px
+    z-index: 10
+    filter: invert(75%) sepia(81%) saturate(2014%) hue-rotate(133deg) brightness(112%) contrast(103%)
