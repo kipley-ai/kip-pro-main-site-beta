@@ -1,5 +1,77 @@
 export const accounts = [
     {
+        image: "/images/twitter-profile/@100trillionUSD.jpg",
+        name: "100trillionUSD",
+    },
+    {
+        image: "/images/twitter-profile/@aantonop.jpg",
+        name: "aantonop",
+    },
+    {
+        image: "/images/twitter-profile/@APompliano.jpg",
+        name: "APompliano",
+    },
+    {
+        image: "/images/twitter-profile/@brian_armstrong.png",
+        name: "brian_armstrong",
+    },
+    {
+        image: "/images/twitter-profile/@cz_binance.jpg",
+        name: "cz_binance",
+    },
+    {
+        image: "/images/twitter-profile/@danheld.jpg",
+        name: "danheld",
+    },
+    {
+        image: "/images/twitter-profile/@elliotrades.jpg",
+        name: "elliotrades",
+    },
+    {
+        image: "/images/twitter-profile/@jack.jpg",
+        name: "jack",
+    },
+    {
+        image: "/images/twitter-profile/@maxkeiser.jpg",
+        name: "maxkeiser",
+    },
+    {
+        image: "/images/twitter-profile/@MMCrypto.jpg",
+        name: "MMCrypto",
+    },
+    {
+        image: "/images/twitter-profile/@RaoulGMI.jpg",
+        name: "RaoulGMI",
+    },
+    {
+        image: "/images/twitter-profile/@SatoshiLite.png",
+        name: "SatoshiLite",
+    },
+    {
+        image: "/images/twitter-profile/@saylor.jpg",
+        name: "saylor",
+    },
+    {
+        image: "/images/twitter-profile/@scottmelker.jpg",
+        name: "scottmelker",
+    },
+    {
+        image: "/images/twitter-profile/@TheCryptoLark.jpg",
+        name: "TheCryptoLark",
+    },
+    {
+        image: "/images/twitter-profile/@VitalikButerin.jpg",
+        name: "VitalikButerin",
+    },
+    {
+        image: "/images/twitter-profile/@WClementeIII.jpg",
+        name: "WClementeIII",
+    },
+    {
+        image: "/images/twitter-profile/@woonomic.jpg",
+        name: "woonomic",
+    },
+    {
         image: "/images/twitter-profile/@0xFinish.jpg",
         name: "0xFinish",
     },
