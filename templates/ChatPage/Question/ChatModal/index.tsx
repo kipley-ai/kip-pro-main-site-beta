@@ -45,38 +45,88 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
     const [analysisStatus, setAnalysisStatus] = useState("answer_1"); // idle, answer_1, answer_2
     const [answer, setAnswer] = useState(null);
     const [answer1, setAnswer1] = useState([]);
+    const [answer2, setAnswer2] = useState([]);
     const fieldRef = React.useRef<HTMLInputElement>(null);
     const [username, setUsername] = useState("saylor");
+    const [connection1closed, setConnection1Closed] = useState(false);
+    const [connection2closed, setConnection2Closed] = useState(false);
+    const [sentences1, setSentences1] = useState(0);
+    const [sentences2, setSentences2] = useState(0);
 
-    const { sendMessage, lastMessage, readyState } = useWebSocket(
+    const {
+        sendMessage: sendMessage1,
+        lastMessage: lastMessage1,
+        readyState: readyState1,
+        getWebSocket: getWebSocket1,
+    } = useWebSocket(
         "wss://chatbox-personal-twitter.kipley.ai/twitter-search/async_websocket",
         {
             // Options
             onClose: (event) => {
                 // Perform your action here
-                console.log("WebSocket Closed:", event);
+                console.log("WebSocket 1 Closed");
 
                 setChatHistory([
                     ...chatHistory,
-                    { username, message: answer1.join() },
+                    {
+                        username: "saylor",
+                        message: answer1.slice(1, -1).join(""),
+                        timestamp: "2023-12-20T10:01:00.000Z",
+                    },
                 ]);
-                setUsername("brian_armstrong");
                 setAnswer1([]);
-                console.log("connection reset");
-
-                // Example: Send a message to a different endpoint or perform another action
+                setConnection1Closed(true);
                 handleClickSendMessage2();
             },
         },
     );
 
-    const connectionStatus = {
+    const {
+        sendMessage: sendMessage2,
+        lastMessage: lastMessage2,
+        readyState: readyState2,
+        getWebSocket: getWebSocket2,
+    } = useWebSocket(
+        connection1closed
+            ? "wss://chatbox-personal-twitter.kipley.ai/twitter-search/async_websocket"
+            : null,
+        {
+            // Options
+            onClose: (event) => {
+                // Perform your action here
+                console.log("WebSocket 2 Closed");
+                let modifiedAnswer2 = answer2.slice(1, -1);
+                modifiedAnswer2 = modifiedAnswer2.map(item => item == "James" ? "Brian" : item);
+
+                setChatHistory([
+                    ...chatHistory,
+                    {
+                        username: "brian_armstrong",
+                        message: modifiedAnswer2.join(""),
+                        timestamp: "2023-12-20T10:02:00.000Z",
+                    },
+                ]);
+                setAnswer2([]);
+                console.log("connection reset");
+            },
+        },
+    );
+
+    const connectionStatus1 = {
         [ReadyState.CONNECTING]: "Connecting",
         [ReadyState.OPEN]: "Open",
         [ReadyState.CLOSING]: "Closing",
         [ReadyState.CLOSED]: "Closed",
         [ReadyState.UNINSTANTIATED]: "Uninstantiated",
-    }[readyState];
+    }[readyState1];
+
+    const connectionStatus2 = {
+        [ReadyState.CONNECTING]: "Connecting",
+        [ReadyState.OPEN]: "Open",
+        [ReadyState.CLOSING]: "Closing",
+        [ReadyState.CLOSED]: "Closed",
+        [ReadyState.UNINSTANTIATED]: "Uninstantiated",
+    }[readyState2];
 
     const { account } = useWeb3Context();
 
@@ -124,13 +174,20 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
     };
 
     const handleChat = () => {
-        setChatHistory([{ username: "KIPtest", message: question }]);
+        setChatHistory([
+            {
+                username: "KIPtest",
+                message: question,
+                timestamp: "2023-12-20T10:00:00.000Z",
+            },
+        ]);
         handleClickSendMessage();
+        setQuestion("");
     };
 
     const handleClickSendMessage = useCallback(
         (username: string | null, sess: string | null) =>
-            sendMessage(
+            sendMessage1(
                 JSON.stringify({
                     keyword: question,
                     user_id: "01293ea3-0311-4447-bf9e-41fec92c71fd",
@@ -140,22 +197,22 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
                     plugin_config: "{}",
                 }),
             ),
-        [question, sendMessage],
+        [question, sendMessage1],
     );
 
     const handleClickSendMessage2 = useCallback(
         () =>
-            sendMessage(
+            sendMessage2(
                 JSON.stringify({
                     keyword: question,
                     user_id: "01293ea3-0311-4447-bf9e-41fec92c71fd",
-                    session_id: "3c9da8d5-9cf6-43f5-9c29-c92c2a979fe2",
+                    session_id: "e94f1b88-2341-457b-9f8a-29ad20c10e7d",
                     app_id: "9cb85eda-0e56-4a06-8c53-19b61227d394",
                     kb_id: "042a65a0-66d1-47df-bc9b-c0b82a73385e",
                     plugin_config: "{}",
                 }),
             ),
-        [question, sendMessage],
+        [question, sendMessage2],
     );
 
     // useEffect(() => {
@@ -196,12 +253,21 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
     // }, [webSocket, serverMessage]);
 
     useEffect(() => {
-        if (lastMessage !== null) {
-            // console.log("last message", lastMessage);
+        if (lastMessage1 !== null) {
+            // console.log("last message", lastMessage1);
             if (analysisStatus === "answer_1") {
                 setAnswer1((prev: any) => {
-                    if (JSON.parse(lastMessage.data).type === "stream") {
-                        const message = JSON.parse(lastMessage.data);
+                    if (JSON.parse(lastMessage1.data).type === "stream") {
+                        const message = JSON.parse(lastMessage1.data);
+                        if (sentences1 === 2) {
+                            const websocket = getWebSocket1();
+                            if (websocket) {
+                                websocket.close();
+                            }
+                        }
+                        if (message.message.includes(".")) {
+                            setSentences1((prev) => prev + 1);
+                        }
                         return [...prev, message.message];
                     } else {
                         return prev;
@@ -209,9 +275,70 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
                 });
             }
         }
-    }, [lastMessage]);
+    }, [lastMessage1]);
+
+    useEffect(() => {
+        if (lastMessage2 !== null) {
+            // console.log("last message", lastMessage2);
+            if (analysisStatus === "answer_1") {
+                setAnswer2((prev: any) => {
+                    if (JSON.parse(lastMessage2.data).type === "stream") {
+                        const message = JSON.parse(lastMessage2.data);
+                        if (sentences2 === 2) {
+                            const websocket = getWebSocket2();
+                            if (websocket) {
+                                websocket.close();
+                            }
+                        }
+                        if (message.message.includes(".")) {
+                            setSentences2((prev) => prev + 1);
+                        }
+                        return [...prev, message.message];
+                    } else {
+                        return prev;
+                    }
+                });
+            }
+        }
+    }, [lastMessage2]);
+
+    // useEffect(() => {
+    //     if (readyState1 === ReadyState.CLOSED && !connection1closed) {
+    //         console.log("readyState1", readyState1);
+    //         setChatHistory([
+    //             ...chatHistory,
+    //             {
+    //                 username: "saylor",
+    //                 message: answer1.join(""),
+    //                 timestamp: "2023-12-20T10:03:00.000Z",
+    //             },
+    //         ]);
+    //         setAnswer1([]);
+    //         console.log("connection reset");
+    //         setConnection1Closed(true);
+    //         handleClickSendMessage2();
+    //     }
+    // }, [readyState1, answer1, chatHistory, connection1closed, handleClickSendMessage2]);
+
+    // useEffect(() => {
+    //     if (readyState2 === ReadyState.CLOSED && !connection2closed) {
+    //         console.log("readyState2", readyState2);
+    //         setChatHistory([
+    //             ...chatHistory,
+    //             {
+    //                 username: "brian_armstrong",
+    //                 message: answer2.join(""),
+    //                 timestamp: "2023-12-20T10:03:00.000Z",
+    //             },
+    //         ]);
+    //         setAnswer2([]);
+    //         console.log("connection reset");
+    //         setConnection2Closed(true);
+    //     }
+    // }, [readyState2, answer2, chatHistory, connection2closed]);
 
     console.log("answer1", answer1);
+    console.log("answer2", answer2);
 
     return (
         <div className={styles.modalOverlay} onClick={handleBackdropClick}>
