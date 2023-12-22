@@ -6,7 +6,6 @@ import Modal from "@/components/Modal";
 import { chat } from "@/mocks/chat";
 import Field from "@/components/Field";
 
-import { useSemanticContext } from "./semantic-context";
 import useWebSocket, { ReadyState } from "react-use-websocket";
 import { useWeb3Context } from "@/components/GetInvolvedButton/Web3Context";
 
@@ -25,20 +24,10 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
     const [expandedMessages, setExpandedMessages] = useState<{
         [index: number]: boolean;
     }>({});
-    const [chatHistory, setChatHistory] = useState([]);
-    // const [webSocket, setWebSocket] = useState(
-    //     new WebSocket(
-    //         "wss://chatbox-personal-twitter-test.kipley.ai/twitter-search/async_websocket",
-    //     ),
-    // );
-    // const [serverMessage, setServerMessage] = useState("");
-    // const [webSocketReady, setWebSocketReady] = useState(false);
-    // const [chat, setChat] = useState(chat);
+    const [chatHistory, setChatHistory] = useState<
+        Array<{ username: string; message: string; timestamp: string }>
+    >([]);
 
-    // const { handleChange } = useSemanticContext();
-    // const urlparams = useParams();
-    // const appDetail = useGetAppDetail({ app_id: urlparams["id"] as string });
-    // const searchParams = useSearchParams();
     const [mode, setMode] = useState("output");
     const [isBold, setIsBold] = useState(false);
 
@@ -61,9 +50,7 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
     } = useWebSocket(
         "wss://chatbox-personal-twitter.kipley.ai/twitter-search/async_websocket",
         {
-            // Options
             onClose: (event) => {
-                // Perform your action here
                 console.log("WebSocket 1 Closed");
 
                 setChatHistory([
@@ -91,12 +78,12 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
             ? "wss://chatbox-personal-twitter.kipley.ai/twitter-search/async_websocket"
             : null,
         {
-            // Options
             onClose: (event) => {
-                // Perform your action here
                 console.log("WebSocket 2 Closed");
-                let modifiedAnswer2 = answer2.slice(1, -1);
-                modifiedAnswer2 = modifiedAnswer2.map(item => item == "James" ? "Brian" : item);
+                let modifiedAnswer2: string[] = answer2.slice(1, -1);
+                modifiedAnswer2 = modifiedAnswer2.map((item) =>
+                    item == "James" ? "Brian" : item,
+                );
 
                 setChatHistory([
                     ...chatHistory,
@@ -158,7 +145,6 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
         } else if (hoursAgo < 24) {
             return `${hoursAgo} HR${hoursAgo === 1 ? "" : "S"} AGO`;
         } else {
-            // If more than 24 hours ago, you can display the full timestamp or another message
             return "MORE THAN 24 HRS AGO";
         }
     };
@@ -186,7 +172,7 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
     };
 
     const handleClickSendMessage = useCallback(
-        (username: string | null, sess: string | null) =>
+        () =>
             sendMessage1(
                 JSON.stringify({
                     keyword: question,
@@ -215,46 +201,8 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
         [question, sendMessage2],
     );
 
-    // useEffect(() => {
-    //     webSocket.onopen = (event) => {
-    //         setWebSocketReady(true);
-    //     };
-
-    //     webSocket.onmessage = function (event) {
-    //         const response: string = JSON.parse(event.data);
-    //         // setServerMessage((prevMessage) => prevMessage + response.message);
-    //     };
-
-    //     webSocket.onclose = function (event) {
-    //         setWebSocketReady(false);
-    //         setTimeout(() => {
-    //             setWebSocket(
-    //                 new WebSocket(
-    //                     "wss://chatbox-personal-twitter-test.kipley.ai/twitter-search/async_websocket",
-    //                 ),
-    //             );
-    //         }, 5000);
-    //         // console.log(serverMessage);
-    //     };
-
-    //     webSocket.onerror = function (err) {
-    //         console.log(
-    //             "Socket encountered error: ",
-    //             err.message,
-    //             "Closing socket",
-    //         );
-    //         setWebSocketReady(false);
-    //         webSocket.close();
-    //     };
-
-    //     return () => {
-    //         webSocket.close();
-    //     };
-    // }, [webSocket, serverMessage]);
-
     useEffect(() => {
         if (lastMessage1 !== null) {
-            // console.log("last message", lastMessage1);
             if (analysisStatus === "answer_1") {
                 setAnswer1((prev: any) => {
                     if (JSON.parse(lastMessage1.data).type === "stream") {
@@ -279,7 +227,6 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
 
     useEffect(() => {
         if (lastMessage2 !== null) {
-            // console.log("last message", lastMessage2);
             if (analysisStatus === "answer_1") {
                 setAnswer2((prev: any) => {
                     if (JSON.parse(lastMessage2.data).type === "stream") {
@@ -301,41 +248,6 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
             }
         }
     }, [lastMessage2]);
-
-    // useEffect(() => {
-    //     if (readyState1 === ReadyState.CLOSED && !connection1closed) {
-    //         console.log("readyState1", readyState1);
-    //         setChatHistory([
-    //             ...chatHistory,
-    //             {
-    //                 username: "saylor",
-    //                 message: answer1.join(""),
-    //                 timestamp: "2023-12-20T10:03:00.000Z",
-    //             },
-    //         ]);
-    //         setAnswer1([]);
-    //         console.log("connection reset");
-    //         setConnection1Closed(true);
-    //         handleClickSendMessage2();
-    //     }
-    // }, [readyState1, answer1, chatHistory, connection1closed, handleClickSendMessage2]);
-
-    // useEffect(() => {
-    //     if (readyState2 === ReadyState.CLOSED && !connection2closed) {
-    //         console.log("readyState2", readyState2);
-    //         setChatHistory([
-    //             ...chatHistory,
-    //             {
-    //                 username: "brian_armstrong",
-    //                 message: answer2.join(""),
-    //                 timestamp: "2023-12-20T10:03:00.000Z",
-    //             },
-    //         ]);
-    //         setAnswer2([]);
-    //         console.log("connection reset");
-    //         setConnection2Closed(true);
-    //     }
-    // }, [readyState2, answer2, chatHistory, connection2closed]);
 
     console.log("answer1", answer1);
     console.log("answer2", answer2);
@@ -398,9 +310,6 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
                                         <img
                                             src={`/images/twitter-profile/@${message.username}.jpg`}
                                             alt={`Avatar ${index}`}
-                                            onError={() =>
-                                                (this.src = `/images/twitter-profile/@${message.username}.png`)
-                                            }
                                         />
                                     </div>
                                 )}
