@@ -12,7 +12,7 @@ export const accounts = [
         name: "APompliano",
     },
     {
-        image: "/images/twitter-profile/@brian_armstrong.png",
+        image: "/images/twitter-profile/@brian_armstrong.jpg",
         name: "brian_armstrong",
     },
     {

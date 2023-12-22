@@ -149,6 +149,13 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
         }
     };
 
+    const getCurrentTime = (): string => {
+        const now = new Date();
+        const hour = now.getHours();
+        const minute = now.getMinutes();
+        return `${hour}:${minute}`;
+    };
+
     const app_ids = {
         saylor: "2ad3e821-4457-417e-8aeb-f3ffc54492c9",
         brian_armstrong: "9cb85eda-0e56-4a06-8c53-19b61227d394",
@@ -207,15 +214,15 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
                 setAnswer1((prev: any) => {
                     if (JSON.parse(lastMessage1.data).type === "stream") {
                         const message = JSON.parse(lastMessage1.data);
-                        if (sentences1 === 2) {
-                            const websocket = getWebSocket1();
-                            if (websocket) {
-                                websocket.close();
-                            }
-                        }
-                        if (message.message.includes(".")) {
-                            setSentences1((prev) => prev + 1);
-                        }
+                        // if (sentences1 === 2) {
+                        //     const websocket = getWebSocket1();
+                        //     if (websocket) {
+                        //         websocket.close();
+                        //     }
+                        // }
+                        // if (message.message.includes(".")) {
+                        //     setSentences1((prev) => prev + 1);
+                        // }
                         return [...prev, message.message];
                     } else {
                         return prev;
@@ -231,15 +238,15 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
                 setAnswer2((prev: any) => {
                     if (JSON.parse(lastMessage2.data).type === "stream") {
                         const message = JSON.parse(lastMessage2.data);
-                        if (sentences2 === 2) {
-                            const websocket = getWebSocket2();
-                            if (websocket) {
-                                websocket.close();
-                            }
-                        }
-                        if (message.message.includes(".")) {
-                            setSentences2((prev) => prev + 1);
-                        }
+                        // if (sentences2 === 2) {
+                        //     const websocket = getWebSocket2();
+                        //     if (websocket) {
+                        //         websocket.close();
+                        //     }
+                        // }
+                        // if (message.message.includes(".")) {
+                        //     setSentences2((prev) => prev + 1);
+                        // }
                         return [...prev, message.message];
                     } else {
                         return prev;
@@ -339,7 +346,7 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
                                     >
                                         {message.message}
                                     </div>
-                                    {message.message.length > 2 * 40 && (
+                                    {message.message.length > 30 && (
                                         <button
                                             onClick={() =>
                                                 toggleMessageExpansion(index)
@@ -357,7 +364,7 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
                                                 message.username === myUsername,
                                         })}
                                     >
-                                        {timeAgo(message.timestamp)}
+                                        {getCurrentTime()}
                                     </div>
                                 </div>
                             </div>
@@ -365,7 +372,7 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
                 </div>
                 <div className={styles.input}>
                     <img
-                        src="images/chat-input-orb.png"
+                        src="images/chat-siri-without-ring.png"
                         className={styles.orb}
                         alt="Input Orb"
                     />
