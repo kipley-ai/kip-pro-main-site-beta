@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import { ParallaxProvider } from "react-scroll-parallax";
 import "../styles/app.sass";
 import Script from "next/script";
+import { Web3Provider } from "../components/GetInvolvedButton/Web3Context"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -22,7 +23,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <ParallaxProvider>
-        <Component {...pageProps} />
+        <Web3Provider>
+          <Component {...pageProps} />
+        </Web3Provider>
       </ParallaxProvider>
     </>
   );

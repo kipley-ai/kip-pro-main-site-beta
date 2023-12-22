@@ -9,12 +9,15 @@ import Field from "@/components/Field";
 import ChatModal from "./ChatModal";
 
 import { accounts } from "@/mocks/twitter-accounts";
+import { useWeb3Context } from "@/components/GetInvolvedButton/Web3Context";
 
 type QuestionProps = {};
 
 const Question = ({}: QuestionProps) => {
     const [selectedMembers, setSelectedMembers] = useState<string[]>([]);
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+    const { connectToMetaMask, account } = useWeb3Context();
 
     // Function to toggle a team member's selection and colorization
     const toggleSelection = (name: string) => {
@@ -30,8 +33,11 @@ const Question = ({}: QuestionProps) => {
     };
 
     const handleSiriClick = () => {
-        console.log("Siri clicked");
-        setIsModalOpen(true);
+        if (account) {
+            setIsModalOpen(true);
+        } else {
+            connectToMetaMask();
+        }
     };
 
     useEffect(() => {
