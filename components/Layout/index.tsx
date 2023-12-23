@@ -4,6 +4,7 @@ import { enablePageScroll, clearQueueScrollLocks } from "scroll-lock";
 import Head from "next/head";
 import cn from "classnames";
 import styles from "./Layout.module.sass";
+import Banner from "@/components/Banner";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -31,6 +32,7 @@ const Layout = ({ layoutNoOverflow, children }: LayoutProps) => {
           [styles.layoutNoOverflow]: layoutNoOverflow,
         })}
       >
+        <Banner />
         <Header />
         {children}
         <Footer />
