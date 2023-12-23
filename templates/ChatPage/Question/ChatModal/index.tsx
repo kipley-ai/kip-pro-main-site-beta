@@ -151,8 +151,8 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
 
     const getCurrentTime = (): string => {
         const now = new Date();
-        const hour = now.getHours();
-        const minute = now.getMinutes();
+        const hour = now.getHours().toString().padStart(2, "0");
+        const minute = now.getMinutes().toString().padStart(2, "0");
         return `${hour}:${minute}`;
     };
 
@@ -178,6 +178,26 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
         setQuestion("");
     };
 
+    const pluginConfig1 = {
+        SUMMARY_PROMPT: {
+            prompt_template:
+                "Use the following pieces of context retreived from Michael Saylor's tweets to answer the question at the end. I will provide Michael's background for your reference only. Please call him Michael when you answer the question. \n\nHere is the background of Michael Saylor:\n\nMichael Saylor is an American entrepreneur, business executive, and author, known for his role as the co-founder and longtime CEO of MicroStrategy, a company specializing in business intelligence, mobile software, and cloud-based services.\n\nHere is Michael Saylor tweets:\n{context}\n\nHere is the question: {question}\n\nHere are some helpful answers from chat history:",
+            model_temperature: "0.53",
+            frequency_penalty: "0.56",
+            presence_penalty: "0.08",
+        },
+    };
+
+    const pluginConfig2 = {
+        SUMMARY_PROMPT: {
+            model_temperature: "0.73",
+            frequency_penalty: "0.49",
+            presence_penalty: "0.21",
+            prompt_template:
+                "Use the following pieces of context retreived from Brian Armstrong's tweets to answer the question at the end. I will provide Brian Armstrong's background for your reference only. Please call him Brian when you answer the question. \n\nHere is the background of Brian Armstrong:\n\nBrian Armstrong is an American entrepreneur, known for co-founding and leading Coinbase, one of the world's largest cryptocurrency exchanges. Before launching Coinbase in 2012, he worked at Deloitte as a consultant and then at Airbnb as a software engineer, where he gained valuable experience in the tech industry. Under his leadership, Coinbase has grown significantly, playing a pivotal role in mainstreaming cryptocurrency trading. Armstrong is also recognized for his advocacy for cryptocurrency and blockchain technology, contributing to the evolving dialogue around their impact on the global financial system. His vision and influence in the crypto space have made him a notable figure in the technology and finance sectors.\n\nHere is Brian's tweets:\n{context}\n\nHere is the question: {question}\n\nHere are some helpful answers from chat history:",
+        },
+    };
+
     const handleClickSendMessage = useCallback(
         () =>
             sendMessage1(
@@ -187,7 +207,7 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
                     session_id: "3c9da8d5-9cf6-43f5-9c29-c92c2a979fe2",
                     app_id: "2ad3e821-4457-417e-8aeb-f3ffc54492c9",
                     kb_id: "8d991ea9-8cee-4c31-9f93-f41343caaa2f",
-                    plugin_config: "{}",
+                    plugin_config: JSON.stringify(pluginConfig1),
                 }),
             ),
         [question, sendMessage1],
@@ -202,7 +222,7 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
                     session_id: "e94f1b88-2341-457b-9f8a-29ad20c10e7d",
                     app_id: "9cb85eda-0e56-4a06-8c53-19b61227d394",
                     kb_id: "042a65a0-66d1-47df-bc9b-c0b82a73385e",
-                    plugin_config: "{}",
+                    plugin_config: JSON.stringify(pluginConfig2),
                 }),
             ),
         [question, sendMessage2],
@@ -255,6 +275,44 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
             }
         }
     }, [lastMessage2]);
+
+    useEffect(() => {
+        const closeWebSocketAfterTwoMinutes = setTimeout(() => {
+            const websocket = getWebSocket1();
+
+            if (websocket && readyState1 === ReadyState.OPEN) {
+                websocket.close();
+            }
+        }, 30000);
+
+        return () => {
+            clearTimeout(closeWebSocketAfterTwoMinutes);
+            const websocket = getWebSocket1();
+
+            if (websocket && readyState1 === ReadyState.OPEN) {
+                websocket.close();
+            }
+        };
+    }, [getWebSocket1, readyState1]);
+
+    useEffect(() => {
+        const closeWebSocketAfterTwoMinutes = setTimeout(() => {
+            const websocket = getWebSocket2();
+
+            if (websocket && readyState2 === ReadyState.OPEN) {
+                websocket.close();
+            }
+        }, 30000);
+
+        return () => {
+            clearTimeout(closeWebSocketAfterTwoMinutes);
+            const websocket = getWebSocket2();
+
+            if (websocket && readyState2 === ReadyState.OPEN) {
+                websocket.close();
+            }
+        };
+    }, [getWebSocket2, readyState2]);
 
     console.log("answer1", answer1);
     console.log("answer2", answer2);
@@ -346,7 +404,7 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
                                     >
                                         {message.message}
                                     </div>
-                                    {message.message.length > 30 && (
+                                    {message.message.length > 25 && (
                                         <button
                                             onClick={() =>
                                                 toggleMessageExpansion(index)
