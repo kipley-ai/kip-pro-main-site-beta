@@ -14,6 +14,8 @@ export const accounts = [
     {
         image: "/images/twitter-profile/@brian_armstrong.jpg",
         name: "brian_armstrong",
+        kb_id: "042a65a0-66d1-47df-bc9b-c0b82a73385e",
+        app_id: "9cb85eda-0e56-4a06-8c53-19b61227d394",
     },
     {
         image: "/images/twitter-profile/@cz_binance.jpg",
@@ -50,6 +52,8 @@ export const accounts = [
     {
         image: "/images/twitter-profile/@saylor.jpg",
         name: "saylor",
+        kb_id: "8d991ea9-8cee-4c31-9f93-f41343caaa2f",
+        app_id: "2ad3e821-4457-417e-8aeb-f3ffc54492c9",
     },
     {
         image: "/images/twitter-profile/@scottmelker.jpg",
