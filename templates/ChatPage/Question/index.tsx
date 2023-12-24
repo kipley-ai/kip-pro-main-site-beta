@@ -49,24 +49,46 @@ const Question = ({}: QuestionProps) => {
 
       if (!selected) return;
 
-      const { contractWrite, contractRead } = await getContract();
+      const { contractWrite, contractRead, contractApprv} = await getContract();
 
       try {
-        const res = await contractWrite.paySession(
-          uuid(),
-          selectedKBid,
-          selected * 10
+        const resaprv = await contractApprv.approve(
+            '0x757822612Ee772aD1311f1e662fF44AE0509E9e8',
+            selected * 10
         );
-        console.log("res", res);
+        console.log("resaprv", resaprv);
+
+        // console.log("before pay");
+
+        // const sessionId = uuid();
+        // console.log("Session ID:", sessionId);
+        // console.log("selectedKBid:", selectedKBid);
+        // const tokenAmount = selected * 10;
+        // console.log("Token Amount:", tokenAmount);
+        // const KBIdsString = selectedKBid.join(","); // 
+
+
+        // const res = await contractWrite.paySession(
+        //   sessionId,
+        //   KBIdsString, //selectedKBid,
+        //   tokenAmount
+        // );
+        // console.log("res", res);
+        // console.log("after pay");
 
         setIsModalOpen(true);
       } catch (error) {
         console.log("error", error);
+        console.log("error log selectedKBid", selectedKBid);
+        console.log("error log uuid", uuid());
+        console.log("error log token amount", selected * 10);
       }
     } else {
       connectToMetaMask();
-    }
+    };
   };
+
+
 
   useEffect(() => {
     console.log("Selected members: ", selectedMembers);

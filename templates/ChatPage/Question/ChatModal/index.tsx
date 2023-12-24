@@ -19,6 +19,9 @@ type ChatModalProps = {
     onClose: () => void;
 };
 
+let globalQuestion = ""; // global var
+
+
 const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
     const [question, setQuestion] = useState<string>("");
     const [expandedMessages, setExpandedMessages] = useState<{
@@ -174,6 +177,7 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
                 timestamp: "2023-12-20T10:00:00.000Z",
             },
         ]);
+        globalQuestion = question;
         handleClickSendMessage();
         setQuestion("");
     };
@@ -181,28 +185,39 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
     const pluginConfig1 = {
         SUMMARY_PROMPT: {
             prompt_template:
-                "Use the following pieces of context retreived from Michael Saylor's tweets to answer the question at the end. I will provide Michael's background for your reference only. Please call him Michael when you answer the question. \n\nHere is the background of Michael Saylor:\n\nMichael Saylor is an American entrepreneur, business executive, and author, known for his role as the co-founder and longtime CEO of MicroStrategy, a company specializing in business intelligence, mobile software, and cloud-based services.\n\nHere is Michael Saylor tweets:\n{context}\n\nHere is the question: {question}\n\nHere are some helpful answers from chat history:",
-            model_temperature: "0.53",
-            frequency_penalty: "0.56",
-            presence_penalty: "0.08",
+                "Act as Michael Saylor, an American entrepreneur, business executive, and author, known for his role as the co-founder and longtime CEO of MicroStrategy, a company specializing in business intelligence, mobile software, and cloud-based services.\n\
+                Use the following pieces of context retreived from Michael's tweets to answer the question at the end. \
+                Here are Michael's tweets:\n{context} \n\
+                Here is the question: {question}\n\
+                Please answer the question directly from first perspective. Do now say something like 'As Michael, I ...'.\n \
+                Here are some helpful answers from chat history:",
+            model_temperature: "0.73",
+            frequency_penalty: "0.49",
+            presence_penalty: "0.21",
         },
     };
 
     const pluginConfig2 = {
         SUMMARY_PROMPT: {
+            prompt_template:
+                "Act as Brian Armstrong, an American entrepreneur, known for co-founding and leading Coinbase, one of the world's largest cryptocurrency exchanges. \
+                Use the following pieces of context retreived from Brian's tweets to answer the question at the end. \
+                Here are Brian's tweets:\n{context}\n\
+                Here is the question: {question}\n\
+                Please answer the question directly from first perspective. Do now say something like 'As Brian, I ...'. \n\
+                Here are some helpful answers from chat history:",
             model_temperature: "0.73",
             frequency_penalty: "0.49",
             presence_penalty: "0.21",
-            prompt_template:
-                "Use the following pieces of context retreived from Brian Armstrong's tweets to answer the question at the end. I will provide Brian Armstrong's background for your reference only. Please call him Brian when you answer the question. \n\nHere is the background of Brian Armstrong:\n\nBrian Armstrong is an American entrepreneur, known for co-founding and leading Coinbase, one of the world's largest cryptocurrency exchanges. Before launching Coinbase in 2012, he worked at Deloitte as a consultant and then at Airbnb as a software engineer, where he gained valuable experience in the tech industry. Under his leadership, Coinbase has grown significantly, playing a pivotal role in mainstreaming cryptocurrency trading. Armstrong is also recognized for his advocacy for cryptocurrency and blockchain technology, contributing to the evolving dialogue around their impact on the global financial system. His vision and influence in the crypto space have made him a notable figure in the technology and finance sectors.\n\nHere is Brian's tweets:\n{context}\n\nHere is the question: {question}\n\nHere are some helpful answers from chat history:",
         },
     };
 
+    // console.log("question1", globalQuestion);
     const handleClickSendMessage = useCallback(
         () =>
             sendMessage1(
                 JSON.stringify({
-                    keyword: question,
+                    keyword: globalQuestion,
                     user_id: "01293ea3-0311-4447-bf9e-41fec92c71fd",
                     session_id: "3c9da8d5-9cf6-43f5-9c29-c92c2a979fe2",
                     app_id: "2ad3e821-4457-417e-8aeb-f3ffc54492c9",
@@ -210,22 +225,22 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
                     plugin_config: JSON.stringify(pluginConfig1),
                 }),
             ),
-        [question, sendMessage1],
+        [globalQuestion, sendMessage1],
     );
-
+    // console.log("question2", globalQuestion);
     const handleClickSendMessage2 = useCallback(
         () =>
             sendMessage2(
                 JSON.stringify({
-                    keyword: question,
+                    keyword: globalQuestion,
                     user_id: "01293ea3-0311-4447-bf9e-41fec92c71fd",
-                    session_id: "e94f1b88-2341-457b-9f8a-29ad20c10e7d",
+                    session_id: "e94f1b88-2341-457b-9f8a-29ad20c10e7f",
                     app_id: "9cb85eda-0e56-4a06-8c53-19b61227d394",
                     kb_id: "042a65a0-66d1-47df-bc9b-c0b82a73385e",
                     plugin_config: JSON.stringify(pluginConfig2),
                 }),
             ),
-        [question, sendMessage2],
+        [globalQuestion, sendMessage2],
     );
 
     useEffect(() => {
@@ -322,12 +337,12 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
             <Modal className={styles.leftModal}>
                 <div className={styles.info}>
                     <h2 className={styles.title}>You are chatting with</h2>
-                    <p>
+      {/*              <p>
                         The world's most powerful AI KnowledgeFi generation
                         engine.
                         <br />
                         What do you want to ask?
-                    </p>
+                    </p>*/}
                     <div className={styles.avatars}>
                         {avatars.map((avatar, index) => (
                             <img
@@ -399,7 +414,7 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
                                                 : "hidden",
                                             maxHeight: expandedMessages[index]
                                                 ? "none"
-                                                : "1.5em",
+                                                : "3em",
                                         }}
                                     >
                                         {message.message}
