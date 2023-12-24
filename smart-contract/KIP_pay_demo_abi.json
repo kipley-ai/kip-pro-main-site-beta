@@ -1,0 +1,43 @@
+[
+	{
+		"inputs": [],
+		"stateMutability": "payable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "session_id",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "KB_ids",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "paymen_amount",
+				"type": "uint256"
+			}
+		],
+		"name": "paySession",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "token_address",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
