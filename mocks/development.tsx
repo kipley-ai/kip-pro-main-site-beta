@@ -2,7 +2,7 @@ export const development = [
   {
     title: "Create Knowledge Asset NFT",
     content:
-      "Secure your valuable knowledge and data on the blockchain through creating a discrete Knowledge Asset, with ownership rights tied to an ERC 1155 NFT.",
+      "Secure your valuable knowledge and data on the blockchain through creating a discrete Knowledge Asset, with ownership rights tied to an ERC 3525 NFT.",
     image: "/images/figures/figure-101.png",
     color: "#6F5BEB",
     url: "/technology",
