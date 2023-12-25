@@ -54,27 +54,28 @@ const Question = ({}: QuestionProps) => {
       try {
         const resaprv = await contractApprv.approve(
             '0x757822612Ee772aD1311f1e662fF44AE0509E9e8',
-            selected * 10
+            BigInt(selected) * BigInt("10000000000000000000") // 10^19
         );
         console.log("resaprv", resaprv);
 
-        // console.log("before pay");
+        console.log("before pay");
 
-        // const sessionId = uuid();
-        // console.log("Session ID:", sessionId);
-        // console.log("selectedKBid:", selectedKBid);
-        // const tokenAmount = selected * 10;
-        // console.log("Token Amount:", tokenAmount);
-        // const KBIdsString = selectedKBid.join(","); // 
+        const sessionId = uuid();
+        console.log("Session ID:", sessionId);
+        console.log("selectedKBid:", selectedKBid);
+        const tokenAmount: BigInt = BigInt(selected) * BigInt("10000000000000000000"); // 10^19
+
+        console.log("Token Amount:", tokenAmount);
+        // const KBIdsString = selectedKBid.join(","); 
 
 
-        // const res = await contractWrite.paySession(
-        //   sessionId,
-        //   KBIdsString, //selectedKBid,
-        //   tokenAmount
-        // );
-        // console.log("res", res);
-        // console.log("after pay");
+        const res = await contractWrite.paySession(
+          sessionId,
+          selectedKBid,
+          tokenAmount
+        );
+        console.log("res", res);
+        console.log("after pay");
 
         setIsModalOpen(true);
       } catch (error) {

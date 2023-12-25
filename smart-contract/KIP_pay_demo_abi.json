@@ -12,9 +12,9 @@
 				"type": "string"
 			},
 			{
-				"internalType": "string",
+				"internalType": "string[]",
 				"name": "KB_ids",
-				"type": "string"
+				"type": "string[]"
 			},
 			{
 				"internalType": "uint256",

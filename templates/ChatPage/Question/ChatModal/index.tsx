@@ -358,10 +358,11 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
                     className={styles.wallet}
                     style={{ background: `url(images/wallet-gradient.png)` }}
                 >
-                    <div className={cn("p", styles.walletAddress)}>
+                    <div className={cn("h4", styles.walletTitle)} style={{ lineHeight: '1.2', letterSpacing: '-0.5px' }}>Wallet Address</div>
+                    <div className={cn("p", styles.walletAddress)} style={{ lineHeight: '1.2', letterSpacing: '-0.5px' }}>
                         [ {account} ]
                     </div>
-                    <div className={cn("h2", styles.walletTitle)}>$KIP 500</div>
+                    
                     {/* <div className={styles.walletDescription}>
                         <div className={cn("h4", styles.walletIntegration)}>
                             Integration with APIs
