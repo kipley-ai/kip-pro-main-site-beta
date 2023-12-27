@@ -9,7 +9,7 @@ const GetInvolvedButton = ({ buttonStyle }) => {
             className={buttonStyle}
             onClick={connectToMetaMask}
         >
-            <span>{account ? "Connected" : "Get Involved"}</span>
+            <span>{account ? "Connected" : "EARN KIP PTS"}</span>
         </button>
     );
 };

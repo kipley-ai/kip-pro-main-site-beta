@@ -5,6 +5,7 @@ import styles from "./Header.module.sass";
 import Logo from "@/components/Logo";
 import Menu from "./Menu";
 import Link from 'next/link';
+import { useRouter } from "next/router";
 
 import { headerNavigation } from "@/constants/navigation";
 import { socials } from "@/constants/socials";
@@ -20,6 +21,8 @@ const Header = ({}: HeaderProps) => {
   useScrollPosition(({ currPos }) => {
     setHeaderStyle(currPos.y <= -2);
   });
+
+  const { pathname } = useRouter();
 
   return (
     <Web3Provider>
@@ -38,34 +41,36 @@ const Header = ({}: HeaderProps) => {
           data-scroll-lock-fill-gap
         >
           <Logo className={styles.logo} />
-          <div className={styles.links}>
-            <Link href="/about-us">
-              <a className={cn("a", styles.link)}>
-                <span className={styles["link-text"]}>About Us</span>
+          {pathname !== "/invite" ? (
+            <div className={styles.links}>
+              <Link href="/about-us">
+                <a className={cn("a", styles.link)}>
+                  <span className={styles["link-text"]}>About Us</span>
+                </a>
+              </Link>
+              {/* <Link href="/chat-with-kols">
+                <a className={cn("a", styles.link)}>
+                  <span className={styles["link-text"]}>Chat</span>
+                </a>
+              </Link> */}
+              <a
+                rel="noreferrer"
+                target="_blank"
+                href="https://linktr.ee/kip.pro"
+                className={cn("a", styles.link)}
+              >
+                <span className={styles["link-text"]}>Community</span>
               </a>
-            </Link>
-            {/* <Link href="/chat-with-kols">
-              <a className={cn("a", styles.link)}>
-                <span className={styles["link-text"]}>Chat</span>
+              <a
+                rel="noreferrer"
+                target="_blank"
+                href="https://kipprotocol.gitbook.io/wp/"
+                className={cn("a", styles.link)}
+              >
+                <span className={styles["link-text"]}>Documentation</span>
               </a>
-            </Link> */}
-            <a
-              rel="noreferrer"
-              target="_blank"
-              href="https://linktr.ee/kip.pro"
-              className={cn("a", styles.link)}
-            >
-              <span className={styles["link-text"]}>Community</span>
-            </a>
-            <a
-              rel="noreferrer"
-              target="_blank"
-              href="https://kipprotocol.gitbook.io/wp/"
-              className={cn("a", styles.link)}
-            >
-              <span className={styles["link-text"]}>Documentation</span>
-            </a>
-          </div>
+            </div>
+          ) : null}
           <div className={styles.menu}>
             <Menu
               navigation={headerNavigation}
