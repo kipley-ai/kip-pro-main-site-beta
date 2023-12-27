@@ -30,7 +30,6 @@ const Main = ({}: MainProps) => {
                     <div className={styles.input}>
                         <Field
                             className={styles.field}
-                            inputClassName={styles.inputField}
                             placeholder="XXX XXX"
                             value={question}
                             onChange={(e: any) => setQuestion(e.target.value)}
