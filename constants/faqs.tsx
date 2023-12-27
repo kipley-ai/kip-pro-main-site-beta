@@ -10,7 +10,7 @@ export const faqs = [
             "Your data can be transformed, organized, and shared across applications for anyone to query with just a few keystrokes. Your data can be transformed, organized, and shared across applications for anyone to query with just a few keystrokes. Stay current on the latest Onix project developments, news, and content, updated daily. Stay current on the latest Onix project developments, news, and content, updated daily.",
     },
     {
-        title: "What is UI8",
+        title: "How to apply?",
         content:
             "Your data can be transformed, organized, and shared across applications for anyone to query with just a few keystrokes. Your data can be transformed, organized, and shared across applications for anyone to query with just a few keystrokes. Stay current on the latest Onix project developments, news, and content, updated daily. Stay current on the latest Onix project developments, news, and content, updated daily.",
     },
