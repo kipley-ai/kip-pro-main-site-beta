@@ -1,0 +1,179 @@
+@import @/styles/helpers
+
+.section
+    margin: 16rem 0 4rem
+
+.row
+    position: relative
+    display: flex
+    gap: 3rem
+    
+.wrap
+    max-width: 578px
+    +d
+        max-width: 526px
+    +t
+        max-width: 100%
+
+.title
+    margin-bottom: 32px
+    +t
+        max-width: 600px
+
+.info
+    margin-bottom: 56px
+    +body1
+    color: $n3
+    +d
+        margin-bottom: 40px
+    +t
+        margin-bottom: 88px
+    +m
+        margin-bottom: 62px
+
+.list
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    margin: -32px -12px 56px
+    +d
+        margin-bottom: 40px
+    +t
+        margin-bottom: 64px
+    +m
+        display: block
+        margin: 0 0 48px
+
+.item
+    flex: 0 0 calc(50% - 24px)
+    width: calc(50% - 24px)
+    margin: 32px 12px 0
+    +m
+        width: 100%
+        margin: 0
+        &:not(:last-child)
+            margin-bottom: 24px
+
+.number
+    margin-bottom: 24px
+    padding-bottom: 16px
+    border-bottom: 1px solid $n6
+    +m
+        margin-bottom: 16px
+
+.content
+    color: $n3
+
+.line
+    display: flex
+    align-items: center
+
+.button
+    margin-right: 32px
+
+.document
+    +karla
+    +body2
+    color: $c1
+    transition: color .2s
+    &:hover
+        color: $c1s1
+
+.preview
+    position: relative
+    width: 712px
+    font-size: 0
+    +d
+        left: calc(50% - 80px)
+    +t
+        display: none
+
+// Posts
+.listCard
+    flex-shrink: 0
+    width: 558px
+    +d
+        flex: 0 0 calc(50% - 48px)
+        width: calc(50% - 48px)
+        margin: 0 24px
+    +t
+        width: auto
+        margin: 0
+
+.card
+    border-radius: 24px
+    overflow: hidden
+    +m
+        box-shadow: none
+    &:hover
+        .arrow
+            fill: $n1
+    &:not(:last-child)
+        margin-bottom: 32px
+    .corner
+        +m
+            top: auto
+            bottom: 0
+            transform: scaleY(-1)
+    .square
+        +m
+            top: auto !important
+            bottom: 8px
+
+.backgroundCard
+    +m
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 100px), calc(100% - 77px) calc(100% - 100px), calc(100% - 77px) 100%, 0 100%) !important
+
+.inner
+    display: flex
+    flex-direction: row
+    +m
+        flex-direction: column
+
+.previewCard,
+.details
+    flex: 0 0 50%
+    +m
+        flex: 0 0 auto
+
+.previewCard
+    position: relative
+    +m
+        height: 190px
+
+.details
+    padding: 22px 24px 16px
+
+.status
+    margin-bottom: 6px
+    background: $c1s3
+    +m
+        margin-bottom: 8px
+
+.subtitle
+    margin-bottom: 30px
+
+.line
+    display: flex
+    align-items: center
+    +m
+        padding-right: 70px
+
+.date
+    margin-right: auto
+    +caption
+    color: $n5
+
+.arrow
+    fill: $n5
+    transition: fill .3s
+
+.image
+    position: absolute
+    top: 7.1%
+    left: calc(50% - 1056px)
+    width: 620px
+    pointer-events: none
+    font-size: 0
+    +w
+        display: none
