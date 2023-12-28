@@ -4,6 +4,7 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import "../styles/app.sass";
 import Script from "next/script";
 import { Web3Provider } from "../components/GetInvolvedButton/Web3Context"
+import { Toaster } from 'react-hot-toast';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -25,6 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ParallaxProvider>
         <Web3Provider>
           <Component {...pageProps} />
+          <Toaster />
         </Web3Provider>
       </ParallaxProvider>
     </>

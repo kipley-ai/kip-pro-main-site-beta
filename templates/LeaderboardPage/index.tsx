@@ -9,7 +9,7 @@ const LeaderboardPage = () => {
 
     return (
         <Layout>
-            <InvitationCodes />
+            <InvitationCodes scrollToRef={scrollToRef} />
             <Leaderboard />
             <Faq />
         </Layout>

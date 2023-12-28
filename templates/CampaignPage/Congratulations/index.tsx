@@ -60,7 +60,6 @@ const Congratulations = ({}: CongratulationsProps) => (
                                 color={item.color}
                                 key={index}
                                 url={item.url}
-                                animateIn="fadeInDown"
                                 small
                             >
                                 <div className={styles.preview}>

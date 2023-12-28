@@ -1,7 +1,8 @@
 import cn from "classnames";
 import styles from "./Leaderboard.module.sass";
-import Item from "./Item";
 import LeaderboardTable from "./LeaderboardTable";
+
+import { leaderboardAccounts } from "@/mocks/leaderboard";
 
 type LeaderboardProps = {};
 
@@ -13,7 +14,7 @@ const Leaderboard = ({}: LeaderboardProps) => (
                 Follow us on Twitter today and experience the power of Knowledge
                 in your life!
             </div>
-            <LeaderboardTable />
+            <LeaderboardTable users={leaderboardAccounts} />
         </div>
     </div>
 );

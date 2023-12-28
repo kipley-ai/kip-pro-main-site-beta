@@ -4,6 +4,7 @@ import cn from "classnames";
 import styles from "./Main.module.sass";
 import Image from "@/components/Image";
 import Field from "@/components/Field";
+import Link from "next/link";
 
 const images = [
     "/images/figures/figure-1.png",
@@ -36,14 +37,11 @@ const Main = ({}: MainProps) => {
                         />
                     </div>
                     <div className={styles.buttons}>
-                        <a
-                            className={cn("button", styles.button)}
-                            href="https://linktr.ee/kip.pro"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <span>APPLY</span>
-                        </a>
+                        <Link href="/campaigns/tasks">
+                            <a className={cn("button", styles.button)}>
+                                <span>APPLY</span>
+                            </a>
+                        </Link>
                     </div>
                 </div>
                 <div className={styles.images}>

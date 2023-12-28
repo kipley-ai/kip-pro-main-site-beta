@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState, useContext } from "react";
 import { Web3 } from "web3";
+import toast from 'react-hot-toast';
 
 const Web3Context = createContext();
 
@@ -42,6 +43,9 @@ export const Web3Provider = ({ children }) => {
         // Request access to the user's MetaMask accounts
         await window.ethereum.enable();
         console.log("Connected to MetaMask!");
+        toast.success('Connected to MetaMask.', {
+          id: "connect-success"
+        });
 
         // Now you can use Web3 to interact with the user's wallet
         const web3 = new Web3(window.ethereum);
@@ -69,6 +73,34 @@ export const Web3Provider = ({ children }) => {
       console.error("MetaMask not installed");
     }
   };
+
+  const accountWasChanged = (accounts) => {
+    setAccount(accounts[0]);
+    console.log('accountWasChanged ', accounts);
+    if (accounts.length === 0) {
+      console.log('Logged out');
+      toast.success('Disconnected from Metamask.', {
+        id: "disconnect-success"
+      });
+    }
+  }
+  
+  const clearAccount = () => {
+    setAccount("");
+    console.log('clearAccount');
+  };
+
+  useEffect(() => {
+    if (!window.ethereum) {
+      return;
+    }
+    window.ethereum.on('accountsChanged', accountWasChanged);
+    window.ethereum.on('disconnect', clearAccount);
+    return () => {
+      window.ethereum.removeListener('accountsChanged', accountWasChanged);
+      window.ethereum.removeListener('disconnect', clearAccount);
+    }
+  }, []);
 
   return (
     <Web3Context.Provider value={{ account, connectToMetaMask, error }}>

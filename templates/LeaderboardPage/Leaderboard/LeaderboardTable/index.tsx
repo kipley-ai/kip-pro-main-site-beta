@@ -2,8 +2,6 @@ import React from "react";
 import Image from "next/image";
 import styles from "./LeaderboardTable.module.sass";
 
-import { leaderboardAccounts } from "@/mocks/leaderboard";
-
 type UserProfile = {
     position: number;
     profilePic: string;
@@ -28,7 +26,7 @@ const LeaderboardTable: React.FC<{ users: UserProfile[] }> = ({ users }) => (
             </tr>
         </thead>
         <tbody>
-            {leaderboardAccounts.map((user) => (
+            {users.map((user) => (
                 <tr key={user.position}>
                     <td>{user.position}</td>
                     <td className={styles.user}>
