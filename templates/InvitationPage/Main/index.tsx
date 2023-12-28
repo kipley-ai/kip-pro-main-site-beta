@@ -22,15 +22,16 @@ const Main = ({ handleValidateCode }: MainProps) => {
             <div className={cn("container", styles.container)}>
                 <div className={styles.wrap}>
                     <div className={cn("h2", styles.title)}>
-                        Do you have invite code?
+                        Please input your<br />
+                        Invite Code
                     </div>
-                    <div className={styles.info}>
+                    {/* <div className={styles.info}>
                         <p>Enter your invite code here</p>
-                    </div>
+                    </div> */}
                     <div className={styles.input}>
                         <Field
                             className={styles.field}
-                            placeholder="XXX XXX"
+                            placeholder="Enter your invite code here"
                             value={code}
                             onChange={(e: any) => setCode(e.target.value)}
                         />
