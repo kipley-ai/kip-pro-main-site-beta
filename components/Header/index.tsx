@@ -44,7 +44,7 @@ const Header = ({}: HeaderProps) => {
           {pathname !== "/invite" ? (
             <div className={styles.links}>
               <Link href="/leaderboard">
-                <a className={cn("a", styles.link)}>
+                <a className={cn("a", styles.codeLink)}>
                   <span className={styles["link-text"]}>Invitation Code</span>
                 </a>
               </Link>

@@ -1,4 +1,5 @@
 @import @/styles/helpers
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap')
 
 .header
     position: fixed
@@ -24,7 +25,7 @@
             transform: scale(0.6)
             +m
                 transform-origin: center
-        
+
     &.open.visible
         background: transparent
 
@@ -44,12 +45,23 @@
     +t
         display: none
 
-.link
-    margin-right: 40px
+.link, .codeLink
+    margin-right: 3rem
+    padding: 0.5rem 0
+    font-size: 0.9em
+
+.codeLink
+    background: linear-gradient(black, black) padding-box, linear-gradient(to right, #ffadad, #ffd6a5, #fdffb6, #caffbf, #9bf6ff, #a0c4ff, #bdb2ff) border-box
+    border-radius: 10px
+    border: 3px solid transparent
+    font-family: 'Source Code Pro', monospace
+    font-size: 0.8em
+    padding: 0.5rem 1rem
 
 .link-text
     color: white
     font-weight: 500
+    text-transform: uppercase
 
 .link-text:hover
     color: #01F7FF
