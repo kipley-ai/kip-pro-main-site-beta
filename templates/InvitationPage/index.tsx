@@ -3,10 +3,42 @@ import Layout from "@/components/Layout";
 import Main from "./Main";
 import Congratulations from "./Congratulations";
 import Tasks from "./Tasks";
+import toast from "react-hot-toast";
+import { useWeb3Context } from "@/components/GetInvolvedButton/Web3Context";
 
 const InvitationPage = () => {
-    const [hasLanded, setHasLanded] = useState(false);
+    const [hasLanded, setHasLanded] = useState<boolean>(false);
     const scrollToRef = useRef(null);
+    const { account } = useWeb3Context();
+
+    const handleValidateCode = async (code: string) => {
+        if (!account) {
+            toast.error("Please connect your wallet first.");
+            return;
+        }
+        
+        try {
+            const res = await fetch("/api/campaigns/validate-code", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    wallet_address: account,
+                    invitation_code: code,
+                }),
+            });
+
+            if (res.ok) {
+                toast.success("Invite code is valid.");
+                setHasLanded(true);
+            } else {
+                toast.error("Invite code is invalid.");
+            }
+        } catch (error) {
+            console.error("Error calling the API:", error);
+        }
+    };
 
     return (
         <Layout>
@@ -16,7 +48,7 @@ const InvitationPage = () => {
                     <Tasks />
                 </>
             ) : (
-                <Main setHasLanded={setHasLanded} />
+                <Main handleValidateCode={handleValidateCode} />
             )}
         </Layout>
     );

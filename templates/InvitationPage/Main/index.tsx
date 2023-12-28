@@ -12,18 +12,15 @@ const images = [
     "/images/figures/figure-5.png",
 ];
 
-type MainProps = {
-    setHasLanded: (setHasLanded: boolean) => void;
-};
+type MainProps = { handleValidateCode: (code: string) => void };
 
-const Main = ({ setHasLanded }: MainProps) => {
-    const [question, setQuestion] = useState("");
+const Main = ({ handleValidateCode }: MainProps) => {
+    const [code, setCode] = useState("");
 
     return (
         <div className={styles.section}>
             <div className={cn("container", styles.container)}>
                 <div className={styles.wrap}>
-                    {/* <div className={styles.stage}>join onix</div> */}
                     <div className={cn("h2", styles.title)}>
                         Do you have invite code?
                     </div>
@@ -34,13 +31,13 @@ const Main = ({ setHasLanded }: MainProps) => {
                         <Field
                             className={styles.field}
                             placeholder="XXX XXX"
-                            value={question}
-                            onChange={(e: any) => setQuestion(e.target.value)}
+                            value={code}
+                            onChange={(e: any) => setCode(e.target.value)}
                         />
                     </div>
                     <div className={styles.buttons}>
                         <a
-                            onClick={() => setHasLanded(true)}
+                            onClick={() => handleValidateCode(code)}
                             className={cn("button", styles.button)}
                         >
                             <span>APPLY</span>
