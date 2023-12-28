@@ -13,9 +13,8 @@
 .content
     h2
         margin-bottom: 32px
-
-.blockquote
-    margin-top: 80px
+    p
+        font-size: 14pt
 
 .preview
     position: relative
@@ -186,8 +185,11 @@
     border-collapse: collapse
     z-index: 10
 
+    th
+        color: $n3
+
     th, td
-        padding: 8px
+        padding: 1rem 6px
         text-align: left
         border-bottom: 1px solid #ddd
 
@@ -199,10 +201,12 @@
 
 .checkmarkIcon
     display: inline-block
-    width: 20px
-    height: 20px
+    width: 30px
+    height: 30px
     border-radius: 50%
-    background-color: green
-    color: white
+    background-color: transparent
+    border: 1px solid #01F7FF
+    color: transparent
+    text-shadow: 0 0 0 #01F7FF
     text-align: center
-    line-height: 20px
+    line-height: 30px

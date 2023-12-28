@@ -35,8 +35,8 @@ const LeaderboardTable: React.FC<{ users: UserProfile[] }> = ({ users }) => (
                         <Image
                             src={user.profilePic}
                             alt={user.fullName}
-                            width={50}
-                            height={50}
+                            width={55}
+                            height={55}
                         />
                         <div className={styles.userDetails}>
                             <div className={styles.fullName}>

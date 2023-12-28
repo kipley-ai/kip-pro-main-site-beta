@@ -1,7 +1,7 @@
 export const leaderboardAccounts = [
     {
         position: 1,
-        profilePic: "/path/to/profile1.jpg",
+        profilePic: "/images/avatar-1.jpg",
         fullName: "Alice Johnson",
         username: "alicej",
         twitter: "@alicej",
@@ -11,7 +11,7 @@ export const leaderboardAccounts = [
     },
     {
         position: 2,
-        profilePic: "/path/to/profile2.jpg",
+        profilePic: "/images/avatar-2.jpg",
         fullName: "Bob Smith",
         username: "bobs",
         twitter: "@bobsmith",
@@ -21,7 +21,7 @@ export const leaderboardAccounts = [
     },
     {
         position: 3,
-        profilePic: "/path/to/profile3.jpg",
+        profilePic: "/images/avatar-3.jpg",
         fullName: "Charlie Brown",
         username: "charlieb",
         twitter: "@charliebrown",

@@ -23,6 +23,16 @@ const Item = ({ className, itemWrapClass, item }: ItemProps) => {
         { code: "BCDE7890FGH", expiryDate: "10/04/2024", used: false },
     ];
 
+    codes.sort((a, b) => {
+        if (a.code < b.code) {
+            return -1;
+        }
+        if (a.code > b.code) {
+            return 1;
+        }
+        return 0;
+    });
+
     return (
         <div className={cn(styles.item, className)}>
             <div className={cn(styles.wrap, itemWrapClass)}>
