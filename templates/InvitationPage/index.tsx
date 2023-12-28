@@ -38,7 +38,7 @@ const InvitationPage = () => {
             if (data.is_ok) {
                 setHasLanded(true);
                 toast.success("Invite code successfully applied!");
-                localStorage.setItem("hasLanded", true);
+                localStorage.setItem("hasLanded", "true");
             } else {
                 if (data.message === "Wallet already validated.") {
                     toast.error("Wallet already validated.");
