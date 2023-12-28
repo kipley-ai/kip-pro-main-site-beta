@@ -12,9 +12,11 @@ const images = [
     "/images/figures/figure-5.png",
 ];
 
-type MainProps = {};
+type MainProps = {
+    setHasLanded: (setHasLanded: boolean) => void;
+};
 
-const Main = ({}: MainProps) => {
+const Main = ({ setHasLanded }: MainProps) => {
     const [question, setQuestion] = useState("");
 
     return (
@@ -37,11 +39,12 @@ const Main = ({}: MainProps) => {
                         />
                     </div>
                     <div className={styles.buttons}>
-                        <Link href="/campaigns/tasks">
-                            <a className={cn("button", styles.button)}>
-                                <span>APPLY</span>
-                            </a>
-                        </Link>
+                        <a
+                            onClick={() => setHasLanded(true)}
+                            className={cn("button", styles.button)}
+                        >
+                            <span>APPLY</span>
+                        </a>
                     </div>
                 </div>
                 <div className={styles.images}>
