@@ -23,16 +23,17 @@ const validateCodeHandler = async (
     if (req.method === "POST") {
         const { wallet_address, invitation_code }: RequestBody = req.body;
 
-        if (!wallet_address || !invitation_code) {
-            res.status(400).json({
-                error: "Wallet address and invitation code are required",
+        if (!wallet_address) {
+            res.status(401).json({
+                is_ok: false,
+                message: "Please connect your wallet first.",
             });
             return;
         }
 
         try {
             const response = await axios.post<ExternalApiResponse>(
-                "https://kb-platform-test.kipley.ai/whitelist_wallet_activate",
+                `${process.env.NEXT_PUBLIC_API_URL}/whitelist_wallet_activate`,
                 {
                     wallet_address,
                     invitation_code,
@@ -40,13 +41,14 @@ const validateCodeHandler = async (
             );
 
             if (response.data.data.is_ok) {
-              res.status(200).json(response.data.data);
+                res.status(200).json(response.data.data);
             } else {
-              res.status(400).json(response.data.data);
+                res.status(400).json(response.data.data);
             }
         } catch (error) {
             res.status(500).json({
-                error: "Error contacting the external API",
+                is_ok: false,
+                message: "Error contacting the external API.",
             });
         }
     } else {

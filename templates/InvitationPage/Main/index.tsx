@@ -22,8 +22,7 @@ const Main = ({ handleValidateCode }: MainProps) => {
             <div className={cn("container", styles.container)}>
                 <div className={styles.wrap}>
                     <div className={cn("h2", styles.title)}>
-                        Please input your<br />
-                        Invite Code
+                        Please input your Invite Code
                     </div>
                     {/* <div className={styles.info}>
                         <p>Enter your invite code here</p>
