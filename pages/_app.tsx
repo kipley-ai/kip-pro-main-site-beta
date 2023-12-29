@@ -6,6 +6,42 @@ import Script from "next/script";
 import { Web3Provider } from "../components/GetInvolvedButton/Web3Context"
 import { Toaster } from 'react-hot-toast';
 
+import '@rainbow-me/rainbowkit/styles.css';
+import {
+  getDefaultWallets,
+  RainbowKitProvider,
+} from '@rainbow-me/rainbowkit';
+import { configureChains, createConfig, WagmiConfig } from 'wagmi';
+import {
+  mainnet,
+  polygon,
+  optimism,
+  arbitrum,
+  base,
+  zora,
+} from 'wagmi/chains';
+import { alchemyProvider } from 'wagmi/providers/alchemy';
+import { publicProvider } from 'wagmi/providers/public';
+
+const { chains, publicClient } = configureChains(
+  [mainnet, polygon, optimism, arbitrum, base, zora],
+  [
+    publicProvider(),
+  ]
+);
+
+const { connectors } = getDefaultWallets({
+  appName: 'KIP Protocol',
+  projectId: 'KIP-PRO',
+  chains
+});
+
+const wagmiConfig = createConfig({
+  autoConnect: true,
+  connectors,
+  publicClient
+})
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -24,10 +60,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <ParallaxProvider>
-        <Web3Provider>
-          <Component {...pageProps} />
-          <Toaster />
-        </Web3Provider>
+        <WagmiConfig config={wagmiConfig}>
+          <RainbowKitProvider chains={chains}>
+            <Component {...pageProps} />
+            <Toaster />
+          </RainbowKitProvider>
+        </WagmiConfig>
       </ParallaxProvider>
     </>
   );
