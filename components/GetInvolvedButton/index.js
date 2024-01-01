@@ -1,19 +1,9 @@
-import { useWeb3Context } from "./Web3Context";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import Image from "next/image";
 
 const GetInvolvedButton = ({ buttonStyle }) => {
-    const { connectToMetaMask, account } = useWeb3Context();
-
     return (
         <>
-            {/* <button
-                disabled={account}
-                className={buttonStyle}
-                onClick={connectToMetaMask}
-            >
-                <span>{account ? "Connected" : "Get Involved"}</span>
-            </button> */}
             <ConnectButton.Custom>
                 {({
                     account,
@@ -23,8 +13,6 @@ const GetInvolvedButton = ({ buttonStyle }) => {
                     openConnectModal,
                     mounted,
                 }) => {
-                    // Note: If your app doesn't use authentication, you
-                    // can remove all 'authenticationStatus' checks
                     const ready = mounted;
                     const connected = ready && account && chain;
 

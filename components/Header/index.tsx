@@ -10,7 +10,6 @@ import { useRouter } from "next/router";
 import { headerNavigation } from "@/constants/navigation";
 import { socials } from "@/constants/socials";
 import GetInvolvedButton from "@/components/GetInvolvedButton";
-import { Web3Provider } from "@/components/GetInvolvedButton/Web3Context";
 
 type HeaderProps = {};
 
@@ -25,7 +24,6 @@ const Header = ({}: HeaderProps) => {
   const { pathname } = useRouter();
 
   return (
-    <Web3Provider>
       <header
         className={cn(
           {
@@ -88,7 +86,6 @@ const Header = ({}: HeaderProps) => {
           />
         </div>
       </header>
-    </Web3Provider>
   );
 };
 

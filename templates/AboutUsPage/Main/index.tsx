@@ -5,14 +5,13 @@ import Scroll from "@/components/Scroll";
 import Image from "@/components/Image";
 import ProgressBar from "./ProgressBar";
 import GetInvolvedButton from "@/components/GetInvolvedButton";
-import { Web3Provider } from "@/components/GetInvolvedButton/Web3Context";
 
 type MainProps = {
   scrollToRef?: any;
 };
 
 const Main = ({ scrollToRef }: MainProps) => (
-  <Web3Provider>
+
     <div className={cn("section", styles.section)}>
       <div className={cn("container", styles.container)}>
         <div className={styles.wrap}>
@@ -64,7 +63,7 @@ const Main = ({ scrollToRef }: MainProps) => (
         </Parallax>
       </div>
     </div>
-  </Web3Provider>
+
 );
 
 export default Main;

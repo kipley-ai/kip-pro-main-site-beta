@@ -3,7 +3,6 @@ import type { AppProps } from "next/app";
 import { ParallaxProvider } from "react-scroll-parallax";
 import "../styles/app.sass";
 import Script from "next/script";
-import { Web3Provider } from "../components/GetInvolvedButton/Web3Context"
 import { Toaster } from 'react-hot-toast';
 
 import '@rainbow-me/rainbowkit/styles.css';

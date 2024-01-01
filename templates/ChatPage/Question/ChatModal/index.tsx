@@ -7,7 +7,7 @@ import { chat } from "@/mocks/chat";
 import Field from "@/components/Field";
 
 import useWebSocket, { ReadyState } from "react-use-websocket";
-import { useWeb3Context } from "@/components/GetInvolvedButton/Web3Context";
+import { useAccount } from 'wagmi';
 
 const currentTimestamp: string = "2023-12-20T10:02:30.000Z";
 const myUsername: string = "KIPtest";
@@ -118,7 +118,7 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
         [ReadyState.UNINSTANTIATED]: "Uninstantiated",
     }[readyState2];
 
-    const { account } = useWeb3Context();
+    const { address, isConnected } = useAccount();
 
     const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
         if (e.target === e.currentTarget) {
@@ -360,7 +360,7 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
                 >
                     <div className={cn("h4", styles.walletTitle)} style={{ lineHeight: '1.2', letterSpacing: '-0.5px' }}>Wallet Address</div>
                     <div className={cn("p", styles.walletAddress)} style={{ lineHeight: '1.2', letterSpacing: '-0.5px' }}>
-                        [ {account} ]
+                        [ {address} ]
                     </div>
                     
                     {/* <div className={styles.walletDescription}>

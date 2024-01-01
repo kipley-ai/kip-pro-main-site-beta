@@ -8,8 +8,9 @@ import Card from "@/components/Card";
 import Field from "@/components/Field";
 import ChatModal from "./ChatModal";
 import { v4 as uuid } from "uuid";
+import toast from "react-hot-toast";
 import { accounts } from "@/mocks/twitter-accounts";
-import { useWeb3Context } from "@/components/GetInvolvedButton/Web3Context";
+import { useAccount } from "wagmi";
 import { getContract } from "@/smart-contract/index";
 
 type QuestionProps = {};
@@ -18,7 +19,7 @@ const Question = ({}: QuestionProps) => {
   const [selectedMembers, setSelectedMembers] = useState<string[]>([]);
   const [selectedKBid, setselectedKBid] = useState<string[]>([]);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const { account, connectToMetaMask } = useWeb3Context();
+  const { address, isConnected } = useAccount();
 
   // Function to toggle a team member's selection and colorization
   const toggleSelection = (name: string, kb_id?: string) => {
@@ -44,7 +45,7 @@ const Question = ({}: QuestionProps) => {
   };
 
   const handleSiriClick = async () => {
-    if (account) {
+    if (address) {
       const selected = selectedKBid.length;
 
       if (!selected) return;
@@ -85,7 +86,7 @@ const Question = ({}: QuestionProps) => {
         console.log("error log token amount", selected * 10);
       }
     } else {
-      connectToMetaMask();
+      toast.error("Please connect your wallet first.");
     };
   };
 
