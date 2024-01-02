@@ -50,7 +50,7 @@ const InvitationPage = () => {
                     "/api/campaigns/validate-code",
                     {
                         wallet_address: address,
-                        invitation_code: "",
+                        invitation_code: "TEST-CODE",
                     },
                 );
 
@@ -60,28 +60,22 @@ const InvitationPage = () => {
                     data.is_ok &&
                     data.message === "Wallet already validated."
                 ) {
-                    // Check if the session storage is valid
-                    const sessionIsAuthenticated =
-                        sessionStorage.getItem("isAuthenticated");
-
-                    if (sessionIsAuthenticated === null) {
-                        // Set isAuthenticated to true and store it in sessionStorage
-                        setIsAuthenticated(true);
-                        sessionStorage.setItem("isAuthenticated", "true");
-                        toast.success("Your wallet was already validated.", {
-                            id: "validate-success",
-                        });
-                    } else {
-                        // Session storage is already set, no need to set isAuthenticated again
-                        setIsAuthenticated(true);
-                    }
+                    setIsAuthenticated(true);
+                    sessionStorage.setItem("address", address);
+                    toast.success(data.message, {
+                        id: "validate-success",
+                    });
                 }
             } catch (error: any) {
                 console.error("Error:", error.response.data);
             }
         };
 
-        if (isConnected) {
+        const storedAddress = sessionStorage.getItem("address");
+        if (isConnected && storedAddress === address) {
+            setIsAuthenticated(true);
+        } else {
+            setIsAuthenticated(false);
             validateWallet();
         }
     }, [isConnected, address]);
