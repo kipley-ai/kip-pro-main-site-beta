@@ -46,7 +46,7 @@ const Details = ({ scrollToRef }: DetailsProps) => (
             >
                 <Player
                     autoplay
-                    keepLastFrame
+                    loop
                     src="images/figures/3d-icons-9.json"
                     style={{ height: '900px', width: '900px' }}
                     >

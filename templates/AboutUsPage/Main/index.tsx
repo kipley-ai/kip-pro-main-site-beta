@@ -29,6 +29,8 @@ const Main = ({ scrollToRef }: MainProps) => (
           </button> */}
             <GetInvolvedButton
               buttonStyle={cn("button", styles["get-involved-button"])}
+              chainStyle={styles.chainButton}
+              wrapStyle={""}
             />
           </div>
           {scrollToRef ? (

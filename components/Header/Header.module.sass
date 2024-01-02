@@ -10,7 +10,7 @@
     padding: 72px 0
     transition: all .2s
     +w
-        padding: 40px 0
+        padding: 55px 0
     +m
         padding: 24px 0
     &.visible
@@ -49,6 +49,8 @@
     margin-right: 3rem
     padding: 0.5rem 0
     font-size: 0.9em
+    +d
+        margin-right: 1.5rem
 
 .codeLink
     background: linear-gradient(black, black) padding-box, linear-gradient(to right, #ffadad, #ffd6a5, #fdffb6, #caffbf, #9bf6ff, #a0c4ff, #bdb2ff) border-box
@@ -104,3 +106,16 @@
     &:hover
         span
             background: lighten(rgba(1, 247, 255, 0.5), 3)
+
+.chainButton
+    display: flex
+    align-items: center
+    color: white
+    +t
+        display: none
+    +m
+        display: none
+
+.getInvolvedButtonWrap
+    display: flex
+    gap: 12px

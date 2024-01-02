@@ -27,12 +27,6 @@ const HomePage = () => {
       <UpToDate />
       <AboutUsPageMain />
       <Quests scrollToRef={scrollToRef} />
-      <Posts
-        className="section"
-        title="Your gateway to everything Onix."
-        info="Stay current on the latest Onix project developments, news, and content, updated daily."
-        posts={posts}
-      />
       {/* <AboutUs />
       <Statistics />
       <Solutions />

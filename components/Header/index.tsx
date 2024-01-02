@@ -83,6 +83,8 @@ const Header = ({}: HeaderProps) => {
           </div>
           <GetInvolvedButton
             buttonStyle={cn("button", styles["get-involved-button"])}
+            chainStyle={styles.chainButton}
+            wrapStyle={styles.getInvolvedButtonWrap}
           />
         </div>
       </header>

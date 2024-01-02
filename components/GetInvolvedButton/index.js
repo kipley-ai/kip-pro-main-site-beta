@@ -1,7 +1,9 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import Image from "next/image";
+import cn from "classnames";
+import styles from "./GetInvolvedButton.module.sass";
 
-const GetInvolvedButton = ({ buttonStyle }) => {
+const GetInvolvedButton = ({ buttonStyle, chainStyle, wrapStyle }) => {
     return (
         <>
             <ConnectButton.Custom>
@@ -51,14 +53,10 @@ const GetInvolvedButton = ({ buttonStyle }) => {
                                 }
 
                                 return (
-                                    <div style={{ display: "flex", gap: 12 }}>
+                                    <div className={wrapStyle}>
                                         <button
                                             onClick={openChainModal}
-                                            style={{
-                                                display: "flex",
-                                                alignItems: "center",
-                                                color: "white",
-                                            }}
+                                            className={chainStyle}
                                             type="button"
                                         >
                                             {chain.hasIcon && (

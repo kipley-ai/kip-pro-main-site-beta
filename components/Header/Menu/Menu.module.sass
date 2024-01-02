@@ -97,6 +97,8 @@
     display: flex
     flex-wrap: wrap
     margin: auto 0
+    +t
+        top: 2rem
 
 .link
     flex: 0 0 50%
@@ -104,6 +106,7 @@
     padding-right: 40px
     color: $n3
     transition: color .2s
+    text-transform: uppercase
     +w
         margin: 24px 0
     +d
@@ -111,8 +114,8 @@
         font-size: 48px
     +t
         flex: 0 0 100%
-        font-size: 40px
-        line-height: 48px
+        font-size: 30px
+        line-height: 30px
     +m
         margin: 12px 0
         font-size: 24px
@@ -120,6 +123,17 @@
     &:hover,
     &.active
         color: $n1
+
+.codeLink
+    background: linear-gradient(black, black) padding-box, linear-gradient(to right, #ffadad, #ffd6a5, #fdffb6, #caffbf, #9bf6ff, #a0c4ff, #bdb2ff) border-box
+    border-radius: 10px
+    border: 3px solid transparent
+    font-family: 'Source Code Pro', monospace
+    font-size: 0.5em
+    color: $n1
+    text-transform: uppercase
+    padding: 0.5rem 1rem
+    
 
 .line
     position: relative
@@ -134,7 +148,7 @@
     flex: 0 0 50%
     +t
         flex: 0 0 auto
-        margin-bottom: 24px
+        margin: 24px 0
 
 .note
     +base
@@ -164,7 +178,7 @@
         width: 290px
 
 .get-involved-button
-    margin: 20px 0
+    margin: 0
     span
         position: relative
         z-index: 1
@@ -192,3 +206,12 @@
     &:hover
         span
             background: lighten(rgba(1, 247, 255, 0.5), 3)
+
+.chainButton
+    display: flex
+    align-items: center
+    color: white
+
+.getInvolvedButtonWrap
+    display: flex
+    gap: 12px

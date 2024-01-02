@@ -9,6 +9,7 @@ import NavLink from "@/components/NavLink";
 import Socials from "@/components/Socials";
 import Image from "@/components/Image";
 import GetInvolvedButton from "@/components/GetInvolvedButton";
+import Link from "next/link";
 
 type NavigationType = {
     title: string;
@@ -125,9 +126,20 @@ const Menu = ({ navigation, socials, onClick }: MenuProps) => {
                                               </NavLink>
                                           )
                                       )}
-                                      <GetInvolvedButton
-                                        buttonStyle={cn("button", styles["get-involved-button"])}
-                                      />
+                                      <div className={styles.link}>
+                                        <Link href="/campaigns">
+                                          <a className={cn("a", styles.codeLink)}>
+                                            <span>Join Campaigns Now</span>
+                                          </a>
+                                        </Link>
+                                      </div>
+                                      <div className={styles.link}>
+                                        <GetInvolvedButton
+                                          buttonStyle={cn("button", styles["get-involved-button"])}
+                                          chainStyle={styles.chainButton}
+                                          wrapStyle={styles.getInvolvedButtonWrap}
+                                        />
+                                      </div>
                                   </nav>
                                   <div className={styles.line}>
                                       <Socials
