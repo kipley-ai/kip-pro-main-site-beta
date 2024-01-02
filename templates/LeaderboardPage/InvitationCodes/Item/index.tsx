@@ -37,13 +37,25 @@ const Item = ({ className, itemWrapClass, item }: ItemProps) => {
         }, 2000);
     };
 
-    const formatDate = (dateString: string) => {
-        const date = new Date(dateString);
-        const day = date.getDate().toString().padStart(2, "0");
-        const month = (date.getMonth() + 1).toString().padStart(2, "0"); // Adding 1 because months are 0-based
-        const year = date.getFullYear().toString();
+    const formatDate = (dateString: string): string => {
+        const givenDate = new Date(dateString);
+        const formattedDate = givenDate.toLocaleDateString("en-GB");
+        return formattedDate;
+    };
 
-        return `${day}/${month}/${year}`;
+    const isDateExpired = (validStart: string, validEnd: string): boolean => {
+        const validStartDate = new Date(validStart);
+        const validEndDate = new Date(validEnd);
+        const currentDate = new Date().toLocaleString("en-GB", {
+            timeZone: "UTC",
+        });
+        const validStartTimestamp = new Date(validStartDate).getTime();
+        const validEndTimestamp = new Date(validEndDate).getTime();
+        const currentTimestamp = new Date(currentDate).getTime();
+        return (
+            currentTimestamp < validStartTimestamp ||
+            currentTimestamp > validEndTimestamp
+        );
     };
 
     useEffect(() => {
@@ -100,12 +112,24 @@ const Item = ({ className, itemWrapClass, item }: ItemProps) => {
                             {codes.map((item, index) => (
                                 <tr
                                     key={index}
-                                    className={item.used ? styles.used : ""}
+                                    className={
+                                        item.used ||
+                                        isDateExpired(
+                                            item.valid_start,
+                                            item.valid_end,
+                                        )
+                                            ? styles.used
+                                            : ""
+                                    }
                                 >
                                     <td>{item.invite_code}</td>
                                     <td>{formatDate(item.valid_end)}</td>
                                     <td>
-                                        {item.used ? (
+                                        {item.used ||
+                                        isDateExpired(
+                                            item.valid_start,
+                                            item.valid_end,
+                                        ) ? (
                                             <span
                                                 className={styles.checkmarkIcon}
                                             >

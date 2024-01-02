@@ -31,7 +31,7 @@ const { chains, publicClient } = configureChains(
 
 const { connectors } = getDefaultWallets({
   appName: 'KIP Protocol',
-  projectId: 'KIP-PRO',
+  projectId: 'f53ae5cdc0007d6f85bd532c0edf4d3d',
   chains
 });
 

@@ -31,6 +31,14 @@ const validateCodeHandler = async (
             return;
         }
 
+        if (!invitation_code) {
+            res.status(400).json({
+                is_ok: false,
+                message: "Invite code is empty.",
+            });
+            return;
+        }
+
         try {
             const response = await axios.post<ExternalApiResponse>(
                 `${process.env.NEXT_PUBLIC_API_URL}/whitelist_wallet_activate`,
@@ -43,7 +51,28 @@ const validateCodeHandler = async (
             if (response.data.data.is_ok) {
                 res.status(200).json(response.data.data);
             } else {
-                res.status(400).json(response.data.data);
+                switch (response.data.data.message) {
+                    case "Invitation code not found.":
+                        res.status(404).json({
+                            is_ok: false,
+                            message: "Invite code not found.",
+                        });
+                        break;
+                    case "Invitation code has been used.":
+                        res.status(400).json({
+                            is_ok: false,
+                            message: "Invite code has been used.",
+                        });
+                        break;
+                    case "Invitation code has been expired.":
+                        res.status(400).json({
+                            is_ok: false,
+                            message: "Invite code has expired.",
+                        });
+                        break;
+                    default:
+                        res.status(400).json(response.data.data);
+                }
             }
         } catch (error) {
             res.status(500).json({
