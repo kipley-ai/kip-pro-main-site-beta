@@ -61,7 +61,9 @@ const InvitationPage = () => {
                     data.message === "Wallet already validated."
                 ) {
                     setIsAuthenticated(true);
-                    sessionStorage.setItem("address", address);
+                    if (address) {
+                        sessionStorage.setItem("address", address);
+                    }
                     toast.success(data.message, {
                         id: "validate-success",
                     });
