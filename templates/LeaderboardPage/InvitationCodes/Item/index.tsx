@@ -59,7 +59,6 @@ const Item = ({ className, itemWrapClass, item }: ItemProps) => {
     };
 
     useEffect(() => {
-        // Function to call the API
         const fetchInviteCodes = async () => {
             try {
                 const response = await fetch("/api/campaigns/get-codes", {
@@ -67,7 +66,7 @@ const Item = ({ className, itemWrapClass, item }: ItemProps) => {
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({ wallet_address: address }),
+                    body: JSON.stringify({ wallet_address: "a" }),
                 });
 
                 if (!response.ok) {
@@ -75,15 +74,10 @@ const Item = ({ className, itemWrapClass, item }: ItemProps) => {
                 }
 
                 const data = await response.json();
-                if (data.length === 0) {
-                    router.push("/campaigns");
-                    toast.error("Please complete all of your tasks first.");
-                    return;
-                }
                 setCodes(data);
             } catch (err: any) {
                 console.error(err.message);
-                toast.error("Error fetching invite codes.");
+                toast.error(err.message);
             }
         };
 
