@@ -103,71 +103,84 @@ const Item = ({ className, itemWrapClass, item }: ItemProps) => {
 
             <Card className={styles.card} url={item.url} color={item.color}>
                 <div className={styles.content}>
-                    <table className={styles.invitationCodes}>
-                        <thead>
-                            <tr>
-                                <th>INVITE CODE</th>
-                                <th>EXPIRY DATE</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {codes.map((item, index) => (
-                                <tr
-                                    key={index}
-                                    className={
-                                        item.used ||
-                                        isDateExpired(
-                                            item.valid_start,
-                                            item.valid_end,
-                                        )
-                                            ? styles.used
-                                            : ""
-                                    }
-                                >
-                                    <td>{item.invite_code}</td>
-                                    <td>{formatDate(item.valid_end)}</td>
-                                    <td>
-                                        {item.used ||
-                                        isDateExpired(
-                                            item.valid_start,
-                                            item.valid_end,
-                                        ) ? (
-                                            <span
-                                                className={styles.checkmarkIcon}
-                                            >
-                                                ✔️
-                                            </span>
-                                        ) : (
-                                            <button
-                                                className={styles.copyButton}
-                                                onClick={() =>
-                                                    copyToClipboard(
-                                                        item.invite_code,
-                                                        index,
-                                                    )
-                                                }
-                                            >
-                                                {isCopied[index] ? (
-                                                    <CopySuccess
-                                                        size="32"
-                                                        color="#01F7FF"
-                                                        variant="Bold"
-                                                    />
-                                                ) : (
-                                                    <Copy
-                                                        size="32"
-                                                        color="#01F7FF"
-                                                        variant="Bold"
-                                                    />
-                                                )}
-                                            </button>
-                                        )}
-                                    </td>
+                    {codes.length > 0 ? (
+                        <table className={styles.invitationCodes}>
+                            <thead>
+                                <tr>
+                                    <th>INVITE CODE</th>
+                                    <th>EXPIRY DATE</th>
+                                    <th></th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {codes.map((item, index) => (
+                                    <tr
+                                        key={index}
+                                        className={
+                                            item.used ||
+                                            isDateExpired(
+                                                item.valid_start,
+                                                item.valid_end,
+                                            )
+                                                ? styles.used
+                                                : ""
+                                        }
+                                    >
+                                        <td>{item.invite_code}</td>
+                                        <td>{formatDate(item.valid_end)}</td>
+                                        <td>
+                                            {item.used ||
+                                            isDateExpired(
+                                                item.valid_start,
+                                                item.valid_end,
+                                            ) ? (
+                                                <span
+                                                    className={
+                                                        styles.checkmarkIcon
+                                                    }
+                                                >
+                                                    ✔️
+                                                </span>
+                                            ) : (
+                                                <button
+                                                    className={
+                                                        styles.copyButton
+                                                    }
+                                                    onClick={() =>
+                                                        copyToClipboard(
+                                                            item.invite_code,
+                                                            index,
+                                                        )
+                                                    }
+                                                >
+                                                    {isCopied[index] ? (
+                                                        <CopySuccess
+                                                            size="32"
+                                                            color="#01F7FF"
+                                                            variant="Bold"
+                                                        />
+                                                    ) : (
+                                                        <Copy
+                                                            size="32"
+                                                            color="#01F7FF"
+                                                            variant="Bold"
+                                                        />
+                                                    )}
+                                                </button>
+                                            )}
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    ) : (
+                        <div className={styles.completeTasks}>
+                            <p>
+                                Please complete all the tasks <br />
+                                first to claim invite code
+                            </p>
+                        </div>
+                    )}
                 </div>
             </Card>
         </div>
