@@ -75,6 +75,11 @@ const Item = ({ className, itemWrapClass, item }: ItemProps) => {
                 }
 
                 const data = await response.json();
+                if (data.length === 0) {
+                    router.push("/campaigns");
+                    toast.error("Please complete all of your tasks first.");
+                    return;
+                }
                 setCodes(data);
             } catch (err: any) {
                 console.error(err.message);
@@ -88,7 +93,7 @@ const Item = ({ className, itemWrapClass, item }: ItemProps) => {
             router.push("/campaigns");
             toast.error("Please connect your wallet first.");
         }
-    });
+    }, [isConnected, address, router]);
 
     return (
         <div className={cn(styles.item, className)}>

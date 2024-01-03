@@ -67,7 +67,7 @@ const Congratulations = ({}: CongratulationsProps) => (
                                         src={item.image}
                                         layout="fill"
                                         objectFit="cover"
-                                        alt="Post"
+                                        alt={item.title}
                                     />
                                 </div>
                                 <div className={styles.details}>

@@ -121,7 +121,7 @@ const Tasks = ({}: TasksProps) => {
                                 src={item.image}
                                 layout="fill"
                                 objectFit="cover"
-                                alt="Careers"
+                                alt={item.title}
                             />
                         </div>
                     </div>
