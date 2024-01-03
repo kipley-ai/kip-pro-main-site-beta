@@ -66,7 +66,7 @@ const Item = ({ className, itemWrapClass, item }: ItemProps) => {
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({ wallet_address: "a" }),
+                    body: JSON.stringify({ wallet_address: address }),
                 });
 
                 if (!response.ok) {
@@ -93,7 +93,11 @@ const Item = ({ className, itemWrapClass, item }: ItemProps) => {
         <div className={cn(styles.item, className)}>
             <div className={cn(styles.wrap, itemWrapClass)}>
                 <div className={cn("content", styles.content)}>
-                    {item.content}
+                    <h2>Your Invitation Code</h2>
+                    <p>
+                        Follow us on Twitter today and experience the power of
+                        Knowledge in your life!
+                    </p>
                 </div>
             </div>
 

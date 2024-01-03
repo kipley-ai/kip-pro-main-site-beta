@@ -2,13 +2,15 @@
 
 .item
     display: flex
+    flex-direction: column
     justify-content: space-between
+    align-items: flex-start
     +t
         display: block
 
 .wrap
     flex-grow: 1
-    max-width: 45%
+    max-width: 65%
 
 .content
     h2
@@ -118,7 +120,7 @@
 .card
     float: left
     width: calc(60% - 56px)
-    margin: 90px 28px 0
+    margin: 1rem 0 0
     padding: 72px 60px 40px
     +t
         width: calc(50% - 32px)
@@ -165,7 +167,7 @@
         word-break: break-all
 
 .content
-    margin-bottom: 54px
+    margin-bottom: 1rem
 
 .foot
     display: flex
