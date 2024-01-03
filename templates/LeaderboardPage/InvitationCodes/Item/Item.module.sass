@@ -8,10 +8,6 @@
     +t
         display: block
 
-.wrap
-    flex-grow: 1
-    max-width: 65%
-
 .content
     h2
         margin-bottom: 32px
@@ -119,7 +115,8 @@
 
 .card
     float: left
-    width: calc(60% - 56px)
+    // width: calc(60% - 56px)
+    width: 100%
     margin: 1rem 0 0
     padding: 72px 60px 40px
     +t
@@ -168,6 +165,8 @@
 
 .content
     margin-bottom: 1rem
+    h2
+        font-size: 2.75rem
 
 .foot
     display: flex
@@ -190,10 +189,12 @@
     th
         color: $n3
 
+    td
+        border-top: 2px solid #363636
+
     th, td
         padding: 1rem 6px
         text-align: left
-        border-bottom: 1px solid #ddd
 
 .copyButton
     color: white

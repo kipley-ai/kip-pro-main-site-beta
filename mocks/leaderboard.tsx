@@ -6,7 +6,7 @@ export const leaderboardAccounts = [
         username: "alicej",
         twitter: "@alicej",
         discord: "alicej#1234",
-        address: "abcd1234efgh5678",
+        address: "0x7b95c28e6a6f8336d3eb57bf37dd47c4b27b1001",
         loyaltyPoints: 1200,
     },
     {
@@ -16,7 +16,7 @@ export const leaderboardAccounts = [
         username: "bobs",
         twitter: "@bobsmith",
         discord: "bobs#5678",
-        address: "ijkl9012mnop3456",
+        address: "0x9a4e4b3b344e0833ca5aebc10ca053254fe975d3",
         loyaltyPoints: 950,
     },
     {
@@ -26,7 +26,7 @@ export const leaderboardAccounts = [
         username: "charlieb",
         twitter: "@charliebrown",
         discord: "charlieb#9012",
-        address: "qrst6789uvwx1234",
+        address: "0x2f4c7a8c105e1601a916c329d9233f267894e745",
         loyaltyPoints: 800,
     },
     // ... more users

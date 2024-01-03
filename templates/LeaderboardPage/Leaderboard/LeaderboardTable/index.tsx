@@ -17,19 +17,19 @@ const LeaderboardTable: React.FC<{ users: UserProfile[] }> = ({ users }) => (
     <table className={styles.userProfileTable}>
         <thead>
             <tr>
-                <th>Position</th>
-                <th>Name</th>
+                <th></th>
+                {/* <th>Name</th>
                 <th>Twitter</th>
-                <th>Discord</th>
-                <th>Address</th>
-                <th>Loyalty Points</th>
+                <th>Discord</th> */}
+                <th>ADDRESS</th>
+                <th>LOYALTY POINTS</th>
             </tr>
         </thead>
         <tbody>
             {users.map((user) => (
                 <tr key={user.position}>
                     <td>{user.position}</td>
-                    <td className={styles.user}>
+                    {/* <td className={styles.user}>
                         <Image
                             src={user.profilePic}
                             alt={user.fullName}
@@ -46,7 +46,7 @@ const LeaderboardTable: React.FC<{ users: UserProfile[] }> = ({ users }) => (
                         </div>
                     </td>
                     <td>{user.twitter}</td>
-                    <td>{user.discord}</td>
+                    <td>{user.discord}</td> */}
                     <td>{user.address}</td>
                     <td>{user.loyaltyPoints}</td>
                 </tr>
