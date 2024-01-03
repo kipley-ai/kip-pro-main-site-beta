@@ -2,11 +2,29 @@
 
 .section
     position: relative
-    margin: 6rem 0
+    margin: 8rem 0
     +m
         margin-bottom: 66px
 
-.container
+.apply
+    display: inline-flex
+    align-items: center
+    +text-button
+    color: #01F7FF
+    +m
+        position: absolute
+        left: 0
+        bottom: 40px
+    svg
+        margin-right: 40px
+        fill: $n5
+        transition: fill .2s
+        transform: scale(-1,1)
+    &:hover
+        svg
+            fill: $n1
+
+.firstRow
     display: flex
     gap: 4em
 
