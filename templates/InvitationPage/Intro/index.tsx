@@ -4,6 +4,7 @@ import styles from "./Intro.module.sass";
 import Scroll from "@/components/Scroll";
 import Image from "@/components/Image";
 import Icon from "@/components/Icon";
+import WhiteButton from "@/components/WhiteButton";
 
 type IntroProps = {
     scrollToRef: any;
@@ -41,11 +42,7 @@ const Intro = ({ scrollToRef }: IntroProps) => (
                     row
                 />
             </div>
-            <div className={styles.backArrow}>
-                <a className={styles.apply} href={"/leaderboard"}>
-                    VIEW LEADERBOARD <Icon name="arrow-right" size="26" />
-                </a>
-            </div>
+            <WhiteButton />
         </div>
         <div className={styles.images}>
             <div className={styles.image}>

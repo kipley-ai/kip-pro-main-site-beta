@@ -4,6 +4,7 @@ import Image from "@/components/Image";
 import Card from "@/components/Card";
 import Icon from "@/components/Icon";
 import Link from "next/link";
+import WhiteButton from "@/components/WhiteButton";
 
 const getCurrentDate = (): string => {
     const now = new Date();
@@ -32,24 +33,36 @@ type CongratulationsProps = {
 
 const Congratulations = ({ scrollToRef }: CongratulationsProps) => (
     <div className={cn("section", styles.section)}>
+        <div className={styles.backgroundGradient}></div>
         <div className={cn("anchor", styles.anchor)} ref={scrollToRef}></div>
         <div className={cn("container", styles.container)}>
             <div className={styles.row}>
                 <div className={styles.wrap}>
                     <div className={cn("h2", styles.title)}>
-                        You made it to the 1st cycle! Start earning $KIP
+                        Conquer. Claim. Collect. Repeat.
                     </div>
                     <div className={styles.info}>
-                        Follow us on Twitter today and experience the power of
-                        Knowledge in your life!
+                        Complete missions, recruit allies, contribute on Discord
+                        - loot points with every triumph! Accumulate 300 points
+                        and exchange for randomized NFT blind boxes. Within each
+                        box lies untold digital wealth - Gold, Silver or Bronze
+                        tier collectibles representing generous airdrops. Will
+                        you uncover the rarest of prizes? There are only 10,000
+                        total for the taking! Each revealed NFT is yours to keep
+                        or trade as you please. But grab your boxes fast - once
+                        they&#39;re gone, the adventure ends! Our realm awaits
+                        brave explorers like you. Questing refreshes every few
+                        days. Join now to start stacking points before this
+                        event concludes in March 2024! Fortune and glory to the
+                        victors! Let the quests commence!
                     </div>
-                    <div className={styles.buttons}>
+                    {/* <div className={styles.buttons}>
                         <Link href="/leaderboard">
                             <a className={cn("button", styles.button)}>
                                 <span>VIEW LEADERBOARD</span>
                             </a>
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
                 <div className={styles.preview}>
                     <div className={styles.list}>
@@ -63,27 +76,18 @@ const Congratulations = ({ scrollToRef }: CongratulationsProps) => (
                                 color={item.color}
                                 key={index}
                                 url={item.url}
-                                small
                             >
-                                <div className={styles.preview}>
-                                    <Image
-                                        src={item.image}
-                                        layout="fill"
-                                        objectFit="cover"
-                                        alt={item.title}
-                                    />
-                                </div>
                                 <div className={styles.details}>
-                                    <div
+                                    {/* <div
                                         className={cn("status", styles.status)}
                                         style={{ color: item.color }}
                                     >
                                         {item.status}
-                                    </div>
+                                    </div> */}
                                     <div className={cn("h4", styles.subtitle)}>
                                         {item.title}
                                     </div>
-                                    <div className={styles.line}>
+                                    {/* <div className={styles.line}>
                                         <div className={styles.date}>
                                             {item.date}
                                         </div>
@@ -92,6 +96,15 @@ const Congratulations = ({ scrollToRef }: CongratulationsProps) => (
                                             name="arrow-right"
                                             size="26"
                                         />
+                                    </div> */}
+                                    <div className={styles.preview}>
+                                        <Image
+                                            src={"/images/galxe-ch1-ss.png"}
+                                            width={580}
+                                            height={329}
+                                            objectFit="fill"
+                                            alt={item.title}
+                                        />
                                     </div>
                                 </div>
                             </Card>
@@ -99,6 +112,7 @@ const Congratulations = ({ scrollToRef }: CongratulationsProps) => (
                     </div>
                 </div>
             </div>
+            <WhiteButton />
         </div>
     </div>
 );
