@@ -30,7 +30,7 @@ const careers = [
 
 type TasksProps = {};
 
-const Tasks = ({}: TasksProps) => {
+const Tasks = ({ }: TasksProps) => {
     const [days, setDays] = useState<number>(0);
     const [hours, setHours] = useState<number>(0);
     const [minutes, setMinutes] = useState<number>(0);
@@ -76,8 +76,8 @@ const Tasks = ({}: TasksProps) => {
                 <div className={cn("h2", styles.countTitle)}>
                     You have <span className={styles.timeCount}>{days}</span>{" "}
                     days <span className={styles.timeCount}>{hours}</span> hours{" "}
-                    <span className={styles.timeCount}>{minutes}</span> mins to
-                    complete these tasks
+                    <span className={styles.timeCount}>{minutes}</span> min to
+                    complete Cycle 1
                 </div>
                 {careers.map((item, index) => (
                     <div className={styles.item} key={index}>
