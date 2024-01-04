@@ -11,7 +11,7 @@ const LeaderboardPage = () => {
         <Layout>
             <InvitationCodes scrollToRef={scrollToRef} />
             {/* <Leaderboard /> */}
-            <Faq />
+            {/* <Faq /> */}
         </Layout>
     );
 };

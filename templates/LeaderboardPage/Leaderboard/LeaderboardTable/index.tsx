@@ -21,8 +21,8 @@ const LeaderboardTable: React.FC<{ users: UserProfile[] }> = ({ users }) => (
                 {/* <th>Name</th>
                 <th>Twitter</th>
                 <th>Discord</th> */}
-                <th>ADDRESS</th>
-                <th>LOYALTY POINTS</th>
+                <th>WALLET</th>
+                <th>POINTS</th>
             </tr>
         </thead>
         <tbody>

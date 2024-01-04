@@ -38,12 +38,15 @@ const Item = ({ className, itemWrapClass, item }: ItemProps) => {
     };
 
     const formatDate = (dateString: string): string => {
+        if (!dateString) {
+            return "";
+        }
         const givenDate = new Date(dateString);
         const formattedDate = givenDate.toLocaleDateString("en-GB");
         return formattedDate;
     };
 
-    const isDateExpired = (validStart: string, validEnd: string): boolean => {
+    const isDateExpired = (validStart: string, validEnd: string | number): boolean => {
         const validStartDate = new Date(validStart);
         const validEndDate = new Date(validEnd);
         const currentDate = new Date().toLocaleString("en-GB", {
@@ -52,6 +55,14 @@ const Item = ({ className, itemWrapClass, item }: ItemProps) => {
         const validStartTimestamp = new Date(validStartDate).getTime();
         const validEndTimestamp = new Date(validEndDate).getTime();
         const currentTimestamp = new Date(currentDate).getTime();
+
+        if (!validEnd) {
+            if (currentTimestamp < validStartTimestamp) {
+                return true;
+            }
+            return false;
+        }
+
         return (
             currentTimestamp < validStartTimestamp ||
             currentTimestamp > validEndTimestamp
@@ -94,10 +105,10 @@ const Item = ({ className, itemWrapClass, item }: ItemProps) => {
             <div className={cn(styles.wrap, itemWrapClass)}>
                 <div className={cn("content", styles.content)}>
                     <h2>Your Invitation Code</h2>
-                    <p>
+                    {/* <p>
                         Follow us on Twitter today and experience the power of
                         Knowledge in your life!
-                    </p>
+                    </p> */}
                 </div>
             </div>
 
@@ -133,15 +144,7 @@ const Item = ({ className, itemWrapClass, item }: ItemProps) => {
                                             isDateExpired(
                                                 item.valid_start,
                                                 item.valid_end,
-                                            ) ? (
-                                                <span
-                                                    className={
-                                                        styles.checkmarkIcon
-                                                    }
-                                                >
-                                                    ✔️
-                                                </span>
-                                            ) : (
+                                            ) ? null : (
                                                 <button
                                                     className={
                                                         styles.copyButton
