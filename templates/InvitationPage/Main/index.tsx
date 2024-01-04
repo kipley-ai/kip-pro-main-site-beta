@@ -22,7 +22,8 @@ const Main = ({ handleValidateCode }: MainProps) => {
             <div className={cn("container", styles.container)}>
                 <div className={styles.wrap}>
                     <div className={cn("h2", styles.title)}>
-                        Please Input Your Invite Code
+                        Welcome to KIP Protocol!
+                        Begin your mission to earn our coveted collectibles.
                     </div>
                     {/* <div className={styles.info}>
                         <p>Enter your invite code here</p>
@@ -41,6 +42,20 @@ const Main = ({ handleValidateCode }: MainProps) => {
                             className={cn("button", styles.button)}
                         >
                             <span>APPLY</span>
+                        </a>
+                    </div>
+                    <div className={cn("h2", styles.title)}>
+                        OR
+                    </div>
+                    <div className={cn("h2", styles.title)}>
+                        Already Joined?
+                    </div>
+                    <div className={styles.buttons}>
+                        <a
+                            onClick={() => handleValidateCode(code)}
+                            className={cn("button", styles.button)}
+                        >
+                            <span>Connect Wallet to Continue</span>
                         </a>
                     </div>
                 </div>
