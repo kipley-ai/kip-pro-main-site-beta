@@ -36,7 +36,7 @@ const GetInvolvedButton = ({ buttonStyle, chainStyle, wrapStyle }) => {
                                             className={buttonStyle}
                                             onClick={openConnectModal}
                                         >
-                                            <span>Get Involved</span>
+                                            <span>Connect Wallet</span>
                                         </button>
                                     );
                                 }
