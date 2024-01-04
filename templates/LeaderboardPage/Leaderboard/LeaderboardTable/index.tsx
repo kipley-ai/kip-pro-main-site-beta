@@ -47,7 +47,9 @@ const LeaderboardTable: React.FC<{ users: UserProfile[] }> = ({ users }) => (
                     </td>
                     <td>{user.twitter}</td>
                     <td>{user.discord}</td> */}
-                    <td>{user.address}</td>
+                    <td>
+                        {user.address.slice(0, 6)}...{user.address.slice(-6)}
+                    </td>
                     <td>{user.loyaltyPoints}</td>
                 </tr>
             ))}
