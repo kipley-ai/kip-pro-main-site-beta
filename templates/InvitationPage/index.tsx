@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import Layout from "@/components/Layout";
+import Intro from "./Intro";
 import Main from "./Main";
 import Congratulations from "./Congratulations";
 import Tasks from "./Tasks";
@@ -10,6 +11,8 @@ import { useAccount } from "wagmi";
 const InvitationPage = () => {
     const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
     const { address, isConnected } = useAccount();
+
+    const scrollToRef = useRef(null);
 
     const handleValidateCode = async (code: string) => {
         if (!address) {
@@ -86,7 +89,8 @@ const InvitationPage = () => {
         <Layout>
             {isAuthenticated ? (
                 <>
-                    <Congratulations />
+                    <Intro scrollToRef={scrollToRef} />
+                    <Congratulations scrollToRef={scrollToRef} />
                     <Tasks />
                 </>
             ) : (

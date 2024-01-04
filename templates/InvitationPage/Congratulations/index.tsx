@@ -26,10 +26,13 @@ const posts = [
     },
 ];
 
-type CongratulationsProps = {};
+type CongratulationsProps = {
+    scrollToRef: any;
+};
 
-const Congratulations = ({}: CongratulationsProps) => (
+const Congratulations = ({ scrollToRef }: CongratulationsProps) => (
     <div className={cn("section", styles.section)}>
+        <div className={cn("anchor", styles.anchor)} ref={scrollToRef}></div>
         <div className={cn("container", styles.container)}>
             <div className={styles.row}>
                 <div className={styles.wrap}>
