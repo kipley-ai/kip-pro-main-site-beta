@@ -74,6 +74,7 @@ const Tasks = ({ }: TasksProps) => {
 
     return (
         <div className={cn("section", styles.section)}>
+            <div className={styles.backgroundGradient}></div>
             <div className={cn("container", styles.container)}>
                 <div className={cn("h2", styles.countTitle)}>
                     You have <span className={styles.timeCount}>{days}</span>{" "}
