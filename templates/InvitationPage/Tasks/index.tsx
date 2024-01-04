@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import cn from "classnames";
 import styles from "./Tasks.module.sass";
 import Image from "@/components/Image";
+import CampaignImage from "public/images/campaign-pic.jpg"
 import Card from "@/components/Card";
 import Icon from "@/components/Icon";
 import Link from "next/link";
 
 import { posts } from "@/mocks/posts";
+import { relative } from "path";
 
 const getCurrentDate = (): string => {
     const now = new Date();
@@ -79,7 +81,18 @@ const Tasks = ({ }: TasksProps) => {
                     <span className={styles.timeCount}>{minutes}</span> min to
                     complete Cycle 1
                 </div>
-                {careers.map((item, index) => (
+                <div className={cn("campaignItem", styles.campaignItem)}>
+                    <a
+                        href={
+                            "https://galxe.com/KIPProtocol/campaign/GCQH3tUYcq"
+                        }
+                    >
+                        <Image
+                            src={CampaignImage}
+                        />
+                    </a>
+                </div>
+                {/* {careers.map((item, index) => (
                     <div className={styles.item} key={index}>
                         <div className={styles.details}>
                             <div className={styles.line}>
@@ -125,7 +138,7 @@ const Tasks = ({ }: TasksProps) => {
                             />
                         </div>
                     </div>
-                ))}
+                ))} */}
             </div>
         </div>
     );
