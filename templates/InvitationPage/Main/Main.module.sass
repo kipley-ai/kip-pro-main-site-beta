@@ -2,7 +2,7 @@
 
 .section
     position: relative
-    padding: 248px 0 389px
+    padding: 168px 0 389px
     text-align: center
     height: 1100px
     +w
@@ -37,6 +37,9 @@
     +m
         font-size: 48px
         line-height: 60px
+
+.subtitle
+    font-size: 1.5rem
 
 .info
     color: $n5
@@ -114,3 +117,10 @@
     cursor: pointer
     span
         padding: 0 60px
+
+.getInvolvedButton
+    padding: 6px 2px 0px 6px
+    span
+        visibility: hidden
+    &:before
+        content: "CONNECT WALLET TO CONTINUE"

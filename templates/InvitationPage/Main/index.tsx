@@ -5,6 +5,7 @@ import styles from "./Main.module.sass";
 import Image from "@/components/Image";
 import Field from "@/components/Field";
 import Link from "next/link";
+import GetInvolvedButton from "@/components/GetInvolvedButton";
 
 const images = [
     "/images/figures/figure-1.png",
@@ -23,6 +24,9 @@ const Main = ({ handleValidateCode }: MainProps) => {
                 <div className={styles.wrap}>
                     <div className={cn("h2", styles.title)}>
                         Welcome to KIP Protocol!
+                        <br />
+                    </div>
+                    <div className={cn("p", styles.subtitle)}>
                         Begin your mission to earn our coveted collectibles.
                     </div>
                     {/* <div className={styles.info}>
@@ -44,20 +48,26 @@ const Main = ({ handleValidateCode }: MainProps) => {
                             <span>APPLY</span>
                         </a>
                     </div>
+                    <div className={cn("p", styles.subtitle)}>OR</div>
                     <div className={cn("h2", styles.title)}>
-                        OR
+                        Already joined?
                     </div>
-                    <div className={cn("h2", styles.title)}>
-                        Already Joined?
-                    </div>
-                    <div className={styles.buttons}>
+                    {/* <div className={styles.buttons}>
                         <a
                             onClick={() => handleValidateCode(code)}
                             className={cn("button", styles.button)}
                         >
                             <span>Connect Wallet to Continue</span>
                         </a>
-                    </div>
+                    </div> */}
+                    <GetInvolvedButton
+                        buttonStyle={cn(
+                            "button",
+                            styles.getInvolvedButton,
+                        )}
+                        chainStyle={styles.chainButton}
+                        wrapStyle={styles.getInvolvedButtonWrap}
+                    />
                 </div>
                 <div className={styles.images}>
                     <div className={styles.image}>
