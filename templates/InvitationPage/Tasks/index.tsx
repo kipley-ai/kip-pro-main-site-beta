@@ -87,26 +87,29 @@ const Tasks = ({}: TasksProps) => {
             <div className={styles.backgroundGradient}></div>
             <div className={cn("container", styles.container)}>
                 <div className={cn("h2", styles.countTitle)}>
-                    You have <span className={styles.timeCount}>{days}</span>{" "}
+                    <span className={styles.timeCount}>{days}</span>{" "}
                     days <span className={styles.timeCount}>{hours}</span> hours{" "}
                     <span className={styles.timeCount}>{minutes}</span> min
-                    to complete
+                    remaining...
+                </div>
+                <div className={cn("h2", styles.title)}>
+                    Complete cycle tasks to gain points and invite codes!
                 </div>
                 <div className={styles.row}>
                     <div className={styles.wrap}>
-                        <div className={cn("h2", styles.title)}>
-                            
-                        </div>
+                        <div className={cn("h2", styles.title)}></div>
                         <div className={styles.info}>
-                            
+                            <p>
+                                Invite more friends using your unique invite
+                                codes for even more points when they complete
+                                the activation tasks.
+                            </p>
+                            <br />
+                            <p>
+                                The more allies you recruit, the higher your
+                                score will climb. Team up for epic rewards!
+                            </p>
                         </div>
-                        {/* <div className={styles.buttons}>
-                        <Link href="/leaderboard">
-                            <a className={cn("button", styles.button)}>
-                                <span>VIEW LEADERBOARD</span>
-                            </a>
-                        </Link>
-                    </div> */}
                     </div>
                     <div className={styles.preview}>
                         <div className={styles.list}>
