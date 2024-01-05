@@ -89,7 +89,7 @@ const Tasks = ({}: TasksProps) => {
                 <div className={cn("h2", styles.countTitle)}>
                     You have <span className={styles.timeCount}>{days}</span>{" "}
                     days <span className={styles.timeCount}>{hours}</span> hours{" "}
-                    <span className={styles.timeCount}>{minutes}</span> min <br />
+                    <span className={styles.timeCount}>{minutes}</span> min
                     to complete
                 </div>
                 <div className={styles.row}>
