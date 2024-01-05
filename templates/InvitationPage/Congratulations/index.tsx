@@ -5,6 +5,7 @@ import Card from "@/components/Card";
 import Icon from "@/components/Icon";
 import Link from "next/link";
 import WhiteButton from "@/components/WhiteButton";
+import CampaignPic2 from "public/images/campaign-pic-2.jpg"
 
 const getCurrentDate = (): string => {
     const now = new Date();
@@ -18,11 +19,11 @@ const getCurrentDate = (): string => {
 
 const posts = [
     {
-        title: "Galxe Campaign",
+        title: "Activation Tasks",
         date: getCurrentDate(),
-        image: "/images/campaign-page-ss.png",
+        image: CampaignPic2,
         status: "FEATURES",
-        url: "https://galxe.com/KIPProtocol/campaign/GCQH3tUYcq",
+        url: "https://galxe.com/KIPProtocol/campaign/GCnjsttqXn",
         color: "#01F7FF",
     },
 ];
@@ -99,9 +100,9 @@ const Congratulations = ({ scrollToRef }: CongratulationsProps) => (
                                     </div> */}
                                     <div className={styles.preview}>
                                         <Image
-                                            src={"/images/galxe-ch1-ss.png"}
-                                            width={580}
-                                            height={329}
+                                            src={CampaignPic2}
+                                            // width={580}
+                                            // height={329}
                                             objectFit="fill"
                                             alt={item.title}
                                         />
