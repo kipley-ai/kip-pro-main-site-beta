@@ -6,6 +6,7 @@ import Image from "@/components/Image";
 import Field from "@/components/Field";
 import Link from "next/link";
 import GetInvolvedButton from "@/components/GetInvolvedButton";
+import { useAccount } from "wagmi";
 
 const images = [
     "/images/figures/figure-1.png",
@@ -17,6 +18,8 @@ type MainProps = { handleValidateCode: (code: string) => void };
 
 const Main = ({ handleValidateCode }: MainProps) => {
     const [code, setCode] = useState("");
+
+    const { isConnected } = useAccount();
 
     return (
         <div className={styles.section}>
@@ -48,24 +51,23 @@ const Main = ({ handleValidateCode }: MainProps) => {
                             <span>APPLY</span>
                         </a>
                     </div>
-                    <div className={cn("p", styles.subtitle)}>OR</div>
-                    <div className={cn("h2", styles.title)}>
-                        Already joined?
-                    </div>
-                    {/* <div className={styles.buttons}>
-                        <a
-                            onClick={() => handleValidateCode(code)}
-                            className={cn("button", styles.button)}
-                        >
-                            <span>Connect Wallet to Continue</span>
-                        </a>
-                    </div> */}
-                    <GetInvolvedButton
-                        content="Connect Wallet to Continue"
-                        buttonStyle={cn("button", styles.getInvolvedButton)}
-                        chainStyle={styles.chainButton}
-                        wrapStyle={styles.getInvolvedButtonWrap}
-                    />
+                    {!isConnected && (
+                        <>
+                            <div className={cn("p", styles.subtitle)}>OR</div>
+                            <div className={cn("h2", styles.title)}>
+                                Already joined?
+                            </div>
+                            <GetInvolvedButton
+                                content="Connect Wallet to Continue"
+                                buttonStyle={cn(
+                                    "button",
+                                    styles.getInvolvedButton,
+                                )}
+                                chainStyle={styles.chainButton}
+                                wrapStyle={styles.getInvolvedButtonWrap}
+                            />
+                        </>
+                    )}
                 </div>
                 <div className={styles.images}>
                     <div className={styles.image}>
