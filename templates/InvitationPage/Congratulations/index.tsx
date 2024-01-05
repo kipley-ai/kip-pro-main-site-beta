@@ -112,7 +112,6 @@ const Congratulations = ({ scrollToRef }: CongratulationsProps) => (
                     </div>
                 </div>
             </div>
-            <WhiteButton />
         </div>
     </div>
 );

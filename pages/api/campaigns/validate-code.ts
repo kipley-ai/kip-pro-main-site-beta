@@ -75,6 +75,7 @@ const validateCodeHandler = async (
                 }
             }
         } catch (error) {
+            console.log(error);
             res.status(500).json({
                 is_ok: false,
                 message: "Error contacting the external API.",

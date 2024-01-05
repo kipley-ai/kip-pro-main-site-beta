@@ -42,7 +42,6 @@ const Intro = ({ scrollToRef }: IntroProps) => (
                     row
                 />
             </div>
-            <WhiteButton />
         </div>
         <div className={styles.images}>
             <div className={styles.image}>
@@ -61,6 +60,7 @@ const Intro = ({ scrollToRef }: IntroProps) => (
                 />
             </Parallax>
         </div>
+        <WhiteButton />
     </div>
 );
 
