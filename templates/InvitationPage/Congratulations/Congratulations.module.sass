@@ -128,6 +128,9 @@
         margin-bottom: 32px
     .corner
         fill: #0a0617 !important
+        stroke: cyan
+        stroke-width: 2px
+        z-index: -5
         +m
             top: auto
             bottom: 0
@@ -139,7 +142,9 @@
             bottom: 8px
 
 .backgroundCard
-    background: #0a0617 !important
+    background: linear-gradient(#0a0617, #0a0617) padding-box, linear-gradient(to bottom, cyan, cyan 40%, #6a4093, #6a4093 66.66%, #2d2d2d, #2d2d2d) border-box !important
+    border-radius: 24px
+    border: 2px solid transparent
     +m
         clip-path: polygon(0 0, 100% 0, 100% calc(100% - 100px), calc(100% - 77px) calc(100% - 100px), calc(100% - 77px) 100%, 0 100%) !important
 
