@@ -3,7 +3,14 @@ import Image from "next/image";
 import cn from "classnames";
 import styles from "./GetInvolvedButton.module.sass";
 
-const GetInvolvedButton = ({ buttonStyle, chainStyle, wrapStyle }) => {
+type GetInvolvedButtonProps = {
+    buttonStyle?: string;
+    chainStyle?: string;
+    wrapStyle?: string;
+    content?: string;
+};
+
+const GetInvolvedButton = ({ buttonStyle, chainStyle, wrapStyle, content }: GetInvolvedButtonProps) => {
     return (
         <>
             <ConnectButton.Custom>
@@ -36,7 +43,11 @@ const GetInvolvedButton = ({ buttonStyle, chainStyle, wrapStyle }) => {
                                             className={buttonStyle}
                                             onClick={openConnectModal}
                                         >
-                                            <span>Connect Wallet</span>
+                                            <span>
+                                                {content
+                                                    ? content
+                                                    : "Connect Wallet"}
+                                            </span>
                                         </button>
                                     );
                                 }

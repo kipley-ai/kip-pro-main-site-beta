@@ -61,10 +61,8 @@ const Main = ({ handleValidateCode }: MainProps) => {
                         </a>
                     </div> */}
                     <GetInvolvedButton
-                        buttonStyle={cn(
-                            "button",
-                            styles.getInvolvedButton,
-                        )}
+                        content="Connect Wallet to Continue"
+                        buttonStyle={cn("button", styles.getInvolvedButton)}
                         chainStyle={styles.chainButton}
                         wrapStyle={styles.getInvolvedButtonWrap}
                     />
