@@ -22,9 +22,9 @@ const getCurrentDate = (): string => {
 
 const careers = [
     {
-        title: "Galxe Campaign",
+        title: "Cycle 1 Tasks",
         content: getCurrentDate(),
-        image: "/images/campaign-page-ss.png",
+        image: CampaignImage,
         status: [],
         url: "https://galxe.com/KIPProtocol/campaign/GCQH3tUYcq",
     },
@@ -82,20 +82,9 @@ const Tasks = ({ }: TasksProps) => {
                     <span className={styles.timeCount}>{minutes}</span> min to
                     complete Cycle 1
                 </div>
-                <div className={cn("campaignItem", styles.campaignItem)}>
-                    <a
-                        href={
-                            "https://galxe.com/KIPProtocol/campaign/GCQH3tUYcq"
-                        }
-                    >
-                        <Image
-                            src={CampaignImage}
-                        />
-                    </a>
-                </div>
-                {/* {careers.map((item, index) => (
+                {careers.map((item, index) => (
                     <div className={styles.item} key={index}>
-                        <div className={styles.details}>
+                        {/* <div className={styles.details}>
                             <div className={styles.line}>
                                 {item.status.map((status, index) => (
                                     <div
@@ -129,17 +118,17 @@ const Tasks = ({ }: TasksProps) => {
                                 Explore now{" "}
                                 <Icon name="arrow-right" size="26" />
                             </a>
-                        </div>
+                        </div> */}
                         <div className={styles.preview}>
                             <Image
                                 src={item.image}
                                 layout="fill"
-                                objectFit="cover"
+                                objectFit="fill"
                                 alt={item.title}
                             />
                         </div>
                     </div>
-                ))} */}
+                ))}
             </div>
         </div>
     );
