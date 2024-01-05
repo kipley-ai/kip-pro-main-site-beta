@@ -11,7 +11,7 @@
     width: 300px
     height: 300px
     border-radius: 9rem
-    background: radial-gradient(63.62% 69.52% at 100% 0%, rgba(247, 214, 98, 0.8) 0%, rgba(247, 214, 98, 0.168) 52.08%, rgba(247, 214, 98, 0) 100%),linear-gradient(208.42deg, #F0422A 7.46%, rgba(240, 88, 42, 0.18) 42.58%, rgba(240, 101, 42, 0) 64.13%),radial-gradient(114.51% 122.83% at 0% -15.36%, #E74F6A 0%, rgba(231, 79, 106, 0.22) 66.72%, rgba(231, 79, 106, 0) 100%),linear-gradient(333.95deg, rgba(83, 208, 236, 0.85) -7.76%, rgba(83, 208, 236, 0.204) 19.67%, rgba(138, 137, 190, 0) 35.42%),radial-gradient(109.15% 148.57% at 4.46% 98.44%, #1B3180 0%, rgba(27, 49, 128, 0) 100%),linear-gradient(141.57deg, #4EADEB 19.08%, rgba(78, 173, 235, 0) 98.72%)
+    background: linear-gradient(#EE46D3 10%, #F2371F 20%, #012bff 60%, #00C5DF)
     background-blend-mode: normal, normal, normal, normal, multiply, normal
     filter: blur(100px)
 
@@ -128,6 +128,9 @@
         margin-bottom: 32px
     .corner
         fill: #0a0617 !important
+        stroke: cyan
+        stroke-width: 2px
+        z-index: -5
         +m
             top: auto
             bottom: 0
@@ -139,7 +142,9 @@
             bottom: 8px
 
 .backgroundCard
-    background: #0a0617 !important
+    background: linear-gradient(#0a0617, #0a0617) padding-box, linear-gradient(to bottom, cyan, cyan 40%, #6a4093, #6a4093 66.66%, #2d2d2d, #2d2d2d) border-box !important
+    border-radius: 24px
+    border: 2px solid transparent
     +m
         clip-path: polygon(0 0, 100% 0, 100% calc(100% - 100px), calc(100% - 77px) calc(100% - 100px), calc(100% - 77px) 100%, 0 100%) !important
 
@@ -151,7 +156,7 @@
 
 .previewCard,
 .details
-    flex: 0 0 50%
+    flex: 0 0 100%
     +m
         flex: 0 0 auto
 
