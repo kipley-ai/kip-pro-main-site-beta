@@ -77,6 +77,7 @@ const Congratulations = ({ scrollToRef }: CongratulationsProps) => (
                                 color={item.color}
                                 key={index}
                                 url={item.url}
+                                externalUrl
                             >
                                 <div className={styles.details}>
                                     {/* <div
@@ -98,12 +99,12 @@ const Congratulations = ({ scrollToRef }: CongratulationsProps) => (
                                             size="26"
                                         />
                                     </div> */}
-                                    <div className={styles.preview}>
+                                    <div className={styles.previewCard}>
                                         <Image
                                             src={CampaignPic2}
                                             // width={580}
                                             // height={329}
-                                            objectFit="fill"
+                                            objectFit="cover"
                                             alt={item.title}
                                         />
                                     </div>

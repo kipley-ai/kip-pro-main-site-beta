@@ -16,6 +16,7 @@ type CardProps = {
     animateIn?: string;
     style?: React.CSSProperties;
     delay?: number;
+    externalUrl?: boolean;
 };
 
 const Card = ({
@@ -31,6 +32,7 @@ const Card = ({
     animateIn,
     style,
     delay,
+    externalUrl,
 }: CardProps) => {
     const inner = (
         <>
@@ -77,17 +79,32 @@ const Card = ({
     ) : (
         <>
             {url ? (
-                <Link href={url}>
+                externalUrl ? (
                     <a
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className={cn(
                             styles.card,
                             { [styles.small]: small },
-                            className
+                            className,
                         )}
                     >
                         {inner}
                     </a>
-                </Link>
+                ) : (
+                    <Link href={url}>
+                        <a
+                            className={cn(
+                                styles.card,
+                                { [styles.small]: small },
+                                className,
+                            )}
+                        >
+                            {inner}
+                        </a>
+                    </Link>
+                )
             ) : (
                 <div
                     className={cn(
