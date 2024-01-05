@@ -2,13 +2,23 @@ import React, { useState, useEffect } from "react";
 import cn from "classnames";
 import styles from "./Tasks.module.sass";
 import Image from "@/components/Image";
-import CampaignImage from "public/images/campaign-pic.jpg"
+import CampaignImage from "public/images/campaign-pic.jpg";
 import Card from "@/components/Card";
 import Icon from "@/components/Icon";
 import Link from "next/link";
 
-import { posts } from "@/mocks/posts";
 import { relative } from "path";
+
+const posts = [
+    {
+        title: "Cycle 1 Tasks",
+        date: "",
+        image: CampaignImage,
+        status: "FEATURES",
+        url: "https://galxe.com/KIPProtocol/campaign/GCVKDtthhv",
+        color: "#01F7FF",
+    },
+];
 
 const getCurrentDate = (): string => {
     const now = new Date();
@@ -32,7 +42,7 @@ const careers = [
 
 type TasksProps = {};
 
-const Tasks = ({ }: TasksProps) => {
+const Tasks = ({}: TasksProps) => {
     const [days, setDays] = useState<number>(0);
     const [hours, setHours] = useState<number>(0);
     const [minutes, setMinutes] = useState<number>(0);
@@ -79,56 +89,79 @@ const Tasks = ({ }: TasksProps) => {
                 <div className={cn("h2", styles.countTitle)}>
                     You have <span className={styles.timeCount}>{days}</span>{" "}
                     days <span className={styles.timeCount}>{hours}</span> hours{" "}
-                    <span className={styles.timeCount}>{minutes}</span> min to
-                    complete Cycle 1
+                    <span className={styles.timeCount}>{minutes}</span> min <br />
+                    to complete
                 </div>
-                {careers.map((item, index) => (
-                    <div className={styles.item} key={index}>
-                        {/* <div className={styles.details}>
-                            <div className={styles.line}>
-                                {item.status.map((status, index) => (
-                                    <div
-                                        className={cn(
-                                            {
-                                                "status-pink":
-                                                    status === "REMOTE",
-                                                "status-green":
-                                                    status === "FULL-TIME",
-                                                "status-yellow":
-                                                    status === "CONTRACT",
-                                            },
-                                            styles.status,
-                                        )}
-                                        key={index}
-                                    >
-                                        {status}
-                                    </div>
-                                ))}
-                            </div>
-                            <div className={cn("h3", styles.title)}>
-                                {item.title}
-                            </div>
-                            <div className={styles.content}>{item.content}</div>
-                            <a
-                                className={styles.apply}
-                                href={item.url}
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                Explore now{" "}
-                                <Icon name="arrow-right" size="26" />
+                <div className={styles.row}>
+                    <div className={styles.wrap}>
+                        <div className={cn("h2", styles.title)}>
+                            
+                        </div>
+                        <div className={styles.info}>
+                            
+                        </div>
+                        {/* <div className={styles.buttons}>
+                        <Link href="/leaderboard">
+                            <a className={cn("button", styles.button)}>
+                                <span>VIEW LEADERBOARD</span>
                             </a>
-                        </div> */}
-                        <div className={styles.preview}>
-                            <Image
-                                src={item.image}
-                                layout="fill"
-                                objectFit="fill"
-                                alt={item.title}
-                            />
+                        </Link>
+                    </div> */}
+                    </div>
+                    <div className={styles.preview}>
+                        <div className={styles.list}>
+                            {posts.map((item, index) => (
+                                <Card
+                                    className={styles.card}
+                                    cornerCardClass={styles.corner}
+                                    backgroundCardClass={styles.backgroundCard}
+                                    squareCardClass={styles.square}
+                                    innerCardClass={styles.inner}
+                                    color={item.color}
+                                    key={index}
+                                    url={item.url}
+                                    externalUrl
+                                >
+                                    <div className={styles.details}>
+                                        {/* <div
+                                        className={cn("status", styles.status)}
+                                        style={{ color: item.color }}
+                                    >
+                                        {item.status}
+                                    </div> */}
+                                        <div
+                                            className={cn(
+                                                "h4",
+                                                styles.subtitle,
+                                            )}
+                                        >
+                                            {item.title}
+                                        </div>
+                                        {/* <div className={styles.line}>
+                                        <div className={styles.date}>
+                                            {item.date}
+                                        </div>
+                                        <Icon
+                                            className={styles.arrow}
+                                            name="arrow-right"
+                                            size="26"
+                                        />
+                                    </div> */}
+                                        <div className={styles.previewCard}>
+                                            <Image
+                                                src={CampaignImage}
+                                                // width={580}
+                                                // height={329}
+                                                objectFit="cover"
+                                                alt={item.title}
+                                            />
+                                        </div>
+                                    </div>
+                                </Card>
+                            ))}
                         </div>
                     </div>
-                ))}
+                </div>
             </div>
         </div>
     );

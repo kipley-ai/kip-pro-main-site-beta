@@ -30,12 +30,12 @@
         display: block
         padding: 40px 0 91px
 
-.details
-    flex-grow: 1
-    padding-right: 48px
-    +m
-        margin-bottom: 40px
-        padding-right: 0
+// .details
+//     flex-grow: 1
+//     padding-right: 48px
+//     +m
+//         margin-bottom: 40px
+//         padding-right: 0
 
 .line
     display: flex
@@ -75,19 +75,19 @@
         svg
             fill: $n1
 
-.preview
-    margin-left: 200px
-    margin-right: 200px
-    position: relative
-    width: 70%
-    height: 250px   
-    border-radius: 16px
-    border: 8px solid $n6
-    overflow: hidden
-    background: $n2
-    +m
-        width: 100%
-        height: 100%
+// .preview
+//     margin-left: 200px
+//     margin-right: 200px
+//     position: relative
+//     width: 70%
+//     height: 250px   
+//     border-radius: 16px
+//     border: 8px solid $n6
+//     overflow: hidden
+//     background: $n2
+//     +m
+//         width: 100%
+//         height: 100%
 
 .timeCount
     color: #01F7FF
@@ -99,3 +99,105 @@
     position: relative
     margin-top: 50px
     text-align: center
+
+// Posts
+.row
+    margin: 5rem 0
+    display: flex
+    justify-content: center
+
+.preview
+    width: 50%
+
+.listCard
+    flex-shrink: 0
+    width: 558px
+    +d
+        flex: 0 0 calc(50% - 48px)
+        width: calc(50% - 48px)
+        margin: 0 24px
+    +t
+        width: auto
+        margin: 0
+
+.card
+    border-radius: 24px
+    // border: 1px solid #01F7FF
+    overflow: hidden
+    +m
+        box-shadow: none
+    &:hover
+        .arrow
+            fill: $n1
+    &:not(:last-child)
+        margin-bottom: 32px
+    .corner
+        fill: #0a0617 !important
+        +m
+            top: auto
+            bottom: 0
+            transform: scaleY(-1)
+    .square
+        display: none
+        +m
+            top: auto !important
+            bottom: 8px
+
+.backgroundCard
+    background: #0a0617 !important
+    +m
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 100px), calc(100% - 77px) calc(100% - 100px), calc(100% - 77px) 100%, 0 100%) !important
+
+.inner
+    display: flex
+    flex-direction: row
+    +m
+        flex-direction: column
+
+.previewCard,
+.details
+    flex: 0 0 100%
+    +m
+        flex: 0 0 auto
+
+.previewCard
+    position: relative
+    +m
+        height: 190px
+
+.details
+    padding: 22px 24px 16px
+
+.status
+    margin-bottom: 6px
+    background: $c1s3
+    +m
+        margin-bottom: 8px
+
+.subtitle
+    margin-bottom: 30px
+
+.line
+    display: flex
+    align-items: center
+    +m
+        padding-right: 70px
+
+.date
+    margin-right: auto
+    +caption
+    color: $n5
+
+.arrow
+    fill: $n5
+    transition: fill .3s
+
+.image
+    position: absolute
+    top: 7.1%
+    left: calc(50% - 1056px)
+    width: 620px
+    pointer-events: none
+    font-size: 0
+    +w
+        display: none
