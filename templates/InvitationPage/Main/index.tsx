@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Parallax } from "react-scroll-parallax";
 import cn from "classnames";
 import styles from "./Main.module.sass";
@@ -18,8 +18,63 @@ type MainProps = { handleValidateCode: (code: string) => void };
 
 const Main = ({ handleValidateCode }: MainProps) => {
     const [code, setCode] = useState("");
+    const [isBlankPresent, setIsBlankPresent] = useState(true);
 
     const { isConnected } = useAccount();
+
+    const [otp, setOtp] = useState(new Array(5).fill(""));
+    const inputsRef = useRef<(HTMLInputElement | null)[]>([]);
+
+    const handleChange = (element: any, index: number) => {
+        if (!/^[A-Za-z0-9]$/.test(element.value)) {
+            return false;
+        }
+
+        let value = element.value;
+
+        if (isNaN(value)) {
+            value = value.toUpperCase();
+        }
+
+        setOtp([...otp.map((d, idx) => (idx === index ? value : d))]);
+
+        if (element.nextSibling) {
+            element.nextSibling.focus();
+        }
+    };
+
+    const handleKeyDown = (e: any, index: number) => {
+        // Check if the key pressed is Backspace, Delete, or ArrowLeft
+        if (
+            e.key === "Backspace" ||
+            e.key === "Delete" ||
+            e.key === "ArrowLeft"
+        ) {
+            e.preventDefault(); // Prevent default behavior
+
+            // Update OTP array
+            const newOtp = [...otp];
+            newOtp[index] = ""; // Clear the current input
+            setOtp(newOtp);
+
+            // If not the first input, move focus to the previous input
+            if (index > 0) {
+                inputsRef.current[index - 1]?.focus();
+            }
+        }
+    };
+
+    useEffect(() => {
+        if (inputsRef.current[0]) {
+            inputsRef.current[0].focus();
+        }
+    }, []);
+
+    useEffect(() => {
+        // Check if any string in the OTP array is blank
+        const blankCheck = otp.some((otpValue) => otpValue.trim() === "");
+        setIsBlankPresent(blankCheck);
+    }, [otp]);
 
     return (
         <div
@@ -36,30 +91,55 @@ const Main = ({ handleValidateCode }: MainProps) => {
             <div className={cn("container", styles.container)}>
                 <div className={styles.wrap}>
                     <div className={cn("h2", styles.title)}>
-                        Welcome to KIP Protocol!
+                        KIP PROTOCOL: GENESIS
                         <br />
                     </div>
                     <div className={cn("p", styles.subtitle)}>
-                        Begin your mission to earn our coveted collectibles.
+                        Enter Invite Code to Join.
                     </div>
                     {/* <div className={styles.info}>
                         <p>Enter your invite code here</p>
                     </div> */}
-                    <div className={styles.input}>
+                    {/* <div className={styles.input}>
                         <Field
                             className={styles.field}
                             placeholder="Enter your invite code here"
                             value={code}
                             onChange={(e: any) => setCode(e.target.value)}
                         />
+                    </div> */}
+                    <div className={styles.verificationCode}>
+                        <div className={styles.verificationCodeInputs}>
+                            {otp.map((data, index) => {
+                                return (
+                                    <input
+                                        type="text"
+                                        maxLength={1}
+                                        key={index}
+                                        value={otp[index]}
+                                        onChange={(e) =>
+                                            handleChange(e.target, index)
+                                        }
+                                        onKeyDown={(e) =>
+                                            handleKeyDown(e, index)
+                                        }
+                                        ref={(ref) =>
+                                            (inputsRef.current[index] = ref)
+                                        }
+                                        className={styles.inputBox}
+                                    />
+                                );
+                            })}
+                        </div>
                     </div>
                     <div className={styles.buttons}>
-                        <a
+                        <button
                             onClick={() => handleValidateCode(code)}
-                            className={cn("button", styles.button)}
+                            className={cn("button", styles.getInvolvedButton)}
+                            disabled={isBlankPresent}
                         >
-                            <span>APPLY</span>
-                        </a>
+                            <span>JOIN NOW</span>
+                        </button>
                     </div>
                     {!isConnected && (
                         <>
