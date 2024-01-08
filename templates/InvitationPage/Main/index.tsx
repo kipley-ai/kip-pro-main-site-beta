@@ -22,7 +22,17 @@ const Main = ({ handleValidateCode }: MainProps) => {
     const { isConnected } = useAccount();
 
     return (
-        <div className={styles.section}>
+        <div
+            className={styles.section}
+            style={{
+                background:
+                    "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(images/invite-bg.png)",
+                backgroundPosition: "center top",
+                backgroundSize: "contain",
+                width: "100%",
+                height: "100%",
+            }}
+        >
             <div className={cn("container", styles.container)}>
                 <div className={styles.wrap}>
                     <div className={cn("h2", styles.title)}>
@@ -69,7 +79,7 @@ const Main = ({ handleValidateCode }: MainProps) => {
                         </>
                     )}
                 </div>
-                <div className={styles.images}>
+                {/* <div className={styles.images}>
                     <div className={styles.image}>
                         <Image
                             src="/images/lines-4.svg"
@@ -89,7 +99,7 @@ const Main = ({ handleValidateCode }: MainProps) => {
                             <Image src={image} layout="fill" alt="Figure" />
                         </Parallax>
                     ))}
-                </div>
+                </div> */}
             </div>
         </div>
     );
