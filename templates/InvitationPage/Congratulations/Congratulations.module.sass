@@ -3,6 +3,11 @@
 .section
     margin: 5rem 0 1rem
 
+.container
+    display: flex
+    flex-direction: column
+    align-items: center
+
 .backgroundGradient
     position: absolute
     left: calc(50% - 200px)
@@ -17,12 +22,11 @@
 
 .row
     position: relative
-    display: flex
-    gap: 3rem
+    align-items: center
 
 .wrap
     position: relative
-    top: -2.5rem
+    top: 0.5rem
     max-width: 578px
     +d
         max-width: 526px
@@ -36,7 +40,8 @@
 
 .info
     margin-bottom: 56px
-    font-size: 1rem !important
+    text-align: center
+    font-size: 1.5rem !important
     +body1
     color: white
     +d
@@ -115,6 +120,7 @@
     border-radius: 24px
     // border: 1px solid #01F7FF
     overflow: hidden
+    width: 30%
     +m
         box-shadow: none
     &:hover
@@ -147,6 +153,7 @@
 .inner
     display: flex
     flex-direction: row
+    align-items: center
     +m
         flex-direction: column
 
@@ -162,7 +169,7 @@
         height: 190px
 
 .details
-    padding: 22px 24px 16px
+    padding: 16px 48px 16px
 
 .status
     margin-bottom: 6px
@@ -171,7 +178,12 @@
         margin-bottom: 8px
 
 .subtitle
-    margin-bottom: 30px
+    display: flex
+    gap: 4px
+    margin-bottom: 0
+
+.rightArrow
+    margin-left: 0
 
 .line
     display: flex
