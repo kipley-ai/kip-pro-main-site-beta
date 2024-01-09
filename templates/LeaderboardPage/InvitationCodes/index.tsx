@@ -22,7 +22,7 @@ const InvitationCodes = ({ scrollToRef }: InvitationCodesProps) => (
                     className={styles.apply}
                     href={"/campaigns"}
                 >
-                    <Icon name="arrow-right" size="26" /> BACK TO GENESIS CAMPAIGN
+                    <Icon name="arrow-right" size="26" /> BACK TO GENESIS CAMPAIGN 
                 </a>
             </div>
             <div className={styles.firstRow}>
