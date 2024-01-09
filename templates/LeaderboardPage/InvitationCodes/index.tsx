@@ -41,7 +41,7 @@ const InvitationCodes = ({ scrollToRef }: InvitationCodesProps) => (
                         Follow us on Twitter today and experience the power of
                         Knowledge in your life!
                     </div> */}
-                    <LeaderboardTable users={leaderboardAccounts} />
+                    <LeaderboardTable />
                 </div>
             </div>
         </div>
