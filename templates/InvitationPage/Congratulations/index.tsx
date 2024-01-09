@@ -63,7 +63,7 @@ const Congratulations = ({ scrollToRef }: CongratulationsProps) => (
                                 name="arrow-right"
                                 className={styles.rightArrow}
                                 fill="#FFF"
-                                size="26"
+                                size="38"
                             />
                         </div>
                         {/* <div className={styles.line}>

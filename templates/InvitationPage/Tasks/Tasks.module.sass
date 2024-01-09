@@ -92,8 +92,9 @@
 
 .countTitle
     text-align: center
-    font-size: 2.75rem
-    margin-bottom: 4rem
+    font-size: 2rem
+    margin-bottom: 1rem
+    width: 100%
 
 .campaignItem
     position: relative
@@ -102,18 +103,19 @@
 
 // Posts
 .row
-    margin: 5rem 0
+    margin: 1rem 0 6rem
     gap: 3rem
     display: flex
     justify-content: center
 
 .wrap
     position: relative
-    top: -2.5rem
-    width: 50%
-    max-width: 578px
+    display: flex
+    flex-direction: column
+    align-items: center
+    max-width: 1000px
     +d
-        max-width: 526px
+        max-width: 726px
     +t
         max-width: 100%
 
@@ -136,6 +138,8 @@
     border-radius: 24px
     // border: 1px solid #01F7FF
     overflow: hidden
+    width: 600px
+    height: 100px
     +m
         box-shadow: none
     &:hover
@@ -168,6 +172,7 @@
 .inner
     display: flex
     flex-direction: row
+    align-items: center
     +m
         flex-direction: column
 
@@ -183,7 +188,7 @@
         height: 190px
 
 .details
-    padding: 22px 24px 16px
+    padding: 16px 48px 16px
 
 .status
     margin-bottom: 6px
@@ -192,7 +197,16 @@
         margin-bottom: 8px
 
 .subtitle
-    margin-bottom: 30px
+    display: flex
+    justify-content: space-between
+    margin-bottom: 0
+    font-size: 3rem
+
+.info
+    p
+        max-width: 600px
+        font-size: 1.5rem
+        text-align: center
 
 .line
     display: flex

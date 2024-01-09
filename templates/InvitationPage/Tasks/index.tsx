@@ -86,54 +86,38 @@ const Tasks = ({}: TasksProps) => {
         <div className={cn("section", styles.section)}>
             <div className={styles.backgroundGradient}></div>
             <div className={cn("container", styles.container)}>
-                <div className={cn("h2", styles.countTitle)}>
-                    <span className={styles.timeCount}>{days}</span> days{" "}
-                    <span className={styles.timeCount}>{hours}</span> hours{" "}
-                    <span className={styles.timeCount}>{minutes}</span> min
-                    remaining...
-                </div>
-                <div className={cn("h2", styles.title)}>Cycle Tasks</div>
+                {/* <div className={cn("h2", styles.title)}>Cycle Tasks</div> */}
                 <div className={styles.row}>
                     <div className={styles.wrap}>
-                        <div className={cn("h2", styles.title)}></div>
-                        <div className={styles.info}>
-                            <p>
-                                Refreshes every cycle for additional points and
-                                invite codes. Boost your lead! Invite friends
-                                for extra points.
-                            </p>
-                        </div>
-                    </div>
-                    <div className={styles.preview}>
-                        <div className={styles.list}>
-                            {posts.map((item, index) => (
-                                <Card
-                                    className={styles.card}
-                                    cornerCardClass={styles.corner}
-                                    backgroundCardClass={styles.backgroundCard}
-                                    squareCardClass={styles.square}
-                                    innerCardClass={styles.inner}
-                                    color={item.color}
-                                    key={index}
-                                    url={item.url}
-                                    externalUrl
-                                >
-                                    <div className={styles.details}>
-                                        {/* <div
+                        {posts.map((item, index) => (
+                            <Card
+                                className={styles.card}
+                                cornerCardClass={styles.corner}
+                                backgroundCardClass={styles.backgroundCard}
+                                squareCardClass={styles.square}
+                                innerCardClass={styles.inner}
+                                color={item.color}
+                                key={index}
+                                url={item.url}
+                                externalUrl
+                            >
+                                <div className={styles.details}>
+                                    {/* <div
                                         className={cn("status", styles.status)}
                                         style={{ color: item.color }}
                                     >
                                         {item.status}
                                     </div> */}
-                                        <div
-                                            className={cn(
-                                                "h4",
-                                                styles.subtitle,
-                                            )}
-                                        >
-                                            {item.title}
-                                        </div>
-                                        {/* <div className={styles.line}>
+                                    <div className={cn("h4", styles.subtitle)}>
+                                        {item.title}
+                                        <Icon
+                                            name="arrow-right"
+                                            className={styles.rightArrow}
+                                            fill="#FFF"
+                                            size="38"
+                                        />
+                                    </div>
+                                    {/* <div className={styles.line}>
                                         <div className={styles.date}>
                                             {item.date}
                                         </div>
@@ -143,7 +127,7 @@ const Tasks = ({}: TasksProps) => {
                                             size="26"
                                         />
                                     </div> */}
-                                        <div className={styles.previewCard}>
+                                    {/* <div className={styles.previewCard}>
                                             <Image
                                                 src={CampaignImage}
                                                 // width={580}
@@ -151,10 +135,24 @@ const Tasks = ({}: TasksProps) => {
                                                 objectFit="cover"
                                                 alt={item.title}
                                             />
-                                        </div>
-                                    </div>
-                                </Card>
-                            ))}
+                                        </div> */}
+                                </div>
+                            </Card>
+                        ))}
+                        <div className={cn("h2", styles.countTitle)}>
+                            <span className={styles.timeCount}>{days}</span>{" "}
+                            days{" "}
+                            <span className={styles.timeCount}>{hours}</span>{" "}
+                            hours{" "}
+                            <span className={styles.timeCount}>{minutes}</span>{" "}
+                            min remaining...
+                        </div>
+                        <div className={styles.info}>
+                            <p>
+                                Refreshes every cycle for additional points and
+                                invite codes. Boost your lead! Invite friends
+                                for extra points.
+                            </p>
                         </div>
                     </div>
                 </div>
