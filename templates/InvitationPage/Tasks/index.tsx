@@ -87,27 +87,20 @@ const Tasks = ({}: TasksProps) => {
             <div className={styles.backgroundGradient}></div>
             <div className={cn("container", styles.container)}>
                 <div className={cn("h2", styles.countTitle)}>
-                    <span className={styles.timeCount}>{days}</span>{" "}
-                    days <span className={styles.timeCount}>{hours}</span> hours{" "}
+                    <span className={styles.timeCount}>{days}</span> days{" "}
+                    <span className={styles.timeCount}>{hours}</span> hours{" "}
                     <span className={styles.timeCount}>{minutes}</span> min
                     remaining...
                 </div>
-                <div className={cn("h2", styles.title)}>
-                    Complete cycle tasks to gain points and invite codes!
-                </div>
+                <div className={cn("h2", styles.title)}>Cycle Tasks</div>
                 <div className={styles.row}>
                     <div className={styles.wrap}>
                         <div className={cn("h2", styles.title)}></div>
                         <div className={styles.info}>
                             <p>
-                                Invite more friends using your unique invite
-                                codes for even more points when they complete
-                                the activation tasks.
-                            </p>
-                            <br />
-                            <p>
-                                The more allies you recruit, the higher your
-                                score will climb. Team up for epic rewards!
+                                Refreshes every cycle for additional points and
+                                invite codes. Boost your lead! Invite friends
+                                for extra points.
                             </p>
                         </div>
                     </div>

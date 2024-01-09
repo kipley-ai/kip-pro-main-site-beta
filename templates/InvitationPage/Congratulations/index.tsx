@@ -37,34 +37,13 @@ const Congratulations = ({ scrollToRef }: CongratulationsProps) => (
         <div className={styles.backgroundGradient}></div>
         <div className={cn("anchor", styles.anchor)} ref={scrollToRef}></div>
         <div className={cn("container", styles.container)}>
-            <div className={cn("h2", styles.title)}>
-                Conquer. Claim. Collect. Repeat.
-            </div>
+            <div className={cn("h2", styles.title)}>Activation Tasks</div>
             <div className={styles.row}>
                 <div className={styles.wrap}>
                     <div className={styles.info}>
                         <p>
-                            Complete missions, recruit allies, contribute on
-                            Discord - loot points with every triumph!
-                            <br />
-                            Accumulate 300 points and exchange for randomized
-                            NFT blind boxes. Within each box lies untold digital
-                            wealth - Gold, Silver or Bronze tier Genesis NFTs
-                            representing generous airdrops.
-                            <br />
-                            Will you uncover the rarest of prizes? There are
-                            only 10,000 total for the taking! <br />
-                            Each revealed NFT is yours to keep or trade as you
-                            please. But grab your boxes fast - once they&#39;re
-                            gone, the adventure ends!
-                        </p>
-                        <br />
-                        <p>
-                            Our realm awaits brave explorers like you. Questing
-                            refreshes every few days. Join now to start stacking
-                            points before this event concludes in March 2024!
-                            Fortune and glory to the victors! Let the quests
-                            commence!
+                            Kickstart Genesis campaign with points from
+                            completing Activation tasks.
                         </p>
                     </div>
                     {/* <div className={styles.buttons}>
