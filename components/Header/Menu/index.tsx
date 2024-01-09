@@ -129,7 +129,7 @@ const Menu = ({ navigation, socials, onClick }: MenuProps) => {
                                       {/* <div className={styles.link}>
                                         <Link href="/campaigns">
                                           <a className={cn("a", styles.codeLink)}>
-                                            <span>Join Campaigns Now</span>
+                                            <span>GENESIS CAMPAIGN</span>
                                           </a>
                                         </Link>
                                       </div> */}

@@ -22,7 +22,7 @@ const InvitationCodes = ({ scrollToRef }: InvitationCodesProps) => (
                     className={styles.apply}
                     href={"/campaigns"}
                 >
-                    <Icon name="arrow-right" size="26" /> BACK TO CAMPAIGNS
+                    <Icon name="arrow-right" size="26" /> BACK TO GENESIS CAMPAIGN 
                 </a>
             </div>
             <div className={styles.firstRow}>
@@ -41,7 +41,7 @@ const InvitationCodes = ({ scrollToRef }: InvitationCodesProps) => (
                         Follow us on Twitter today and experience the power of
                         Knowledge in your life!
                     </div> */}
-                    <LeaderboardTable users={leaderboardAccounts} />
+                    <LeaderboardTable />
                 </div>
             </div>
         </div>
