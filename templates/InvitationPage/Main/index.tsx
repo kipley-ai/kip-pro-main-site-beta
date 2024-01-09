@@ -82,10 +82,6 @@ const Main = ({ handleValidateCode }: MainProps) => {
             style={{
                 background:
                     "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(images/invite-bg.png)",
-                backgroundPosition: "center top",
-                backgroundSize: "contain",
-                width: "100%",
-                height: "100%",
             }}
         >
             <div className={cn("container", styles.container)}>
@@ -143,12 +139,12 @@ const Main = ({ handleValidateCode }: MainProps) => {
                     </div>
                     {!isConnected && (
                         <>
-                            <div className={cn("p", styles.subtitle)}>OR</div>
-                            <div className={cn("h2", styles.title)}>
+                            <div className={cn("p", styles.or)}>OR</div>
+                            <div className={cn("p", styles.already)}>
                                 Already joined?
                             </div>
                             <GetInvolvedButton
-                                content="Connect Wallet to Continue"
+                                content="Connect Wallet"
                                 buttonStyle={cn(
                                     "button",
                                     styles.getInvolvedButton,
