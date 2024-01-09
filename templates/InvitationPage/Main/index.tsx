@@ -135,7 +135,7 @@ const Main = ({ handleValidateCode }: MainProps) => {
                     </div>
                     <div className={styles.buttons}>
                         <button
-                            onClick={() => handleValidateCode(code)}
+                            onClick={() => handleValidateCode(otp.join(""))}
                             className={cn("button", styles.getInvolvedButton)}
                             disabled={isBlankPresent}
                         >
