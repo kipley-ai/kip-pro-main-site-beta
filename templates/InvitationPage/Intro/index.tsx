@@ -70,26 +70,28 @@ const Intro = ({ scrollToRef }: IntroProps) => (
             <div className={cn("container", styles.container2)}>
                 <div className={styles.wrap2}>
                     {/* <div className={styles.stage}>Contact us</div> */}
-                    <div className={cn("h1", styles.title)}>HOW TO START</div>
+                    <div className={cn("h1", styles.title)}>HOW TO BEGIN</div>
                     <div className={styles.info2}>
                         <p>
-                            Earn points to redeem exclusive KIP NFT Blind Box.
+                            Earn points to qualify and redeem exclusive KIP NFT
+                            Blind Box with only 10,000 availability!
                             <br />
-                            1000 points to qualify for only 10,000 availability!
-                            <br />
-                            Blind Box unlocks 3 Tiers of Genesis NFTs for access
-                            to airdrops and perks.
+                            Blind Box unlocks 1 of 3 Tiers of Genesis NFTs for
+                            guaranteed access to airdrops and perks.
                         </p>
                         <br />
                         <p>
-                            Step 1: Complete Activation and Cycle tasks <br />
-                            Step 2: Recruit friends with Invite Codes <br />
-                            Step 3: Participate in Discord and Twitter
-                            engagement
+                            <span className={styles.step}>Step 1:</span> Complete Activation and Cycle
+                            tasks on Galxe
+                            <br />
+                            <span className={styles.step}>Step 2:</span> Recruit friends with Invite
+                            Codes <br />
+                            <span className={styles.step}>Step 3:</span> Participate in Discord and
+                            Twitter engagement
                         </p>
                         <br />
                         <p>
-                            Join the Adventure now! Dont miss out on the Genesis
+                            Join the adventure now! Dont miss out on the Genesis
                             NFT.
                         </p>
                     </div>
