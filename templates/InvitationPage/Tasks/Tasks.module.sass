@@ -142,6 +142,7 @@
     height: 100px
     +m
         box-shadow: none
+        width: 350px
     &:hover
         .arrow
             fill: $n1
@@ -153,9 +154,11 @@
         stroke-width: 1px
         z-index: -5
         +m
-            top: auto
+            top: 0
             bottom: 0
-            transform: scaleY(-1)
+            height: 55%
+            width: 15%
+            border-bottom-right-radius: 24px
     .square
         display: none
         +m
@@ -167,14 +170,13 @@
     border-radius: 24px
     border: 1px solid transparent
     +m
-        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 100px), calc(100% - 77px) calc(100% - 100px), calc(100% - 77px) 100%, 0 100%) !important
+        height: 55%
+        width: 380px
 
 .inner
     display: flex
     flex-direction: row
     align-items: center
-    +m
-        flex-direction: column
 
 .previewCard,
 .details
@@ -190,6 +192,10 @@
 .details
     padding: 16px 48px 16px
 
+    +m
+        padding: 0px 0px 56px 32px
+
+
 .status
     margin-bottom: 6px
     background: $c1s3
@@ -201,6 +207,11 @@
     justify-content: space-between
     margin-bottom: 0
     font-size: 2.5rem
+    width: 100%
+
+    +m
+        margin-right: 80px
+        font-size: 1.5rem
 
 .info
     p

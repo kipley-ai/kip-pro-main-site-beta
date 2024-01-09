@@ -3,7 +3,7 @@ import styles from "./WhiteButton.module.sass";
 
 type WhiteButtonProps = {};
 
-const WhiteButton = ({ }: WhiteButtonProps) => (
+const WhiteButton = ({}: WhiteButtonProps) => (
     <div className={styles.line}>
         <div className={styles.backArrow}>
             <a className={styles.apply} href={"/leaderboard"}>

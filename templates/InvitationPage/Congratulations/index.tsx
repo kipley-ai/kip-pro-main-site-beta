@@ -5,7 +5,7 @@ import Card from "@/components/Card";
 import Icon from "@/components/Icon";
 import Link from "next/link";
 import WhiteButton from "@/components/WhiteButton";
-import CampaignPic2 from "public/images/campaign-pic-2.jpg";
+// import CampaignPic2 from "public/images/campaign-pic-2.jpg";
 
 const getCurrentDate = (): string => {
     const now = new Date();
@@ -21,7 +21,7 @@ const posts = [
     {
         title: "Activation Tasks",
         date: getCurrentDate(),
-        image: CampaignPic2,
+        // image: CampaignPic2,
         status: "FEATURES",
         url: "https://galxe.com/KIPProtocol/campaign/GCnjsttqXn",
         color: "#01F7FF",
