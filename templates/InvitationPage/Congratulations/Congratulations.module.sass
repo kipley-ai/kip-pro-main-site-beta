@@ -124,6 +124,7 @@
     height: 100px
     +m
         box-shadow: none
+        width: 350px
     &:hover
         .arrow
             fill: $n1
@@ -132,12 +133,14 @@
     .corner
         fill: #0a0617 !important
         stroke: cyan
-        stroke-width: 2px
+        stroke-width: 1px
         z-index: -5
         +m
-            top: auto
+            top: 0
             bottom: 0
-            transform: scaleY(-1)
+            height: 55%
+            width: 15%
+            border-bottom-right-radius: 24px
     .square
         display: none
         +m
@@ -147,16 +150,15 @@
 .backgroundCard
     background: linear-gradient(#0a0617, #0a0617) padding-box, linear-gradient(to bottom, cyan, cyan 40%, #6a4093, #6a4093 66.66%, #2d2d2d, #2d2d2d) border-box !important
     border-radius: 24px
-    border: 2px solid transparent
+    border: 1px solid transparent
     +m
-        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 100px), calc(100% - 77px) calc(100% - 100px), calc(100% - 77px) 100%, 0 100%) !important
+        height: 55%
+        width: 380px
 
 .inner
     display: flex
     flex-direction: row
     align-items: center
-    +m
-        flex-direction: column
 
 .previewCard,
 .details
@@ -172,6 +174,10 @@
 .details
     padding: 16px 48px 16px
 
+    +m
+        padding: 0px 0px 56px 32px
+
+
 .status
     margin-bottom: 6px
     background: $c1s3
@@ -183,9 +189,17 @@
     justify-content: space-between
     margin-bottom: 0
     font-size: 2.5rem
+    width: 100%
 
-.rightArrow
-    margin-left: 0
+    +m
+        margin-right: 50px
+        font-size: 1.5rem
+
+.info
+    p
+        max-width: 600px
+        font-size: 1.25rem
+        text-align: center
 
 .line
     display: flex

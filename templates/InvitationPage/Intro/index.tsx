@@ -28,7 +28,7 @@ const Intro = ({ scrollToRef }: IntroProps) => (
                 <div className={styles.wrap}>
                     {/* <div className={styles.stage}>Contact us</div> */}
                     <div className={cn("h1", styles.title)}>
-                        KIP Protocol is the first decentralised AI base layer.
+                        KIP Protocol is the first Web3 Base Layer for AI.
                     </div>
                     {/* <Scroll
                     className={styles.scroll}
@@ -81,13 +81,13 @@ const Intro = ({ scrollToRef }: IntroProps) => (
                         </p>
                         <br />
                         <p>
-                            <span className={styles.step}>Step 1:</span> Complete Activation and Cycle
-                            tasks on Galxe
+                            <span className={styles.step}>Step 1:</span>{" "}
+                            Complete Activation and Cycle tasks on Galxe
                             <br />
-                            <span className={styles.step}>Step 2:</span> Recruit friends with Invite
-                            Codes <br />
-                            <span className={styles.step}>Step 3:</span> Participate in Discord and
-                            Twitter engagement
+                            <span className={styles.step}>Step 2:</span> Recruit
+                            friends with Invite Codes <br />
+                            <span className={styles.step}>Step 3:</span>{" "}
+                            Participate in Discord and Twitter engagement
                         </p>
                         <br />
                         <p>

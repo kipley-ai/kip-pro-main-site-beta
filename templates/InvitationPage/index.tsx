@@ -54,7 +54,7 @@ const InvitationPage = () => {
                     {
                         wallet_address: address,
                         invitation_code: "TEST-CODE",
-                    },
+                    }
                 );
 
                 const data = response.data;
@@ -87,7 +87,7 @@ const InvitationPage = () => {
 
     return (
         <Layout>
-            {isAuthenticated ? (
+            {/* {isAuthenticated ? (
                 <>
                     <Intro scrollToRef={scrollToRef} />
                     <Congratulations scrollToRef={scrollToRef} />
@@ -95,7 +95,13 @@ const InvitationPage = () => {
                 </>
             ) : (
                 <Main handleValidateCode={handleValidateCode} />
-            )}
+            )} */}
+
+            <>
+                <Intro scrollToRef={scrollToRef} />
+                <Congratulations scrollToRef={scrollToRef} />
+                <Tasks />
+            </>
         </Layout>
     );
 };

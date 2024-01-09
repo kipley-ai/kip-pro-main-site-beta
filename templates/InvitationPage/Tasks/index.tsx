@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import cn from "classnames";
 import styles from "./Tasks.module.sass";
 import Image from "@/components/Image";
-import CampaignImage from "public/images/campaign-pic.jpg";
+// import CampaignImage from "public/images/campaign-pic.jpg";
 import Card from "@/components/Card";
 import Icon from "@/components/Icon";
 import Link from "next/link";
@@ -13,7 +13,7 @@ const posts = [
     {
         title: "Cycle 1 Tasks",
         date: "",
-        image: CampaignImage,
+        // image: CampaignImage,
         status: "FEATURES",
         url: "https://galxe.com/KIPProtocol/campaign/GCVKDtthhv",
         color: "#01F7FF",
@@ -34,7 +34,7 @@ const careers = [
     {
         title: "Cycle 1 Tasks",
         content: getCurrentDate(),
-        image: CampaignImage,
+        // image: CampaignImage,
         status: [],
         url: "https://galxe.com/KIPProtocol/campaign/GCQH3tUYcq",
     },
@@ -62,13 +62,13 @@ const Tasks = ({}: TasksProps) => {
             } else {
                 const timeRemaining = targetDate - currentTime;
                 const remainingDays = Math.floor(
-                    timeRemaining / (1000 * 60 * 60 * 24),
+                    timeRemaining / (1000 * 60 * 60 * 24)
                 );
                 const remainingHours = Math.floor(
-                    (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+                    (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
                 );
                 const remainingMinutes = Math.floor(
-                    (timeRemaining % (1000 * 60 * 60)) / (1000 * 60),
+                    (timeRemaining % (1000 * 60 * 60)) / (1000 * 60)
                 );
 
                 setDays(remainingDays);
