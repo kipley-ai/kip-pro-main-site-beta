@@ -47,7 +47,7 @@ const Tasks = ({}: TasksProps) => {
     const [hours, setHours] = useState<number>(0);
     const [minutes, setMinutes] = useState<number>(0);
 
-    const targetTime: string = "2024-01-06T17:00:00Z";
+    const targetTime: string = "2024-01-14T03:00:00Z";
 
     useEffect(() => {
         const intervalId = setInterval(() => {
