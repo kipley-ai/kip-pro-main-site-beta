@@ -1,7 +1,12 @@
 @import @/styles/helpers
 
 .section
-    margin: 16rem 0 4rem
+    margin: 5rem 0 1rem
+
+.container
+    display: flex
+    flex-direction: column
+    align-items: center
 
 .backgroundGradient
     position: absolute
@@ -17,12 +22,11 @@
 
 .row
     position: relative
-    display: flex
-    gap: 3rem
+    align-items: center
 
 .wrap
     position: relative
-    top: -2.5rem
+    top: 0.5rem
     max-width: 578px
     +d
         max-width: 526px
@@ -36,7 +40,8 @@
 
 .info
     margin-bottom: 56px
-    font-size: 1rem !important
+    text-align: center
+    font-size: 1.25rem !important
     +body1
     color: white
     +d
@@ -98,10 +103,6 @@
     position: relative
     width: 612px
     font-size: 0
-    +d
-        left: calc(50% - 80px)
-    +t
-        display: none
 
 // Posts
 .listCard
@@ -119,22 +120,27 @@
     border-radius: 24px
     // border: 1px solid #01F7FF
     overflow: hidden
+    width: 600px
+    height: 100px
     +m
         box-shadow: none
+        width: 350px
     &:hover
         .arrow
             fill: $n1
     &:not(:last-child)
-        margin-bottom: 32px
+        margin-bottom: 10px
     .corner
         fill: #0a0617 !important
         stroke: cyan
-        stroke-width: 2px
+        stroke-width: 1px
         z-index: -5
         +m
-            top: auto
+            top: 0
             bottom: 0
-            transform: scaleY(-1)
+            height: 55%
+            width: 15%
+            border-bottom-right-radius: 24px
     .square
         display: none
         +m
@@ -144,15 +150,15 @@
 .backgroundCard
     background: linear-gradient(#0a0617, #0a0617) padding-box, linear-gradient(to bottom, cyan, cyan 40%, #6a4093, #6a4093 66.66%, #2d2d2d, #2d2d2d) border-box !important
     border-radius: 24px
-    border: 2px solid transparent
+    border: 1px solid transparent
     +m
-        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 100px), calc(100% - 77px) calc(100% - 100px), calc(100% - 77px) 100%, 0 100%) !important
+        height: 55%
+        width: 380px
 
 .inner
     display: flex
     flex-direction: row
-    +m
-        flex-direction: column
+    align-items: center
 
 .previewCard,
 .details
@@ -166,7 +172,11 @@
         height: 190px
 
 .details
-    padding: 22px 24px 16px
+    padding: 16px 48px 16px
+
+    +m
+        padding: 0px 0px 56px 32px
+
 
 .status
     margin-bottom: 6px
@@ -175,7 +185,21 @@
         margin-bottom: 8px
 
 .subtitle
-    margin-bottom: 30px
+    display: flex
+    justify-content: space-between
+    margin-bottom: 0
+    font-size: 2.5rem
+    width: 100%
+
+    +m
+        margin-right: 50px
+        font-size: 1.5rem
+
+.info
+    p
+        max-width: 600px
+        font-size: 1.25rem
+        text-align: center
 
 .line
     display: flex

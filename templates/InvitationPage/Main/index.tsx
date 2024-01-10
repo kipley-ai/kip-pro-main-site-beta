@@ -65,9 +65,9 @@ const Main = ({ handleValidateCode }: MainProps) => {
     };
 
     useEffect(() => {
-        if (inputsRef.current[0]) {
-            inputsRef.current[0].focus();
-        }
+        // if (inputsRef.current[0]) {
+        //     inputsRef.current[0].focus();
+        // }
     }, []);
 
     useEffect(() => {
@@ -83,9 +83,10 @@ const Main = ({ handleValidateCode }: MainProps) => {
                 background:
                     "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(images/invite-bg.png)",
                 backgroundPosition: "center top",
-                backgroundSize: "contain",
+                backgroundSize: "cover",
                 width: "100%",
                 height: "100%",
+                backgroundRepeat: "no-repeat",
             }}
         >
             <div className={cn("container", styles.container)}>
@@ -134,7 +135,7 @@ const Main = ({ handleValidateCode }: MainProps) => {
                     </div>
                     <div className={styles.buttons}>
                         <button
-                            onClick={() => handleValidateCode(code)}
+                            onClick={() => handleValidateCode(otp.join(""))}
                             className={cn("button", styles.getInvolvedButton)}
                             disabled={isBlankPresent}
                         >
@@ -143,12 +144,12 @@ const Main = ({ handleValidateCode }: MainProps) => {
                     </div>
                     {!isConnected && (
                         <>
-                            <div className={cn("p", styles.subtitle)}>OR</div>
-                            <div className={cn("h2", styles.title)}>
+                            <div className={cn("p", styles.or)}>OR</div>
+                            <div className={cn("p", styles.already)}>
                                 Already joined?
                             </div>
                             <GetInvolvedButton
-                                content="Connect Wallet to Continue"
+                                content="Connect Wallet"
                                 buttonStyle={cn(
                                     "button",
                                     styles.getInvolvedButton,

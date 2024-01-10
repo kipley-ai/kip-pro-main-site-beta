@@ -2,13 +2,31 @@
 
 .section
     position: relative
-    padding-top: 328px
-    +w
-        padding-top: 296px
-    +m
-        padding-top: 130px
+    padding: 70px 0
+    margin-top: 180px
+    margin-bottom: 100px
+
+.section2
+    margin: 0
+    position: relative
+    padding-top: 0
 
 .container
+    +w
+        max-width: 100%
+        padding: 0 142px
+    +d
+        padding: 0 40px
+    +m
+        padding: 0 24px
+
+.container2
+    display: flex
+    // justify-content: center
+    text-align: center
+    display: flex
+    flex-direction: column
+    align-items: center
     +w
         max-width: 100%
         padding: 0 142px
@@ -21,6 +39,16 @@
     position: relative
     z-index: 2
     max-width: 620px
+    +t
+        max-width: 400px
+    +m
+        margin: 0 auto
+        text-align: center
+
+.wrap2
+    position: relative
+    z-index: 2
+    // max-width: 620px
     +t
         max-width: 400px
     +m
@@ -43,7 +71,8 @@
 
 .title
     margin-bottom: 20px
-    font-size: 4rem
+    font-size: 2.5rem
+    line-height: 1.5
 
 .info
     margin-bottom: 50px
@@ -54,21 +83,41 @@
     +m
         margin-bottom: 416px
 
+.info2
+    display: flex
+    flex-direction: column
+    margin-bottom: 50px
+    text-align: left
+    max-width: 800px
+    +body1
+    color: white
+    +t
+        margin-bottom: 264px
+    +m
+        margin-bottom: 416px
+    p
+        font-size: 1.1rem
+
+.step
+    font-weight: bold
+    color: #01F7FF
+
 .images
     position: absolute
     top: -53.3%
     right: calc(50% - 1320px)
-    z-index: -1
-    width: 1900px
+    // z-index: -1
+    width: 500px
     font-size: 0
     +xl
-        right: calc(50% - 1305px)
+        top: -30%
+        right: calc(50% - 605px)
     +w
-        top: -43.9%
-        right: calc(50% - 1375px)
+        top: -36.9%
+        right: calc(50% - 605px)
     +d
-        top: -43.8%
-        right: calc(50% - 1365px)
+        top: -35.8%
+        right: calc(50% - 555px)
     +t
         top: -23%
         right: -665px
@@ -76,8 +125,8 @@
     +m
         top: auto
         right: 50%
-        bottom: -184px
-        width: 900px
+        bottom: -100px
+        width: 500px
         transform: translateX(49%)
 
 .image

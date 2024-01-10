@@ -54,7 +54,7 @@ const InvitationPage = () => {
                     {
                         wallet_address: address,
                         invitation_code: "TEST-CODE",
-                    },
+                    }
                 );
 
                 const data = response.data;
