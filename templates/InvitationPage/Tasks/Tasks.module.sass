@@ -148,6 +148,8 @@
             fill: $n1
     &:not(:last-child)
         margin-bottom: 10px
+        +m
+            margin-bottom: -2rem
     .corner
         fill: #0a0617 !important
         stroke: cyan
@@ -177,6 +179,8 @@
     display: flex
     flex-direction: row
     align-items: center
+    +m
+        align-items: flex-start
 
 .previewCard,
 .details
@@ -193,7 +197,7 @@
     padding: 16px 48px 16px
 
     +m
-        padding: 0px 0px 56px 32px
+        padding: 0px 0px 0 32px
 
 
 .status
@@ -210,8 +214,9 @@
     width: 100%
 
     +m
-        margin-right: 80px
+        padding: 1rem 0 0
         font-size: 1.5rem
+        gap: 90px
 
 .info
     p

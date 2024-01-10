@@ -36,7 +36,7 @@ const LeaderboardTable = () => {
                 const myAccountData = await axios.post("/api/leaderboard", {
                     page: currentPage + 1,
                     page_size: itemsPerPage,
-                    wallet_address: address
+                    wallet_address: address,
                 });
                 if (response.status !== 200) {
                     throw new Error();
@@ -49,7 +49,7 @@ const LeaderboardTable = () => {
             }
         };
         handleLeaderboardRankings();
-    }, [currentPage])
+    }, [currentPage]);
 
     const pageCount = Math.ceil(itemLengths / itemsPerPage);
     //console.log(data)
@@ -64,7 +64,7 @@ const LeaderboardTable = () => {
         <table className={styles.userProfileTable}>
             <thead>
                 <tr>
-                    <th></th>
+                    <th>RANKING</th>
                     {/* <th>Name</th>
                     <th>Twitter</th>
                     <th>Discord</th> */}
@@ -73,19 +73,33 @@ const LeaderboardTable = () => {
                 </tr>
             </thead>
             <tbody>
-                {myData !== null ? myData?.map((myDataRank: any) => (
-                    <tr className={styles.userData} key={myDataRank.wallet_address}>
-                        <td>{myDataRank.rank}</td>
-                        <td>{myDataRank.wallet_address.slice(0, 6)}...{myDataRank.wallet_address.slice(-6)}</td>
-                        <td>{myDataRank.points}</td>
-                    </tr>
-                )) :
+                {myData !== null ? (
+                    myData?.map((myDataRank: any) => (
+                        <tr
+                            className={styles.userData}
+                            key={myDataRank.wallet_address}
+                        >
+                            <td>
+                                <div className={styles.myScore}>My Points</div>
+                                <div className={styles.myRow}>
+                                    {myDataRank.rank}
+                                </div>
+                            </td>
+                            <td>
+                                {myDataRank.wallet_address.slice(0, 6)}...
+                                {myDataRank.wallet_address.slice(-6)}
+                            </td>
+                            <td>{myDataRank.points}</td>
+                        </tr>
+                    ))
+                ) : (
                     <></>
-                }
-                {data.length > 0 ? data?.map((row: any) => (
-                    <tr key={row.wallet_address}>
-                        <td>{row.rank}</td>
-                        {/* <td className={styles.user}>
+                )}
+                {data.length > 0 ? (
+                    data?.map((row: any) => (
+                        <tr key={row.wallet_address}>
+                            <td>{row.rank}</td>
+                            {/* <td className={styles.user}>
                             <Image
                                 src={user.profilePic}
                                 alt={user.fullName}
@@ -103,37 +117,41 @@ const LeaderboardTable = () => {
                         </td>
                         <td>{user.twitter}</td>
                         <td>{user.discord}</td> */}
-                        <td>
-                            {row.wallet_address.slice(0, 6)}...{row.wallet_address.slice(-6)}
-                        </td>
-                        <td>{row.points}</td>
-                    </tr>
-                )) :
+                            <td>
+                                {row.wallet_address.slice(0, 6)}...
+                                {row.wallet_address.slice(-6)}
+                            </td>
+                            <td>{row.points}</td>
+                        </tr>
+                    ))
+                ) : (
                     <></>
-                }
+                )}
             </tbody>
             {pageCount >= 1 && (
                 <tfoot>
                     <tr>
                         <td colSpan={3}>
-                            <ReactPaginate className={styles.pagination}
+                            <ReactPaginate
+                                className={styles.pagination}
                                 previousLabel={"<"}
                                 nextLabel={">"}
                                 breakLabel={"..."}
                                 pageCount={pageCount}
                                 onPageChange={handlePageClick}
-                                // containerClassName={"pagination"}
-                                activeClassName={"active"}
                                 forcePage={currentPage}
+                                pageRangeDisplayed={3}
+                                marginPagesDisplayed={1}
+                                pageLinkClassName={styles.pageLink}
+                                activeLinkClassName={styles.activeLink}
                             />
                         </td>
                     </tr>
                 </tfoot>
             )}
         </table>
-    )
-
-}
+    );
+};
 
 // const LeaderboardTable: React.FC<{ users: UserProfile[] }> = ({ users }) => (
 //     const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
