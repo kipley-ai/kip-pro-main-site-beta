@@ -11,10 +11,12 @@ import toast from "react-hot-toast";
 import { pageExtensions } from "next.config";
 
 const LeaderboardTable = () => {
+    const { address } = useAccount();
     const [data, setData] = useState([]);
     const [itemLengths, setItemLengths] = useState(0);
     const [currentPage, setCurrentPage] = useState(0);
     const itemsPerPage = 10;
+    const [myData, setMyData] = useState([]);
 
     useEffect(() => {
         const handleLeaderboardRankings = async () => {
@@ -30,6 +32,16 @@ const LeaderboardTable = () => {
                 }
                 setData(response.data.ranking_list);
                 setItemLengths(response.data.code_count);
+
+                const myAccountData = await axios.post("/api/leaderboard", {
+                    page: currentPage + 1,
+                    page_size: itemsPerPage,
+                    wallet_address: address
+                });
+                if (response.status !== 200) {
+                    throw new Error();
+                }
+                setMyData(myAccountData.data.ranking_list);
             } catch (error: any) {
                 console.error("Error:", error.response.data.message);
                 toast.error(error.response.data.message);
@@ -46,6 +58,7 @@ const LeaderboardTable = () => {
         // const newOffset = (event.selected * itemsPerPage) % data.length;
         setCurrentPage(event.selected);
     };
+    console.log(myData);
 
     return (
         <table className={styles.userProfileTable}>
@@ -55,11 +68,20 @@ const LeaderboardTable = () => {
                     {/* <th>Name</th>
                     <th>Twitter</th>
                     <th>Discord</th> */}
-                    <th>WALLET</th>
+                    <th>ADDRESS</th>
                     <th>POINTS</th>
                 </tr>
             </thead>
             <tbody>
+                {myData !== null ? myData?.map((myDataRank: any) => (
+                    <tr className={styles.userData} key={myDataRank.wallet_address}>
+                        <td>{myDataRank.rank}</td>
+                        <td>{myDataRank.wallet_address.slice(0, 6)}...{myDataRank.wallet_address.slice(-6)}</td>
+                        <td>{myDataRank.points}</td>
+                    </tr>
+                )) :
+                    <></>
+                }
                 {data.length > 0 ? data?.map((row: any) => (
                     <tr key={row.wallet_address}>
                         <td>{row.rank}</td>
