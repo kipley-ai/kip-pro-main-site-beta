@@ -21,8 +21,10 @@
     filter: blur(100px)
 
 .row
-    position: relative
-    align-items: center
+    margin: 1rem 0 6rem
+    gap: 3rem
+    display: flex
+    justify-content: center
 
 .wrap
     position: relative
@@ -130,6 +132,8 @@
             fill: $n1
     &:not(:last-child)
         margin-bottom: 10px
+        +m
+            margin-bottom: -2rem
     .corner
         fill: #0a0617 !important
         stroke: cyan

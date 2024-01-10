@@ -74,10 +74,10 @@ const Intro = ({ scrollToRef }: IntroProps) => (
                     <div className={styles.info2}>
                         <p>
                             Earn points to qualify and redeem exclusive KIP NFT
-                            Blind Box with only 10,000 availability!
+                            Blind Box!
                             <br />
-                            Blind Box unlocks 1 of 3 Tiers of Genesis NFTs for
-                            guaranteed access to airdrops and perks.
+                            Blind Box unlocks different tiers of Genesis NFTs
+                            for guaranteed<br />access to airdrops and perks.
                         </p>
                         <br />
                         <p>
