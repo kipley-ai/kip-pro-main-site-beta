@@ -38,6 +38,42 @@
     justify-content: center
 
 .pagination
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+  background-color: #151515
+  padding: 10px 0
+
+  ul
     display: flex
-    justify-content: center
-    letter-spacing: 5px
+    flex-direction: row
+    list-style: none
+    padding: 0
+    margin: 0
+
+  li
+    margin: 0 5px
+
+  li a
+    text-decoration: none
+    color: #fff
+    background-color: #333
+    padding: 8px 12px
+    border-radius: 4px
+    cursor: pointer
+    display: block // Ensure the anchor tag fills the li for better click area
+    &:hover
+      background-color: #444
+
+  li.previous a, li.next a, li.break a
+    background-color: transparent
+
+  li.active a
+    background-color: #007bff
+    color: white
+    &:hover
+      background-color: #0056b3
+
+.userData
+  color: cyan
