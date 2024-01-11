@@ -105,10 +105,9 @@ const Item = ({ className, itemWrapClass, item }: ItemProps) => {
             <div className={cn(styles.wrap, itemWrapClass)}>
                 <div className={cn("content", styles.content)}>
                     <h2>Invite Code</h2>
-                    {/* <p>
-                        Follow us on Twitter today and experience the power of
-                        Knowledge in your life!
-                    </p> */}
+                    <p className={styles.updateNotice}>
+                        Updated every 15 min
+                    </p>
                 </div>
             </div>
 
