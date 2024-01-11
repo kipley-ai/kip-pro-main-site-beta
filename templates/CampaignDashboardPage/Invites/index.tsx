@@ -6,46 +6,66 @@ import CheckIcon from "public/check-icon.svg";
 import { useState } from "react";
 
 const InvitationCodeTable = () => {
+    const dummyData = [
+        {
+            code: "CODE911102",
+            expiryDate: "27/12/2023"
+        },
+        {
+            code: "CODE911034",
+            expiryDate: "01/01/2024"
+        },
+        {
+            code: "CODE911045",
+            expiryDate: "10/11/2023"
+        },
+        {
+            code: "CODE911067",
+            expiryDate: "31/08/2023"
+        },
+        {
+            code: "CODE911078",
+            expiryDate: "07/09/2023"
+        },
+        {
+            code: "CODE911089",
+            expiryDate: "16/01/2024"
+        }
+    ]
+    const [clicked, setClicked] = useState([false, false, false, false, false, false])
+
+    const clickHandler = (index: number) => {
+        const newClicked = [...clicked];
+        newClicked[index] = true;
+        setClicked(newClicked);
+    }
+
+    const copyHandler = (inviteCode: string, index: number) => {
+        navigator.clipboard.writeText(inviteCode);
+        clickHandler(index);
+    }
+
     return (
-        <table className={styles.body_container}>
+        <table className={styles.table}>
             <thead>
-                <tr className={styles.table_row}>
-                    <th className={styles.table_item}>INVITE CODE</th>
-                    <th className={styles.table_item}>EXPIRY DATE</th>
-                    <th className={styles.table_item}></th>
+                <tr>
+                    <th>INVITE CODE</th>
+                    <th>EXPIRY DATE</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td className={styles.table_item}>CODE911102</td>
-                    <td className={styles.table_item}>27/12/2023</td>
-                    <td className={styles.table_item}><Image src={CopyIcon} alt="copy"/></td>
-                </tr>
-                <tr>
-                    <td className={styles.table_item}>CODE911034</td>
-                    <td className={styles.table_item}>01/01/2024</td>
-                    <td className={styles.table_item}><Image src={CopyIcon} alt="copy"/></td>
-                </tr>
-                <tr>
-                    <td className={styles.table_item}>CODE911045</td>
-                    <td className={styles.table_item}>10/11/2023</td>
-                    <td className={styles.table_item}><Image src={CheckIcon} alt="copy"/></td>
-                </tr>
-                <tr>
-                    <td className={styles.table_item}>CODE911067</td>
-                    <td className={styles.table_item}>31/08/2023</td>
-                    <td className={styles.table_item}><Image src={CheckIcon} alt="copy"/></td>
-                </tr>
-                <tr>
-                    <td className={styles.table_item}>CODE911078</td>
-                    <td className={styles.table_item}>07/09/2023</td>
-                    <td className={styles.table_item}><Image src={CheckIcon} alt="copy"/></td>
-                </tr>
-                <tr>
-                    <td className={styles.table_item}>CODE911089</td>
-                    <td className={styles.table_item}>16/01/2024</td>
-                    <td className={styles.table_item}><Image src={CopyIcon} alt="copy"/></td>
-                </tr>
+                {
+                    dummyData.map((item, index) => {
+                        return (
+                            <tr key={index}>
+                                <td style={{ textDecoration: clicked[index] ? 'line-through' : 'none' }}>{item.code}</td>
+                                <td>{item.expiryDate}</td>
+                                <td><Image src={clicked[index] ? CheckIcon : CopyIcon} alt="copy" onClick={() => copyHandler(item.code, index)} /></td>
+                            </tr>
+                        )
+                    })
+                }
             </tbody>
         </table>
     )
@@ -95,7 +115,6 @@ const Invites = () => {
                 </div>
             </div>
             <InvitationCodeTable />
-            {/* <FAQs /> */}
         </div>
     )
 }

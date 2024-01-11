@@ -7,20 +7,32 @@
     display: flex
     flex-direction: column
     align-items: center
-    font-family: "Inter"
+
+    h1 
+        font-size:42px
+        font-family: Inter
+        font-weight: 900
+
+    h6
+        color: #D9D9D9
+        font-family: Space Grotesk
+        font-size: 10px
+        font-style: normal
+        text-transform: uppercase
+        letter-spacing: 1.5px
 
 .header_description
     display: flex
     flex-direction: row
     align-items: center
     margin-top: 10px
-    font-weight: 300
-    font-family: "Space Grotesk"
 
 .loading_icon
     margin: 10px
 
-.body_container
+.table
+    @apply table-auto
+
     display: flex
     flex-direction: column
     align-items: center
@@ -31,22 +43,38 @@
     background-size: 100% 100%
     margin-top: 30px
     padding-top: 100px
+    
 
-.table_row
-    display: flex
-    align-items: center
-    justify-content: center
-    border: solid
-    border-color: #222325
-    border-top-width: 0
-    border-left-width: 0
-    border-right-width: 0
+    th
+        font-family: Inter
+        color: #6F767E
+        
 
-    &:last-child
-        border: none
+    tr
+        display: flex
+        align-items: center
+        justify-content: center
+        border-bottom: 1px #363842 solid
 
-.table_item
-    padding: 10px
+        &:last-child
+            border: none
+
+    td
+        font-family: Inter
+        font-size: 16px
+        font-style: normal
+        text-align: center
+
+        &:last-child
+            cursor: pointer
+
+    th, td
+        @apply text-left
+        width: 200px
+        padding: 20px 10px 20px 10px
+        
+        &:last-child
+            width: 50px
 
 .faq_container
     display: flex
