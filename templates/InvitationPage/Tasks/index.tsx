@@ -15,7 +15,7 @@ const posts = [
         date: "",
         // image: CampaignImage,
         status: "FEATURES",
-        url: "https://galxe.com/KIPProtocol/campaign/GCGSJttp9G",
+        url: "https://galxe.com/KIPProtocol/campaign/GCAcJttXFV",
         color: "#01F7FF",
     },
 ];
@@ -29,16 +29,6 @@ const getCurrentDate = (): string => {
 
     return `${day}/${month}/${year}`;
 };
-
-const careers = [
-    {
-        title: "Cycle 1 Tasks",
-        content: getCurrentDate(),
-        // image: CampaignImage,
-        status: [],
-        url: "https://galxe.com/KIPProtocol/campaign/GCQH3tUYcq",
-    },
-];
 
 type TasksProps = {};
 

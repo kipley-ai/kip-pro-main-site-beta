@@ -90,7 +90,7 @@ const InvitationPage = () => {
             {isAuthenticated ? (
                 <>
                     <Intro scrollToRef={scrollToRef} />
-                    <Congratulations scrollToRef={scrollToRef} />
+                    {/* <Congratulations scrollToRef={scrollToRef} /> */}
                     <Tasks />
                 </>
             ) : (

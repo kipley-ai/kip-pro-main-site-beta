@@ -82,7 +82,7 @@ const Intro = ({ scrollToRef }: IntroProps) => (
                         <br />
                         <p>
                             <span className={styles.step}>Step 1:</span>{" "}
-                            Complete Activation and Cycle tasks on Galxe
+                            Complete tasks on Galxe
                             <br />
                             <span className={styles.step}>Step 2:</span> Recruit
                             friends with Invite Codes <br />
