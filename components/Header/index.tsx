@@ -43,7 +43,7 @@ const Header = ({}: HeaderProps) => {
             <div className={styles.links}>
               <Link href="/campaigns">
                 <a className={cn("a", styles.codeLink)}>
-                  <span className={styles["link-text"]}>Join Campaigns Now</span>
+                  <span className={styles["link-text"]}>GENESIS CAMPAIGN</span>
                 </a>
               </Link>
               <Link href="/about-us">
