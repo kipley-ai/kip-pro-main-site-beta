@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 import { Copy, CopySuccess } from "iconsax-react";
 import { useAccount } from "wagmi";
 import { useRouter } from "next/router";
+import ReactPaginate from "react-paginate";
 
 type ItemProps = {
     className?: string;
@@ -16,10 +17,19 @@ type ItemProps = {
 };
 
 const Item = ({ className, itemWrapClass, item }: ItemProps) => {
+    
+    const itemsPerPage = 20;
     const [codes, setCodes] = useState<any[]>([]);
-    const [isCopied, setIsCopied] = useState(Array(5).fill(false));
+    const [isCopied, setIsCopied] = useState(Array(itemsPerPage).fill(false));
     const { address, isConnected } = useAccount();
     const router = useRouter();
+    const [itemLengths, setItemLengths] = useState(0);
+    const [currentPage, setCurrentPage] = useState(0);
+    const pageCount = Math.ceil(itemLengths / itemsPerPage);
+
+    const handlePageClick = (event: any) => {
+        setCurrentPage(event.selected);
+    }
 
     const copyToClipboard = (code: string, index: number) => {
         navigator.clipboard.writeText(code);
@@ -77,7 +87,7 @@ const Item = ({ className, itemWrapClass, item }: ItemProps) => {
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({ wallet_address: address }),
+                    body: JSON.stringify({ page: currentPage + 1, page_size: itemsPerPage, wallet_address: address }),
                 });
 
                 if (!response.ok) {
@@ -85,7 +95,8 @@ const Item = ({ className, itemWrapClass, item }: ItemProps) => {
                 }
 
                 const data = await response.json();
-                setCodes(data);
+                setCodes(data.code_list);
+                setItemLengths(data.code_count);
             } catch (err: any) {
                 console.error(err.message);
                 toast.error(err.message);
@@ -98,7 +109,7 @@ const Item = ({ className, itemWrapClass, item }: ItemProps) => {
             router.push("/campaigns");
             toast.error("Please connect your wallet first.");
         }
-    }, [isConnected, address, router]);
+    }, [isConnected, address, router, currentPage]);
 
     return (
         <div className={cn(styles.item, className)}>
@@ -174,12 +185,36 @@ const Item = ({ className, itemWrapClass, item }: ItemProps) => {
                                     </tr>
                                 ))}
                             </tbody>
+                            {
+                                pageCount >= 1 && (
+                                    <tfoot>
+                                        <tr>
+                                            <td colSpan={3}>
+                                                <div className={styles.pagination}>
+                                                    <ReactPaginate
+                                                        className={styles.pagination}
+                                                        previousLabel={"<"}
+                                                        nextLabel={">"}
+                                                        breakLabel={"..."}
+                                                        pageCount={pageCount}
+                                                        onPageChange={handlePageClick}
+                                                        forcePage={currentPage}
+                                                        pageRangeDisplayed={3}
+                                                        marginPagesDisplayed={1}
+                                                        pageLinkClassName={styles.pageLink}
+                                                        activeLinkClassName={styles.activeLink}
+                                                    />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                )
+                            }
                         </table>
                     ) : (
                         <div className={styles.completeTasks}>
                             <p>
-                                Please complete all the tasks <br />
-                                first to claim invite code
+                                Please complete Activation and Cycle Tasks to claim invite codes to share
                             </p>
                         </div>
                     )}
