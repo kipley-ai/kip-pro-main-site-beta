@@ -1,7 +1,17 @@
 .container
-    padding-top: 60px
-    display: flex
-    gap: 60px
+    @apply flex gap-[60px] pt-[60px] mb-48 flex-wrap
+
+.nftContainer
+    @apply flex items-center w-[451px]
+
+.nftBlue
+    width: 15px
+    height: 316px
+    border-radius: 24px 0px 0px 24px
+    background: #01F7FF
+
+.nftPict
+    @apply w-full rounded-[24px]
 
 .score
     margin-top: 48px
@@ -17,8 +27,8 @@
     margin-bottom: 32px
     position: relative
     display: flex
-    width: 223px
-    height: 54px
+    width: 231px
+    height: 57px
     padding: 9px 14px
     justify-content: center
     align-items: center
@@ -34,6 +44,9 @@
     letter-spacing: -0.48px
     text-transform: uppercase
 
+    &:hover
+        cursor: pointer
+
 .border
     position: absolute
     top: -2px
@@ -47,5 +60,90 @@
 .corner
     position: absolute
     right: -2px
-    top: -2px
-    height: 57px
+    top: -3px
+    height: 58px
+
+.ledContainer
+    @apply flex flex-col w-[702px]
+
+.leaderboardText
+    margin-bottom: 32px
+    font-family: Inter
+    font-size: 48px
+    font-style: normal
+    font-weight: 900
+    line-height: 65px /* 135.417% */
+
+.ledTable
+    position: relative
+    border-radius: 24px
+    width: 100%
+    background: #222325
+    display: flex
+    flex-direction: column
+    align-items: center
+    clip-path: polygon(0 0, 90% 0,100% 10% ,100% 100%, 0 100%)
+
+.tableContainer
+    @apply flex flex-col w-full h-full py-[47px] px-[122px] gap-[47px] pb-[64px]
+
+.ledUpdated
+    @apply flex items-center gap-[10px] mb-6
+    h1
+        color: #D9D9D9
+        font-family: Space Grotesk
+        font-size: 10px
+        font-style: normal
+        font-weight: 400
+        line-height: 16px /* 160% */
+        letter-spacing: 1.5px
+        text-transform: uppercase
+
+.ledSearch
+    @apply flex items-center gap-[10px] bg-[#6F767E66] opacity-40 py-4 px-2 rounded-sm
+
+.table
+    @apply table-auto
+
+    th
+        color: var(--Neutral-04, #6F767E)
+        font-family: Inter
+        font-size: 18px
+        font-style: normal
+        font-weight: 600
+        line-height: 16px /* 88.889% */
+        letter-spacing: -0.18px
+        
+        @apply pb-[24px]
+
+    td
+        color: var(--Neutral-Grey-0, #FFF)
+
+        text-align: center
+        font-family: Inter
+        font-size: 16px
+        font-style: normal
+        font-weight: 600
+        line-height: 24px /* 150% */
+        letter-spacing: -0.16px
+        text-align: center
+        padding: 24px
+        border-top: 1px #272830 solid
+    
+    tbody
+        tr
+            @apply hover:bg-[#272830] hover:cursor-pointer rounded-sm
+
+.pagContainer
+    @apply flex w-full items-center justify-between px-[66px]
+
+    div
+        color: var(--Neutral-Grey-0, #FFF)
+        font-family: Inter
+        font-size: 12px
+        font-style: normal
+        font-weight: 500
+        line-height: 100% /* 12px */
+        letter-spacing: -0.36px
+        @apply bg-black rounded-md w-8 h-8 flex items-center justify-center hover:cursor-pointer
+
