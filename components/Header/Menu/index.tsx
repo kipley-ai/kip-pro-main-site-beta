@@ -126,13 +126,13 @@ const Menu = ({ navigation, socials, onClick }: MenuProps) => {
                                               </NavLink>
                                           )
                                       )}
-                                      {/* <div className={styles.link}>
+                                      <div className={styles.link}>
                                         <Link href="/campaigns">
                                           <a className={cn("a", styles.codeLink)}>
                                             <span>GENESIS CAMPAIGN</span>
                                           </a>
                                         </Link>
-                                      </div> */}
+                                      </div>
                                       <div className={styles.link}>
                                         <GetInvolvedButton
                                           buttonStyle={cn("button", styles["get-involved-button"])}
