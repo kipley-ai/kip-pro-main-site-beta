@@ -87,7 +87,7 @@ const InvitationPage = () => {
 
     return (
         <Layout>
-            {/* {isAuthenticated ? (
+            {isAuthenticated ? (
                 <>
                     <Intro scrollToRef={scrollToRef} />
                     <Congratulations scrollToRef={scrollToRef} />
@@ -95,12 +95,7 @@ const InvitationPage = () => {
                 </>
             ) : (
                 <Main handleValidateCode={handleValidateCode} />
-            )} */}
-            <>
-                <Intro scrollToRef={scrollToRef} />
-                <Congratulations scrollToRef={scrollToRef} />
-                <Tasks />
-            </>
+            )}
         </Layout>
     );
 };
