@@ -37,10 +37,9 @@ const InvitationCodes = ({ scrollToRef }: InvitationCodesProps) => (
 
                 <div className={styles.leaderboard}>
                     <div className={cn("h2", styles.title)}>Leaderboard</div>
-                    {/* <div className={cn("p", styles.subtitle)}>
-                        Follow us on Twitter today and experience the power of
-                        Knowledge in your life!
-                    </div> */}
+                    <div className={cn("p", styles.subtitle)}>
+                        Updated every 12 hours
+                    </div>
                     <LeaderboardTable />
                 </div>
             </div>
