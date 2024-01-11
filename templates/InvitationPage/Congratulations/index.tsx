@@ -23,7 +23,7 @@ const posts = [
         date: getCurrentDate(),
         // image: CampaignPic2,
         status: "FEATURES",
-        url: "https://galxe.com/KIPProtocol/campaign/GCnjsttqXn",
+        url: "https://galxe.com/KIPProtocol/campaign/GCdw3ttLrP",
         color: "#01F7FF",
     },
 ];
