@@ -64,10 +64,53 @@ const Main = ({ handleValidateCode }: MainProps) => {
         }
     };
 
+    const handlePaste = (event: any) => {
+        event.preventDefault();
+
+        const clipboardData =
+            event.clipboardData || (window as any).clipboardData;
+        let clipboardText = clipboardData.getData("text").trim().toUpperCase();
+
+        if (clipboardText.length > 5) {
+            clipboardText = clipboardText.slice(0, 5);
+        }
+
+        const otpArray = Array(5).fill("");
+
+        for (let i = 0; i < clipboardText.length; i++) {
+            otpArray[i] = clipboardText[i];
+        }
+
+        setOtp(otpArray);
+
+        const lastFilledInputIndex = otpArray.lastIndexOf(
+            clipboardText.slice(-1),
+        );
+        const firstBlankInputIndex = otpArray.findIndex(
+            (value) => value === "",
+        );
+
+        if (lastFilledInputIndex !== -1) {
+            if (lastFilledInputIndex < 4) {
+                inputsRef.current[lastFilledInputIndex + 1]?.focus();
+            } else {
+                inputsRef.current[lastFilledInputIndex]?.blur();
+            }
+        } else if (firstBlankInputIndex !== -1) {
+            inputsRef.current[firstBlankInputIndex]?.focus();
+        }
+    };
+
     useEffect(() => {
-        // if (inputsRef.current[0]) {
-        //     inputsRef.current[0].focus();
-        // }
+        if (inputsRef.current[0]) {
+            inputsRef.current[0].focus();
+        }
+
+        window.addEventListener("paste", handlePaste);
+
+        return () => {
+            window.removeEventListener("paste", handlePaste);
+        };
     }, []);
 
     useEffect(() => {
@@ -128,6 +171,7 @@ const Main = ({ handleValidateCode }: MainProps) => {
                                             (inputsRef.current[index] = ref)
                                         }
                                         className={styles.inputBox}
+                                        onPaste={handlePaste}
                                     />
                                 );
                             })}
