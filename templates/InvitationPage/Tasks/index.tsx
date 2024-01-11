@@ -15,7 +15,7 @@ const posts = [
         date: "",
         // image: CampaignImage,
         status: "FEATURES",
-        url: "https://galxe.com/KIPProtocol/campaign/GCd93ttL1J",
+        url: "https://galxe.com/KIPProtocol/campaign/GCGSJttp9G",
         color: "#01F7FF",
     },
 ];
