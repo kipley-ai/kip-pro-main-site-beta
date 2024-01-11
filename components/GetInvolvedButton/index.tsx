@@ -56,6 +56,7 @@ const GetInvolvedButton = ({ buttonStyle, chainStyle, wrapStyle, content }: GetI
                                     return (
                                         <button
                                             onClick={openChainModal}
+                                            className={styles.wrongNetwork}
                                             type="button"
                                         >
                                             Wrong network
