@@ -2,12 +2,14 @@ import Layout from "@/components/Layout";
 import styles from "./Layout.module.sass";
 import TabsHeader from "./Tabs";
 import Leaderboard from "./Leaderboard";
+import Invites from "./Invites";
 
 const CampaignDashboardPage = () => {
     return (
         <Layout>
             <div className={styles.container}>
                 <TabsHeader />
+                <Invites />
                 <Leaderboard />
             </div>
         </Layout>
