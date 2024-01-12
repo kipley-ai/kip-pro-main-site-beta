@@ -1,6 +1,11 @@
 import styles from "./Tabs.module.sass";
 
-const TabsHeader = () => {
+type TabsHeaderProps = {
+    tab: string;
+    setTab: Function;
+};
+
+const TabsHeader = ({ tab, setTab }: TabsHeaderProps) => {
     return (
         <div>
             <div className={styles.back}>
@@ -23,15 +28,15 @@ const TabsHeader = () => {
                 BACK TO CAMPAIGNS
             </div>
             <div className={styles.tabs}>
-                <div className={styles.tab}>
+                <div className={styles.tab} onClick={() => setTab("invites")}>
                     <h1>Invites</h1>
                     <div className={styles.ind}></div>
                 </div>
-                <div className={styles.tab}>
+                <div className={styles.tab} onClick={() => setTab("leaderboard")}>
                     <h1>Leaderboard</h1>
                     <div className={styles.ind}></div>
                 </div>
-                <div className={styles.tab}>
+                <div className={styles.tab} onClick={() => setTab("nftcollection")}>
                     <h1>NFTCollection</h1>
                     <div className={styles.ind}></div>
                 </div>

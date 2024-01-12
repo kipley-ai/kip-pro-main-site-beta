@@ -17,12 +17,14 @@ type ExternalApiResponse = {
 };
 
 type RequestBody = {
+    page: number;
+    page_size: number;
     wallet_address: string;
 };
 
 const getCodes = async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.method === "POST") {
-        const { wallet_address }: RequestBody = req.body;
+        const { page, page_size, wallet_address }: RequestBody = req.body;
 
         if (!wallet_address) {
             res.status(400).json({ error: "Wallet address is required" });
@@ -33,11 +35,13 @@ const getCodes = async (req: NextApiRequest, res: NextApiResponse) => {
             const response = await axios.post<ExternalApiResponse>(
                 `${process.env.NEXT_PUBLIC_API_URL}/get_wallet_codes`,
                 {
-                    wallet_address,
+                    page: page,
+                    page_size: page_size,
+                    wallet_address: wallet_address,
                 },
             );
 
-            res.status(200).json(response.data.data.code_list);
+            res.status(200).json(response.data.data);
         } catch (error) {
             res.status(500).json({
                 error: "Error contacting the external API.",
