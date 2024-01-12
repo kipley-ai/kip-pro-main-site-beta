@@ -5,7 +5,9 @@ import styles from "./Header.module.sass";
 import Logo from "@/components/Logo";
 import Menu from "./Menu";
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from "next/router";
+import { useAccount } from "wagmi";
 
 import { headerNavigation } from "@/constants/navigation";
 import { socials } from "@/constants/socials";
@@ -16,6 +18,7 @@ type HeaderProps = {};
 const Header = ({}: HeaderProps) => {
   const [headerStyle, setHeaderStyle] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(false);
+  const { isConnected } = useAccount();
 
   useScrollPosition(({ currPos }) => {
     setHeaderStyle(currPos.y <= -2);
@@ -87,6 +90,21 @@ const Header = ({}: HeaderProps) => {
             wrapStyle={styles.getInvolvedButtonWrap}
           />
         </div>
+        {pathname === "/campaigns" && !isConnected && (
+          <div className={styles.connectWarning}>
+            <Image
+              src="/images/circle-warning.svg" 
+              className={styles.connectWarningIcon}
+              width={15} 
+              height={15} 
+              alt="Warning Icon"
+            />
+            <p>
+              For Existing Galxe users:<br />
+              Please use the same wallet to connect
+            </p>
+          </div>
+        )}
       </header>
   );
 };

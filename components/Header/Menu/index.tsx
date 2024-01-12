@@ -10,6 +10,8 @@ import Socials from "@/components/Socials";
 import Image from "@/components/Image";
 import GetInvolvedButton from "@/components/GetInvolvedButton";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useAccount } from "wagmi";
 
 type NavigationType = {
     title: string;
@@ -26,6 +28,9 @@ type MenuProps = {
 const Menu = ({ navigation, socials, onClick }: MenuProps) => {
     const [visible, setVisible] = useState<boolean>(false);
     const [loaded, setLoaded] = useState<boolean>(false);
+
+    const { pathname } = useRouter();
+    const { isConnected } = useAccount();
 
     useHotkeys("esc", () => setVisible(false), {
         enableOnTags: ["INPUT", "TEXTAREA"],
@@ -139,6 +144,21 @@ const Menu = ({ navigation, socials, onClick }: MenuProps) => {
                                           chainStyle={styles.chainButton}
                                           wrapStyle={styles.getInvolvedButtonWrap}
                                         />
+                                        {pathname === "/campaigns" && !isConnected && (
+                                          <div className={styles.connectWarning}>
+                                            <Image
+                                              src="/images/circle-warning.svg" 
+                                              className={styles.connectWarningIcon}
+                                              width={15} 
+                                              height={15} 
+                                              alt="Warning Icon"
+                                            />
+                                            <p>
+                                              For Existing Galxe users:<br />
+                                              Please use the same wallet to connect
+                                            </p>
+                                          </div>
+                                        )}
                                       </div>
                                   </nav>
                                   <div className={styles.line}>

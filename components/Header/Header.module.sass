@@ -14,13 +14,13 @@
     +m
         padding: 24px 0
     &.visible
-        padding: 32px 0
+        padding: 42px 0
         background: rgba($n9, .95)
         +w
             padding: 24px 0
         +m
             padding: 20px 0
-        img
+        .logo
             transform-origin: left
             transform: scale(0.6)
             +m
@@ -119,3 +119,22 @@
 .getInvolvedButtonWrap
     display: flex
     gap: 12px
+
+.connectWarning
+    position: absolute
+    right: 55px
+    margin-top: 3px
+    padding-bottom: 3px
+    display: flex
+    gap: 5px
+    color: $n3
+    font-size: 0.6rem
+    +w
+        right: 15px
+    +t
+        display: none
+
+.connectWarningIcon
+    svg
+        path
+            fill: $n3
