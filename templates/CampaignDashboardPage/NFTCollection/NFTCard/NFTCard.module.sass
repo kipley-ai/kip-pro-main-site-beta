@@ -1,0 +1,89 @@
+@import @/styles/helpers
+
+.nftCard
+    position: relative
+    padding: 0.5rem
+    display: flex
+    flex-direction: column
+    border-radius: 20px
+    overflow: hidden
+    background: $n6
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
+    &:hover .buttonsContainer
+        display: flex
+
+.nftImageContainer
+    position: relative
+    height: 300px
+
+.nftImage
+    border-radius: 20px
+    object-fit: contain
+
+.nftDetails
+    display: flex
+    flex-direction: column
+    gap: 0.5rem
+    padding: 16px
+
+.nftDetailsTop
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+
+.nftTitle
+    font-size: 24px
+    font-weight: 500
+    color: white
+
+.nftAuthor
+    font-size: 18px
+    color: $n3
+
+.nftPricing
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: flex-start
+    margin-top: 8px
+
+.nftPriceLabel
+    font-size: 16px
+    color: $n3
+
+.nftPrice
+    display: flex
+    align-items: flex-start
+    gap: 0.5rem
+    font-size: 18px
+
+.ethLogo
+    position: relative
+    width: 24px
+    height: 24px
+
+.nftPriceValue
+    font-weight: 500
+    color: white
+
+.buttonsContainer
+    display: none
+    position: absolute
+    right: 0
+    bottom: 0
+    left: 0
+    justify-content: center
+    align-items: center
+
+.button
+    padding: 20px 20px
+    background-color: rgb(15, 102, 105)
+    border: 1px solid #01F7FF
+    cursor: pointer
+    width: 50%
+    &:nth-child(1)
+        border-radius: 0 0 0 20px
+    &:nth-child(2)
+        border-radius: 0 0 20px 0
+    &:hover
+        background-color: rgb(19, 130, 134)
