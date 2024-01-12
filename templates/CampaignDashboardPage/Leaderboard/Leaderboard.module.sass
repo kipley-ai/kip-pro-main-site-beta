@@ -1,3 +1,5 @@
+@import @/styles/helpers
+
 .container
     @apply flex gap-[60px] pt-[60px] mb-48 flex-wrap
 
@@ -103,36 +105,27 @@
     @apply flex items-center gap-[10px] bg-[#6F767E66] opacity-40 py-4 px-2 rounded-sm
 
 .table
-    @apply table-auto
+  width: 100%
+  border-collapse: separate
+  background-color: $n6
+  border-radius: 24px
+  padding: 0 2.25rem
+  table-layout: fixed
 
-    th
-        color: var(--Neutral-04, #6F767E)
-        font-family: Inter
-        font-size: 18px
-        font-style: normal
-        font-weight: 600
-        line-height: 16px /* 88.889% */
-        letter-spacing: -0.18px
-        
-        @apply pb-[24px]
+  th:nth-child(2), td:nth-child(2)
+    width: 40%
 
-    td
-        color: var(--Neutral-Grey-0, #FFF)
+  th, td
+    padding: 1rem 2rem 1rem 1rem
+    vertical-align: top
 
-        text-align: center
-        font-family: Inter
-        font-size: 16px
-        font-style: normal
-        font-weight: 600
-        line-height: 24px /* 150% */
-        letter-spacing: -0.16px
-        text-align: center
-        padding: 24px
-        border-top: 1px #272830 solid
-    
-    tbody
-        tr
-            @apply hover:bg-[#272830] hover:cursor-pointer rounded-sm
+  th
+    background-color: transparent
+    color: $n3
+    text-align: left
+
+  td
+    border-top: 2px solid #363636
 
 .pagContainer
     @apply flex w-full items-center justify-between px-[66px]
@@ -147,3 +140,60 @@
         letter-spacing: -0.36px
         @apply bg-black rounded-md w-8 h-8 flex items-center justify-center hover:cursor-pointer
 
+.pagination
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+  padding: 10px 0
+
+  ul
+    display: flex
+    flex-direction: row
+    list-style: none
+    padding: 0
+    margin: 0
+
+  li
+    margin: 0 5px
+
+  li.previous a, li.next a, li.break a
+    background-color: transparent
+
+  li.active a
+    background-color: #007bff
+    color: white
+    &:hover
+      background-color: #0056b3
+
+.pageLink
+  text-decoration: none
+  color: #fff
+  background-color: #333
+  padding: 8px 12px
+  border-radius: 4px
+  cursor: pointer
+  display: block // Ensure the anchor tag fills the li for better click area
+  &:hover
+    background-color: #444
+
+.activeLink
+  background-color: #01F7FF
+  color: black
+  &:hover
+    background-color: #07b6cd
+
+.userData
+  color: cyan
+  outline: 2px solid
+
+.myScore
+  position: relative
+  margin-top: -34px
+  z-index: 100
+  background: $n6
+  text-align: center
+
+.myRow
+  position: relative
+  top: 6px
