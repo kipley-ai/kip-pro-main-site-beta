@@ -73,7 +73,7 @@ const LeaderboardTable = () => {
                 </tr>
             </thead>
             <tbody>
-                {myData !== null ? (
+                {myData.length !== 0 ? (
                     myData?.map((myDataRank: any) => (
                         <tr
                             className={styles.userData}
@@ -92,9 +92,24 @@ const LeaderboardTable = () => {
                             <td>{myDataRank.points}</td>
                         </tr>
                     ))
-                ) : (
-                    <></>
-                )}
+                ) :
+                    <tr
+                        className={styles.userData}
+                        key={address}
+                    >
+                        <td>
+                            <div className={styles.myScore}>My Points</div>
+                            <div className={styles.myRow}>
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            {address?.slice(0, 6)}...
+                            {address?.slice(-6)}
+                        </td>
+                        <td>0</td>
+                    </tr>
+                }
                 {data.length > 0 ? (
                     data?.map((row: any) => (
                         <tr key={row.wallet_address}>
