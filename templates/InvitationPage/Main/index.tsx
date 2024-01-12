@@ -201,6 +201,20 @@ const Main = ({ handleValidateCode }: MainProps) => {
                                 chainStyle={styles.chainButton}
                                 wrapStyle={styles.getInvolvedButtonWrap}
                             />
+                            <div className={styles.connectWarning}>
+                                <Image
+                                    src="/images/circle-warning.svg"
+                                    className={styles.connectWarningIcon}
+                                    width={15}
+                                    height={15}
+                                    alt="Warning Icon"
+                                />
+                                <p>
+                                    For Existing Galxe users:
+                                    <br />
+                                    Please use the same wallet to connect
+                                </p>
+                            </div>
                         </>
                     )}
                 </div>
