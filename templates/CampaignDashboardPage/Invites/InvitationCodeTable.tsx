@@ -3,7 +3,6 @@ import Image from "next/image";
 import CopyIcon from "public/copy-icon.svg";
 import CheckIcon from "public/check-icon.svg";
 import ReactPaginate from "react-paginate";
-import toast from "react-hot-toast";
 import { useState } from "react";
 import { Pagination } from "../Leaderboard";
 
