@@ -25,7 +25,7 @@ const TabsHeader = ({ tab, setTab }: TabsHeaderProps) => {
                         fill="#0AE9F2"
                     />
                 </svg>
-                BACK TO CAMPAIGNS
+                BACK TO GENESIS CAMPAIGN
             </div>
             <div className={styles.tabs}>
                 <div className={styles.tab} onClick={() => setTab("invites")}>
@@ -37,7 +37,7 @@ const TabsHeader = ({ tab, setTab }: TabsHeaderProps) => {
                     <div className={styles.ind}></div>
                 </div>
                 <div className={styles.tab} onClick={() => setTab("nftcollection")}>
-                    <h1>NFTCollection</h1>
+                    <h1>NFT Collection</h1>
                     <div className={styles.ind}></div>
                 </div>
             </div>

@@ -3,6 +3,7 @@ import styles from "./Layout.module.sass";
 import TabsHeader from "./Tabs";
 import Leaderboard from "./Leaderboard";
 import Invites from "./Invites";
+import NFTCollection from "./NFTCollection";
 import { useState } from "react";
 
 const CampaignDashboardPage = () => {
@@ -17,7 +18,9 @@ const CampaignDashboardPage = () => {
                     <Invites /> 
                     : tab === "leaderboard" ? 
                     <Leaderboard /> 
-                    : <div>NFT Collection</div>
+                    : tab === "nftcollection" ?
+                    <NFTCollection />
+                    : null
                 }
             </div>
         </Layout>
