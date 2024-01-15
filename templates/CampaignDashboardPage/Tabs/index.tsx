@@ -28,15 +28,30 @@ const TabsHeader = ({ tab, setTab }: TabsHeaderProps) => {
                 BACK TO GENESIS CAMPAIGN
             </div>
             <div className={styles.tabs}>
-                <div className={styles.tab} onClick={() => setTab("invites")}>
+                <div
+                    className={`${styles.tab} ${
+                        tab === "invites" ? styles.active : ""
+                    }`}
+                    onClick={() => setTab("invites")}
+                >
                     <h1>Invites</h1>
                     <div className={styles.ind}></div>
                 </div>
-                <div className={styles.tab} onClick={() => setTab("leaderboard")}>
+                <div
+                    className={`${styles.tab} ${
+                        tab === "leaderboard" ? styles.active : ""
+                    }`}
+                    onClick={() => setTab("leaderboard")}
+                >
                     <h1>Leaderboard</h1>
                     <div className={styles.ind}></div>
                 </div>
-                <div className={styles.tab} onClick={() => setTab("nftcollection")}>
+                <div
+                    className={`${styles.tab} ${
+                        tab === "nftcollection" ? styles.active : ""
+                    }`}
+                    onClick={() => setTab("nftcollection")}
+                >
                     <h1>NFT Collection</h1>
                     <div className={styles.ind}></div>
                 </div>
