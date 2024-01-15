@@ -4,6 +4,9 @@
     flex-direction: column
     width: 85%
     margin: 50px auto
+    +d
+        margin: 2rem 0
+        width: 100%
     
 
 .header_container
@@ -203,12 +206,10 @@
     margin: 1rem 0 0
     padding: 72px 3.5rem 40px
     +t
-        width: calc(50% - 32px)
-        margin: 32px 16px 0
+        padding: 4rem 2.5rem
+        margin: 1.5rem 0
     +m
-        float: none
-        width: 100%
-        margin: 0
+        padding: 4rem 1rem
 
 .preview
     position: relative
@@ -230,16 +231,16 @@
             right: 16px
             bottom: -16px
 
-.inner
-    position: absolute
-    top: 50%
-    left: 50%
-    width: 348px
-    transform: translate(-55%,-57%)
-    &:before
-        content: ""
-        display: block
-        padding-bottom: 100%
+// .inner
+//     position: absolute
+//     top: 50%
+//     left: 50%
+//     width: 348px
+//     transform: translate(-55%,-57%)
+//     &:before
+//         content: ""
+//         display: block
+//         padding-bottom: 100%
 
 .subtitle
     margin-bottom: 16px
@@ -264,6 +265,12 @@
     border-collapse: collapse
     z-index: 10
 
+    &::-webkit-scrollbar-track
+        background: rgba(1, 247, 255, 0.4)
+    
+    &::-webkit-scrollbar-thumb
+        background: #01F7FF
+
     th
         color: $n3
 
@@ -274,6 +281,15 @@
         padding: 1rem 6px
         text-align: left
         vertical-align: middle    
+        +a
+            padding: 0.5rem 0.5rem
+            &:nth-child(1)
+                width: 60%
+            &:nth-child(2), &:nth-child(3)
+                display: none
+        +s
+            &:nth-child(1)
+                width: 50%
     
     button
         vertical-align: middle
@@ -322,7 +338,6 @@
     background-color: #07b6cd
 
 .actionButtons
-    padding-right: 2rem
     display: flex
     justify-content: space-between
 

@@ -219,56 +219,52 @@ const InvitationCodeTable = () => {
     }, [isConnected, address, router, currentPage]);
 
     return (
-        <Card className={styles.card} color="#01F7FF">
+        <Card
+            className={styles.card}
+            innerCardClass={styles.inner}
+            color="#01F7FF"
+        >
             <div className={styles.content}>
                 {codes.length > 0 ? (
-                    <table className={styles.invitationCodes}>
-                        <thead>
-                            <tr>
-                                <th>INVITE CODES</th>
-                                <th>EARNED POINTS</th>
-                                <th>INVITEE</th>
-                                <th>ACTION</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {codes.map((item, index) => (
-                                <TableRow
-                                    key={index}
-                                    item={item}
-                                    index={index}
-                                    itemsPerPage={itemsPerPage}
-                                />
-                            ))}
-                        </tbody>
-                        {pageCount >= 1 && (
-                            <tfoot>
+                    <>
+                        <table className={styles.invitationCodes}>
+                            <thead>
                                 <tr>
-                                    <td colSpan={4}>
-                                        <div className={styles.pagination}>
-                                            <ReactPaginate
-                                                className={styles.pagination}
-                                                previousLabel={"<"}
-                                                nextLabel={">"}
-                                                breakLabel={"..."}
-                                                pageCount={pageCount}
-                                                onPageChange={handlePageClick}
-                                                forcePage={currentPage}
-                                                pageRangeDisplayed={3}
-                                                marginPagesDisplayed={1}
-                                                pageLinkClassName={
-                                                    styles.pageLink
-                                                }
-                                                activeLinkClassName={
-                                                    styles.activeLink
-                                                }
-                                            />
-                                        </div>
-                                    </td>
+                                    <th>INVITE CODES</th>
+                                    <th>EARNED POINTS</th>
+                                    <th>INVITEE</th>
+                                    <th>ACTION</th>
                                 </tr>
-                            </tfoot>
+                            </thead>
+                            <tbody>
+                                {codes.map((item, index) => (
+                                    <TableRow
+                                        key={index}
+                                        item={item}
+                                        index={index}
+                                        itemsPerPage={itemsPerPage}
+                                    />
+                                ))}
+                            </tbody>
+                        </table>
+                        {pageCount >= 1 && (
+                            <div className={styles.pagination}>
+                                <ReactPaginate
+                                    className={styles.pagination}
+                                    previousLabel={"<"}
+                                    nextLabel={">"}
+                                    breakLabel={"..."}
+                                    pageCount={pageCount}
+                                    onPageChange={handlePageClick}
+                                    forcePage={currentPage}
+                                    pageRangeDisplayed={3}
+                                    marginPagesDisplayed={1}
+                                    pageLinkClassName={styles.pageLink}
+                                    activeLinkClassName={styles.activeLink}
+                                />
+                            </div>
                         )}
-                    </table>
+                    </>
                 ) : (
                     <div className={styles.completeTasks}>
                         <p>
