@@ -58,7 +58,7 @@ function Leaderboard() {
         <div>
             <div className={styles.container}>
                 <div>
-                    <div className={styles.nftContainer}>
+                    {/* <div className={styles.nftContainer}>
                         <div className={styles.nftBlue} />
                         <div className={styles.nftPict}>
                             <Image
@@ -72,7 +72,7 @@ function Leaderboard() {
                                 alt="NFT Image"
                             />
                         </div>
-                    </div>
+                    </div> */}
                     {/* <div className={styles.score}>Your Score: 99</div>
                     <div className={styles.redeem}>
                         REDEEM NFT
@@ -174,7 +174,7 @@ function Leaderboard() {
                                 fill="#D9D9D9"
                             />
                         </svg>
-                        <h1>Update every 12 hours</h1>
+                        <h1>Updated every 12 hours</h1>
                     </div>
                     <div
                         style={{
@@ -194,7 +194,7 @@ function Leaderboard() {
                         ></div>
                         <div className={styles.ledTable}>
                             <div className={styles.tableContainer}>
-                                <div className={styles.ledSearch}>
+                                {/* <div className={styles.ledSearch}>
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="24"
@@ -220,7 +220,7 @@ function Leaderboard() {
                                         type="text"
                                         placeholder="Search by username or email"
                                     />
-                                </div>
+                                </div> */}
                                 <div>
                                     <table className={styles.table}>
                                         <thead>
@@ -329,7 +329,7 @@ function Leaderboard() {
                     </div>
                 </div>
             </div>
-            <Faq />
+            {/* <Faq /> */}
         </div>
     );
 }
