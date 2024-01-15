@@ -73,7 +73,7 @@ function Leaderboard() {
                             />
                         </div>
                     </div>
-                    <div className={styles.score}>Your Score: 99</div>
+                    {/* <div className={styles.score}>Your Score: 99</div>
                     <div className={styles.redeem}>
                         REDEEM NFT
                         <svg
@@ -113,7 +113,7 @@ function Leaderboard() {
                                 stroke-width="2"
                             />
                         </svg>
-                    </div>
+                    </div> */}
                 </div>
                 <div className={styles.ledContainer}>
                     <div className={styles.leaderboardText}>Leaderboard</div>
@@ -237,17 +237,15 @@ function Leaderboard() {
                                                     className={styles.userData}
                                                     key={myDataRank.wallet_address}
                                                 >
-                                                    <td>
-                                                        <div className={styles.myScore}>My Points</div>
-                                                        <div className={styles.myRow}>
-                                                            {myDataRank.rank}
-                                                        </div>
-                                                    </td>
+                                                    <td>{myDataRank.rank}</td>
                                                     <td>
                                                         {myDataRank.wallet_address.slice(0, 6)}...
                                                         {myDataRank.wallet_address.slice(-6)}
                                                     </td>
-                                                    <td>{myDataRank.points}</td>
+                                                    <td>
+                                                        <div className={styles.myScore}>My Points</div>
+                                                        <div className={styles.myRow}>{myDataRank.points}</div>
+                                                    </td>
                                                 </tr>
                                             ))
                                         ) :

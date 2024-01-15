@@ -10,57 +10,6 @@ import toast from "react-hot-toast";
 import { useAccount } from "wagmi";
 import { useRouter } from "next/router";
 
-const dummyData = [
-    {
-        code: "CODE911102",
-        expiryDate: "27/12/2023"
-    },
-    {
-        code: "CODE911034",
-        expiryDate: "01/01/2024"
-    },
-    {
-        code: "CODE911045",
-        expiryDate: "10/11/2023"
-    },
-    {
-        code: "CODE911067",
-        expiryDate: "31/08/2023"
-    },
-    {
-        code: "CODE911078",
-        expiryDate: "07/09/2023"
-    },
-    {
-        code: "CODE911089",
-        expiryDate: "16/01/2024"
-    },
-    // {
-    //     code: "CODE911090",
-    //     expiryDate: "22/03/2024"
-    // },
-    // {
-    //     code: "CODE911091",
-    //     expiryDate: "05/06/2023"
-    // },
-    // {
-    //     code: "CODE911092",
-    //     expiryDate: "14/09/2023"
-    // },
-    // {
-    //     code: "CODE911093",
-    //     expiryDate: "30/11/2023"
-    // },
-    // {
-    //     code: "CODE911094",
-    //     expiryDate: "12/02/2024"
-    // },
-    // {
-    //     code: "CODE911095",
-    //     expiryDate: "19/05/2024"
-    // }
-]
-
 const InvitationCodeTable = () => {
 
     const itemsPerPage = 20;
