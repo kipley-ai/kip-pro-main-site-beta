@@ -88,6 +88,10 @@
 
 .tableContainer
     @apply flex flex-col w-full h-full py-[47px] px-[122px] gap-[47px] pb-[64px]
+    @media (max-width: 767px)
+      padding-left: 30px
+      padding-right: 30px
+
 
 .ledUpdated
     @apply flex items-center gap-[10px] mb-6
@@ -109,7 +113,6 @@
   border-collapse: separate
   background-color: $n6
   border-radius: 24px
-  padding: 0 2.25rem
   table-layout: fixed
 
   th:nth-child(2), td:nth-child(2)
@@ -124,8 +127,14 @@
     color: $n3
     text-align: left
 
+    @media (max-width: 1025px)
+      font-size: 12px
+
   td
     border-top: 2px solid #363636
+
+    @media (max-width: 1025px)
+      font-size: 12px
 
 .pagContainer
     @apply flex w-full items-center justify-between px-[66px]
@@ -194,6 +203,11 @@
   background: $n6
   text-align: center
 
+  @media (max-width: 1025px)
+    display: none
+
 .myRow
   position: relative
   top: 6px
+  @media (max-width: 1025px)
+      top: 0
