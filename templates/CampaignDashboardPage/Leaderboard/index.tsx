@@ -32,7 +32,7 @@ function Leaderboard() {
                 setItemLengths(response.data.code_count);
 
                 const myAccountData = await axios.post("/api/leaderboard", {
-                    page: currentPage + 1,
+                    page: 1,
                     page_size: itemsPerPage,
                     wallet_address: address,
                 });
@@ -225,9 +225,9 @@ function Leaderboard() {
                                     <table className={styles.table}>
                                         <thead>
                                             <tr>
-                                                <th>RANK</th>
+                                                <th>RANKING</th>
                                                 <th>ADDRESS</th>
-                                                <th>LOYALTY POINTS</th>
+                                                <th>POINTS</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -253,17 +253,15 @@ function Leaderboard() {
                                                 className={styles.userData}
                                                 key={address}
                                             >
-                                                <td>
-                                                    <div className={styles.myScore}>My Points</div>
-                                                    <div className={styles.myRow}>
-                                                        -
-                                                    </div>
-                                                </td>
+                                                <td>-</td>
                                                 <td>
                                                     {address?.slice(0, 6)}...
                                                     {address?.slice(-6)}
                                                 </td>
-                                                <td>0</td>
+                                                <td>
+                                                    <div className={styles.myScore}>My Points</div>
+                                                    <div className={styles.myRow}>0</div>
+                                                </td>
                                             </tr>
                                         }
                                         {data.length > 0 ? (
