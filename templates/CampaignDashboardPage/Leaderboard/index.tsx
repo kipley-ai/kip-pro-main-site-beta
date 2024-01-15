@@ -6,6 +6,7 @@ import { useAccount } from "wagmi";
 import ReactPaginate from "react-paginate";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { redeemNft, setMinter } from "@/smart-contract/KipAirdrop";
 
 function Leaderboard() {
     const { address } = useAccount();
@@ -47,11 +48,20 @@ function Leaderboard() {
             }
         };
         handleLeaderboardRankings();
-    }, [currentPage])
+    }, [currentPage]);
 
     const handlePageClick = (event: any) => {
         // const newOffset = (event.selected * itemsPerPage) % data.length;
         setCurrentPage(event.selected);
+    };
+
+    const handleRedeemNft = async () => {
+        try {
+            const res = await redeemNft();
+            toast.success("NFT Minted");
+        } catch (error: any) {
+            toast.error(error.reason);
+        }
     };
 
     return (
@@ -74,7 +84,7 @@ function Leaderboard() {
                         </div>
                     </div>
                     <div className={styles.score}>Your Score: 99</div>
-                    <div className={styles.redeem}>
+                    <div className={styles.redeem} onClick={handleRedeemNft}>
                         REDEEM NFT
                         <svg
                             style={{
@@ -231,48 +241,89 @@ function Leaderboard() {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        {myData.length !== 0 ? (
-                                            myData?.map((myDataRank: any) => (
+                                            {myData.length !== 0 ? (
+                                                myData?.map(
+                                                    (myDataRank: any) => (
+                                                        <tr
+                                                            className={
+                                                                styles.userData
+                                                            }
+                                                            key={
+                                                                myDataRank.wallet_address
+                                                            }
+                                                        >
+                                                            <td>
+                                                                <div
+                                                                    className={
+                                                                        styles.myScore
+                                                                    }
+                                                                >
+                                                                    My Points
+                                                                </div>
+                                                                <div
+                                                                    className={
+                                                                        styles.myRow
+                                                                    }
+                                                                >
+                                                                    {
+                                                                        myDataRank.rank
+                                                                    }
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                {myDataRank.wallet_address.slice(
+                                                                    0,
+                                                                    6
+                                                                )}
+                                                                ...
+                                                                {myDataRank.wallet_address.slice(
+                                                                    -6
+                                                                )}
+                                                            </td>
+                                                            <td>
+                                                                {
+                                                                    myDataRank.points
+                                                                }
+                                                            </td>
+                                                        </tr>
+                                                    )
+                                                )
+                                            ) : (
                                                 <tr
                                                     className={styles.userData}
-                                                    key={myDataRank.wallet_address}
+                                                    key={address}
                                                 >
                                                     <td>
-                                                        <div className={styles.myScore}>My Points</div>
-                                                        <div className={styles.myRow}>
-                                                            {myDataRank.rank}
+                                                        <div
+                                                            className={
+                                                                styles.myScore
+                                                            }
+                                                        >
+                                                            My Points
+                                                        </div>
+                                                        <div
+                                                            className={
+                                                                styles.myRow
+                                                            }
+                                                        >
+                                                            -
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        {myDataRank.wallet_address.slice(0, 6)}...
-                                                        {myDataRank.wallet_address.slice(-6)}
+                                                        {address?.slice(0, 6)}
+                                                        ...
+                                                        {address?.slice(-6)}
                                                     </td>
-                                                    <td>{myDataRank.points}</td>
+                                                    <td>0</td>
                                                 </tr>
-                                            ))
-                                        ) :
-                                            <tr
-                                                className={styles.userData}
-                                                key={address}
-                                            >
-                                                <td>
-                                                    <div className={styles.myScore}>My Points</div>
-                                                    <div className={styles.myRow}>
-                                                        -
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    {address?.slice(0, 6)}...
-                                                    {address?.slice(-6)}
-                                                </td>
-                                                <td>0</td>
-                                            </tr>
-                                        }
-                                        {data.length > 0 ? (
-                                            data?.map((row: any) => (
-                                                <tr key={row.wallet_address}>
-                                                    <td>{row.rank}</td>
-                                                    {/* <td className={styles.user}>
+                                            )}
+                                            {data.length > 0 ? (
+                                                data?.map((row: any) => (
+                                                    <tr
+                                                        key={row.wallet_address}
+                                                    >
+                                                        <td>{row.rank}</td>
+                                                        {/* <td className={styles.user}>
                                                     <Image
                                                         src={user.profilePic}
                                                         alt={user.fullName}
@@ -290,40 +341,60 @@ function Leaderboard() {
                                                 </td>
                                                 <td>{user.twitter}</td>
                                                 <td>{user.discord}</td> */}
-                                                    <td>
-                                                        {row.wallet_address.slice(0, 6)}...
-                                                        {row.wallet_address.slice(-6)}
-                                                    </td>
-                                                    <td>{row.points}</td>
-                                                </tr>
-                                            ))
-                                        ) : (
-                                            <></>
-                                        )}
+                                                        <td>
+                                                            {row.wallet_address.slice(
+                                                                0,
+                                                                6
+                                                            )}
+                                                            ...
+                                                            {row.wallet_address.slice(
+                                                                -6
+                                                            )}
+                                                        </td>
+                                                        <td>{row.points}</td>
+                                                    </tr>
+                                                ))
+                                            ) : (
+                                                <></>
+                                            )}
                                         </tbody>
-                                        {
-                                            pageCount >= 1 && (
-                                                <tfoot>
-                                                    <tr>
-                                                        <td colSpan={3}>
+                                        {pageCount >= 1 && (
+                                            <tfoot>
+                                                <tr>
+                                                    <td colSpan={3}>
                                                         <ReactPaginate
-                                                            className={styles.pagination}
+                                                            className={
+                                                                styles.pagination
+                                                            }
                                                             previousLabel={"<"}
                                                             nextLabel={">"}
                                                             breakLabel={"..."}
-                                                            pageCount={pageCount}
-                                                            onPageChange={handlePageClick}
-                                                            forcePage={currentPage}
-                                                            pageRangeDisplayed={3}
-                                                            marginPagesDisplayed={1}
-                                                            pageLinkClassName={styles.pageLink}
-                                                            activeLinkClassName={styles.activeLink}
+                                                            pageCount={
+                                                                pageCount
+                                                            }
+                                                            onPageChange={
+                                                                handlePageClick
+                                                            }
+                                                            forcePage={
+                                                                currentPage
+                                                            }
+                                                            pageRangeDisplayed={
+                                                                3
+                                                            }
+                                                            marginPagesDisplayed={
+                                                                1
+                                                            }
+                                                            pageLinkClassName={
+                                                                styles.pageLink
+                                                            }
+                                                            activeLinkClassName={
+                                                                styles.activeLink
+                                                            }
                                                         />
-                                                        </td>
-                                                    </tr>
-                                                </tfoot>
-                                            )
-                                        }
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                        )}
                                     </table>
                                 </div>
                             </div>
