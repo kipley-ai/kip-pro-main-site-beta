@@ -244,46 +244,21 @@ function Leaderboard() {
                                             {myData.length !== 0 ? (
                                                 myData?.map(
                                                     (myDataRank: any) => (
-                                                        <tr
-                                                            className={
-                                                                styles.userData
-                                                            }
-                                                            key={
-                                                                myDataRank.wallet_address
-                                                            }
-                                                        >
+                                                        <tr className={styles.userData}
+                                                            key={myDataRank.wallet_address}>
+                                                            <td>{ myDataRank.rank }</td>
                                                             <td>
-                                                                <div
-                                                                    className={
-                                                                        styles.myScore
-                                                                    }
-                                                                >
+                                                                {myDataRank.wallet_address.slice(0, 6)}
+                                                                ...
+                                                                {myDataRank.wallet_address.slice(-6)}
+                                                            </td>
+                                                            <td>
+                                                                <div className={styles.myScore}>
                                                                     My Points
                                                                 </div>
-                                                                <div
-                                                                    className={
-                                                                        styles.myRow
-                                                                    }
-                                                                >
-                                                                    {
-                                                                        myDataRank.rank
-                                                                    }
+                                                                <div className={styles.myRow}>
+                                                                    { myDataRank.points }
                                                                 </div>
-                                                            </td>
-                                                            <td>
-                                                                {myDataRank.wallet_address.slice(
-                                                                    0,
-                                                                    6
-                                                                )}
-                                                                ...
-                                                                {myDataRank.wallet_address.slice(
-                                                                    -6
-                                                                )}
-                                                            </td>
-                                                            <td>
-                                                                {
-                                                                    myDataRank.points
-                                                                }
                                                             </td>
                                                         </tr>
                                                     )
@@ -293,28 +268,18 @@ function Leaderboard() {
                                                     className={styles.userData}
                                                     key={address}
                                                 >
-                                                    <td>
-                                                        <div
-                                                            className={
-                                                                styles.myScore
-                                                            }
-                                                        >
-                                                            My Points
-                                                        </div>
-                                                        <div
-                                                            className={
-                                                                styles.myRow
-                                                            }
-                                                        >
-                                                            -
-                                                        </div>
-                                                    </td>
+                                                    <td>-</td>
                                                     <td>
                                                         {address?.slice(0, 6)}
                                                         ...
                                                         {address?.slice(-6)}
                                                     </td>
-                                                    <td>0</td>
+                                                    <td>
+                                                        <div className={styles.myScore}>
+                                                            My Points
+                                                        </div>
+                                                        <div className={styles.myRow}>0</div>
+                                                    </td>
                                                 </tr>
                                             )}
                                             {data.length > 0 ? (
