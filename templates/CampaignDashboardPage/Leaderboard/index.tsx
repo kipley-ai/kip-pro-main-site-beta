@@ -32,7 +32,7 @@ function Leaderboard() {
                 setItemLengths(response.data.code_count);
 
                 const myAccountData = await axios.post("/api/leaderboard", {
-                    page: currentPage + 1,
+                    page: 1,
                     page_size: itemsPerPage,
                     wallet_address: address,
                 });
@@ -58,7 +58,7 @@ function Leaderboard() {
         <div>
             <div className={styles.container}>
                 <div>
-                    <div className={styles.nftContainer}>
+                    {/* <div className={styles.nftContainer}>
                         <div className={styles.nftBlue} />
                         <div className={styles.nftPict}>
                             <Image
@@ -72,8 +72,8 @@ function Leaderboard() {
                                 alt="NFT Image"
                             />
                         </div>
-                    </div>
-                    <div className={styles.score}>Your Score: 99</div>
+                    </div> */}
+                    {/* <div className={styles.score}>Your Score: 99</div>
                     <div className={styles.redeem}>
                         REDEEM NFT
                         <svg
@@ -113,7 +113,7 @@ function Leaderboard() {
                                 stroke-width="2"
                             />
                         </svg>
-                    </div>
+                    </div> */}
                 </div>
                 <div className={styles.ledContainer}>
                     <div className={styles.leaderboardText}>Leaderboard</div>
@@ -174,7 +174,7 @@ function Leaderboard() {
                                 fill="#D9D9D9"
                             />
                         </svg>
-                        <h1>Update every 12 hours</h1>
+                        <h1>Updated every 12 hours</h1>
                     </div>
                     <div
                         style={{
@@ -194,7 +194,7 @@ function Leaderboard() {
                         ></div>
                         <div className={styles.ledTable}>
                             <div className={styles.tableContainer}>
-                                <div className={styles.ledSearch}>
+                                {/* <div className={styles.ledSearch}>
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="24"
@@ -220,14 +220,14 @@ function Leaderboard() {
                                         type="text"
                                         placeholder="Search by username or email"
                                     />
-                                </div>
+                                </div> */}
                                 <div>
                                     <table className={styles.table}>
                                         <thead>
                                             <tr>
-                                                <th>RANK</th>
+                                                <th>RANKING</th>
                                                 <th>ADDRESS</th>
-                                                <th>LOYALTY POINTS</th>
+                                                <th>POINTS</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -237,17 +237,15 @@ function Leaderboard() {
                                                     className={styles.userData}
                                                     key={myDataRank.wallet_address}
                                                 >
-                                                    <td>
-                                                        <div className={styles.myScore}>My Points</div>
-                                                        <div className={styles.myRow}>
-                                                            {myDataRank.rank}
-                                                        </div>
-                                                    </td>
+                                                    <td>{myDataRank.rank}</td>
                                                     <td>
                                                         {myDataRank.wallet_address.slice(0, 6)}...
                                                         {myDataRank.wallet_address.slice(-6)}
                                                     </td>
-                                                    <td>{myDataRank.points}</td>
+                                                    <td>
+                                                        <div className={styles.myScore}>My Points</div>
+                                                        <div className={styles.myRow}>{myDataRank.points}</div>
+                                                    </td>
                                                 </tr>
                                             ))
                                         ) :
@@ -255,17 +253,15 @@ function Leaderboard() {
                                                 className={styles.userData}
                                                 key={address}
                                             >
-                                                <td>
-                                                    <div className={styles.myScore}>My Points</div>
-                                                    <div className={styles.myRow}>
-                                                        -
-                                                    </div>
-                                                </td>
+                                                <td>-</td>
                                                 <td>
                                                     {address?.slice(0, 6)}...
                                                     {address?.slice(-6)}
                                                 </td>
-                                                <td>0</td>
+                                                <td>
+                                                    <div className={styles.myScore}>My Points</div>
+                                                    <div className={styles.myRow}>0</div>
+                                                </td>
                                             </tr>
                                         }
                                         {data.length > 0 ? (
@@ -331,7 +327,7 @@ function Leaderboard() {
                     </div>
                 </div>
             </div>
-            <Faq />
+            {/* <Faq /> */}
         </div>
     );
 }

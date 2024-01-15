@@ -58,7 +58,6 @@ const LeaderboardTable = () => {
         // const newOffset = (event.selected * itemsPerPage) % data.length;
         setCurrentPage(event.selected);
     };
-    console.log(myData);
 
     return (
         <table className={styles.userProfileTable}>
