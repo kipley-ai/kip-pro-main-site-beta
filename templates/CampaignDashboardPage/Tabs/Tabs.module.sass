@@ -23,6 +23,9 @@
     gap: 24px
     padding-top: 32px
     padding-bottom: 32px
+    +m
+        flex-direction: column
+        padding: 0
 
 .tab
     display: flex
@@ -30,10 +33,14 @@
     flex-direction: column
     width: 262px
     gap: 20px
+    +m
+        width: 100%
 
     &:hover
         background-color: $n6
         cursor: pointer
+        +m
+            background-color: transparent
     
     h1
         padding: 2px 6px 0
@@ -43,10 +50,11 @@
         font-weight: 900
         line-height: 28.8px /* 120% */
         letter-spacing: -0.48px
+        +m
+            padding: 0
 
     &.active
         .ind
-            height: 2px
             background: #01F7FF
 
 .ind
