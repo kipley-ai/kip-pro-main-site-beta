@@ -129,7 +129,7 @@ const TableRow = ({ item, index, itemsPerPage }: TableRowProps) => {
 };
 
 const InvitationCodeTable = () => {
-    const itemsPerPage = 20;
+    const itemsPerPage = 10;
     const [codes, setCodes] = useState<any[]>([]);
     const { address, isConnected } = useAccount();
     const router = useRouter();
