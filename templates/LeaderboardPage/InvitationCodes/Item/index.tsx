@@ -9,7 +9,6 @@ import { Copy, CopySuccess } from "iconsax-react";
 import { useAccount } from "wagmi";
 import { useRouter } from "next/router";
 import ReactPaginate from "react-paginate";
-import { Text } from "./text";
 
 type ItemProps = {
     className?: string;

@@ -12,57 +12,6 @@ import toast from "react-hot-toast";
 import { useAccount } from "wagmi";
 import { useRouter } from "next/router";
 
-const dummyData = [
-    {
-        code: "CODE911102",
-        expiryDate: "27/12/2023",
-    },
-    {
-        code: "CODE911034",
-        expiryDate: "01/01/2024",
-    },
-    {
-        code: "CODE911045",
-        expiryDate: "10/11/2023",
-    },
-    {
-        code: "CODE911067",
-        expiryDate: "31/08/2023",
-    },
-    {
-        code: "CODE911078",
-        expiryDate: "07/09/2023",
-    },
-    {
-        code: "CODE911089",
-        expiryDate: "16/01/2024",
-    },
-    // {
-    //     code: "CODE911090",
-    //     expiryDate: "22/03/2024"
-    // },
-    // {
-    //     code: "CODE911091",
-    //     expiryDate: "05/06/2023"
-    // },
-    // {
-    //     code: "CODE911092",
-    //     expiryDate: "14/09/2023"
-    // },
-    // {
-    //     code: "CODE911093",
-    //     expiryDate: "30/11/2023"
-    // },
-    // {
-    //     code: "CODE911094",
-    //     expiryDate: "12/02/2024"
-    // },
-    // {
-    //     code: "CODE911095",
-    //     expiryDate: "19/05/2024"
-    // }
-];
-
 type TableRowProps = {
     item: any;
     index: number;
@@ -87,6 +36,16 @@ const TableRow = ({ item, index, itemsPerPage }: TableRowProps) => {
             });
         }, 2000);
     };
+
+    const shareText = (code: string) => {
+        const text = `Join the missions in @KIPprotocol and start to earn NFTs and airdrop $KIP.\n\nGo to https://kip.pro/campaigns and enter the invite code:\n👉🏻 ${code} 👈🏻\n\nStay Smort. Stay Knawligible! 🧠`
+        navigator.clipboard.writeText(text);
+    }
+
+    const shareX = (code: string) => {
+        const link = `https://twitter.com/intent/tweet?text=Join%20the%20missions%20in%20%40KIPprotocol%20and%20start%20to%20farm%20%24KIP.%20%0A%0AGo%20to%20https%3A%2F%2Fkip.pro%2Fcampaigns%20and%20enter%20invite%20code%3A%20%0A%0A%F0%9F%91%89%F0%9F%8F%BB%20${code}%20%F0%9F%91%88%F0%9F%8F%BB%20`
+        window.open(link, "_blank")
+    }
 
     const isDateExpired = (
         validStart: string,
@@ -148,17 +107,13 @@ const TableRow = ({ item, index, itemsPerPage }: TableRowProps) => {
                         </button>
                         <button
                             className={styles.copyButton}
-                            onClick={() => {
-                                return null;
-                            }}
+                            onClick={() => shareText(item.invite_code)}
                         >
                             <Image src={ShareIcon} alt="share" />
                         </button>
                         <button
                             className={styles.copyButton}
-                            onClick={() => {
-                                return null;
-                            }}
+                            onClick={() => shareX(item.invite_code)}
                         >
                             <Image src={XIcon} alt="X" />
                         </button>
