@@ -1,5 +1,12 @@
 @import @/styles/helpers
 
+.container
+    padding: 0 0 2rem
+    +t
+        padding: 0 0 1rem
+    +m
+        padding: 2rem 0 0
+
 .title
     margin-bottom: -0.5rem
     font-size: 50px
@@ -14,6 +21,8 @@
 .subtitle
     color: $n3
     text-align: center
+    +m
+        margin: 0.5rem 0 0
 
 .nftCards
     display: grid
@@ -21,3 +30,10 @@
     gap: 1rem
     margin-top: 2rem
     margin-bottom: 2rem
+    +t
+        display: grid
+        grid-template-columns: 1fr 1fr
+    +m
+        display: flex
+        flex-direction: column
+
