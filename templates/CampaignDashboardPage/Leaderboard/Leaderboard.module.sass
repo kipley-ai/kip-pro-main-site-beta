@@ -1,7 +1,7 @@
 @import @/styles/helpers
 
 .container
-    @apply flex gap-[60px] mb-48 flex-wrap
+    @apply flex justify-center gap-[60px] my-[50px] mx-auto flex-wrap
 
 .nftContainer
     @apply flex items-center w-[451px]
@@ -66,10 +66,9 @@
     height: 58px
 
 .ledContainer
-    @apply flex flex-col w-[702px]
+    @apply flex flex-col w-full xl:w-4/5
 
 .leaderboardText
-    margin-bottom: 32px
     font-family: Inter
     font-size: 42px
     font-style: normal
@@ -87,14 +86,10 @@
     clip-path: polygon(0 0, 90% 0,100% 10% ,100% 100%, 0 100%)
 
 .tableContainer
-    @apply flex flex-col w-full h-full py-[47px] px-[122px] gap-[47px] pb-[64px]
-    @media (max-width: 767px)
-      padding-left: 30px
-      padding-right: 30px
-
+    @apply flex flex-col w-full h-full py-[47px] px-5 md:px-14 gap-[47px] pb-[64px]
 
 .ledUpdated
-    @apply flex items-center gap-[10px] mb-6
+    @apply flex items-center mb-6
     h1
         color: $n3
         font-size: 18px
@@ -112,6 +107,9 @@
   border-radius: 24px
   table-layout: fixed
 
+  th:nth-child(1), td:nth-child(1)
+    width: 25%
+
   th:nth-child(2), td:nth-child(2)
     width: 40%
 
@@ -124,14 +122,14 @@
     color: $n3
     text-align: left
 
-    @media (max-width: 1025px)
-      font-size: 12px
+    +a
+      font-size: 0.75rem
 
   td
     border-top: 2px solid #363636
 
-    @media (max-width: 1025px)
-      font-size: 12px
+    +a
+      font-size: 0.75rem
 
 .pagContainer
     @apply flex w-full items-center justify-between px-[66px]
@@ -199,12 +197,15 @@
   z-index: 100
   background: $n6
   text-align: center
-
-  @media (max-width: 1025px)
-    display: none
+  width: 120px
+  +m
+    width: 90px
+    top: 4px
+  +a
+    width: 65px
 
 .myRow
   position: relative
   top: 6px
-  @media (max-width: 1025px)
-      top: 0
+  +a
+    top: 14px
