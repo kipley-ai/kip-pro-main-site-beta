@@ -38,12 +38,16 @@ const TableRow = ({ item, index, itemsPerPage }: TableRowProps) => {
     };
 
     const shareText = (code: string) => {
-        const text = `Join the missions in @KIPprotocol and start to earn NFTs and airdrop $KIP.\n\nGo to https://kip.pro/campaigns and enter the invite code:\n👉🏻 ${code} 👈🏻\n\nStay Smort. Stay Knawligible! 🧠`
+        const text = `GM Farmoors. I got an extra KIP code for you to start farming $KIP on KIP Protocol.\nGo to https://kip.pro/campaigns and enter the invite code:\n\n👉🏻 ${code}\n\nEach code is only available for a single use.\nStay Smort. Stay Knawligible🧠`;
+        
         navigator.clipboard.writeText(text);
+        toast.success("Copy Invite Link Successfully");
     }
 
     const shareX = (code: string) => {
-        const link = `https://twitter.com/intent/tweet?text=Join%20the%20missions%20in%20%40KIPprotocol%20and%20start%20to%20farm%20%24KIP.%20%0A%0AGo%20to%20https%3A%2F%2Fkip.pro%2Fcampaigns%20and%20enter%20invite%20code%3A%20%0A%0A%F0%9F%91%89%F0%9F%8F%BB%20${code}%20%F0%9F%91%88%F0%9F%8F%BB%20`
+        const text = `GM Farmoors. I got an extra KIP code for you to start farming $KIP on KIP Protocol.\nGo to https://kip.pro/campaigns and enter the invite code:\n\n👉🏻 ${code}\n\nEach code is only available for a single use.\nStay Smort. Stay Knawligible🧠`;
+        const twitterIntentText = encodeURIComponent(text);
+        const link = `https://twitter.com/intent/tweet?text=${twitterIntentText}`;
         window.open(link, "_blank")
     }
 
