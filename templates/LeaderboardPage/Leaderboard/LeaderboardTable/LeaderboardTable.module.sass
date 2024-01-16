@@ -20,8 +20,15 @@
     color: $n3
     text-align: left
 
+    @media (max-width: 1025px)
+      font-size: 12px
+    
+
   td
     border-top: 2px solid #363636
+
+    @media (max-width: 1025px)
+      font-size: 12px
 
 .user
   display: flex
@@ -64,15 +71,22 @@
   outline: 2px solid
 
 .myScore
+  width: 100%
   position: relative
   margin-top: -34px
   z-index: 100
   background: $n6
   text-align: center
 
+  @media (max-width: 767px)
+      display: none
+
 .myRow
   position: relative
   top: 6px
+
+  @media (max-width: 1025px)
+      top: 0
 
 .pageLink
   text-decoration: none

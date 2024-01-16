@@ -6,6 +6,8 @@ import { useAccount } from "wagmi";
 import ReactPaginate from "react-paginate";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { redeemNft, setMinter } from "@/smart-contract/KipAirdrop";
+import LoadingIcon from "public/loading-01.svg";
 
 function Leaderboard() {
     const { address } = useAccount();
@@ -32,7 +34,7 @@ function Leaderboard() {
                 setItemLengths(response.data.code_count);
 
                 const myAccountData = await axios.post("/api/leaderboard", {
-                    page: currentPage + 1,
+                    page: 1,
                     page_size: itemsPerPage,
                     wallet_address: address,
                 });
@@ -47,18 +49,26 @@ function Leaderboard() {
             }
         };
         handleLeaderboardRankings();
-    }, [currentPage])
+    }, [currentPage]);
 
     const handlePageClick = (event: any) => {
         // const newOffset = (event.selected * itemsPerPage) % data.length;
         setCurrentPage(event.selected);
     };
 
+    const handleRedeemNft = async () => {
+        try {
+            const res = await redeemNft();
+            toast.success("NFT Minted");
+        } catch (error: any) {
+            toast.error(error.reason);
+        }
+    };
+
     return (
-        <div>
             <div className={styles.container}>
-                <div>
-                    <div className={styles.nftContainer}>
+                {/* <div> */}
+                    {/* <div className={styles.nftContainer}>
                         <div className={styles.nftBlue} />
                         <div className={styles.nftPict}>
                             <Image
@@ -72,8 +82,8 @@ function Leaderboard() {
                                 alt="NFT Image"
                             />
                         </div>
-                    </div>
-                    <div className={styles.score}>Your Score: 99</div>
+                    </div> */}
+                    {/* <div className={styles.score}>Your Score: 99</div>
                     <div className={styles.redeem}>
                         REDEEM NFT
                         <svg
@@ -113,68 +123,13 @@ function Leaderboard() {
                                 stroke-width="2"
                             />
                         </svg>
-                    </div>
-                </div>
+                    </div> */}
+                {/* </div> */}
                 <div className={styles.ledContainer}>
                     <div className={styles.leaderboardText}>Leaderboard</div>
                     <div className={styles.ledUpdated}>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="13"
-                            height="12"
-                            viewBox="0 0 13 12"
-                            fill="none"
-                        >
-                            <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M6.5 0.625C6.77614 0.625 7 0.848858 7 1.125V2.375C7 2.65114 6.77614 2.875 6.5 2.875C6.22386 2.875 6 2.65114 6 2.375V1.125C6 0.848858 6.22386 0.625 6.5 0.625Z"
-                                fill="#D9D9D9"
-                            />
-                            <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M6.5 8.5C6.77614 8.5 7 8.72386 7 9V11C7 11.2761 6.77614 11.5 6.5 11.5C6.22386 11.5 6 11.2761 6 11V9C6 8.72386 6.22386 8.5 6.5 8.5Z"
-                                fill="#D9D9D9"
-                            />
-                            <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M1.125 6C1.125 5.72386 1.34886 5.5 1.625 5.5H3.375C3.65114 5.5 3.875 5.72386 3.875 6C3.875 6.27614 3.65114 6.5 3.375 6.5H1.625C1.34886 6.5 1.125 6.27614 1.125 6Z"
-                                fill="#D9D9D9"
-                            />
-                            <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M9.875 6C9.875 5.72386 10.0989 5.5 10.375 5.5H11.125C11.4011 5.5 11.625 5.72386 11.625 6C11.625 6.27614 11.4011 6.5 11.125 6.5H10.375C10.0989 6.5 9.875 6.27614 9.875 6Z"
-                                fill="#D9D9D9"
-                            />
-                            <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M9.02145 8.52145C9.21671 8.32618 9.53329 8.32618 9.72855 8.52145L10.0821 8.875C10.2774 9.07026 10.2774 9.38684 10.0821 9.58211C9.88684 9.77737 9.57026 9.77737 9.375 9.58211L9.02145 9.22855C8.82618 9.03329 8.82618 8.71671 9.02145 8.52145Z"
-                                fill="#D9D9D9"
-                            />
-                            <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M10.1857 2.35434C10.3809 2.5496 10.3809 2.86618 10.1857 3.06145L9.47855 3.76855C9.28329 3.96382 8.96671 3.96382 8.77145 3.76855C8.57618 3.57329 8.57618 3.25671 8.77145 3.06145L9.47855 2.35434C9.67382 2.15908 9.9904 2.15908 10.1857 2.35434Z"
-                                fill="#D9D9D9"
-                            />
-                            <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M4.72855 7.77145C4.92382 7.96671 4.92382 8.28329 4.72855 8.47855L3.31434 9.89277C3.11908 10.088 2.8025 10.088 2.60723 9.89277C2.41197 9.6975 2.41197 9.38092 2.60723 9.18566L4.02145 7.77145C4.21671 7.57618 4.53329 7.57618 4.72855 7.77145Z"
-                                fill="#D9D9D9"
-                            />
-                            <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M2.71079 2.25079C2.90605 2.05552 3.22263 2.05552 3.41789 2.25079L4.47855 3.31145C4.67382 3.50671 4.67382 3.82329 4.47855 4.01855C4.28329 4.21382 3.96671 4.21382 3.77145 4.01855L2.71079 2.95789C2.51552 2.76263 2.51552 2.44605 2.71079 2.25079Z"
-                                fill="#D9D9D9"
-                            />
-                        </svg>
-                        <h1>Update every 12 hours</h1>
+                    <Image className={styles.loading_icon} src={LoadingIcon} width={12} height={12} alt="loading" />&nbsp;&nbsp;
+                        <h1>Updated every 12 hours</h1>
                     </div>
                     <div
                         style={{
@@ -194,7 +149,7 @@ function Leaderboard() {
                         ></div>
                         <div className={styles.ledTable}>
                             <div className={styles.tableContainer}>
-                                <div className={styles.ledSearch}>
+                                {/* <div className={styles.ledSearch}>
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="24"
@@ -220,34 +175,67 @@ function Leaderboard() {
                                         type="text"
                                         placeholder="Search by username or email"
                                     />
-                                </div>
+                                </div> */}
                                 <div>
                                     <table className={styles.table}>
                                         <thead>
                                             <tr>
-                                                <th>RANK</th>
+                                                <th>RANKING</th>
                                                 <th>ADDRESS</th>
-                                                <th>LOYALTY POINTS</th>
+                                                <th>POINTS</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        {myData.length !== 0 ? (
-                                            myData?.map((myDataRank: any) => (
+                                            {myData.length !== 0 ? (
+                                                myData?.map(
+                                                    (myDataRank: any) => (
+                                                        <tr className={styles.userData}
+                                                            key={myDataRank.wallet_address}>
+                                                            <td>{ myDataRank.rank }</td>
+                                                            <td>
+                                                                {myDataRank.wallet_address.slice(0, 6)}
+                                                                ...
+                                                                {myDataRank.wallet_address.slice(-6)}
+                                                            </td>
+                                                            <td>
+                                                                <div className={styles.myScore}>
+                                                                    My Points
+                                                                </div>
+                                                                <div className={styles.myRow}>
+                                                                    { myDataRank.points }
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    )
+                                                )
+                                            ) : (
                                                 <tr
                                                     className={styles.userData}
-                                                    key={myDataRank.wallet_address}
+                                                    key={address}
                                                 >
+                                                    <td>-</td>
+                                                    <td>
+                                                        {address?.slice(0, 6)}
+                                                        ...
+                                                        {address?.slice(-6)}
+                                                    </td>
+                                                    <td>
+                                                        <div className={styles.myScore}>
+                                                            My Points
+                                                        </div>
+                                                        <div className={styles.myRow}>0</div>
+                                                    </td>
+                                                </tr>
+                                            )}
+                                            {data.length > 0 ? (
+                                                data?.map((row: any) => (
+                                                    <tr key={row.wallet_address}>
+                                                        <td>{row.rank}</td>
+                                                        {/* <td className={styles.user}>
                                                     <td>
                                                         <div className={styles.myScore}>My Points</div>
-                                                        <div className={styles.myRow}>
-                                                            {myDataRank.rank}
-                                                        </div>
+                                                        <div className={styles.myRow}>{myDataRank.points}</div>
                                                     </td>
-                                                    <td>
-                                                        {myDataRank.wallet_address.slice(0, 6)}...
-                                                        {myDataRank.wallet_address.slice(-6)}
-                                                    </td>
-                                                    <td>{myDataRank.points}</td>
                                                 </tr>
                                             ))
                                         ) :
@@ -255,17 +243,15 @@ function Leaderboard() {
                                                 className={styles.userData}
                                                 key={address}
                                             >
-                                                <td>
-                                                    <div className={styles.myScore}>My Points</div>
-                                                    <div className={styles.myRow}>
-                                                        -
-                                                    </div>
-                                                </td>
+                                                <td>-</td>
                                                 <td>
                                                     {address?.slice(0, 6)}...
                                                     {address?.slice(-6)}
                                                 </td>
-                                                <td>0</td>
+                                                <td>
+                                                    <div className={styles.myScore}>My Points</div>
+                                                    <div className={styles.myRow}>0</div>
+                                                </td>
                                             </tr>
                                         }
                                         {data.length > 0 ? (
@@ -290,40 +276,39 @@ function Leaderboard() {
                                                 </td>
                                                 <td>{user.twitter}</td>
                                                 <td>{user.discord}</td> */}
-                                                    <td>
-                                                        {row.wallet_address.slice(0, 6)}...
-                                                        {row.wallet_address.slice(-6)}
-                                                    </td>
-                                                    <td>{row.points}</td>
-                                                </tr>
-                                            ))
-                                        ) : (
-                                            <></>
-                                        )}
-                                        </tbody>
-                                        {
-                                            pageCount >= 1 && (
-                                                <tfoot>
-                                                    <tr>
-                                                        <td colSpan={3}>
-                                                        <ReactPaginate
-                                                            className={styles.pagination}
-                                                            previousLabel={"<"}
-                                                            nextLabel={">"}
-                                                            breakLabel={"..."}
-                                                            pageCount={pageCount}
-                                                            onPageChange={handlePageClick}
-                                                            forcePage={currentPage}
-                                                            pageRangeDisplayed={3}
-                                                            marginPagesDisplayed={1}
-                                                            pageLinkClassName={styles.pageLink}
-                                                            activeLinkClassName={styles.activeLink}
-                                                        />
+                                                        <td>
+                                                            {row.wallet_address.slice(0,6)}
+                                                            ...
+                                                            {row.wallet_address.slice(-6)}
                                                         </td>
+                                                        <td>{row.points}</td>
                                                     </tr>
-                                                </tfoot>
-                                            )
-                                        }
+                                                ))
+                                            ) : (
+                                                <></>
+                                            )}
+                                        </tbody>
+                                        {pageCount >= 1 && (
+                                            <tfoot>
+                                                <tr>
+                                                    <td colSpan={3}>
+                                                        <ReactPaginate 
+                                                        className={styles.pagination}
+                                                        previousLabel={"<"}
+                                                        nextLabel={">"}
+                                                        breakLabel={"..."}
+                                                        pageCount={pageCount}
+                                                        onPageChange={handlePageClick}
+                                                        forcePage={currentPage}
+                                                        pageRangeDisplayed={3}
+                                                        marginPagesDisplayed={1}
+                                                        pageLinkClassName={styles.pageLink}
+                                                        activeLinkClassName={styles.activeLink}
+                                                        />
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                        )}
                                     </table>
                                 </div>
                             </div>
@@ -331,8 +316,6 @@ function Leaderboard() {
                     </div>
                 </div>
             </div>
-            <Faq />
-        </div>
     );
 }
 

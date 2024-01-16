@@ -34,7 +34,7 @@ const LeaderboardTable = () => {
                 setItemLengths(response.data.code_count);
 
                 const myAccountData = await axios.post("/api/leaderboard", {
-                    page: currentPage + 1,
+                    page: 1,
                     page_size: itemsPerPage,
                     wallet_address: address,
                 });
@@ -58,7 +58,6 @@ const LeaderboardTable = () => {
         // const newOffset = (event.selected * itemsPerPage) % data.length;
         setCurrentPage(event.selected);
     };
-    console.log(myData);
 
     return (
         <table className={styles.userProfileTable}>
@@ -80,16 +79,16 @@ const LeaderboardTable = () => {
                             key={myDataRank.wallet_address}
                         >
                             <td>
-                                <div className={styles.myScore}>My Points</div>
-                                <div className={styles.myRow}>
-                                    {myDataRank.rank}
-                                </div>
+                                {myDataRank.rank}
                             </td>
                             <td>
                                 {myDataRank.wallet_address.slice(0, 6)}...
                                 {myDataRank.wallet_address.slice(-6)}
                             </td>
-                            <td>{myDataRank.points}</td>
+                            <td>
+                                <div className={styles.myScore}>My Points</div>
+                                <div className={styles.myRow}>{myDataRank.points}</div>
+                            </td>
                         </tr>
                     ))
                 ) :
@@ -98,16 +97,16 @@ const LeaderboardTable = () => {
                         key={address}
                     >
                         <td>
-                            <div className={styles.myScore}>My Points</div>
-                            <div className={styles.myRow}>
-                                -
-                            </div>
+                            -
                         </td>
                         <td>
                             {address?.slice(0, 6)}...
                             {address?.slice(-6)}
                         </td>
-                        <td>0</td>
+                        <td>   
+                            <div className={styles.myScore}>My Points</div>
+                            <div className={styles.myRow}>0</div>
+                        </td>
                     </tr>
                 }
                 {data.length > 0 ? (

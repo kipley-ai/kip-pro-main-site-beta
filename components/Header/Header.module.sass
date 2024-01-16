@@ -14,7 +14,7 @@
     +m
         padding: 24px 0
     &.visible
-        padding: 42px 0
+        padding: 32px 0
         background: rgba($n9, .95)
         +w
             padding: 24px 0
@@ -138,3 +138,31 @@
     svg
         path
             fill: $n3
+
+.campaignsHeader
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 30
+    padding: 72px 0
+    transition: all .2s
+    +w
+        padding: 55px 0
+    +m
+        padding: 24px 0
+    &.visible
+        padding: 42px 0
+        background: rgba($n9, .95)
+        +w
+            padding: 38px 0
+        +t
+            padding: 20px 0
+        .logo
+            transform-origin: left
+            transform: scale(0.6)
+            +m
+                transform-origin: center
+
+    &.open.visible
+        background: transparent

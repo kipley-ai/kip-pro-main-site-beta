@@ -7,7 +7,7 @@ const Typewriter: React.FC = () => {
     const dataText = ["Power", "Property", "Provenance"];
 
     const typeWriter = (text: string, i: number, fnCallback: () => void) => {
-      if (i < text.length) {
+      if (i < text.length && document.querySelector(`.${styles.typewriterHeader}`)) {
         document.querySelector(`.${styles.typewriterHeader}`)!.innerHTML =
           text.substring(0, i + 1) +
           `<span class="${styles.typewriterSpan}" aria-hidden="true"></span>`;

@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-import LeaderboardPage from "@/templates/LeaderboardPage";
+import CampaignDashboardPage from "@/templates/CampaignDashboardPage";
 
 const Home: NextPage = () => {
-    return <LeaderboardPage />;
+    return <CampaignDashboardPage />;
 };
 
 export default Home;

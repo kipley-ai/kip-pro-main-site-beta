@@ -33,7 +33,9 @@ const Header = ({}: HeaderProps) => {
             [styles.visible]: headerStyle,
             [styles.open]: open,
           },
-          styles.header
+          pathname === "/campaigns" && !isConnected
+            ? styles.campaignsHeader
+            : styles.header,
         )}
       >
         <div
@@ -42,41 +44,39 @@ const Header = ({}: HeaderProps) => {
           data-scroll-lock-fill-gap
         >
           <Logo className={styles.logo} />
-          {pathname !== "/invite" ? (
-            <div className={styles.links}>
-              <Link href="/campaigns">
-                <a className={cn("a", styles.codeLink)}>
-                  <span className={styles["link-text"]}>GENESIS CAMPAIGN</span>
-                </a>
-              </Link>
-              <Link href="/about-us">
-                <a className={cn("a", styles.link)}>
-                  <span className={styles["link-text"]}>About Us</span>
-                </a>
-              </Link>
-              {/* <Link href="/chat-with-kols">
-                <a className={cn("a", styles.link)}>
-                  <span className={styles["link-text"]}>Chat</span>
-                </a>
-              </Link> */}
-              <a
-                rel="noreferrer"
-                target="_blank"
-                href="https://linktr.ee/kip.pro"
-                className={cn("a", styles.link)}
-              >
-                <span className={styles["link-text"]}>Community</span>
+          <div className={styles.links}>
+            <Link href="/campaigns">
+              <a className={cn("a", styles.codeLink)}>
+                <span className={styles["link-text"]}>GENESIS CAMPAIGN</span>
               </a>
-              <a
-                rel="noreferrer"
-                target="_blank"
-                href="https://kipprotocol.gitbook.io/wp/"
-                className={cn("a", styles.link)}
-              >
-                <span className={styles["link-text"]}>Documentation</span>
+            </Link>
+            <Link href="/about-us">
+              <a className={cn("a", styles.link)}>
+                <span className={styles["link-text"]}>About Us</span>
               </a>
-            </div>
-          ) : null}
+            </Link>
+            {/* <Link href="/chat-with-kols">
+              <a className={cn("a", styles.link)}>
+                <span className={styles["link-text"]}>Chat</span>
+              </a>
+            </Link> */}
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://linktr.ee/kip.pro"
+              className={cn("a", styles.link)}
+            >
+              <span className={styles["link-text"]}>Community</span>
+            </a>
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://kipprotocol.gitbook.io/wp/"
+              className={cn("a", styles.link)}
+            >
+              <span className={styles["link-text"]}>Documentation</span>
+            </a>
+          </div>
           <div className={styles.menu}>
             <Menu
               navigation={headerNavigation}
