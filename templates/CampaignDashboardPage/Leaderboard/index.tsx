@@ -284,9 +284,7 @@ function Leaderboard() {
                                             )}
                                             {data.length > 0 ? (
                                                 data?.map((row: any) => (
-                                                    <tr
-                                                        key={row.wallet_address}
-                                                    >
+                                                    <tr key={row.wallet_address}>
                                                         <td>{row.rank}</td>
                                                         {/* <td className={styles.user}>
                                                     <td>
@@ -334,14 +332,9 @@ function Leaderboard() {
                                                 <td>{user.twitter}</td>
                                                 <td>{user.discord}</td> */}
                                                         <td>
-                                                            {row.wallet_address.slice(
-                                                                0,
-                                                                6
-                                                            )}
+                                                            {row.wallet_address.slice(0,6)}
                                                             ...
-                                                            {row.wallet_address.slice(
-                                                                -6
-                                                            )}
+                                                            {row.wallet_address.slice(-6)}
                                                         </td>
                                                         <td>{row.points}</td>
                                                     </tr>
@@ -354,34 +347,18 @@ function Leaderboard() {
                                             <tfoot>
                                                 <tr>
                                                     <td colSpan={3}>
-                                                        <ReactPaginate
-                                                            className={
-                                                                styles.pagination
-                                                            }
-                                                            previousLabel={"<"}
-                                                            nextLabel={">"}
-                                                            breakLabel={"..."}
-                                                            pageCount={
-                                                                pageCount
-                                                            }
-                                                            onPageChange={
-                                                                handlePageClick
-                                                            }
-                                                            forcePage={
-                                                                currentPage
-                                                            }
-                                                            pageRangeDisplayed={
-                                                                3
-                                                            }
-                                                            marginPagesDisplayed={
-                                                                1
-                                                            }
-                                                            pageLinkClassName={
-                                                                styles.pageLink
-                                                            }
-                                                            activeLinkClassName={
-                                                                styles.activeLink
-                                                            }
+                                                        <ReactPaginate 
+                                                        className={styles.pagination}
+                                                        previousLabel={"<"}
+                                                        nextLabel={">"}
+                                                        breakLabel={"..."}
+                                                        pageCount={pageCount}
+                                                        onPageChange={handlePageClick}
+                                                        forcePage={currentPage}
+                                                        pageRangeDisplayed={3}
+                                                        marginPagesDisplayed={1}
+                                                        pageLinkClassName={styles.pageLink}
+                                                        activeLinkClassName={styles.activeLink}
                                                         />
                                                     </td>
                                                 </tr>
