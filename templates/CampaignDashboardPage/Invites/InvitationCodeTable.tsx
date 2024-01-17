@@ -39,17 +39,17 @@ const TableRow = ({ item, index, itemsPerPage }: TableRowProps) => {
 
     const shareText = (code: string) => {
         const text = `GM Farmoors. I got an extra KIP code for you to start farming $KIP on KIP Protocol.\nGo to https://kip.pro/campaigns and enter the invite code:\n\n👉🏻 ${code}\n\nEach code is only available for a single use.\nStay Smort. Stay Knawligible🧠`;
-        
+
         navigator.clipboard.writeText(text);
         toast.success("Copy Invite Link Successfully");
-    }
+    };
 
     const shareX = (code: string) => {
         const text = `GM Farmoors. I got an extra KIP code for you to start farming $KIP on KIP Protocol.\nGo to https://kip.pro/campaigns and enter the invite code:\n\n👉🏻 ${code}\n\nEach code is only available for a single use.\nStay Smort. Stay Knawligible🧠`;
         const twitterIntentText = encodeURIComponent(text);
         const link = `https://twitter.com/intent/tweet?text=${twitterIntentText}`;
-        window.open(link, "_blank")
-    }
+        window.open(link, "_blank");
+    };
 
     const isDateExpired = (
         validStart: string,
@@ -190,7 +190,7 @@ const InvitationCodeTable = () => {
                             <thead>
                                 <tr>
                                     <th>INVITE CODES</th>
-                                    <th>EARNED POINTS</th>
+                                    <th>EARNED POINTS*</th>
                                     <th>INVITEE</th>
                                     <th>ACTION</th>
                                 </tr>
@@ -206,6 +206,9 @@ const InvitationCodeTable = () => {
                                 ))}
                             </tbody>
                         </table>
+                        <p className={styles.asteriskNote}>
+                            *Points are distributed upon completion of tasks
+                        </p>
                         {pageCount >= 1 && (
                             <div className={styles.pagination}>
                                 <ReactPaginate
