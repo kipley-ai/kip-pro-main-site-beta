@@ -59,7 +59,7 @@ export const team = [
   {
     name: "Teo Jun Hao",
     position: "COO",
-    content: `Ex Head Web3 Investment Direct,
+    content: `Ex Head Web3 Investment Director,
         COL. 6 years experiences in project
         management & Web3 Investments.`,
     image: "/images/team-kip-bw/team-junhao.jpg",
