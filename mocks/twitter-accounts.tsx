@@ -1,15 +1,37 @@
 export const accounts = [
     {
+        image: "/images/twitter-profile/@0x_Sats.jpg",
+        name: "0x_Sats",
+    },
+    {
         image: "/images/twitter-profile/@AIprojecthub.jpg",
         name: "AIprojecthub",
         kb_id: "8d991ea9-8cee-4c31-9f93-f41343caaa2f",
         app_id: "2ad3e821-4457-417e-8aeb-f3ffc54492c9",
     },
     {
+        image: "/images/twitter-profile/@cr_zilla.jpg",
+        name: "cr_zilla",
+    },
+    {
+        image: "/images/twitter-profile/@CryptoDefiLord.png",
+        name: "CryptoDefiLord",
+    },
+    {
+        image: "/images/twitter-profile/@Fibonaccious.jpg",
+        name: "Fibonaccious",
+    },
+    {
         image: "/images/twitter-profile/@fitforcrypto_.jpg",
         name: "fitforcrypto_",
-        kb_id: "042a65a0-66d1-47df-bc9b-c0b82a73385e",
-        app_id: "9cb85eda-0e56-4a06-8c53-19b61227d394",
+    },
+    {
+        image: "/images/twitter-profile/@TheLabsWolf.jpg",
+        name: "TheLabsWolf",
+    },
+    {
+        image: "/images/twitter-profile/JAMES @ ANIMOCA VENTURES.jpeg",
+        name: "JAMES @ ANIMOCA VENTURES",
     },
     // {
     //     image: "/images/twitter-profile/@100trillionUSD.jpg",
