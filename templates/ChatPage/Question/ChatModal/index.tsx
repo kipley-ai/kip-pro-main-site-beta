@@ -7,7 +7,7 @@ import { chat } from "@/mocks/chat";
 import Field from "@/components/Field";
 
 import useWebSocket, { ReadyState } from "react-use-websocket";
-import { useAccount } from 'wagmi';
+import { useAccount } from "wagmi";
 
 const currentTimestamp: string = "2023-12-20T10:02:30.000Z";
 const myUsername: string = "KIPtest";
@@ -20,7 +20,6 @@ type ChatModalProps = {
 };
 
 let globalQuestion = ""; // global var
-
 
 const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
     const [question, setQuestion] = useState<string>("");
@@ -59,7 +58,7 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
                 setChatHistory([
                     ...chatHistory,
                     {
-                        username: "saylor",
+                        username: "AIprojecthub",
                         message: answer1.slice(1, -1).join(""),
                         timestamp: "2023-12-20T10:01:00.000Z",
                     },
@@ -91,7 +90,7 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
                 setChatHistory([
                     ...chatHistory,
                     {
-                        username: "brian_armstrong",
+                        username: "fitforcrypto_",
                         message: modifiedAnswer2.join(""),
                         timestamp: "2023-12-20T10:02:00.000Z",
                     },
@@ -243,6 +242,13 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
         [globalQuestion, sendMessage2],
     );
 
+    const handleKeyDown = (e: any) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            handleChat();
+        }
+    };
+
     useEffect(() => {
         if (lastMessage1 !== null) {
             if (analysisStatus === "answer_1") {
@@ -337,7 +343,7 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
             <Modal className={styles.leftModal}>
                 <div className={styles.info}>
                     <h2 className={styles.title}>You are chatting with</h2>
-      {/*              <p>
+                    {/*              <p>
                         The world's most powerful AI KnowledgeFi generation
                         engine.
                         <br />
@@ -358,11 +364,19 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
                     className={styles.wallet}
                     style={{ background: `url(images/wallet-gradient.png)` }}
                 >
-                    <div className={cn("h4", styles.walletTitle)} style={{ lineHeight: '1.2', letterSpacing: '-0.5px' }}>Wallet Address</div>
-                    <div className={cn("p", styles.walletAddress)} style={{ lineHeight: '1.2', letterSpacing: '-0.5px' }}>
+                    <div
+                        className={cn("h4", styles.walletTitle)}
+                        style={{ lineHeight: "1.2", letterSpacing: "-0.5px" }}
+                    >
+                        Wallet Address
+                    </div>
+                    <div
+                        className={cn("p", styles.walletAddress)}
+                        style={{ lineHeight: "1.2", letterSpacing: "-0.5px" }}
+                    >
                         [ {address} ]
                     </div>
-                    
+
                     {/* <div className={styles.walletDescription}>
                         <div className={cn("h4", styles.walletIntegration)}>
                             Integration with APIs
@@ -455,6 +469,7 @@ const ChatModal = ({ avatars, onClose }: ChatModalProps) => {
                         placeholder="Type your chat"
                         value={question}
                         onChange={(e: any) => setQuestion(e.target.value)}
+                        onKeyDown={(e: any) => handleKeyDown(e)}
                     />
                     <img
                         src="https://upload.wikimedia.org/wikipedia/commons/d/de/Down-left-arrow_%2861409%29_-_The_Noun_Project.svg"
