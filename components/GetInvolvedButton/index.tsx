@@ -2,6 +2,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import Image from "next/image";
 import cn from "classnames";
 import styles from "./GetInvolvedButton.module.sass";
+import { useRouter } from "next/router";
 
 type GetInvolvedButtonProps = {
     buttonStyle?: string;
@@ -11,6 +12,7 @@ type GetInvolvedButtonProps = {
 };
 
 const GetInvolvedButton = ({ buttonStyle, chainStyle, wrapStyle, content }: GetInvolvedButtonProps) => {
+    const { pathname } = useRouter();
     return (
         <>
             <ConnectButton.Custom>
@@ -52,7 +54,7 @@ const GetInvolvedButton = ({ buttonStyle, chainStyle, wrapStyle, content }: GetI
                                     );
                                 }
 
-                                if (chain.unsupported) {
+                                if (chain.unsupported && pathname !== "/chat-with-kols") {
                                     return (
                                         <button
                                             onClick={openChainModal}

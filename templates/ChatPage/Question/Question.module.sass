@@ -5,9 +5,14 @@
     margin-bottom: 0
     background: $n9
 
+.container
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 80px
+
 .head
     max-width: 50vw
-    margin: 0 auto 80px
     text-align: center
     +t
         max-width: 500px
@@ -26,18 +31,25 @@
     right: 160px
     cursor: pointer
     z-index: 20
+    +m
+        top: 160px
+        right: 40px
 
 .list
+    position: relative
+    left: 4rem
     display: flex
     flex-wrap: wrap
-    justify-content: center
+    justify-content: flex-start
     margin: -44px -22px 0
     +w
         margin: -44px -13px 0
     +t
         margin: -40px 0 0
+        left: 3rem
     +m
         margin: -40px 0 0
+        left: 0
 
 .item
     position: relative

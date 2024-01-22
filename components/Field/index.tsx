@@ -7,6 +7,7 @@ type FieldProps = {
     type?: string;
     value: string;
     onChange: any;
+    onKeyDown?: any;
     placeholder?: string;
     required?: boolean;
     children?: any;
@@ -19,6 +20,7 @@ const Field = ({
     type,
     value,
     onChange,
+    onKeyDown,
     placeholder,
     required,
     autoFocus,
@@ -36,6 +38,7 @@ const Field = ({
                     className={styles.textarea}
                     value={value}
                     onChange={onChange}
+                    onKeyDown={onKeyDown}
                     placeholder={placeholder}
                     required={required}
                     autoFocus={autoFocus}
@@ -46,6 +49,7 @@ const Field = ({
                     type={type || "text"}
                     value={value}
                     onChange={onChange}
+                    onKeyDown={onKeyDown}
                     placeholder={placeholder}
                     required={required}
                     autoFocus={autoFocus}
