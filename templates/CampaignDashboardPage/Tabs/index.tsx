@@ -50,7 +50,7 @@ const TabsHeader = ({ tab, setTab }: TabsHeaderProps) => {
                         <h1>Leaderboard</h1>
                         <div className={styles.ind}></div>
                     </div>
-                    <div
+                    {/* <div
                         className={`${styles.tab} ${
                             tab === "nftcollection" ? styles.active : ""
                         }`}
@@ -58,7 +58,7 @@ const TabsHeader = ({ tab, setTab }: TabsHeaderProps) => {
                     >
                         <h1>NFT Collection</h1>
                         <div className={styles.ind}></div>
-                    </div>
+                    </div> */}
                 </div>
                 <div className={styles.tabsLine}></div>
             </div>
