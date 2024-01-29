@@ -12,7 +12,7 @@ import { relative } from "path";
 const posts = [
     {
         title: "Cycle 6 Tasks",
-        date: "",
+        date: "", 
         // image: CampaignImage,
         status: "FEATURES",
         url: "https://galxe.com/KIPProtocol/campaign/GCAcJttXFV",
