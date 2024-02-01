@@ -57,7 +57,7 @@ const TableRow = ({ item, index, itemsPerPage }: TableRowProps) => {
     ): boolean => {
         const validStartDate = new Date(validStart);
         const validEndDate = new Date(validEnd);
-        const currentDate = new Date().toLocaleString("en-GB", {
+        const currentDate = new Date().toLocaleString(undefined, {
             timeZone: "UTC",
         });
         const validStartTimestamp = new Date(validStartDate).getTime();
