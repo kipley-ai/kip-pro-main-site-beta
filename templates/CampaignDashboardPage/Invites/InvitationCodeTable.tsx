@@ -82,21 +82,14 @@ const TableRow = ({ item, index, itemsPerPage }: TableRowProps) => {
     };
 
     return (
-        <tr
-            className={
-                item.used || isDateExpired(item.valid_start, item.valid_end)
-                    ? styles.used
-                    : ""
-            }
-        >
+        <tr className={item.used ? styles.used : ""}>
             <td>{item.invite_code}</td>
             <td>{item.earned_points}</td>
             <td>
                 {item.used_by_address && truncateAddress(item.used_by_address)}
             </td>
             <td>
-                {item.used ||
-                isDateExpired(item.valid_start, item.valid_end) ? null : (
+                {item.used ? null : (
                     <div className={styles.actionButtons}>
                         <button
                             className={styles.copyButton}
