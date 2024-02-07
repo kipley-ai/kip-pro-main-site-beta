@@ -17,6 +17,11 @@ export const headerNavigation = [
         external: true,
     },
     {
+        title: "Blog",
+        url: "https://blog.kip.pro",
+        external: true,
+    },
+    {
         title: "Documentation",
         url: "https://kipprotocol.gitbook.io/wp/",
         external: true,

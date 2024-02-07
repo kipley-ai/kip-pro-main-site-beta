@@ -71,6 +71,14 @@ const Header = ({}: HeaderProps) => {
             <a
               rel="noreferrer"
               target="_blank"
+              href="https://blog.kip.pro"
+              className={cn("a", styles.link)}
+            >
+              <span className={styles["link-text"]}>Blog</span>
+            </a>
+            <a
+              rel="noreferrer"
+              target="_blank"
               href="https://kipprotocol.gitbook.io/wp/"
               className={cn("a", styles.link)}
             >
