@@ -1,14 +1,14 @@
 export const getStartedCards = [
     {
-        title: "Decentralized RAG",
+        title: "Decentralised RAG with KIP",
         content:
-            "Build decentralized AI dApps with retrieval-augmented generation",
+            "Build decentralised AI dApps with retrieval-augmented generation",
         image: "/images/figures/figure-101.png",
         color: "#6F5BEB",
         url: "/developer-hub#",
     },
     {
-        title: "Decentralised RAG with KIP",
+        title: "KIP SFT Minting Module",
         content: "Easily turn your knowledge asset into a semi-fungible token",
         image: "/images/figures/figure-106 (1).png",
         color: "#EBB15B",
