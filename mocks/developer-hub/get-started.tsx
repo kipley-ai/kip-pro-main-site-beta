@@ -5,24 +5,24 @@ export const getStartedCards = [
             "Build decentralized AI dApps with retrieval-augmented generation",
         image: "/images/figures/figure-101.png",
         color: "#6F5BEB",
-        url: "/technology",
+        url: "/developer-hub#",
     },
     {
-        title: "KIP SFT Minting Module",
+        title: "Decentralised RAG with KIP",
         content: "Easily turn your knowledge asset into a semi-fungible token",
         image: "/images/figures/figure-106 (1).png",
         color: "#EBB15B",
         delay: 150,
-        url: "/technology",
+        url: "/developer-hub#",
     },
     {
-        title: "Data Uploader",
+        title: "KIP Data Uploader",
         content:
             "Secure and protect your valuable data using our decentralised storage solutions",
         image: "/images/figures/figure-104 (1).png",
         color: "#89EB5B",
         delay: 300,
-        url: "/technology",
+        url: "/developer-hub#",
     },
     {
         title: "KIP Settlements System",
@@ -31,6 +31,6 @@ export const getStartedCards = [
         image: "/images/figures/figure-108.png",
         color: "#6F5BEB",
         delay: 450,
-        url: "/technology",
+        url: "/developer-hub#",
     },
 ];

@@ -25,7 +25,9 @@ const Development = () => {
                     {getStartedCards.map((item, index) => (
                         <Card
                             className={styles.card}
+                            squareCardClass={styles.square}
                             color={item.color}
+                            url={item.url}
                             key={index}
                             animateIn="fadeInDown"
                             delay={item.delay}

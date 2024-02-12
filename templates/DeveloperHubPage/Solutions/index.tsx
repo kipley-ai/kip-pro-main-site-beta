@@ -30,6 +30,7 @@ const Solutions = ({}: SolutionsProps) => {
                     {solutions.map((item, index) => (
                         <Card
                             className={styles.card}
+                            squareCardClass={styles.square}
                             innerCardClass={styles.inner}
                             color={item.color}
                             key={index}

@@ -69,8 +69,27 @@
     +m
         width: 310px
     &:hover
+        filter: brightness(1.2)
         .arrow
             fill: $n2
+            transform: translate(-5px, 0)
+            transition: transform 0.3s ease
+        .square
+            transform: translate(-2px,2px)
+        .preview
+            img
+                transform: translate(0, -35px)
+                transition: transform 0.3s ease
+    &:not(:hover)
+        .arrow
+            fill: $n2
+            transform: none
+            transition: transform 0.3s ease
+        .preview
+            img
+                transform: none
+                transition: transform 0.3s ease
+
     &:not(:last-child)
         margin-right: 40px
         +m
