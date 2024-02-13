@@ -8,19 +8,22 @@ import { useState } from "react";
 
 const roles = [
     {
-        title: "You are a Data Owner",
+        title: "You are a",
+        title2: "Data Owner",
         icon: "/images/icon-1.svg",
         status: "ONLINE",
         color: "#89EB5B",
     },
     {
-        title: "You are an App Owner",
+        title: "You are an",
+        title2: "App Owner",
         icon: "/images/icon-2.svg",
         status: "ONLINE",
         color: "#89EB5B",
     },
     {
-        title: "You are a Model Owner",
+        title: "You are a",
+        title2: "Model Owner",
         icon: "/images/icon-3.svg",
         status: "ONLINE",
         color: "#89EB5B",
@@ -78,18 +81,28 @@ const Knowledge: NextPage = () => {
                                         <div className={styles.icon}>
                                             <Image
                                                 src={item.icon}
-                                                width={32}
-                                                height={32}
+                                                width={48}
+                                                height={48}
                                                 alt="Figure"
                                             />
                                         </div>
-                                        <div
-                                            className={cn(
-                                                "h3",
-                                                styles.subtitle
-                                            )}
-                                        >
-                                            {item.title}
+                                        <div className={styles.titles}>
+                                            <div
+                                                className={cn(
+                                                    "h3",
+                                                    styles.subtitle
+                                                )}
+                                            >
+                                                {item.title}
+                                            </div>
+                                            <div
+                                                className={cn(
+                                                    "h3",
+                                                    styles.subtitle
+                                                )}
+                                            >
+                                                {item.title2}
+                                            </div>
                                         </div>
                                     </Card>
                                 </div>
