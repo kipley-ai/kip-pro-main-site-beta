@@ -13,7 +13,6 @@ const ImageGallery = () => {
     };
 
     const images: string[] = [
-        "/images/community/top.png",
         "/images/community/top1.png",
         "/images/community/top2.png",
         "/images/community/top3.png",
