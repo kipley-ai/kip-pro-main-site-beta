@@ -11,7 +11,7 @@ import { relative } from "path";
 
 const posts = [
     {
-        title: "Cycle 10 Tasks",
+        title: "Cycle 11 Tasks",
         date: "", 
         // image: CampaignImage,
         status: "FEATURES",
@@ -37,7 +37,7 @@ const Tasks = ({}: TasksProps) => {
     const [hours, setHours] = useState<number>(0);
     const [minutes, setMinutes] = useState<number>(0);
 
-    const targetTime: string = "2024-02-22T04:00:00Z";
+    const targetTime: string = "2024-03-01T08:30:00Z";
 
     useEffect(() => {
         const intervalId = setInterval(() => {
