@@ -4,7 +4,8 @@ import cn from "classnames";
 import styles from "./Role.module.sass";
 import Card from "@/components/Card";
 import Image from "@/components/Image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 const roles = [
     {
@@ -31,6 +32,9 @@ const roles = [
 ];
 
 const Knowledge: NextPage = () => {
+    const router = useRouter();
+    const { nextStep } = router.query;
+
     const [showIframe, setShowIframe] = useState(false);
 
     const handleSetIframe = (idx: number) => {
@@ -39,9 +43,17 @@ const Knowledge: NextPage = () => {
         }
     };
 
+    const constructSrc = () => {
+        let src = process.env.NEXT_PUBLIC_KF_CREATE;
+        if (nextStep && nextStep === "mint_nft") {
+            src = src + `?nextStep=${nextStep}`;
+        }
+        return src;
+    };
+
     return (
         <Layout>
-            {showIframe ? (
+            {showIframe || (nextStep && nextStep === "mint_nft") ? (
                 <div
                     style={{
                         marginTop: 100,
@@ -51,7 +63,7 @@ const Knowledge: NextPage = () => {
                     }}
                 >
                     <iframe
-                        src={process.env.NEXT_PUBLIC_KF_CREATE}
+                        src={constructSrc()}
                         width="100%"
                         height="100%"
                     ></iframe>

@@ -23,7 +23,7 @@ const Main = ({}: MainProps) => (
                 <div className={styles.buttons}>
                     <a
                         className={cn("button", styles.read)}
-                        href="https://app.gitbook.com/o/e1IfREVBtd2iWGcblgbo/s/Cu9eAIhqMAiPZTqAL8xN/product-guides/building-with-kip-protocol"
+                        href="https://kip-protocol-developer-hub.gitbook.io/kip-protocol/product-guides/building-with-kip-protocol"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
