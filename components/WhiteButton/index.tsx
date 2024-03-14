@@ -13,7 +13,7 @@ const WhiteButton = () => {
             <div className={styles.backArrow}>
                 {isConnected ? (
                     <a className={styles.apply} href={"/leaderboard"}>
-                        INVITE CODE & LEADERBOARD{" "}
+                        VIEW LEADERBOARD{" "}
                         <Icon name="arrow-right" size="26" />
                     </a>
                 ) : (
@@ -22,7 +22,7 @@ const WhiteButton = () => {
                             className={styles.apply}
                             onClick={openConnectModal}
                         >
-                            CONNECT WALLET <Icon name="arrow-right" size="26" />
+                            VIEW LEADERBOARD <Icon name="arrow-right" size="26" />
                         </button>
                     )
                 )}

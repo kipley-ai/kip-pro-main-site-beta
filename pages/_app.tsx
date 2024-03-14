@@ -3,6 +3,7 @@ import Script from "next/script";
 import type { AppProps } from "next/app";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { Toaster } from "react-hot-toast";
+import { useEffect, useState } from "react";
 
 import {
   connectorsForWallets,
@@ -61,6 +62,12 @@ const wagmiConfig = createConfig({
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [isReady, setIsReady] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsReady(true);
+  }, []);
+
   return (
     <>
       {/* <!-- Google tag (gtag.js) --> */}
@@ -77,14 +84,16 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <ParallaxProvider>
-        <WagmiConfig config={wagmiConfig}>
-          <RainbowKitProvider chains={chains}>
-            <Component {...pageProps} />
-            <Toaster />
-          </RainbowKitProvider>
-        </WagmiConfig>
-      </ParallaxProvider>
+      {isReady && (
+        <ParallaxProvider>
+          <WagmiConfig config={wagmiConfig}>
+            <RainbowKitProvider chains={chains}>
+              <Component {...pageProps} />
+              <Toaster />
+            </RainbowKitProvider>
+          </WagmiConfig>
+        </ParallaxProvider>
+      )}
     </>
   );
 }
