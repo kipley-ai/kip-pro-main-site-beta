@@ -1,3 +1,4 @@
+import axios from "axios";
 import toast from "react-hot-toast";
 import Layout from "@/components/Layout";
 import styles from "./Layout.module.sass";
@@ -13,7 +14,7 @@ const CampaignDashboardPage = () => {
     const [tab, setTab] = useState("leaderboard");
 
     const router = useRouter();
-    const { isConnected } = useAccount();
+    const { address, isConnected } = useAccount();
 
     if (process.browser) {
         if (!isConnected) {
@@ -23,6 +24,21 @@ const CampaignDashboardPage = () => {
             });
         }
     }
+
+    useEffect(() => {
+        const validateWallet = async () => {
+            if (address) {
+                const response = await axios.post(
+                    "/api/campaigns/validate-code",
+                    {
+                        wallet_address: address,
+                        invitation_code: "NO-CODE",
+                    },
+                );
+            }
+        };
+        validateWallet();
+    }, [address]);
 
     return (
         <Layout>
