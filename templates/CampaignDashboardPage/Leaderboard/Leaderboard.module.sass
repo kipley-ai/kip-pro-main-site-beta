@@ -1,7 +1,7 @@
 @import @/styles/helpers
 
 .container
-    @apply flex justify-center gap-[60px] my-[50px] mx-auto flex-wrap
+    @apply flex justify-center gap-[60px] mt-[20px] mb-[40px] mx-auto flex-wrap
 
 .nftContainer
     @apply flex items-center w-[451px]
@@ -89,9 +89,8 @@
     @apply flex flex-col w-full h-full py-[47px] px-5 md:px-14 gap-[47px] pb-[64px]
 
 .ledUpdated
-    @apply flex items-center mb-6
+    @apply flex items-center mb-0
     h1
-        color: $n3
         font-size: 18px
         font-style: normal
         font-weight: 400
@@ -209,3 +208,25 @@
   top: 6px
   +a
     top: 14px
+
+.card
+  float: left
+  // width: calc(60% - 56px)
+  width: 100%
+  margin: 1rem 0 0
+  padding: 30px 3.5rem 30px
+  // z-index: 100
+  +t
+      padding: 4rem 2.5rem
+      margin: 1.5rem 0
+  +m
+      padding: 4rem 1rem
+
+.inner
+  position: relative
+  // z-index: 100
+  background: $n6
+  clip-path: url(#polygonImage)
+  border-radius: 32px
+  +m
+      border-radius: 20px
