@@ -54,7 +54,8 @@ const CampaignDashboardPage = () => {
                     backgroundRepeat: "no-repeat",
                 }}
             >
-                <Leaderboard />
+                <TabsHeader tab={tab} setTab={setTab}/>
+                <Leaderboard /> 
             </div>
         </Layout>
     );
