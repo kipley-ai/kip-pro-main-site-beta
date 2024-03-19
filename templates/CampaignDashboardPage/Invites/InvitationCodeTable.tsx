@@ -6,7 +6,6 @@ import ShareIcon from "public/share-icon.svg";
 import XIcon from "public/x-icon.svg";
 import ReactPaginate from "react-paginate";
 import { useState, useEffect } from "react";
-import { Pagination } from "../Leaderboard";
 import Card from "@/components/Card";
 import toast from "react-hot-toast";
 import { useAccount } from "wagmi";
