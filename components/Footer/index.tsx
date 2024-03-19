@@ -44,7 +44,7 @@ const Footer = ({}: FooterProps) => (
         </div> */}
       </div>
       <div className={styles.row}>
-        <div className={styles.copyright}>© 2023 KIP. All rights reserved.</div>
+        <div className={styles.copyright}>© 2024 KIP. All rights reserved.</div>
         {/* <div className={styles.documents}>
           {documents.map((document, index) => (
             <Link href={document.url} key={index}>
