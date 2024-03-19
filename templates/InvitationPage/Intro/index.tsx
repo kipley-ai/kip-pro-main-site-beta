@@ -75,7 +75,7 @@ const Intro = () => {
                                 <span className={styles.step}>
                                     Step 2:
                                 </span>{" "}
-                                Recruit friends with Invite Codes <br />
+                                Share Galxe tasks with your friends <br />
                                 <span className={styles.step}>
                                     Step 3:
                                 </span>{" "}

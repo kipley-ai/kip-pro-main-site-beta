@@ -11,7 +11,7 @@ import { relative } from "path";
 
 const posts = [
     {
-        title: "Cycle 13 Tasks",
+        title: "Cycle 15 Tasks",
         date: "", 
         // image: CampaignImage,
         status: "FEATURES",
@@ -37,7 +37,7 @@ const Tasks = ({}: TasksProps) => {
     const [hours, setHours] = useState<number>(0);
     const [minutes, setMinutes] = useState<number>(0);
 
-    const targetTime: string = "2024-03-15T10:00:00Z";
+    const targetTime: string = "2024-03-22T10:00:00Z";
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -139,9 +139,8 @@ const Tasks = ({}: TasksProps) => {
                         </div>
                         <div className={styles.info}>
                             <p>
-                                Refreshes every cycle for additional points and
-                                invite codes. Boost your lead! Invite friends
-                                for extra points.
+                                Refreshes every cycle for additional points.<br />
+                                Invite friends to earn extra points!
                             </p>
                         </div>
                     </div>
