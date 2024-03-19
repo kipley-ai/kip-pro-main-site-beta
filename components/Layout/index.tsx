@@ -32,7 +32,7 @@ const Layout = ({ layoutNoOverflow, children }: LayoutProps) => {
           [styles.layoutNoOverflow]: layoutNoOverflow,
         })}
       >
-        {pathname !== "/campaigns" && (<Banner />)}
+        {(pathname !== "/campaigns" && pathname !== "/leaderboard") && (<Banner />)}
         <Header />
         {children}
         <Footer />
