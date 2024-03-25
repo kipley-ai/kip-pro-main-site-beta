@@ -96,6 +96,7 @@ const Header = ({}: HeaderProps) => {
             buttonStyle={cn("button", styles["get-involved-button"])}
             chainStyle={styles.chainButton}
             wrapStyle={styles.getInvolvedButtonWrap}
+            wrongNetworkStyle={styles.wrongNetwork}
           />
         </div>
         {pathname === "/campaigns" && !isConnected && (

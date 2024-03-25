@@ -8,10 +8,11 @@ type GetInvolvedButtonProps = {
     buttonStyle?: string;
     chainStyle?: string;
     wrapStyle?: string;
+    wrongNetworkStyle?: string;
     content?: string;
 };
 
-const GetInvolvedButton = ({ buttonStyle, chainStyle, wrapStyle, content }: GetInvolvedButtonProps) => {
+const GetInvolvedButton = ({ buttonStyle, chainStyle, wrapStyle, wrongNetworkStyle, content }: GetInvolvedButtonProps) => {
     const { pathname } = useRouter();
     return (
         <>
@@ -58,7 +59,7 @@ const GetInvolvedButton = ({ buttonStyle, chainStyle, wrapStyle, content }: GetI
                                     return (
                                         <button
                                             onClick={openChainModal}
-                                            className={styles.wrongNetwork}
+                                            className={cn(wrongNetworkStyle, styles.wrongNetwork)}
                                             type="button"
                                         >
                                             Wrong network
