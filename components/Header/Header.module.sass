@@ -42,6 +42,7 @@
 
 .links
     display: flex
+    align-items: center
     +t
         display: none
 
@@ -49,6 +50,8 @@
     margin-right: 3rem
     padding: 0.5rem 0
     font-size: 0.9em
+    +x
+        margin-right: 2rem
     +d
         margin-right: 1.5rem
 
@@ -59,6 +62,8 @@
     font-family: 'Source Code Pro', monospace
     font-size: 0.8em
     padding: 0.5rem 1rem
+    +d
+        width: 100px
 
 .link-text
     color: white
@@ -166,3 +171,7 @@
 
     &.open.visible
         background: transparent
+
+.wrongNetwork
+    +t
+        display: none
