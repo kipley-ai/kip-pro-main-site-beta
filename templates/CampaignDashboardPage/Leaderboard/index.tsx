@@ -71,7 +71,7 @@ function Leaderboard() {
                     &nbsp;&nbsp;
                     <h1>Updated every 12 hours</h1>
                 </div>
-                <h2>Please note that below leaderboard only display quests from Galxe.</h2>
+                <h2 className={styles.pleaseNote}>Please note that below leaderboard only display quests from Galxe.</h2>
                 <Card
                     className={styles.card}
                     innerCardClass={styles.inner}
