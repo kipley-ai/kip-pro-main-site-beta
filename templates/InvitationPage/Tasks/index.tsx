@@ -9,17 +9,6 @@ import Link from "next/link";
 
 import { relative } from "path";
 
-const posts = [
-    {
-        title: "Cycle 18 Tasks",
-        date: "", 
-        // image: CampaignImage,
-        status: "FEATURES",
-        url: "https://galxe.com/KIPProtocol/campaign/GCAcJttXFV",
-        color: "#01F7FF",
-    },
-];
-
 const getCurrentDate = (): string => {
     const now = new Date();
 
@@ -76,59 +65,21 @@ const Tasks = ({}: TasksProps) => {
         <div className={cn("section", styles.section)}>
             <div className={styles.backgroundGradient}></div>
             <div className={cn("container", styles.container)}>
-                {/* <div className={cn("h2", styles.title)}>Cycle Tasks</div> */}
                 <div className={styles.row}>
                     <div className={styles.wrap}>
-                        {posts.map((item, index) => (
-                            <Card
-                                className={styles.card}
-                                cornerCardClass={styles.corner}
-                                backgroundCardClass={styles.backgroundCard}
-                                squareCardClass={styles.square}
-                                innerCardClass={styles.inner}
-                                color={item.color}
-                                key={index}
-                                url={item.url}
-                                externalUrl
-                            >
-                                <div className={styles.details}>
-                                    {/* <div
-                                        className={cn("status", styles.status)}
-                                        style={{ color: item.color }}
-                                    >
-                                        {item.status}
-                                    </div> */}
-                                    <div className={cn("h4", styles.subtitle)}>
-                                        {item.title}
-                                        <Icon
-                                            name="arrow-right"
-                                            className={styles.rightArrow}
-                                            fill="#FFF"
-                                            size="38"
-                                        />
-                                    </div>
-                                    {/* <div className={styles.line}>
-                                        <div className={styles.date}>
-                                            {item.date}
-                                        </div>
-                                        <Icon
-                                            className={styles.arrow}
-                                            name="arrow-right"
-                                            size="26"
-                                        />
-                                    </div> */}
-                                    {/* <div className={styles.previewCard}>
-                                            <Image
-                                                src={CampaignImage}
-                                                // width={580}
-                                                // height={329}
-                                                objectFit="cover"
-                                                alt={item.title}
-                                            />
-                                        </div> */}
-                                </div>
-                            </Card>
-                        ))}
+                        <a 
+                            href="https://galxe.com/KIPProtocol/campaign/GCAcJttXFV"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <Image
+                                src="/images/airdrop/airdrop-quest-020424.png"
+                                alt="Airdrop"
+                                width={400}
+                                height={400}
+                                className={styles.airdropImage}
+                            />
+                        </a>
                         <div className={cn("h2", styles.countTitle)}>
                             <span className={styles.timeCount}>{days}</span>{" "}
                             days{" "}
