@@ -11,7 +11,7 @@ import { relative } from "path";
 
 const posts = [
     {
-        title: "Cycle 18 Tasks",
+        title: "AIRDROP QUEST",
         date: "", 
         // image: CampaignImage,
         status: "FEATURES",
@@ -88,8 +88,6 @@ const Tasks = ({}: TasksProps) => {
                                 innerCardClass={styles.inner}
                                 color={item.color}
                                 key={index}
-                                url={item.url}
-                                externalUrl
                             >
                                 <div className={styles.details}>
                                     {/* <div
@@ -100,12 +98,6 @@ const Tasks = ({}: TasksProps) => {
                                     </div> */}
                                     <div className={cn("h4", styles.subtitle)}>
                                         {item.title}
-                                        <Icon
-                                            name="arrow-right"
-                                            className={styles.rightArrow}
-                                            fill="#FFF"
-                                            size="38"
-                                        />
                                     </div>
                                     {/* <div className={styles.line}>
                                         <div className={styles.date}>
@@ -129,6 +121,52 @@ const Tasks = ({}: TasksProps) => {
                                 </div>
                             </Card>
                         ))}
+                        <div className={styles.links}>
+                            <Card
+                                className={styles.linkCard}
+                                cornerCardClass={styles.corner}
+                                backgroundCardClass={styles.backgroundCard}
+                                squareCardClass={styles.square}
+                                innerCardClass={styles.inner}
+                                color="#00FF00"
+                                url="https://galxe.com/KIPProtocol/campaign/GCAcJttXFV"
+                                externalUrl
+                            >
+                                <div className={styles.details}>
+                                    <div className={cn("h4", styles.linkSubtitle)}>
+                                        Galxe
+                                        <Icon
+                                            name="arrow-right"
+                                            className={styles.rightArrow}
+                                            fill="#FFF"
+                                            size="38"
+                                        />
+                                    </div>
+                                </div>
+                            </Card>
+                            <Card
+                                className={styles.linkCard}
+                                cornerCardClass={styles.corner}
+                                backgroundCardClass={styles.backgroundCard}
+                                squareCardClass={styles.square}
+                                innerCardClass={styles.inner}
+                                color="#00FF00"
+                                url="https://taskon.xyz/space/2075880"
+                                externalUrl
+                            >
+                                <div className={styles.details}>
+                                    <div className={cn("h4", styles.linkSubtitle)}>
+                                        TaskOn
+                                        <Icon
+                                            name="arrow-right"
+                                            className={styles.rightArrow}
+                                            fill="#FFF"
+                                            size="38"
+                                        />
+                                    </div>
+                                </div>
+                            </Card>
+                        </div>
                         <div className={cn("h2", styles.countTitle)}>
                             <span className={styles.timeCount}>{days}</span>{" "}
                             days{" "}

@@ -70,12 +70,12 @@ const Intro = () => {
                             <br />
                             <p>
                                 <span className={styles.step}>Step 1:</span>{" "}
-                                Complete tasks on Galxe
+                                Complete tasks on Galxe and TaskOn
                                 <br />
                                 <span className={styles.step}>
                                     Step 2:
                                 </span>{" "}
-                                Share Galxe tasks with your friends <br />
+                                Share Galxe and TaskOn tasks with your friends <br />
                                 <span className={styles.step}>
                                     Step 3:
                                 </span>{" "}

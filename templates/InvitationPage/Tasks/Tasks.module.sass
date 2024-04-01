@@ -222,11 +222,69 @@
     margin-bottom: 0
     font-size: 2.5rem
     width: 100%
+    background: -webkit-linear-gradient(left, #58F1F0 2%, #FF2C79 35%, #FFE606 70%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
 
     +m
         padding: 1rem 0 0
         font-size: 1.5rem
         gap: 90px
+
+.links
+    display: flex
+    justify-content: space-between
+    gap: 2rem
+
+.linkCard
+    width: 285px
+    border-radius: 24px
+    // border: 1px solid #01F7FF
+    overflow: hidden
+    transform: scale(1, 0.7)
+    +m
+        box-shadow: none
+        width: 350px
+    &:hover
+        .backgroundCard
+            background: linear-gradient(#110a27, #110a27) padding-box, linear-gradient(to bottom, cyan, cyan 40%, #6a4093, #6a4093 66.66%, #2d2d2d, #2d2d2d) border-box !important
+        .corner
+            fill: #110a27 !important
+        .details
+            .linkSubtitle
+                color: #01f7ff
+            .rightArrow
+                path
+                    fill: #01f7ff !important
+        .arrow
+            fill: $n1
+    &:not(:last-child)
+        margin-bottom: 10px
+        +m
+            margin-bottom: -2rem
+    .corner
+        fill: #0a0617 !important
+        stroke: cyan
+        stroke-width: 1px
+        z-index: -5
+        +m
+            top: 0
+            bottom: 0
+            height: 55%
+            width: 15%
+            border-bottom-right-radius: 24px
+    .square
+        display: none
+        +m
+            top: auto !important
+            bottom: 8px
+    .linkSubtitle
+        display: flex
+        justify-content: space-between
+        margin-bottom: 0
+        font-size: 2rem
+        width: 100%
+        transform: scale(1, 1.4)
 
 .info
     p
