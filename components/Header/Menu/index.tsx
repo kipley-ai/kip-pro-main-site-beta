@@ -134,7 +134,7 @@ const Menu = ({ navigation, socials, onClick }: MenuProps) => {
                                       <div className={styles.link}>
                                         <Link href="/campaigns">
                                           <a className={cn("a", styles.codeLink)}>
-                                            <span>AIRDROP QUEST</span>
+                                            <span>GENESIS CAMPAIGN</span>
                                           </a>
                                         </Link>
                                       </div>
