@@ -55,7 +55,7 @@ const Intro = () => {
                 <div className={cn("container", styles.container2)}>
                     <div className={styles.wrap2}>
                         <div className={cn("h1", styles.title)}>
-                            HOW TO BEGIN
+                            JOIN AIRDROP QUEST NOW
                         </div>
                         <div className={styles.info2}>
                             <p>

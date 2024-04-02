@@ -79,11 +79,11 @@ const Tasks = ({}: TasksProps) => {
                 {/* <div className={cn("h2", styles.title)}>Cycle Tasks</div> */}
                 <div className={styles.row}>
                     <div className={styles.wrap}>
-                        <div className={styles.airdrop}>
+                        {/* <div className={styles.airdrop}>
                             <div className={cn("h4", styles.subtitle)}>
                                 AIRDROP QUEST
                             </div>
-                        </div>
+                        </div> */}
                         <div className={styles.links}>
                             <Card
                                 className={styles.linkCard}
@@ -128,8 +128,8 @@ const Tasks = ({}: TasksProps) => {
                                         <Image
                                             src="/images/taskon-logo.png"
                                             alt="TaskOn"
-                                            width={140}
-                                            height={60}
+                                            width={145}
+                                            height={40}
                                             className={styles.logo}
                                         />
                                         <Icon
