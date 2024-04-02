@@ -55,7 +55,7 @@ const Intro = () => {
                 <div className={cn("container", styles.container2)}>
                     <div className={styles.wrap2}>
                         <div className={cn("h1", styles.title)}>
-                            JOIN AIRDROP QUEST NOW
+                            HOW TO JOIN
                         </div>
                         <div className={styles.info2}>
                             <p>
@@ -83,8 +83,7 @@ const Intro = () => {
                             </p>
                             <br />
                             <p>
-                                Join the adventure now! Dont miss out on the
-                                Genesis NFT.
+                                Don&apos;t miss out on the Genesis NFT. Join the adventure now:
                             </p>
                         </div>
                     </div>
