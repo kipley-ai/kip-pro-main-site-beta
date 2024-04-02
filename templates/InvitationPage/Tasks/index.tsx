@@ -98,12 +98,12 @@ const Tasks = ({}: TasksProps) => {
                                 <div className={styles.details}>
                                     <div className={cn("h4", styles.linkSubtitle)}>
                                         <Image
-                                            src="/images/Galxe-logo-white.png"
+                                            src="/images/Galxe-logo-new.png"
                                             alt="Galxe"
-                                            width={205}
-                                            height={40}
+                                            layout="fill"
                                             className={styles.logo}
                                         />
+                                        {/* Galxe */}
                                         <Icon
                                             name="arrow-right"
                                             className={styles.rightArrow}
@@ -126,12 +126,12 @@ const Tasks = ({}: TasksProps) => {
                                 <div className={styles.details}>
                                     <div className={cn("h4", styles.linkSubtitle)}>
                                         <Image
-                                            src="/images/taskon-logo.png"
+                                            src="/images/taskon-logo-new.png"
                                             alt="TaskOn"
-                                            width={145}
-                                            height={40}
+                                            layout="fill"
                                             className={styles.logo}
                                         />
+                                        {/* TaskOn */}
                                         <Icon
                                             name="arrow-right"
                                             className={styles.rightArrow}
