@@ -79,6 +79,11 @@ const Tasks = ({}: TasksProps) => {
                 {/* <div className={cn("h2", styles.title)}>Cycle Tasks</div> */}
                 <div className={styles.row}>
                     <div className={styles.wrap}>
+                        <div className={styles.airdrop}>
+                            <div className={cn("h4", styles.subtitle)}>
+                                AIRDROP QUEST
+                            </div>
+                        </div>
                         <div className={styles.links}>
                             <Card
                                 className={styles.linkCard}
@@ -92,15 +97,18 @@ const Tasks = ({}: TasksProps) => {
                             >
                                 <div className={styles.details}>
                                     <div className={cn("h4", styles.linkSubtitle)}>
-                                        <div className={cn("h4", styles.subtitle)}>
-                                            AIRDROP QUEST
-                                        </div>
                                         <Image
                                             src="/images/Galxe-logo-white.png"
                                             alt="Galxe"
                                             width={205}
                                             height={40}
                                             className={styles.logo}
+                                        />
+                                        <Icon
+                                            name="arrow-right"
+                                            className={styles.rightArrow}
+                                            fill="#FFF"
+                                            size="38"
                                         />
                                     </div>
                                 </div>
@@ -117,15 +125,18 @@ const Tasks = ({}: TasksProps) => {
                             >
                                 <div className={styles.details}>
                                     <div className={cn("h4", styles.linkSubtitle)}>
-                                        <div className={cn("h4", styles.subtitle)}>
-                                            AIRDROP QUEST
-                                        </div>
                                         <Image
                                             src="/images/taskon-logo.png"
                                             alt="TaskOn"
-                                            width={240}
-                                            height={100}
+                                            width={140}
+                                            height={60}
                                             className={styles.logo}
+                                        />
+                                        <Icon
+                                            name="arrow-right"
+                                            className={styles.rightArrow}
+                                            fill="#FFF"
+                                            size="38"
                                         />
                                     </div>
                                 </div>
