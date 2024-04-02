@@ -144,18 +144,18 @@
         box-shadow: none
         width: 350px
     &:hover
-        .backgroundCard
-            background: linear-gradient(#110a27, #110a27) padding-box, linear-gradient(to bottom, cyan, cyan 40%, #6a4093, #6a4093 66.66%, #2d2d2d, #2d2d2d) border-box !important
-        .corner
-            fill: #110a27 !important
-        .details
-            .subtitle
-                color: #01f7ff
-            .rightArrow
-                path
-                    fill: #01f7ff !important
-        .arrow
-            fill: $n1
+        // .backgroundCard
+        //     background: linear-gradient(#110a27, #110a27) padding-box, linear-gradient(to bottom, cyan, cyan 40%, #6a4093, #6a4093 66.66%, #2d2d2d, #2d2d2d) border-box !important
+        // .corner
+        //     fill: #110a27 !important
+        // .details
+        //     .subtitle
+        //         color: #01f7ff
+        //     .rightArrow
+        //         path
+        //             fill: #01f7ff !important
+        // .arrow
+        //     fill: $n1
     &:not(:last-child)
         margin-bottom: 10px
         +m
@@ -204,10 +204,10 @@
         height: 190px
 
 .details
-    padding: 16px 48px 16px
+    padding: 26px 28px 16px 18px
 
     +m
-        padding: 0px 0px 0 32px
+        padding: 26px 28px 16px 18px
 
 
 .status
@@ -217,16 +217,80 @@
         margin-bottom: 8px
 
 .subtitle
-    display: flex
-    justify-content: space-between
-    margin-bottom: 0
+    padding: 1rem 
     font-size: 2.5rem
     width: 100%
 
     +m
-        padding: 1rem 0 0
+        padding-top: 0.5rem
         font-size: 1.5rem
         gap: 90px
+        width: auto
+
+.links
+    display: flex
+    justify-content: space-between
+    gap: 2rem
+    +m
+        flex-direction: column
+
+.linkCard
+    width: 250px
+    border-radius: 24px
+    // border: 1px solid #01F7FF
+    overflow: hidden
+    transform: scale(1, 0.7)
+    &:hover
+        .backgroundCard
+            background: linear-gradient(#110a27, #110a27) padding-box, linear-gradient(to bottom, cyan, cyan 40%, #6a4093, #6a4093 66.66%, #2d2d2d, #2d2d2d) border-box !important
+        .corner
+            fill: #110a27 !important
+        .details
+            .linkSubtitle
+                filter: brightness(0) saturate(100%) invert(87%) sepia(29%) saturate(6707%) hue-rotate(133deg) brightness(103%) contrast(107%)
+            .rightArrow
+                path
+                    fill: #01f7ff !important
+        .arrow
+            fill: $n1
+    &:not(:last-child)
+        margin-bottom: 10px
+        +m
+            margin-bottom: -2rem
+    .corner
+        fill: #0a0617 !important
+        stroke: cyan
+        stroke-width: 1px
+        z-index: -5
+        +m
+            top: 0
+            bottom: 0
+            height: 55%
+            width: 15%
+            border-bottom-right-radius: 24px
+    .square
+        display: none
+        +m
+            top: auto !important
+            bottom: 8px
+    .linkSubtitle
+        display: flex
+        gap: 2rem
+        align-items: center
+        margin-bottom: 0
+        font-size: 2rem
+        width: 100%
+        transform: scale(1, 1.4)
+        padding-top: 0.5rem
+        +m
+            display: flex
+            gap: 2rem
+            align-items: center
+            margin-bottom: 0
+            font-size: 2rem
+            width: 100%
+            transform: scale(1, 1.4)
+            padding-top: 0.5rem
 
 .info
     p
@@ -258,3 +322,10 @@
     font-size: 0
     +w
         display: none
+
+.airdrop
+    background: $n8
+    width: 100%
+    border-radius: 20px
+    border: 1px solid black
+    text-align: center
