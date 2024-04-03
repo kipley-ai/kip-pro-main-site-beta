@@ -103,7 +103,6 @@ const Tasks = ({}: TasksProps) => {
                                             layout="fill"
                                             className={styles.logo}
                                         />
-                                        {/* Galxe */}
                                         <Icon
                                             name="arrow-right"
                                             className={styles.rightArrow}
@@ -131,7 +130,6 @@ const Tasks = ({}: TasksProps) => {
                                             layout="fill"
                                             className={styles.logo}
                                         />
-                                        {/* TaskOn */}
                                         <Icon
                                             name="arrow-right"
                                             className={styles.rightArrow}

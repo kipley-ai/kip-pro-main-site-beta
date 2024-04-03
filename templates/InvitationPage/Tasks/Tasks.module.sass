@@ -204,11 +204,12 @@
         height: 190px
 
 .details
-    padding: 26px 28px 16px 18px
-
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
     +m
-        padding: 26px 28px 16px 18px
-
+        padding: 18px 30px 18px 20px
 
 .status
     margin-bottom: 6px
@@ -233,6 +234,8 @@
     gap: 2rem
     +m
         flex-direction: column
+        justify-content: flex-start
+        gap: 1.5rem
 
 .linkCard
     width: 250px
@@ -244,6 +247,7 @@
         transform: scale(1, 1)
         box-shadow: none
         width: 350px
+        min-height: 80px !important
     &:hover
         .backgroundCard
             background: linear-gradient(#110a27, #110a27) padding-box, linear-gradient(to bottom, cyan, cyan 40%, #6a4093, #6a4093 66.66%, #2d2d2d, #2d2d2d) border-box !important
@@ -262,12 +266,6 @@
         stroke: cyan
         stroke-width: 1px
         z-index: -5
-        +m
-            top: 0
-            bottom: 0
-            height: 55%
-            width: 15%
-            border-bottom-right-radius: 24px
     .square
         display: none
         +m
@@ -284,15 +282,10 @@
     align-items: center
     margin-bottom: 0
     font-size: 2rem
-    width: 100%
-    padding-top: 0.5rem
+    width: 95%
     transform: scale(0.9, 1.3)
     +m
-        position: relative
-        left: 3rem
-        width: 200px
-        height: 20px
-        transform: scale(1.7, 1.7)
+        transform: scale(0.9, 0.9)
 
 .info
     p
