@@ -9,17 +9,6 @@ import Link from "next/link";
 
 import { relative } from "path";
 
-const posts = [
-    {
-        title: "AIRDROP QUEST",
-        date: "", 
-        // image: CampaignImage,
-        status: "FEATURES",
-        url: "https://galxe.com/KIPProtocol/campaign/GCAcJttXFV",
-        color: "#01F7FF",
-    },
-];
-
 const getCurrentDate = (): string => {
     const now = new Date();
 
@@ -37,7 +26,7 @@ const Tasks = ({}: TasksProps) => {
     const [hours, setHours] = useState<number>(0);
     const [minutes, setMinutes] = useState<number>(0);
 
-    const targetTime: string = "2024-04-05T10:00:00Z";
+    const targetTime: string = "2024-04-09T10:00:00Z";
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -92,7 +81,7 @@ const Tasks = ({}: TasksProps) => {
                                 squareCardClass={styles.square}
                                 innerCardClass={styles.inner}
                                 color="#00FF00"
-                                url="https://galxe.com/KIPProtocol/campaign/GCAcJttXFV"
+                                url="https://galxe.com/KIPProtocol/campaign/GC5r4thCzj"
                                 externalUrl
                             >
                                 <div className={styles.details}>
