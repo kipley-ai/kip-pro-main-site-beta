@@ -22,6 +22,20 @@
 @font-face {
   font-family: 'Proto Mono';
   src: url('../public/fonts/ProtoMono-Bold.otf');
-  font-weight: 900;
+  font-weight: 700;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: 'Proto Mono';
+  src: url('../public/fonts/ProtoMono-Light.otf');
+  font-weight: 300;
+  font-style: light;
+}
+
+@font-face {
+  font-family: 'Proto Mono';
+  src: url('../public/fonts/ProtoMono-Regular.otf');
+  font-weight: 500;
   font-style: normal;
 }

@@ -15,7 +15,7 @@ import Image from "next/image";
 
 const LeaderboardTitle=()=> {
     return (
-        <>
+        <div className={stylesLeaderboard.leaderboardTitle} >
         <div className={stylesLeaderboard.leaderboardText}>Leaderboard</div>
         <div className={stylesLeaderboard.ledUpdated}>
             {/* <Image
@@ -29,7 +29,7 @@ const LeaderboardTitle=()=> {
             <h1>Updated every 12 hours</h1>
         </div>
         <h2 style={{marginLeft:0}}className={stylesLeaderboard.pleaseNote}>Please note that below leaderboard only display quests from Galxe.</h2>
-        </>
+        </div>
     )
 }
 
@@ -68,11 +68,12 @@ const CampaignDashboardPage = () => {
             <div
                 className={styles.container}
                 style={{
-                    // background:
-                    //     "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/invite-bg.png)",
+                    background:
+                        "linear-gradient(#16181A, rgba(0, 0, 0, 0), #16181A, #16181A), url(images/leaderboard-title-bg.png)",
                     backgroundColor: "#16181A",
-                    backgroundPosition: "center top",
-                    backgroundSize: "cover",
+                    backgroundPosition: "center top 60px",
+                    // backgroundSize: "cover",
+                    backgroundSize:"100%",
                     width: "100%",
                     height: "100%",
                     backgroundRepeat: "no-repeat",
