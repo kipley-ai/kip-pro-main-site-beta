@@ -5,7 +5,7 @@ export const headerNavigation = [
     },
     {
         title: "About Us",
-        url: "/about-us",
+        url: "https://kip.pro/about-us",
     },
     // {
     //     title: "Chat",
@@ -18,7 +18,7 @@ export const headerNavigation = [
     },
     {
         title: "Blog",
-        url: "https://blog.kip.pro",
+        url: "https://kip.pro/blogs",
         external: true,
     },
     {
