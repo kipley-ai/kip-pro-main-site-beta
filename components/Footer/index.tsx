@@ -47,15 +47,18 @@ const Footer = ({}: FooterProps) => (
         </div> */}
         <div className={styles.links}>
           <div>
+            <p>Company</p>
             <a>SOLUTIONS</a>
             <a>COMMUNITY</a>
             <a>ABOUT US</a>
           </div>
           {/* <div>
+            <p>Legal</p>
             <a>TERMS & CONDITIONS</a>
             <a>PRIVACY</a>
           </div> */}
           <div>
+            <p>Community</p>
             <a>DISCORD</a>
             <a>TELEGRAM</a>
             <a>X</a>
