@@ -12,13 +12,15 @@ import Reviews from "@/components/Reviews";
 import JoinCommunity from "@/components/JoinCommunity";
 import AboutUsPageMain from "../AboutUsPage/Main";
 import Quests from "./Quests";
+import InvitationPage from "@/templates/InvitationPage";
 
 import { posts } from "@/mocks/posts";
 import { reviews } from "@/mocks/reviews";
 
 const HomePage = () => {
   const scrollToRef = useRef(null);
-
+  
+  return <InvitationPage />
   return (
     <Layout>
       <Main scrollToRef={scrollToRef} />
