@@ -76,7 +76,7 @@ const Tasks = ({}: TasksProps) => {
                         <div className={styles.links2}>
                             <a 
                                 className={styles.backgroundCard2}
-                                href="https://app.galxe.com/quest/KIPProtocol/GCLXxtheNh"
+                                href="https://app.galxe.com/quest/KIPProtocol/GCAcJttXFV"
                                 target="_blank"
                                 rel="noopener noreferrer"    
                             >
