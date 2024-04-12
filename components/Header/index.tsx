@@ -45,11 +45,11 @@ const Header = ({}: HeaderProps) => {
         >
           <Logo className={styles.logo} />
           <div className={styles.links}>
-            <Link href="/campaigns">
+            {/* <Link href="/campaigns">
               <a className={cn("a", styles.codeLink)}>
                 <span className={styles["link-text"]}>GENESIS CAMPAIGN</span>
               </a>
-            </Link>
+            </Link> */}
             <Link href="https://kip.pro/about-us">
               <a className={cn("a", styles.link)}>
                 <span className={styles["link-text"]}>About Us</span>
