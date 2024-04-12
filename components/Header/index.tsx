@@ -50,7 +50,7 @@ const Header = ({}: HeaderProps) => {
                 <span className={styles["link-text"]}>GENESIS CAMPAIGN</span>
               </a>
             </Link>
-            <Link href="/about-us">
+            <Link href="https://kip.pro/about-us">
               <a className={cn("a", styles.link)}>
                 <span className={styles["link-text"]}>About Us</span>
               </a>
@@ -71,7 +71,7 @@ const Header = ({}: HeaderProps) => {
             <a
               rel="noreferrer"
               target="_blank"
-              href="https://blog.kip.pro"
+              href="https://kip.pro/blogs"
               className={cn("a", styles.link)}
             >
               <span className={styles["link-text"]}>Blog</span>
