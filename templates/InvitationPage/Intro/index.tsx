@@ -13,22 +13,22 @@ const Intro = () => {
                 className={cn("section", styles.section)}
                 style={{
                     background:
-                        "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(images/campaign-bg.png)",
-                    backgroundPosition: "center top",
+                        "url(images/campaign-bg-2.png)",
                     backgroundSize: "cover",
-                    width: "100%",
-                    height: "100%",
-                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: 'center center',
                 }}
             >
-                <div className={cn("container", styles.container)}>
+                <div className={cn("container-title", styles.container_title)}>
                     <div className={styles.wrap}>
-                        <div className={cn("h1", styles.title)}>
-                            KIP Protocol is the first Web3 Base Layer for AI.
+                        <div className={cn("h1", styles.title)} style={{paddingTop:"100px"}}>
+                            GENESIS CAMPAIGN
                         </div>
+                        <p className={styles.info2}>
+                            KIP Protocol is the first Web3 Base Layer for AI
+                        </p>
                     </div>
                 </div>
-                <div className={styles.images}>
+                {/* <div className={styles.images}>
                     <div className={styles.image}>
                         <Image
                             src="/images/lines-1.svg"
@@ -48,7 +48,7 @@ const Intro = () => {
                             alt="Figure"
                         />
                     </Parallax>
-                </div>
+                </div> */}
                 <WhiteButton />
             </div>
             <div className={cn("section", styles.section2)}>

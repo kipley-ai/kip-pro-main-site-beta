@@ -63,7 +63,7 @@ const Tasks = ({}: TasksProps) => {
 
     return (
         <div className={cn("section", styles.section)}>
-            <div className={styles.backgroundGradient}></div>
+            {/* <div className={styles.backgroundGradient}></div> */}
             <div className={cn("container", styles.container)}>
                 {/* <div className={cn("h2", styles.title)}>Cycle Tasks</div> */}
                 <div className={styles.row}>
@@ -73,8 +73,38 @@ const Tasks = ({}: TasksProps) => {
                                 AIRDROP QUEST
                             </div>
                         </div> */}
-                        <div className={styles.links}>
-                            <Card
+                        <div className={styles.links2}>
+                            <a 
+                                className={styles.backgroundCard2}
+                                href="https://app.galxe.com/quest/KIPProtocol/GCLXxtheNh"
+                                target="_blank"
+                                rel="noopener noreferrer"    
+                            >
+                                <Image
+                                    className={styles.logo2}
+                                    src="/images/Galxe-logo-new.png"
+                                    alt="Galxe"
+                                    width={150}
+                                    height={30}
+                                />
+                            </a>
+                            <a 
+                                className={styles.backgroundCard2}
+                                href="https://taskon.xyz/space/2075880"
+                                target="_blank"
+                                rel="noopener noreferrer"    
+                            >
+                                <Image
+                                    className={styles.logo2}
+                                    src="/images/taskon-logo-new.png"
+                                    alt="TaskOn"
+                                    width={150}
+                                    height={30}
+                                />
+                            </a>
+                        </div>
+                        {/* <div className={styles.links}>
+                             <Card
                                 className={styles.linkCard}
                                 cornerCardClass={styles.corner}
                                 backgroundCardClass={styles.backgroundCard}
@@ -127,15 +157,15 @@ const Tasks = ({}: TasksProps) => {
                                         />
                                     </div>
                                 </div>
-                            </Card>
-                        </div>
+                            </Card> 
+                        </div> */}
                         <div className={cn("h2", styles.countTitle)}>
                             <span className={styles.timeCount}>{days}</span>{" "}
-                            days{" "}
+                            DAYS{" "}
                             <span className={styles.timeCount}>{hours}</span>{" "}
-                            hours{" "}
+                            HOURS{" "}
                             <span className={styles.timeCount}>{minutes}</span>{" "}
-                            min remaining...
+                            MINS REMAINING...
                         </div>
                         <div className={styles.info}>
                             <p>

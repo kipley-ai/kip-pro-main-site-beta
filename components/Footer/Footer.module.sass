@@ -3,7 +3,13 @@
 .footer
     z-index: 10
     padding: 52px 0 34px
-    background: $n9
+    border: 0
+    border-top: 1px solid #59FAFA 
+    background: linear-gradient(#2C6364, black 80%)
+
+    @media (max-width: 1023px)
+        background: linear-gradient(#2C6364, black 50%)
+
     +t
         position: relative
         padding-top: 80px
@@ -16,12 +22,10 @@
 
 .row
     display: flex
-    align-items: center
+    justify-content: space-between
     +t
         display: block
     +m
-        display: flex
-        flex-direction: column-reverse
         align-items: stretch
     &:not(:last-child)
         margin-bottom: 150px
@@ -29,6 +33,46 @@
             margin-bottom: 72px
         +m
             margin-bottom: 40px
+
+    &:last-child
+        justify-content: flex-end
+
+.title
+    max-width: 438px
+    font-size: 40px
+    font-family: Proto Mono
+
+.links
+    display: flex
+    flex-direction: row
+
+    div
+        display: flex
+        flex-direction: column
+
+        &:not(:first-child)
+            margin-left: 3rem
+
+            @media (max-width: 1023px)
+                margin-left: 0
+
+        a
+            cursor: pointer
+            font-family: Proto Mono
+            font-weight: 300
+            font-size: 14px
+            transition: color .5s
+            margin-bottom: 2rem
+            &:hover,
+            &.active
+                color: #59FAFA
+
+        @media (max-width: 1023px)
+            margin-bottom: 3rem
+
+    @media (max-width: 1023px)
+        flex-direction: column
+        margin-top: 70px
 
 .logo
     margin-right: auto
@@ -49,9 +93,13 @@
         margin-right: 48px
 
 .copyright
+    font-family: "Space Grotesk", sans-serif
     margin-left: 1rem
     margin-right: 48px
-    color: $n5
+    color: #59FAFA
+    font-weight: 300
+    font-size: 16px
+    opacity: 0.5
     +t
         margin-right: 0
     +m

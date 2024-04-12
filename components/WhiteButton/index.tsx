@@ -14,7 +14,7 @@ const WhiteButton = () => {
                 {isConnected ? (
                     <a className={styles.apply} href={"/leaderboard"}>
                         VIEW LEADERBOARD{" "}
-                        <Icon name="arrow-right" size="26" />
+                        <Icon name="arrow-right-2" size="26" />
                     </a>
                 ) : (
                     openConnectModal && (
@@ -22,7 +22,7 @@ const WhiteButton = () => {
                             className={styles.apply}
                             onClick={openConnectModal}
                         >
-                            VIEW LEADERBOARD <Icon name="arrow-right" size="26" />
+                            VIEW LEADERBOARD <Icon name="arrow-right-2" size="26" />
                         </button>
                     )
                 )}

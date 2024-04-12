@@ -92,7 +92,9 @@
 
 .countTitle
     text-align: center
-    font-size: 2rem
+    font-size: 1.875rem
+    font-family: Proto Mono
+    margin-top: 4rem
     margin-bottom: 1rem
     width: 100%
 
@@ -181,6 +183,47 @@
     background: linear-gradient(#0a0617, #0a0617) padding-box, linear-gradient(to bottom, cyan, cyan 40%, #6a4093, #6a4093 66.66%, #2d2d2d, #2d2d2d) border-box !important
     border-radius: 24px
     border: 1px solid transparent
+
+.links2
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: center
+    height: 100px
+    margin-left: -2rem
+
+    @media (max-width: 600px)
+        flex-direction: column
+        margin-top: 50px
+
+.backgroundCard2
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 4px
+
+    border: 1px solid #59FAFA
+    padding-top: 5px
+    padding-bottom: 5px
+    padding-left: 20px
+    padding-right: 20px
+    margin-left: 2rem
+    width: 230px
+    height: 100px
+    
+    &:hover
+        background: #002222
+
+    @media (max-width: 600px)
+        padding-top: 20px
+        padding-bottom: 20px
+        background: #002222
+        margin-bottom: 20px
+
+.logo2
+    object-fit: contain
+    width: 80%
+    height: 100%
 
 .inner
     display: flex
@@ -285,9 +328,12 @@
         transform: scale(0.9, 0.9)
 
 .info
+    font-family: "Space Grotesk", sans-serif
+    font-weight: 300
+    
     p
         max-width: 600px
-        font-size: 1.25rem
+        font-size: 1.1rem
         text-align: center
 
 .line
