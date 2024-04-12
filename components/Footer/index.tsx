@@ -51,10 +51,10 @@ const Footer = ({}: FooterProps) => (
             <a>COMMUNITY</a>
             <a>ABOUT US</a>
           </div>
-          <div>
+          {/* <div>
             <a>TERMS & CONDITIONS</a>
             <a>PRIVACY</a>
-          </div>
+          </div> */}
           <div>
             <a>DISCORD</a>
             <a>TELEGRAM</a>
