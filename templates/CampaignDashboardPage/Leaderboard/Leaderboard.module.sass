@@ -69,11 +69,14 @@
     @apply flex flex-col w-full xl:w-4/5
 
 .leaderboardText
-    font-family: Inter
+    font-family: Proto Mono
     font-size: 42px
     font-style: normal
     font-weight: 900
     line-height: 65px /* 135.417% */
+    text-transform: uppercase
+
+    
 
 .ledTable
     position: relative
@@ -93,8 +96,9 @@
     h1
         font-size: 18px
         font-style: normal
-        font-weight: 400
+        font-weight: 300
         line-height: 16px /* 160% */
+        font-family: "Space Grotesk", sans-serif
 
 .ledSearch
     @apply flex items-center gap-[10px] bg-[#6F767E66] opacity-40 py-4 px-2 rounded-sm
@@ -102,9 +106,10 @@
 .table
   width: 100%
   border-collapse: separate
-  background-color: $n6
+  background-color: $n10
   border-radius: 24px
   table-layout: fixed
+  font-family: "Space Grotesk", sans-serif
 
   th:nth-child(1), td:nth-child(1)
     width: 25%
@@ -120,12 +125,14 @@
     background-color: transparent
     color: $n3
     text-align: left
+    font-weight: 300
 
     +a
       font-size: 0.75rem
 
   td
     border-top: 2px solid #363636
+    font-weight:300
 
     +a
       font-size: 0.75rem
@@ -159,6 +166,8 @@
 
   li
     margin: 0 5px
+    border: 1px solid transparent
+  
 
   li.previous a, li.next a, li.break a
     background-color: transparent
@@ -168,12 +177,15 @@
     color: white
     &:hover
       background-color: #0056b3
+  
+
 
 .pageLink
   text-decoration: none
+  text-align: center
   color: #fff
-  background-color: #333
-  padding: 8px 12px
+  background-color: #101010
+  padding: 8px 16px
   border-radius: 4px
   cursor: pointer
   display: block // Ensure the anchor tag fills the li for better click area
@@ -181,20 +193,21 @@
     background-color: #444
 
 .activeLink
-  background-color: #01F7FF
-  color: black
-  &:hover
-    background-color: #07b6cd
+  background-color: #101010
+  color: $cyan2
+  border: 1px solid $cyan2
+  // &:hover
+    // background-color: #07b6cd
 
 .userData
-  color: cyan
+  color: $cyan2
   outline: 2px solid
 
 .myScore
   position: relative
   margin-top: -34px
   z-index: 100
-  background: $n6
+  background: $n10
   text-align: center
   width: 120px
   +m
@@ -225,7 +238,7 @@
 .inner
   position: relative
   // z-index: 100
-  background: $n6
+  background: $n10
   clip-path: url(#polygonImage)
   border-radius: 32px
   +m
@@ -233,3 +246,22 @@
 
 .pleaseNote
   margin-left: 1.25rem
+  font-family: "Space Grotesk", sans-serif
+  font-weight: 300
+
+.otherCard
+  float: left
+  // width: calc(60% - 56px)
+  width: 100%
+  margin: 1rem 0 0
+  padding: 30px 3.5rem 30px
+  background-color: $n10
+  border: 2px solid $cyan2
+  // z-index: 100
+  +t
+      padding: 4rem 2.5rem
+      margin: 1.5rem 0
+  +m
+      padding: 4rem 1rem
+  
+

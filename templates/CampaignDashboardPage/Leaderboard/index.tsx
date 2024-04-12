@@ -59,7 +59,7 @@ function Leaderboard() {
     return (
         <div className={styles.container}>
             <div className={styles.ledContainer}>
-                <div className={styles.leaderboardText}>Leaderboard</div>
+                {/* <div className={styles.leaderboardText}>Leaderboard</div>
                 <div className={styles.ledUpdated}>
                     <Image
                         className={styles.loading_icon}
@@ -71,20 +71,21 @@ function Leaderboard() {
                     &nbsp;&nbsp;
                     <h1>Updated every 12 hours</h1>
                 </div>
-                <h2 className={styles.pleaseNote}>Please note that below leaderboard only display quests from Galxe.</h2>
-                <Card
+                <h2 className={styles.pleaseNote}>Please note that below leaderboard only display quests from Galxe.</h2> */}
+                {/* <Card
                     className={styles.card}
                     innerCardClass={styles.inner}
                     color="#01F7FF"
-                >
+                > */}
+                <div className={styles.otherCard}>
                     <div className={styles.content}>
                         <>
                             <table className={styles.table}>
                                 <thead>
                                     <tr>
-                                        <th>RANKING</th>
-                                        <th>ADDRESS</th>
-                                        <th>POINTS</th>
+                                        <th>Ranking</th>
+                                        <th>Address</th>
+                                        <th>Points</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -169,10 +170,18 @@ function Leaderboard() {
                                             <td colSpan={3}>
                                                 <ReactPaginate
                                                     className={
-                                                        styles.pagination
+                                                        styles.pagination + " pagination__leaderboard"
                                                     }
-                                                    previousLabel={"<"}
-                                                    nextLabel={">"}
+                                                    previousLabel={
+                                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M13 16.6004L7.5667 11.1671C6.92503 10.5254 6.92503 9.47539 7.5667 8.83372L13 3.40039" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                    }
+                                                    nextLabel={
+                                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M7.9248 16.6004L13.3581 11.1671C13.9998 10.5254 13.9998 9.47539 13.3581 8.83372L7.9248 3.40039" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                    }
                                                     breakLabel={"..."}
                                                     pageCount={pageCount}
                                                     onPageChange={
@@ -195,7 +204,8 @@ function Leaderboard() {
                             </table>
                         </>
                     </div>
-                </Card>
+                </div>
+                {/* </Card> */}
             </div>
         </div>
     );

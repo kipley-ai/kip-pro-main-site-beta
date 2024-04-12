@@ -1,0 +1,27 @@
+.pagination__leaderboard {
+    
+}
+
+.pagination__leaderboard li.previous, .pagination__leaderboard li.next{
+  background-color: #101010;
+  padding: 13px 8px;
+  border-radius:4px;
+}
+
+.pagination__leaderboard li.break{
+  background-color: #101010;
+  padding: 8px 16px;
+  border-radius:4px;
+  cursor:pointer;
+}
+
+.pagination__leaderboard li.break:hover {
+  background-color: #444
+}
+
+@font-face {
+  font-family: 'Proto Mono';
+  src: url('../public/fonts/ProtoMono-Bold.otf');
+  font-weight: 900;
+  font-style: normal;
+}
