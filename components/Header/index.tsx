@@ -41,7 +41,7 @@ const Header = ({}: HeaderProps) => {
         <div
           className={cn("container-wide", styles.container)}
           data-scroll-lock-scrollable
-          data-scroll-lock-fill-gap
+          data-scroll-lock-fill-gap 
         >
           <Logo className={styles.logo} />
           <div className={styles.links}>
