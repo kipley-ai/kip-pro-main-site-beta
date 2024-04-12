@@ -9,7 +9,7 @@ type LogoProps = {
 };
 
 const Logo = ({ className, onClick }: LogoProps) => (
-    <Link href="/">
+    <Link href="https://kip.pro">
         <a className={cn(styles.logo, className)} onClick={onClick}>
             <Image
                 src="/images/KIP.svg"
