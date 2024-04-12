@@ -48,9 +48,28 @@ const Footer = ({}: FooterProps) => (
         <div className={styles.links}>
           <div>
             <p>Company</p>
-            <a>SOLUTIONS</a>
-            <a>COMMUNITY</a>
-            <a>ABOUT US</a>
+            {/* <a>SOLUTIONS</a> */}
+            <a 
+              href="https://www.kip.pro/blogs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              BLOGS
+            </a>
+            <a 
+              href="https://www.kip.pro/about-us"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ABOUT US
+            </a>
+            <a 
+              href="https://www.kip.pro/contact-us"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              CONTACT US
+            </a>
           </div>
           {/* <div>
             <p>Legal</p>
@@ -59,9 +78,21 @@ const Footer = ({}: FooterProps) => (
           </div> */}
           <div>
             <p>Community</p>
-            <a>DISCORD</a>
-            <a>TELEGRAM</a>
-            <a>X</a>
+            <a 
+              href="https://discord.com/invite/Hma2Y6RgND"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+                DISCORD
+            </a>
+            {/* <a>TELEGRAM</a> */}
+            <a 
+              href="https://twitter.com/KIPprotocol"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              X
+            </a>
           </div>
         </div>
       </div>
