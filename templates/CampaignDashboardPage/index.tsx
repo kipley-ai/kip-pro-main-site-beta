@@ -41,7 +41,7 @@ const CampaignDashboardPage = () => {
 
     if (process.browser) {
         if (!isConnected) {
-            router.replace("/campaigns");
+            router.replace("/");
             toast.error("Please connect your wallet first.", {
                 id: "not-connected",
             });

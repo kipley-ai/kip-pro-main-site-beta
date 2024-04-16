@@ -14,37 +14,16 @@ const Footer = ({}: FooterProps) => (
   <footer className={styles.footer}>
     <div className={cn("container-wide", styles.container)}>
       <div className={styles.row}>
-        {/* <Logo className={styles.logo} /> */}
-        <h1 className={styles.title}>
-          YOUR KNOWLEDGE IS PROVENANCE
-        </h1>
-        {/* <div style={{ marginRight: "auto" }}>
-          <Socials className={styles.socials} socials={socials} />
-        </div> */}
-        {/* <div className={styles.menu}>
-          {footerNavigation.map((link, index) =>
-            link.external ? (
-              <a
-                className={styles.link}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                key={index}
-              >
-                {link.title}
-              </a>
-            ) : (
-              <NavLink
-                className={styles.link}
-                activeClassName={styles.active}
-                href={link.url}
-                key={index}
-              >
-                {link.title}
-              </NavLink>
-            )
-          )}
-        </div> */}
+        <h2 className={cn(styles["footer-text"], styles.title)}>YOUR KNOWLEDGE IS
+          <span>
+            <span>
+              <span className={styles["text-cyan-glowy"]}>Property</span>
+              <span className={styles["text-yellow-glowy"]}>Provenance</span>
+              <span className={styles["text-magenta-glowy"]}>Power</span>
+              <span className={styles["text-cyan-glowy"]}>Property</span>
+            </span>
+          </span> 
+        </h2>
         <div className={styles.links}>
           <div>
             <p>Company</p>
@@ -71,11 +50,6 @@ const Footer = ({}: FooterProps) => (
               CONTACT US
             </a>
           </div>
-          {/* <div>
-            <p>Legal</p>
-            <a>TERMS & CONDITIONS</a>
-            <a>PRIVACY</a>
-          </div> */}
           <div>
             <p>Community</p>
             <a 
@@ -98,13 +72,6 @@ const Footer = ({}: FooterProps) => (
       </div>
       <div className={styles.row}>
         <div className={styles.copyright}>© 2024 KIP. ALL RIGHTS RESERVED.</div>
-        {/* <div className={styles.documents}>
-          {documents.map((document, index) => (
-            <Link href={document.url} key={index}>
-              <a className={styles.document}>{document.title}</a>
-            </Link>
-          ))}
-        </div> */}
       </div>
     </div>
   </footer>
