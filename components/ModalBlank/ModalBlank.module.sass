@@ -1,0 +1,40 @@
+.modal
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(0, 0, 0, 0.5)
+    z-index: 1000
+    transition: all 500ms ease
+
+    &.open
+        display: flex
+        align-items: center
+        justify-content: center
+
+    &Content
+        position: relative
+        background: linear-gradient(90deg, rgba(255, 230, 6, 0.05) 4.74%, rgba(255, 230, 6, 0.02) 100%), #16181A
+        border: 1px solid #FFEA06
+        border-radius: 8px
+        min-width: 375px
+        min-height: 450px
+        max-width: 80%
+        overflow-y: auto
+        max-height: 80%
+        transition: opacity 500ms ease
+        
+        color: #FFEA06
+        font-family: 'Proto Mono', monospace
+
+.closeButton
+    position: absolute
+    top: 10px
+    right: 20px
+    background: none
+    border: none
+    font-size: 20px
+    cursor: pointer
+    padding: 0
