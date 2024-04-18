@@ -27,13 +27,19 @@ const Footer = ({}: FooterProps) => (
         <div className={styles.links}>
           <div>
             <p>Company</p>
-            {/* <a>SOLUTIONS</a> */}
+            <a 
+              href="https://www.kip.pro/solutions-data-knowledge-owner"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              SOLUTIONS
+            </a>
             <a 
               href="https://www.kip.pro/blogs"
               target="_blank"
               rel="noopener noreferrer"
             >
-              BLOGS
+              BLOG
             </a>
             <a 
               href="https://www.kip.pro/about-us"
@@ -59,7 +65,13 @@ const Footer = ({}: FooterProps) => (
             >
                 DISCORD
             </a>
-            {/* <a>TELEGRAM</a> */}
+            <a 
+              href="https://twitter.com/KIPprotocol"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              TELEGRAM
+            </a>
             <a 
               href="https://twitter.com/KIPprotocol"
               target="_blank"
