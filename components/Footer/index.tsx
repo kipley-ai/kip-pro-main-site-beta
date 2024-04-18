@@ -70,13 +70,6 @@ const Footer = ({}: FooterProps) => (
               target="_blank"
               rel="noopener noreferrer"
             >
-              TELEGRAM
-            </a>
-            <a 
-              href="https://twitter.com/KIPprotocol"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
               X
             </a>
           </div>
