@@ -97,8 +97,8 @@
     h2
         margin-bottom: -0.5rem
         font-size: 2.75rem
-    p
-        font-size: 14pt
+    +a
+        font-size: 0.75rem  
 
 .preview
     position: relative
@@ -134,6 +134,7 @@
     background: $n6
     clip-path: url(#polygonImage)
     border-radius: 32px
+    overflow-x: auto
     +m
         border-radius: 20px
 
@@ -287,24 +288,16 @@
         +x
             padding: 0.5rem 0.5rem
         +a
-            padding: 0.5rem 0.5rem
-            &:nth-child(1)
-                width: 35%
+            padding: 0.5rem 0.3rem
+            width: 33%
             // &:nth-child(2), &:nth-child(3)
             //     display: none
-        +s
-            &:nth-child(1)
-                width: 50%
-            &:nth-child(3)
-                display: none
     
     button
         vertical-align: middle
 
 .asteriskNote
     color: $n3
-    +s
-        display: none
 
 .pagination
   display: flex
