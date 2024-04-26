@@ -201,10 +201,13 @@
 
 .card
     // width: calc(60% - 56px)
-    width: 80%
     margin: 0 auto
+    width: 100%
     padding: 72px 3.5rem 40px
+    font-family: "Space Grotesk"
     // z-index: 100
+    @media (min-width: 1280px)
+        width: 80%
     +t
         padding: 4rem 2.5rem
         margin: 1.5rem 0
@@ -286,19 +289,21 @@
         +a
             padding: 0.5rem 0.5rem
             &:nth-child(1)
-                width: 60%
-            &:nth-child(2), &:nth-child(3)
-                display: none
+                width: 35%
+            // &:nth-child(2), &:nth-child(3)
+            //     display: none
         +s
             &:nth-child(1)
                 width: 50%
+            &:nth-child(3)
+                display: none
     
     button
         vertical-align: middle
 
 .asteriskNote
     color: $n3
-    +a
+    +s
         display: none
 
 .pagination

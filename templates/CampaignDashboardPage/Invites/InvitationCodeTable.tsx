@@ -152,9 +152,9 @@ const InvitationCodeTable = () => {
                         <table className={styles.invitationCodes}>
                             <thead>
                                 <tr>
-                                    <th>INVITE CODES</th>
-                                    <th>EARNED POINTS*</th>
-                                    <th>INVITEE</th>
+                                    <th>Invite Codes</th>
+                                    <th>Earned Points*</th>
+                                    <th>Invitee</th>
                                 </tr>
                             </thead>
                             <tbody>
