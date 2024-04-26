@@ -97,8 +97,8 @@
     h2
         margin-bottom: -0.5rem
         font-size: 2.75rem
-    p
-        font-size: 14pt
+    +a
+        font-size: 0.75rem  
 
 .preview
     position: relative
@@ -134,6 +134,7 @@
     background: $n6
     clip-path: url(#polygonImage)
     border-radius: 32px
+    overflow-x: auto
     +m
         border-radius: 20px
 
@@ -201,10 +202,13 @@
 
 .card
     // width: calc(60% - 56px)
-    width: 80%
     margin: 0 auto
+    width: 100%
     padding: 72px 3.5rem 40px
+    font-family: "Space Grotesk"
     // z-index: 100
+    @media (min-width: 1280px)
+        width: 80%
     +t
         padding: 4rem 2.5rem
         margin: 1.5rem 0
@@ -284,22 +288,16 @@
         +x
             padding: 0.5rem 0.5rem
         +a
-            padding: 0.5rem 0.5rem
-            &:nth-child(1)
-                width: 60%
-            &:nth-child(2), &:nth-child(3)
-                display: none
-        +s
-            &:nth-child(1)
-                width: 50%
+            padding: 0.5rem 0.3rem
+            width: 33%
+            // &:nth-child(2), &:nth-child(3)
+            //     display: none
     
     button
         vertical-align: middle
 
 .asteriskNote
     color: $n3
-    +a
-        display: none
 
 .pagination
   display: flex
