@@ -87,35 +87,6 @@ const TableRow = ({ item, index, itemsPerPage }: TableRowProps) => {
             <td>
                 {item.used_by_address && truncateAddress(item.used_by_address)}
             </td>
-            <td>
-                {item.used ? null : (
-                    <div className={styles.actionButtons}>
-                        <button
-                            className={styles.copyButton}
-                            onClick={() =>
-                                copyToClipboard(item.invite_code, index)
-                            }
-                        >
-                            <Image
-                                src={isCopied[index] ? CheckIcon : CopyIcon}
-                                alt="copy"
-                            />
-                        </button>
-                        <button
-                            className={styles.copyButton}
-                            onClick={() => shareText(item.invite_code)}
-                        >
-                            <Image src={ShareIcon} alt="share" />
-                        </button>
-                        <button
-                            className={styles.copyButton}
-                            onClick={() => shareX(item.invite_code)}
-                        >
-                            <Image src={XIcon} alt="X" />
-                        </button>
-                    </div>
-                )}
-            </td>
         </tr>
     );
 };
@@ -184,7 +155,6 @@ const InvitationCodeTable = () => {
                                     <th>INVITE CODES</th>
                                     <th>EARNED POINTS*</th>
                                     <th>INVITEE</th>
-                                    <th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -199,7 +169,7 @@ const InvitationCodeTable = () => {
                             </tbody>
                         </table>
                         <p className={styles.asteriskNote}>
-                            *Points are distributed upon completion of tasks
+                            *Invite codes with no earned points will be converted to 50 points per code.
                         </p>
                         {pageCount >= 1 && (
                             <div className={styles.pagination}>
@@ -222,8 +192,7 @@ const InvitationCodeTable = () => {
                 ) : (
                     <div className={styles.completeTasks}>
                         <p>
-                            Please complete Activation and Cycle Tasks to claim
-                            invite codes to share
+                            Genesis Campaign has ended. Stay tune for next season! 
                         </p>
                     </div>
                 )}

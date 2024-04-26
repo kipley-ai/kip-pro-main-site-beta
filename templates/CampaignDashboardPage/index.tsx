@@ -17,17 +17,6 @@ const LeaderboardTitle=()=> {
     return (
         <div className={stylesLeaderboard.leaderboardTitle} >
         <div className={stylesLeaderboard.leaderboardText}>Leaderboard</div>
-        <div className={stylesLeaderboard.ledUpdated}>
-            {/* <Image
-                className={stylesLeaderboard.loading_icon}
-                src={LoadingIcon}
-                width={12}
-                height={12}
-                alt="loading"
-            /> */}
-            {/* &nbsp;&nbsp; */}
-            <h1>Updated every 12 hours</h1>
-        </div>
         <h2 style={{marginLeft:0}}className={stylesLeaderboard.pleaseNote}>Please note that below leaderboard only display quests from Galxe.</h2>
         </div>
     )
@@ -79,9 +68,10 @@ const CampaignDashboardPage = () => {
                     backgroundRepeat: "no-repeat",
                 }}
             >
-                <LeaderboardTitle/>
                 <TabsHeader tab={tab} setTab={setTab}/>
+                <LeaderboardTitle/>
                 <Leaderboard /> 
+                <Invites />
             </div>
         </Layout>
     );

@@ -18,8 +18,8 @@
 
 .container
     padding: 0 100px
-    +m
-        padding: 0 40px
+    +t
+        padding: 0 20px
 
 .row
     display: flex
@@ -46,6 +46,9 @@
     letter-spacing: -4px
     padding: 0
     text-shadow: gray 1px 0 7px
+    +m
+        font-size: 40px
+        max-width: 320px
 
 @keyframes footerTextLoop
     0%
@@ -67,10 +70,12 @@
     position: relative
     overflow: hidden
     transform: translateY(10%)
+    @media (max-width: 340px)
+        margin-left: 0
 
 @media screen and (max-width: 767px)
     .footer-text > span
-        height: 40px
+        height: 32px
 
 .footer-text > span > span
     display: block
@@ -115,8 +120,7 @@ $magenta-60: #632C63
 
         &:not(:first-child)
             margin-left: 3rem
-
-            @media (max-width: 1023px)
+            +s
                 margin-left: 0
 
         p
@@ -139,9 +143,10 @@ $magenta-60: #632C63
         @media (max-width: 1023px)
             margin-bottom: 3rem
 
-    @media (max-width: 1023px)
-        flex-direction: column
+    +t
         margin-top: 70px
+    +s
+        flex-direction: column
 
 .logo
     margin-right: auto
