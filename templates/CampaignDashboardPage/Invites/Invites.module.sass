@@ -2,8 +2,9 @@
 .container
     display: flex
     flex-direction: column
-    width: 85%
-    margin: 50px auto
+    width: 100%
+    margin: 50px 0
+    font-family: "Proto Mono"
     +d
         margin: 2rem 0
         width: 100%
@@ -14,13 +15,22 @@
     flex-direction: column
 
     h1 
-        font-size:42px
-        font-family: Inter
+        font-family: Proto Mono
+        font-size: 42px
+        font-style: normal
         font-weight: 900
+        line-height: 65px /* 135.417% */
+        text-transform: uppercase
+        margin-bottom: 20px
+        letter-spacing: -0.1rem
 
     h6
-        color: $n3
+        @apply flex items-center mb-0
+        font-size: 18px
         font-style: normal
+        font-weight: 300
+        line-height: 16px /* 160% */
+        font-family: "Space Grotesk", sans-serif
 
 .header_description
     display: flex
@@ -192,10 +202,9 @@
         max-width: 960px
 
 .card
-    float: left
     // width: calc(60% - 56px)
-    width: 100%
-    margin: 1rem 0 0
+    width: 80%
+    margin: 2rem auto
     padding: 72px 3.5rem 40px
     // z-index: 100
     +t
