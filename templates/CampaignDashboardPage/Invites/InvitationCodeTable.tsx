@@ -135,8 +135,10 @@ const InvitationCodeTable = () => {
         if (isConnected) {
             fetchInviteCodes();
         } else {
-            router.push("/campaigns");
-            toast.error("Please connect your wallet first.");
+            router.push("/");
+            toast.error("Please connect your wallet first.", {
+                id: "not-connected",
+            });
         }
     }, [isConnected, address, router, currentPage]);
 
