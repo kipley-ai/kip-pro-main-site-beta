@@ -135,8 +135,10 @@ const InvitationCodeTable = () => {
         if (isConnected) {
             fetchInviteCodes();
         } else {
-            router.push("/campaigns");
-            toast.error("Please connect your wallet first.");
+            router.push("/");
+            toast.error("Please connect your wallet first.", {
+                id: "not-connected",
+            });
         }
     }, [isConnected, address, router, currentPage]);
 
@@ -192,7 +194,7 @@ const InvitationCodeTable = () => {
                 ) : (
                     <div className={styles.completeTasks}>
                         <p>
-                            Genesis Campaign has ended. Stay tune for next season! 
+                            Genesis Campaign has ended. Stay tuned for next season! 
                         </p>
                     </div>
                 )}
