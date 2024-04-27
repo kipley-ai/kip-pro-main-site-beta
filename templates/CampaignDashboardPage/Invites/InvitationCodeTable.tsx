@@ -194,7 +194,7 @@ const InvitationCodeTable = () => {
                 ) : (
                     <div className={styles.completeTasks}>
                         <p>
-                            Genesis Campaign has ended. Stay tune for next season! 
+                            Genesis Campaign has ended. Stay tuned for next season! 
                         </p>
                     </div>
                 )}
