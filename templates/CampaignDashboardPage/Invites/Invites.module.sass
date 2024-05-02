@@ -94,10 +94,18 @@
         display: block
 
 .content
+    width: 100%
+    margin: 0 auto
+    padding: 3rem
+    border: 2px solid #59FAFA
+    font-family: "Space Grotesk"
+    @media (min-width: 1280px)
+        width: 80%
     h2
         margin-bottom: -0.5rem
         font-size: 2.75rem
     +a
+        padding: 4rem 1rem
         font-size: 0.75rem  
 
 .preview
@@ -276,15 +284,16 @@
         background: #01F7FF
 
     th
-        color: $n3
+        // color: $n3
 
     td
-        border-top: 2px solid #363636
+        border-top: 2px solid #272B30
 
     th, td
         padding: 1rem 1rem
         text-align: left
-        vertical-align: middle    
+        vertical-align: middle
+        width: 33%
         +x
             padding: 0.5rem 0.5rem
         +a
@@ -305,13 +314,7 @@
   justify-content: center
   align-items: center
   padding: 10px 0
-
-  ul
-    display: flex
-    flex-direction: row
-    list-style: none
-    padding: 0
-    margin: 0
+  gap: 2px
 
   li
     margin: 0 5px
@@ -328,19 +331,16 @@
 .pageLink
   text-decoration: none
   color: #fff
-  background-color: #333
-  padding: 8px 12px
+  background-color: $n9
+  padding: 8px 16px
   border-radius: 4px
-  cursor: pointer
   display: block
   &:hover
     background-color: #444
 
 .activeLink
-  background-color: #01F7FF
-  color: black
-  &:hover
-    background-color: #07b6cd
+  color: $cyan2
+  border: 1px solid $cyan2
 
 .actionButtons
     display: flex

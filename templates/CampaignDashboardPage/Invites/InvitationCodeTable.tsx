@@ -1,12 +1,6 @@
 import styles from "./Invites.module.sass";
-import Image from "next/image";
-import CopyIcon from "public/copy-icon.svg";
-import CheckIcon from "public/check-icon.svg";
-import ShareIcon from "public/share-icon.svg";
-import XIcon from "public/x-icon.svg";
 import ReactPaginate from "react-paginate";
 import { useState, useEffect } from "react";
-import Card from "@/components/Card";
 import toast from "react-hot-toast";
 import { useAccount } from "wagmi";
 import { useRouter } from "next/router";
@@ -143,11 +137,6 @@ const InvitationCodeTable = () => {
     }, [isConnected, address, router, currentPage]);
 
     return (
-        <Card
-            className={styles.card}
-            innerCardClass={styles.inner}
-            color="#01F7FF"
-        >
             <div className={styles.content}>
                 {codes.length > 0 ? (
                     <>
@@ -174,11 +163,19 @@ const InvitationCodeTable = () => {
                             *Invite codes with no earned points will be converted to 50 points per code.
                         </p>
                         {pageCount >= 1 && (
-                            <div className={styles.pagination}>
+                            <>
                                 <ReactPaginate
-                                    className={styles.pagination}
-                                    previousLabel={"<"}
-                                    nextLabel={">"}
+                                    className={styles.pagination+ " pagination__leaderboard"}
+                                    previousLabel={
+                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M13 16.6004L7.5667 11.1671C6.92503 10.5254 6.92503 9.47539 7.5667 8.83372L13 3.40039" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    }
+                                    nextLabel={
+                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.9248 16.6004L13.3581 11.1671C13.9998 10.5254 13.9998 9.47539 13.3581 8.83372L7.9248 3.40039" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    }
                                     breakLabel={"..."}
                                     pageCount={pageCount}
                                     onPageChange={handlePageClick}
@@ -188,7 +185,7 @@ const InvitationCodeTable = () => {
                                     pageLinkClassName={styles.pageLink}
                                     activeLinkClassName={styles.activeLink}
                                 />
-                            </div>
+                            </>
                         )}
                     </>
                 ) : (
@@ -199,7 +196,6 @@ const InvitationCodeTable = () => {
                     </div>
                 )}
             </div>
-        </Card>
     );
 };
 

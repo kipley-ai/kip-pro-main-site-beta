@@ -4,8 +4,12 @@
 
 .pagination__leaderboard li.previous, .pagination__leaderboard li.next{
   background-color: #101010;
-  padding: 13px 8px;
+  padding: 11px 8px;
   border-radius:4px;
+}
+
+.pagination__leaderboard li.previous:hover, .pagination__leaderboard li.next:hover{
+  background-color: #444;
 }
 
 .pagination__leaderboard li.break{
